@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faroe Islands Public Transport</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #1a2634;
+      color: #e8edf2;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #0f1c2a;
+      border-bottom: 2px solid #2a4a6b;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    header h1 { font-size: 1.4rem; font-weight: 700; }
+    header span { font-size: 0.85rem; color: #7a9bbf; }
+
+    .logo {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #4db8ff, #1a7fc1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; flex-shrink: 0;
+    }
+
+    main { max-width: 980px; margin: 0 auto; padding: 32px 16px; }
+
+    /* ── Planner ── */
+    .planner {
+      background: #0f1c2a;
+      border: 1px solid #2a4a6b;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 36px;
+    }
+
+    .planner h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; }
+
+    .planner-inputs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .planner-inputs select {
+      flex: 1;
+      min-width: 200px;
+      padding: 11px 14px;
+      border-radius: 8px;
+      border: 1px solid #2a4a6b;
+      background: #162436;
+      color: #e8edf2;
+      font-size: 0.9rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .planner-inputs select:focus { border-color: #4db8ff; }
+
+    .planner-inputs button {
+      padding: 11px 24px;
+      border-radius: 8px;
+      border: none;
+      background: #1a7fc1;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .planner-inputs button:hover { background: #1d8fd6; }
+
+    /* Journey result */
+    #journey-result { margin-top: 20px; }
+
+    .journey-error {
+      color: #ff7a7a;
+      font-size: 0.88rem;
+      padding: 12px;
+      background: #2a1010;
+      border-radius: 8px;
+      border: 1px solid #5a1a1a;
+    }
+
+    .journey-summary {
+      font-size: 0.82rem;
+      color: #7a9bbf;
+      margin-bottom: 14px;
+    }
+
+    .leg {
+      background: #162436;
+      border: 1px solid #2a4a6b;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .leg-badge {
+      min-width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .badge-ferry   { background: #0d4f7a; color: #4db8ff; }
+    .badge-bus     { background: #0d4f2a; color: #4dff8a; }
+    .badge-express { background: #4a1a6a; color: #d48dff; }
+    .badge-airport { background: #5a3a00; color: #ffb84d; }
+
+    .leg-body { flex: 1; min-width: 0; }
+
+    .leg-route {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #c8dff0;
+    }
+
+    .leg-direction {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin: 2px 0 4px;
+    }
+
+    .leg-via {
+      font-size: 0.77rem;
+      color: #5a7a9a;
+    }
+
+    .leg-note {
+      font-size: 0.75rem;
+      color: #b88a30;
+      margin-top: 4px;
+    }
+
+    .leg-timetable {
+      font-size: 0.75rem;
+      color: #4db8ff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 6px;
+    }
+
+    .leg-timetable:hover { text-decoration: underline; }
+
+    .leg-departures {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #1a2e44;
+      font-size: 0.78rem;
+      color: #7a9bbf;
+    }
+
+    .leg-departures-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #4a6a8a;
+      margin-bottom: 4px;
+    }
+
+    .dep-time {
+      display: inline-block;
+      background: #0f2a3a;
+      border: 1px solid #1a4a6a;
+      border-radius: 5px;
+      padding: 2px 8px;
+      margin: 2px 4px 2px 0;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #4db8ff;
+    }
+
+    .dep-time.next {
+      background: #0a3a1a;
+      border-color: #1a6a3a;
+      color: #4dff8a;
+    }
+
+    .dep-day { font-size: 0.72rem; color: #4a6a8a; margin-left: 2px; }
+
+    .no-sched { color: #4a6a8a; font-style: italic; font-size: 0.78rem; margin-top: 6px; }
+
+    #journey-map {
+      height: 320px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 14px;
+      border: 1px solid #2a4a6b;
+    }
+
+    /* Override Leaflet popup to match dark theme */
+    .leaflet-tooltip {
+      background: #0f1c2a;
+      border: 1px solid #2a4a6b;
+      color: #e8edf2;
+      font-size: 0.8rem;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      box-shadow: none;
+    }
+
+    .leaflet-tooltip::before { border-top-color: #2a4a6b; }
+
+    .transfer-arrow {
+      text-align: center;
+      color: #3a5a7a;
+      font-size: 0.8rem;
+      padding: 4px 0;
+      letter-spacing: 1px;
+    }
+
+    /* ── Section titles ── */
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #7a9bbf;
+      margin-bottom: 12px;
+      margin-top: 32px;
+    }
+
+    .count-pill {
+      display: inline-block;
+      background: #1a2e44;
+      color: #7a9bbf;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 99px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* ── Search ── */
+    .search-bar {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 1px solid #2a4a6b;
+      background: #0f1c2a;
+      color: #e8edf2;
+      font-size: 1rem;
+      margin-bottom: 4px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-bar:focus { border-color: #4db8ff; }
+    .search-bar::placeholder { color: #4a6a8a; }
+
+    /* ── Route grid ── */
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .route-card {
+      background: #0f1c2a;
+      border: 1px solid #2a4a6b;
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .route-card:hover { border-color: #4db8ff; background: #162436; }
+
+    .route-badge {
+      min-width: 44px; height: 44px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85rem;
+    }
+
+    .route-info { flex: 1; min-width: 0; }
+
+    .route-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .route-type { font-size: 0.73rem; color: #7a9bbf; margin-top: 2px; }
+    .route-arrow { color: #2a4a6b; font-size: 1rem; }
+
+    .hidden { display: none !important; }
+
+    .no-results {
+      text-align: center;
+      color: #4a6a8a;
+      padding: 48px 0;
+      font-size: 0.95rem;
+    }
+
+    /* ── Todo ── */
+    .todo-section {
+      margin-top: 48px;
+      background: #0f1c2a;
+      border: 1px solid #2a4a6b;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .todo-section h2 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+
+    .todo-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #1a2e44;
+      font-size: 0.88rem;
+    }
+
+    .todo-item:last-child { border-bottom: none; }
+
+    .todo-status {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      flex-shrink: 0; margin-top: 1px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 700;
+    }
+
+    .status-done    { background: #1a5c2a; color: #4dff8a; }
+    .status-pending { background: #1a2e44; color: #4a6a8a; border: 1px solid #2a4a6b; }
+    .status-wip     { background: #3a2a00; color: #ffb84d; }
+
+    .todo-label { line-height: 1.4; }
+    .todo-label.done { color: #4a6a8a; text-decoration: line-through; }
+    .todo-note { font-size: 0.76rem; color: #4a6a8a; margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">FI</div>
+  <div>
+    <h1>Faroe Islands Public Transport</h1>
+    <span>Strandfaraskip Landsins — ssl.fo</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Journey Planner ── -->
+  <div class="planner">
+    <h2>Plan Your Journey</h2>
+    <div class="planner-inputs">
+      <select id="from-stop"><option value="">From…</option></select>
+      <select id="to-stop"><option value="">To…</option></select>
+      <button onclick="planJourney()">Find Route</button>
+    </div>
+    <div id="journey-result"></div>
+    <div id="journey-map" class="hidden"></div>
+  </div>
+
+  <!-- ── Route Browser ── -->
+  <input class="search-bar" id="search" type="text"
+    placeholder="Search routes by location or number…"
+    oninput="filterRoutes()" autocomplete="off" />
+
+  <div id="ferry-section">
+    <div class="section-title">Ferries (Oyggjaleiðir) <span class="count-pill" id="ferry-count">7</span></div>
+    <div class="route-grid" id="ferry-grid"></div>
+  </div>
+
+  <div id="bus-section">
+    <div class="section-title">Buses (Bygdaleiðir) <span class="count-pill" id="bus-count">22</span></div>
+    <div class="route-grid" id="bus-grid"></div>
+  </div>
+
+  <div class="no-results hidden" id="no-results">No routes match your search.</div>
+
+  <!-- ── Todo ── -->
+  <div class="todo-section">
+    <h2>Project Todos</h2>
+
+    <div class="todo-item">
+      <div class="todo-status status-done">✓</div>
+      <div>
+        <div class="todo-label done">Discover all 29 routes (7 ferry + 22 bus)</div>
+        <div class="todo-note">Scraped from ssl.fo/en/timetable</div>
+      </div>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-status status-done">✓</div>
+      <div>
+        <div class="todo-label done">Build route browser with search</div>
+        <div class="todo-note">All routes listed, filterable, linked to ssl.fo timetables</div>
+      </div>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-status status-done">✓</div>
+      <div>
+        <div class="todo-label done">Scrape timetable + stop data for all routes</div>
+        <div class="todo-note">All stops extracted from ssl.fo, stop graph built</div>
+      </div>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-status status-done">✓</div>
+      <div>
+        <div class="todo-label done">Journey planner: start → goal routing with BFS</div>
+        <div class="todo-note">Finds shortest path (fewest transfers) across all routes</div>
+      </div>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-status status-done">✓</div>
+      <div>
+        <div class="todo-label done">Show next departure times for planned journey</div>
+        <div class="todo-note">Shows next 4 departures per leg based on current day and time</div>
+      </div>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-status status-done">✓</div>
+      <div>
+        <div class="todo-label done">Warn on seasonal and restricted routes</div>
+        <div class="todo-note">Notes shown per leg: seasonal, schooldays-only, request-only, weekdays-only</div>
+      </div>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-status status-done">✓</div>
+      <div>
+        <div class="todo-label done">Add map view</div>
+        <div class="todo-note">Leaflet + OpenStreetMap — shows planned route with color-coded legs and stop markers</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ── Schedule data (departure times per route, direction, day-of-week) ───────
+// Keys: route id → direction label → day index (0=Sun…6=Sat) → sorted HH:MM list
+const SCHEDULES = {"7":{"Tvøroyri→Tórshavn":{"0":["08:30","17:30"],"1":["06:00","11:30","18:45"],"2":["07:00","16:00"],"3":["06:00","11:30","18:45"],"4":["06:00","11:30","17:30"],"5":["07:00","16:00","21:00"],"6":["09:30","18:30"]},"Tórshavn→Tvøroyri":{"0":["11:00","20:00"],"1":["08:45","16:00","21:15"],"2":["13:00","19:00"],"3":["08:45","16:00","21:15"],"4":["08:45","14:15","21:15"],"5":["13:00","18:30"],"6":["07:00","16:00","21:15"]}},"36":{"Sørvágur→Mykines":{"0":["09:30","10:45","13:30","17:30"],"1":["09:30","10:45","13:30","17:30"],"2":["09:30","10:45","13:30","17:30"],"3":["09:30","10:45","13:30","17:30"],"4":["09:30","10:45","13:30","17:30"],"5":["09:30","10:45","13:30","17:30"],"6":["09:30","10:45","13:30","17:30"]},"Mykines→Sørvágur":{"0":["10:15","11:30","14:15","18:15"],"1":["10:15","11:30","14:15","18:15"],"2":["10:15","11:30","14:15","18:15"],"3":["10:15","11:30","14:15","18:15"],"4":["10:15","11:30","14:15","18:15"],"5":["10:15","11:30","14:15","18:15"],"6":["10:15","11:30","14:15","18:15"]}},"56":{},"58":{},"61":{"Gamlarætt→Hestur":{"0":["08:35","14:35","19:05"],"1":["06:55","09:05","14:35","17:05","19:05"],"2":["06:55","09:05","14:35","17:05","19:05"],"3":["06:55","09:05","14:35","17:05","19:05"],"4":["06:55","09:05","14:35","17:05","19:05"],"5":["06:55","09:05","14:35","17:05","19:05"],"6":["08:35","14:35","19:05"]},"Hestur→Gamlarætt":{"0":["08:50","14:50","19:20"],"1":["07:10","09:20","14:50","17:20","19:20"],"2":["07:10","09:20","14:50","17:20","19:20"],"3":["07:10","09:20","14:50","17:20","19:20"],"4":["07:10","09:20","14:50","17:20","19:20"],"5":["07:10","09:20","14:50","17:20","19:20"],"6":["08:50","14:50","19:20"]}},"66":{"Sandur→Skúvoy":{"0":["08:30","10:35","15:00","16:30","18:15"],"1":["06:15","08:30","15:00","16:30"],"2":["06:15","08:30","15:00","16:30"],"3":["06:15","08:30","15:00","16:30","18:15"],"4":["06:15","08:30","15:00","16:30"],"5":["06:15","08:30","15:00","16:30","18:15"],"6":["08:30","10:35","15:00","16:30","18:15"]},"Skúvoy→Sandur":{"0":["09:00","11:05","15:30","17:00","18:45"],"1":["06:50","09:00","15:30","17:00"],"2":["06:50","09:00","15:30","17:00"],"3":["06:50","09:00","15:30","17:00","18:45"],"4":["06:50","09:00","15:30","17:00"],"5":["06:50","09:00","15:30","17:00","18:45"],"6":["09:00","11:05","15:30","17:00","18:45"]}},"90":{"Tórshavn→Nólsoy":{"0":["09:30","13:00","16:20","19:00","22:00"],"1":["06:45","07:45","12:30","16:20","18:00","22:00"],"2":["06:45","07:45","12:30","16:20","18:00","22:00"],"3":["06:45","07:45","09:30","12:30","16:20","18:00","22:00"],"4":["06:45","07:45","12:30","16:20","18:00","22:00"],"5":["06:45","07:45","09:30","12:30","16:20","18:00","22:00"],"6":["07:45","12:30","16:20","19:00","22:00"]}},"100":{"Tórshavn→Vestmanna":{"0":["10:15","15:25","20:20"],"1":["06:45","07:50","09:15","13:15","15:25","16:30","17:45","19:00"],"2":["06:45","07:50","09:15","13:15","15:25","16:30","17:45","19:00"],"3":["06:45","07:50","09:15","13:15","15:25","16:30","17:45","19:00"],"4":["06:45","07:50","09:15","13:15","15:25","16:30","17:45","19:00"],"5":["06:45","07:50","09:15","13:15","15:25","16:30","17:45","19:00"],"6":["10:15","15:25","20:20"]},"Vestmanna→Tórshavn":{"0":["09:05","14:15","19:00"],"1":["06:45","07:55","09:05","12:15","14:15","16:30","18:45"],"2":["06:45","07:55","09:05","12:15","14:15","16:30","18:45"],"3":["06:45","07:55","09:05","12:15","14:15","16:30","18:45"],"4":["06:45","07:55","09:05","12:15","14:15","16:30","18:45"],"5":["06:45","07:55","09:05","12:15","14:15","16:30","18:45"],"6":["09:05","14:15","19:00"]}},"200":{"Eiði→Oyrarbakki":{"1":["06:15","07:15","07:30","08:00","09:15","12:15","13:50","14:40","15:30","16:40","18:30"],"2":["06:15","07:15","07:30","08:00","09:15","12:15","13:50","14:40","15:30","16:40","18:30"],"3":["06:15","07:15","07:30","08:00","09:15","11:50","12:15","12:50","13:50","14:40","15:30","16:40","18:30"],"4":["06:15","07:15","07:30","08:00","09:15","12:15","13:50","14:40","15:30","16:40","18:30"],"5":["06:15","07:15","07:30","08:00","09:15","12:15","13:50","14:40","15:30","16:40","18:30"]},"Oyrarbakki→Eiði":{"1":["06:55","08:40","11:35","12:40","14:15","14:35","15:05","16:15","17:15","19:05"],"2":["06:55","08:40","11:35","12:40","14:15","14:35","15:05","16:15","17:15","19:05"],"3":["06:55","08:40","11:35","12:40","13:15","14:15","14:35","15:05","16:15","17:15","19:05"],"4":["06:55","08:40","11:35","12:40","14:15","14:35","15:05","16:15","17:15","19:05"],"5":["06:55","08:40","11:35","12:40","14:15","14:35","15:05","16:15","17:15","19:05"]}},"201":{"Oyrarbakki→Gjógv":{"1":["07:00","08:40","10:05","14:35","17:15"],"2":["07:00","08:40","10:05","14:35","17:15"],"3":["07:00","08:40","10:05","14:35","17:15"],"4":["07:00","08:40","10:05","14:35","17:15"],"5":["07:00","08:40","10:05","14:35","17:15"],"6":["08:25","14:15"]},"Gjógv→Oyrarbakki":{"1":["09:05","11:10","15:10","15:35","18:30"],"2":["09:05","11:10","15:10","15:35","18:30"],"3":["09:05","11:10","15:10","15:35","18:30"],"4":["09:05","11:10","15:10","15:35","18:30"],"5":["09:05","11:10","15:10","15:35","18:30"],"6":["09:15","15:35"]}},"202":{"Tjørnuvík→Oyrarbakki":{"1":["07:10","08:00","09:15","13:50","14:40","15:30","16:40"],"2":["07:10","08:00","09:15","13:50","14:40","15:30","16:40"],"3":["07:10","08:00","09:15","13:50","14:40","15:30","16:40"],"4":["07:10","08:00","09:15","13:50","14:40","15:30","16:40"],"5":["07:10","08:00","09:15","13:50","14:40","15:30","16:40"]},"Oyrarbakki→Tjørnuvík":{"1":["07:35","08:40","14:15","15:05","16:15"],"2":["07:35","08:40","14:15","15:05","16:15"],"3":["07:35","08:40","14:15","15:05","16:15"],"4":["07:35","08:40","14:15","15:05","16:15"],"5":["07:35","08:40","14:15","15:05","16:15"]}},"222":{"Kollfjarðadalur→Oyrarbakki":{"1":["14:35"],"2":["14:35"],"3":["14:35"],"4":["14:35"],"5":["14:35"]}},"223":{"Hósvík→Kambsdalur":{"1":["07:10"],"2":["07:10"],"3":["07:10"],"4":["07:10"],"5":["07:10"]}},"300":{"Tórshavn→Sørvágur":{"0":["09:15","12:30","16:30","19:00"],"1":["05:40","06:45","07:50","09:15","12:30","14:15","15:20","16:30","17:45","19:00"],"2":["05:40","06:45","07:50","09:15","12:30","14:15","15:20","16:30","17:45","19:00"],"3":["05:40","06:45","07:50","09:15","12:30","14:15","15:20","16:30","17:45","19:00"],"4":["05:40","06:45","07:50","09:15","12:30","14:15","15:20","16:30","17:45","19:00"],"5":["05:40","06:45","07:50","09:15","12:30","14:15","15:20","16:30","17:45","19:00"],"6":["09:15","12:30","16:30","19:00"]},"Sørvágur→Tórshavn":{"0":["06:45","07:50","10:20","13:50","20:30"],"1":["06:45","07:50","08:55","10:20","13:50","16:30","17:35","20:30"],"2":["06:45","07:50","08:55","10:20","13:50","16:30","17:35","20:30"],"3":["06:45","07:50","08:55","10:20","13:50","16:30","17:35","20:30"],"4":["06:45","07:50","08:55","10:20","13:50","16:30","17:35","20:30"],"5":["06:45","07:50","08:55","10:20","13:50","16:30","17:35","20:30"],"6":["06:45","07:50","10:20","13:50","20:30"]}},"350":{"Tórshavn→Bøur":{"1":["11:30","15:30"],"2":["11:30","15:30"],"3":["11:30","15:30"],"4":["11:30","15:30"],"5":["11:30","15:30"]},"Bøur→Tórshavn":{"1":["06:35","12:45"],"2":["06:35","12:45"],"3":["06:35","12:45"],"4":["06:35","12:45"],"5":["06:35","12:45"]}},"400":{"Klaksvík→Tórshavn":{"0":["07:45","11:50","13:25","19:30"],"1":["05:55","06:50","13:05","14:15","16:25","18:05"],"2":["05:55","06:50","13:05","14:15","16:25","18:05"],"3":["05:55","06:50","13:05","14:15","16:25","18:05"],"4":["05:55","06:50","13:05","14:15","16:25","18:05"],"5":["05:55","06:50","13:05","14:15","16:25","18:05"],"6":["07:45","08:50","13:25","15:05"]},"Tórshavn→Klaksvík":{"0":["09:20","10:50","13:50","17:30","20:40"],"1":["06:10","07:55","16:20","18:20"],"2":["06:10","07:55","16:20","18:20"],"3":["06:10","07:55","16:20","18:20"],"4":["06:10","07:55","16:20","18:20"],"5":["06:10","07:55","16:20","18:20"],"6":["09:20","12:10","15:25","17:30","20:40"]}},"401":{"Klaksvík→Tórshavn":{"1":["06:25","07:35","11:00","16:00"],"2":["06:25","07:35","11:00","16:00"],"3":["06:25","07:35","11:00","16:00"],"4":["06:25","07:35","11:00","16:00"],"5":["06:25","07:35","11:00","16:00"]},"Tórshavn→Klaksvík":{"1":["06:25","09:50","14:45","16:15"],"2":["06:25","09:50","14:45","16:15"],"3":["06:25","09:50","14:45","16:15"],"4":["06:25","09:50","14:45","16:15"],"5":["06:25","09:50","14:45","16:15"]}},"410":{"Fuglafjørður→Klaksvík":{"0":["11:55","13:40","18:10"],"6":["08:55","13:40"]},"Klaksvík→Fuglafjørður":{"0":["11:50","13:10","18:05"],"6":["08:50","13:10"]}},"440":{"Selatrað→Toftir":{"0":["13:30","14:25","18:05"],"1":["06:45","07:10","07:45","12:20","12:45","13:30","14:25","15:15","17:00","18:05","18:55"],"2":["06:45","07:10","07:45","12:20","12:45","13:30","14:25","15:15","17:00","18:05","18:55"],"3":["06:45","07:10","07:45","12:20","12:45","13:30","14:25","15:15","17:00","18:05","18:55"],"4":["06:45","07:10","07:45","12:20","12:45","13:30","14:25","15:15","17:00","18:05","18:55"],"5":["06:45","07:10","07:45","12:20","12:45","13:30","14:25","15:15","17:00","18:05","18:55"],"6":["09:05","10:25"]},"Toftir→Selatrað":{"0":["13:35","14:25","18:15"],"1":["06:00","06:55","07:35","07:55","08:40","11:45","12:55","13:35","14:25","15:20","15:55","16:55","18:15","18:55"],"2":["06:00","06:55","07:35","07:55","08:40","11:45","12:55","13:35","14:25","15:20","15:55","16:55","18:15","18:55"],"3":["06:00","06:55","07:35","07:55","08:40","11:45","12:55","13:35","14:25","15:20","15:55","16:55","18:15","18:55"],"4":["06:00","06:55","07:35","07:55","08:40","11:45","12:55","13:35","14:25","15:20","15:55","16:55","18:15","18:55"],"5":["06:00","06:55","07:35","07:55","08:40","11:45","12:55","13:35","14:25","15:20","15:55","16:55","18:15","18:55"],"6":["08:55","10:05","15:55"]}},"442":{"Glyvrar→Æðuvík":{"1":["07:10","15:40"],"2":["07:10","15:40"],"3":["07:10","15:40"],"4":["07:10","15:40"],"5":["07:10","15:40"]},"Æðuvík→Glyvrar":{"1":["16:15"],"2":["16:15"],"3":["16:15"],"4":["16:15"],"5":["16:15"]}},"444":{"Toftir/Strendur→Kambsdalur":{"1":["07:30","07:35"],"2":["07:30","07:35"],"3":["07:30","07:35"],"4":["07:30","07:35"],"5":["07:30","07:35"]},"Kambsdalur→Skálafjørður/Toftir":{"1":["13:35","15:20"],"2":["13:35","15:20"],"3":["13:35","15:20"],"4":["13:35","15:20"],"5":["13:35","15:20"]}},"450":{"Tórshavn→Strendur/Toftir/Runavík":{"0":["13:05","17:40"],"1":["07:20","08:25","11:20","13:05","14:10","15:20","16:25","18:25"],"2":["07:20","08:25","11:20","13:05","14:10","15:20","16:25","18:25"],"3":["07:20","08:25","11:20","13:05","14:10","15:20","16:25","18:25"],"4":["07:20","08:25","11:20","13:05","14:10","15:20","16:25","18:25"],"5":["07:20","08:25","11:20","13:05","14:10","15:20","16:25","18:25"],"6":["08:35"]}},"481":{"Skálafjørður→Oyndarfjørður":{"1":["14:00","15:40","17:25"],"2":["14:00","15:40","17:25"],"3":["14:00","15:40","17:25"],"4":["14:00","15:40","17:25"],"5":["14:00","15:40","17:25"]},"Oyndarfjørður→Skálafjørður":{"1":["07:05","14:20","16:00","17:45"],"2":["07:05","14:20","16:00","17:45"],"3":["07:05","14:20","16:00","17:45"],"4":["07:05","14:20","16:00","17:45"],"5":["07:05","14:20","16:00","17:45"]}},"500":{},"504":{"Klaksvík→Kunoy":{"1":["07:10"],"2":["07:10"],"3":["07:10"],"4":["07:10"],"5":["07:10"]},"Kunoy→Klaksvík":{"1":["07:40"],"2":["07:40"],"3":["07:40"],"4":["07:40"],"5":["07:40"]}},"506":{"Trøllanes→Syðradalur Harbour":{"1":["06:25","07:45","15:15","18:15"],"2":["06:25","07:45","15:15","18:15"],"3":["06:25","07:45","15:15","18:15"],"4":["06:25","07:45","15:15","18:15"],"5":["06:25","07:45","15:15","18:15"]},"Syðradalur Harbour→Trøllanes":{"1":["07:00","08:20","15:50","18:50"],"2":["07:00","08:20","15:50","18:50"],"3":["07:00","08:20","15:50","18:50"],"4":["07:00","08:20","15:50","18:50"],"5":["07:00","08:20","15:50","18:50"]}},"600":{"Skopun→Sandur":{"0":["09:40","17:25"],"1":["06:45","07:50","08:15","09:40","10:55","15:55","17:25","18:50"],"2":["06:45","07:50","08:15","09:40","10:55","15:55","17:25","18:50"],"3":["06:45","07:50","08:15","09:40","10:55","15:55","17:25","18:50"],"4":["06:45","07:50","08:15","09:40","10:55","15:55","17:25","18:50"],"5":["06:45","07:50","08:15","09:40","10:55","15:55","17:25","18:50"],"6":["09:40","17:25"]},"Sandur→Skopun":{"0":["10:55","19:15"],"1":["06:45","07:30","08:00","10:55","19:15"],"2":["06:45","07:30","08:00","10:55","19:15"],"3":["06:45","07:30","08:00","10:55","19:15"],"4":["06:45","07:30","08:00","10:55","19:15"],"5":["06:45","07:30","08:00","10:55","19:15"],"6":["10:55","19:15"]}},"601":{"Dalur→Sandur":{"0":["09:30","17:30"],"1":["06:45","07:30","09:30","13:20","16:20","17:30"],"2":["06:45","07:30","09:30","13:20","16:20","17:30"],"3":["06:45","07:30","09:30","13:20","16:20","17:30"],"4":["06:45","07:30","09:30","13:20","16:20","17:30"],"5":["06:45","07:30","09:30","13:20","16:20","17:30"],"6":["09:30","17:30"]},"Sandur→Dalur":{"0":["09:40","16:15","17:45"],"1":["08:20","09:40","13:35","16:15","17:45","19:20"],"2":["08:20","09:40","13:35","16:15","17:45","19:20"],"3":["08:20","09:40","13:35","16:15","17:45","19:20"],"4":["08:20","09:40","13:35","16:15","17:45","19:20"],"5":["08:20","09:40","13:35","16:15","17:45","19:20"],"6":["09:40","16:15","17:45"]}},"650":{"Tórshavn→Sandur":{"0":["09:05","14:05","17:05","18:35"],"1":["07:00","09:05","10:35","14:05","15:35","17:05","18:35"],"2":["07:00","09:05","10:35","14:05","15:35","17:05","18:35"],"3":["07:00","09:05","10:35","14:05","15:35","17:05","18:35"],"4":["07:00","09:05","10:35","14:05","15:35","17:05","18:35"],"5":["07:00","09:05","10:35","14:05","15:35","17:05","18:35"],"6":["09:05","14:05","17:05","18:35"]}},"700":{"Sumba→Tvøroyri":{"0":["07:25","16:30"],"1":["07:00","12:40","14:30"],"2":["07:00","12:40","14:30"],"3":["07:00","12:40","14:30"],"4":["07:00","12:40","14:30"],"5":["07:00","12:40","14:30"],"6":["08:15"]},"Tvøroyri→Sumba":{"0":["12:50"],"1":["07:15","13:10"],"2":["07:15","13:10"],"3":["07:15","13:10"],"4":["07:15","13:10"],"5":["07:15","13:10"],"6":["08:50"]}},"701":{"Fámjin→Sandvík":{"0":["08:00"],"1":["07:15"],"2":["07:15"],"3":["07:15"],"4":["07:15"],"5":["07:15"],"6":["08:40"]},"Sandvík→Fámjin":{"1":["07:15"],"2":["07:15"],"3":["07:15"],"4":["07:15"],"5":["07:15"]}}};
+
+const DAY_NAMES = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+// Find the matching schedule direction for a leg (forward or reverse on the route)
+function findSchedDir(routeId, fromStop, toStop) {
+  const sched = SCHEDULES[routeId];
+  if (!sched) return null;
+  const dirs = Object.keys(sched);
+  if (!dirs.length) return null;
+  if (dirs.length === 1) return dirs[0];
+
+  const route  = ROUTES.find(r => r.id === routeId);
+  const fromIdx = route ? route.stops.indexOf(fromStop) : -1;
+  const toIdx   = route ? route.stops.indexOf(toStop)   : -1;
+
+  if (fromIdx === -1 || toIdx === -1) return dirs[0];
+  const isForward = fromIdx < toIdx;
+
+  // Try to match by first token of direction label
+  const wantStart = isForward
+    ? (route.stops[0])
+    : (route.stops[route.stops.length - 1]);
+
+  return dirs.find(d => d.startsWith(wantStart)) || dirs[0];
+}
+
+// Returns up to `n` upcoming departures [{time, dayOffset}]
+function getNextDepartures(routeId, fromStop, toStop, n = 4) {
+  const dir = findSchedDir(routeId, fromStop, toStop);
+  if (!dir) return null;
+  const daySched = SCHEDULES[routeId][dir];
+  if (!daySched) return null;
+
+  const now      = new Date();
+  const today    = now.getDay();
+  const nowMins  = now.getHours() * 60 + now.getMinutes();
+  const results  = [];
+
+  for (let off = 0; off <= 7 && results.length < n; off++) {
+    const dayIdx = (today + off) % 7;
+    const times  = daySched[String(dayIdx)] || [];
+    for (const t of times) {
+      if (results.length >= n) break;
+      const [h, m] = t.split(":").map(Number);
+      if (off === 0 && h * 60 + m <= nowMins) continue;
+      results.push({ time: t, dayOffset: off, dayIdx });
+    }
+  }
+  return results;
+}
+
+function renderDepartures(routeId, fromStop, toStop) {
+  const deps = getNextDepartures(routeId, fromStop, toStop);
+  if (!deps) return `<div class="no-sched">No timetable data — check ssl.fo</div>`;
+  if (!deps.length) return `<div class="no-sched">No upcoming departures found today</div>`;
+
+  const pills = deps.map((d, i) => {
+    const dayTag = d.dayOffset === 0 ? "" :
+                   d.dayOffset === 1 ? `<span class="dep-day">tomorrow</span>` :
+                   `<span class="dep-day">${DAY_NAMES[d.dayIdx]}</span>`;
+    return `<span class="dep-time${i === 0 ? " next" : ""}">${d.time}${dayTag}</span>`;
+  }).join("");
+
+  return `
+    <div class="leg-departures-label">Next departures from ${fromStop}</div>
+    ${pills}`;
+}
+
+// ── Route data ──────────────────────────────────────────────────────────────
+const ROUTES = [
+  // Ferries
+  { id:"7",   type:"ferry",   name:"7 – Suðuroy – Tórshavn",
+    stops:["Tvøroyri","Tórshavn"],
+    slug:"ferry/7-suduroy-torshavn", note:"~2h ferry journey" },
+  { id:"36",  type:"ferry",   name:"36 – Sørvágur – Mykines",
+    stops:["Sørvágur","Mykines"],
+    slug:"ferry/36-soervagur-mykines", note:"Seasonal — check schedule" },
+  { id:"56",  type:"ferry",   name:"56 – Klaksvík – Kalsoy",
+    stops:["Klaksvík","Syðradalur"],
+    slug:"ferry/56-klaksvik-kalsoy" },
+  { id:"58",  type:"ferry",   name:"58 – Hvannasund – Hattarvík",
+    stops:["Hvannasund","Svínoy","Kirkja","Hattarvík"],
+    slug:"ferry/58-hvannasund-hattarvik" },
+  { id:"61",  type:"ferry",   name:"61 – Gamlarætt – Hestur",
+    stops:["Gamlarætt","Hestur"],
+    slug:"ferry/61-gamlaraett-hestur", note:"Request-only — call ahead" },
+  { id:"66",  type:"ferry",   name:"66 – Sandur – Skúvoy",
+    stops:["Sandur","Skúvoy"],
+    slug:"ferry/66-sandur-skuvoy", note:"Seasonal: Apr 1 – Oct 31" },
+  { id:"90",  type:"ferry",   name:"90 – Tórshavn – Nólsoy",
+    stops:["Tórshavn","Nólsoy"],
+    slug:"ferry/90-torshavn-nolsoy" },
+  // Buses
+  { id:"100", type:"bus",     name:"100 – Tórshavn – Vestmanna",
+    stops:["Tórshavn","Kollafjørður Tunnel","Kvívík","Vestmanna"],
+    slug:"bus/100-torshavn-vestmanna" },
+  { id:"200", type:"bus",     name:"200 – Oyrarbakki – Eiði",
+    stops:["Eiði","Svínáir","Norðskála","Oyrarbakki"],
+    slug:"bus/200-oyrarbakki-eidi" },
+  { id:"201", type:"bus",     name:"201 – Oyrarbakki – Gjógv",
+    stops:["Oyrarbakki","Eiði","Gjógv"],
+    slug:"bus/201-oyrarbakki-gjogv", note:"Request-only, schooldays" },
+  { id:"202", type:"bus",     name:"202 – Oyrarbakki – Tjørnuvík",
+    stops:["Tjørnuvík","Oyrarbakki"],
+    slug:"bus/202-oyrarbakki-tjoernuvik", note:"Mon–Fri schooldays only" },
+  { id:"222", type:"bus",     name:"222 – Kollafjarðadalur – Oyrarbakki",
+    stops:["Kollafjarðadalur","Hósvík","Hvalvík","Oyrarbakki"],
+    slug:"bus/222-kollafjardadalur-effo-oyrarbakki" },
+  { id:"223", type:"bus",     name:"223 – Sundalagið – Kambsdalur",
+    stops:["Hósvík","Hvalvík","Oyrarbakki","Kambsdalur"],
+    slug:"bus/223-sundalagid-kambsdalur", note:"Schooldays only" },
+  { id:"300", type:"airport", name:"300 – Tórshavn – Airport – Sørvágur",
+    stops:["Tórshavn","Kollafjarðadalur","Sandavágur","Miðvágur","Vága Airport","Sørvágur"],
+    slug:"bus/300-torshavn-airport-soervagur" },
+  { id:"350", type:"airport", name:"350 – Tórshavn – Vága Airport – Bøur",
+    stops:["Tórshavn","Glasir","Kollafjarðadalur","Sandavágur","Miðvágur","Vága Airport","Sørvágur","Bøur"],
+    slug:"bus/350-torshavn-vaga-airport-soervagurboe", note:"Weekdays only" },
+  { id:"400", type:"bus",     name:"400 – Klaksvík – Tórshavn",
+    stops:["Klaksvík","Leirvík","Gøtudalur","Søldarfjørður","Skálafjørður","Oyrarbakki","Hósvík","Kollafjørður Tunnel","Tórshavn"],
+    slug:"bus/400-klaksvik-torshavn" },
+  { id:"401", type:"express", name:"401 – Klaksvík – Tórshavn Express",
+    stops:["Klaksvík","Leirvík","Gøtudalur","Søldarfjørður","Runavík","Tórshavn"],
+    slug:"bus/401-klaksvik-torshavn-express-bus-valid-from-dec-1", note:"Mon–Fri only" },
+  { id:"410", type:"bus",     name:"410 – Fuglafjørður – Klaksvík",
+    stops:["Fuglafjørður","Kambsdalur","Gøtudalur","Leirvík","Klaksvík"],
+    slug:"bus/410-fuglafj-goetudalur-klaksvik" },
+  { id:"440", type:"bus",     name:"440 – Skálafjarðarleiðin",
+    stops:["Selatrað","Strendur","Skála","Skálafjørður","Søldarfjørður","Runavík","Toftir"],
+    slug:"bus/440-skalafjardarleidin" },
+  { id:"442", type:"bus",     name:"442 – Glyvrar – Æðuvík – Rituvík",
+    stops:["Glyvrar","Runavík","Rituvík","Æðuvík"],
+    slug:"bus/442-glyvrar-aeduvik-rituvik" },
+  { id:"444", type:"bus",     name:"444 – Kambsdalur – Skálafjørður",
+    stops:["Toftir","Strendur","Søldarfjørður","Skálafjørður","Kambsdalur"],
+    slug:"bus/444-kambsdalur-skalafjoerdurtoftir", note:"Schooldays only" },
+  { id:"450", type:"express", name:"450 – Tórshavn – Eysturoy",
+    stops:["Tórshavn","Runavík","Toftir","Strendur"],
+    slug:"bus/450-torshavn-eysturoy-jellyfish-roundabout" },
+  { id:"481", type:"bus",     name:"481 – Skálafjørður – Oyndarfjørður",
+    stops:["Skálafjørður","Hellurnar","Oyndarfjørður"],
+    slug:"bus/481-skalafjoerdur-oyndarfjoerdur" },
+  { id:"500", type:"bus",     name:"500 – Klaksvík – Viðareiði",
+    stops:["Klaksvík","Hvannasund","Kunoy","Viðareiði"],
+    slug:"bus/500-klaksvik-vidareidi" },
+  { id:"504", type:"bus",     name:"504 – Kunoy – Klaksvík",
+    stops:["Klaksvík","Haraldssund","Kunoy"],
+    slug:"bus/504-kunoy-klaksvik", note:"Seasonal: Apr 1 – Oct 31" },
+  { id:"506", type:"bus",     name:"506 – Trøllanes – Syðradalur",
+    stops:["Trøllanes","Mikladalur","Húsar","Syðradalur"],
+    slug:"bus/506-troellanes-sydradalur" },
+  { id:"600", type:"bus",     name:"600 – Skopun – Sandur",
+    stops:["Skopun","Inni í Dal","Sandur"],
+    slug:"bus/600-skopun-sandur" },
+  { id:"601", type:"bus",     name:"601 – Dalur – Húsavík – Sandur",
+    stops:["Dalur","Húsavík","Skálavík","Sandur"],
+    slug:"bus/601-dalur-husavik-skalavik-sandur" },
+  { id:"650", type:"bus",     name:"650 – Sandoy – Tórshavn",
+    stops:["Sandur","Inni í Dal","Gamlarætt","Glasir","Tórshavn"],
+    slug:"bus/650-sandoy-torshavn", note:"Includes ferry crossing" },
+  { id:"700", type:"bus",     name:"700 – Sumba – Vágur – Tvøroyri",
+    stops:["Sumba","Lopra","Vágur","Porkeri","Hov","Øravík","Tvøroyri"],
+    slug:"bus/700-sumba-vagur-tvoeroyri" },
+  { id:"701", type:"bus",     name:"701 – Fámjin – Tvøroyri – Sandvík",
+    stops:["Fámjin","Øravík","Tvøroyri","Nes","Hvalba","Sandvík"],
+    slug:"bus/701-famjin-tvoeroyri-sandvik" },
+];
+
+const TYPE_LABEL = { ferry:"Ferry", bus:"Bus", express:"Express Bus", airport:"Airport Bus" };
+const BASE_URL   = "https://www.ssl.fo/en/timetable/";
+
+// ── Build stop graph ─────────────────────────────────────────────────────────
+const graph = {}; // stop → [{stop, route}]
+
+function addEdge(a, b, route) {
+  (graph[a] = graph[a] || []).push({ stop: b, route });
+  (graph[b] = graph[b] || []).push({ stop: a, route });
+}
+
+ROUTES.forEach(route => {
+  for (let i = 0; i < route.stops.length - 1; i++) {
+    addEdge(route.stops[i], route.stops[i + 1], route);
+  }
+});
+
+const ALL_STOPS = Object.keys(graph).sort((a, b) => a.localeCompare(b));
+
+// ── Populate dropdowns ───────────────────────────────────────────────────────
+const fromSel = document.getElementById("from-stop");
+const toSel   = document.getElementById("to-stop");
+
+ALL_STOPS.forEach(stop => {
+  [fromSel, toSel].forEach(sel => {
+    const opt = document.createElement("option");
+    opt.value = opt.textContent = stop;
+    sel.appendChild(opt);
+  });
+});
+
+// ── BFS journey planner ──────────────────────────────────────────────────────
+function bfs(start, end) {
+  if (start === end) return [];
+  const queue   = [[start, []]];
+  const visited = new Set([start]);
+
+  while (queue.length) {
+    const [cur, path] = queue.shift();
+    for (const { stop, route } of (graph[cur] || [])) {
+      if (visited.has(stop)) continue;
+      visited.add(stop);
+      const next = [...path, { from: cur, to: stop, route }];
+      if (stop === end) return next;
+      queue.push([stop, next]);
+    }
+  }
+  return null;
+}
+
+// Group consecutive steps on the same route into legs
+function groupLegs(steps) {
+  const legs = [];
+  let leg = null;
+  for (const step of steps) {
+    if (!leg || leg.route.id !== step.route.id) {
+      if (leg) legs.push(leg);
+      leg = { route: step.route, from: step.from, to: step.to, via: [] };
+    } else {
+      leg.via.push(leg.to);
+      leg.to = step.to;
+    }
+  }
+  if (leg) legs.push(leg);
+  return legs;
+}
+
+function planJourney() {
+  const from = fromSel.value;
+  const to   = toSel.value;
+  const out  = document.getElementById("journey-result");
+
+  if (!from || !to) {
+    out.innerHTML = `<div class="journey-error">Please select both a start and destination.</div>`;
+    return;
+  }
+  if (from === to) {
+    out.innerHTML = `<div class="journey-error">Start and destination are the same.</div>`;
+    return;
+  }
+
+  const steps = bfs(from, to);
+
+  if (!steps) {
+    out.innerHTML = `<div class="journey-error">No route found between <strong>${from}</strong> and <strong>${to}</strong>. These stops may not be connected in the network.</div>`;
+    return;
+  }
+
+  const legs = groupLegs(steps);
+  const transfers = legs.length - 1;
+
+  let html = `<div class="journey-summary">
+    ${legs.length} leg${legs.length > 1 ? "s" : ""} ·
+    ${transfers === 0 ? "No transfers" : transfers + " transfer" + (transfers > 1 ? "s" : "")}
+    · <strong>${from}</strong> → <strong>${to}</strong>
+  </div>`;
+
+  legs.forEach((leg, i) => {
+    const badgeCls = `badge-${leg.route.type}`;
+    const viaText  = leg.via.length ? `via ${leg.via.join(" · ")}` : "";
+
+    html += `
+      <div class="leg">
+        <div class="leg-badge ${badgeCls}">${leg.route.id}</div>
+        <div class="leg-body">
+          <div class="leg-route">${TYPE_LABEL[leg.route.type]} · ${leg.route.name.replace(/^\d+ – /, "")}</div>
+          <div class="leg-direction">${leg.from} → ${leg.to}</div>
+          ${viaText ? `<div class="leg-via">${viaText}</div>` : ""}
+          ${leg.route.note ? `<div class="leg-note">⚠ ${leg.route.note}</div>` : ""}
+          <div class="leg-departures">
+            ${renderDepartures(leg.route.id, leg.from, leg.to)}
+          </div>
+          <a class="leg-timetable" href="${BASE_URL}${leg.route.slug}" target="_blank" rel="noopener">
+            Full timetable ↗
+          </a>
+        </div>
+      </div>`;
+
+    if (i < legs.length - 1) {
+      html += `<div class="transfer-arrow">↕ Transfer at ${leg.to}</div>`;
+    }
+  });
+
+  out.innerHTML = html;
+  updateMap(legs);
+}
+
+// ── Stop coordinates [lat, lng] ──────────────────────────────────────────────
+const COORDS = {
+  // Streymoy
+  "Tórshavn":              [62.0107,  6.7726],
+  "Glasir":                [62.0200,  6.7450],
+  "Gamlarætt":             [62.0744,  7.0283],
+  "Kollafjørður Tunnel":   [62.1200,  7.0500],
+  "Kollafjarðadalur":      [62.1300,  7.0700],
+  "Kvívík":                [62.1383,  7.1716],
+  "Vestmanna":             [62.1567,  7.1666],
+  "Hósvík":                [62.1500,  6.9650],
+  "Hvalvík":               [62.1450,  7.0050],
+  "Oyri":                  [62.1800,  6.9500],
+  "Oyrarbakki":            [62.1933,  6.9733],
+  "Kollfjarðadalur":       [62.1300,  7.0700],
+  // Eiðoy / Eysturoy
+  "Svínáir":               [62.2700,  7.0333],
+  "Norðskála":             [62.2400,  6.9800],
+  "Eiði":                  [62.2967,  7.0967],
+  "Gjógv":                 [62.3167,  7.1333],
+  "Tjørnuvík":             [62.3267,  7.1000],
+  "Funningur":             [62.2833,  7.0833],
+  "Selatrað":              [62.2567,  7.0500],
+  "Strendur":              [62.2367,  7.0167],
+  "Skála":                 [62.2167,  6.9500],
+  "Skálafjørður":          [62.2033,  6.9333],
+  "Hellurnar":             [62.2500,  6.9800],
+  "Oyndarfjørður":         [62.2800,  7.0667],
+  "Fuglafjørður":          [62.2533,  6.8133],
+  "Kambsdalur":            [62.2400,  6.8500],
+  "Gøtudalur":             [62.2100,  6.8500],
+  "Leirvík":               [62.2000,  6.8000],
+  "Søldarfjørður":         [62.2300,  6.8200],
+  "Runavík":               [62.2700,  6.7100],
+  "Toftir":                [62.2100,  6.9133],
+  "Glyvrar":               [62.2800,  6.7500],
+  "Rituvík":               [62.2500,  6.7800],
+  "Æðuvík":                [62.2400,  6.7600],
+  // Norðoyar
+  "Klaksvík":              [62.2276,  6.5887],
+  "Hvannasund":            [62.3133,  6.5133],
+  "Haraldssund":           [62.3000,  6.5500],
+  "Kunoy":                 [62.3000,  6.6833],
+  "Viðareiði":             [62.3567,  6.5333],
+  // Kalsoy
+  "Syðradalur":            [62.2700,  6.6700],
+  "Húsar":                 [62.2933,  6.6333],
+  "Mikladalur":            [62.3167,  6.6333],
+  "Trøllanes":             [62.3567,  6.5833],
+  // Svínoy / Viðoy
+  "Svínoy":                [62.3667,  6.3833],
+  "Kirkja":                [62.4333,  6.4167],
+  "Hattarvík":             [62.4167,  6.4500],
+  // Vágar
+  "Sørvágur":              [62.0733,  7.3066],
+  "Miðvágur":              [62.0900,  7.2833],
+  "Sandavágur":            [62.0783,  7.2500],
+  "Vága Airport":          [62.0636,  7.2772],
+  "Bøur":                  [62.1000,  7.4167],
+  // Mykines
+  "Mykines":               [62.1022,  7.6455],
+  // Nólsoy
+  "Nólsoy":                [62.0028,  6.6139],
+  // Hestur
+  "Hestur":                [62.0667,  6.9667],
+  // Sandoy
+  "Skopun":                [61.9133,  6.8833],
+  "Inni í Dal":            [61.8633,  6.8533],
+  "Sandur":                [61.8456,  6.7789],
+  "Traðir":                [61.8800,  6.8200],
+  "Dalur":                 [61.9533,  6.9500],
+  "Húsavík":               [61.9133,  6.7733],
+  "Skálavík":              [61.8733,  6.7967],
+  // Skúvoy
+  "Skúvoy":                [61.7700,  6.8000],
+  // Suðuroy
+  "Tvøroyri":              [61.5567,  6.8200],
+  "Øravík":                [61.5533,  6.8333],
+  "Hov":                   [61.5267,  6.8267],
+  "Porkeri":               [61.5033,  6.7833],
+  "Vágur":                 [61.4767,  6.8100],
+  "Lopra":                 [61.4567,  6.8167],
+  "Sumba":                 [61.4200,  6.7133],
+  "Fámjin":                [61.5500,  6.8833],
+  "Nes":                   [61.5800,  6.8000],
+  "Hvalba":                [61.5933,  6.8167],
+  "Sandvík":               [61.6200,  6.7833],
+};
+
+// ── Map ──────────────────────────────────────────────────────────────────────
+const TYPE_COLORS = { ferry:"#4db8ff", bus:"#4dff8a", express:"#d48dff", airport:"#ffb84d" };
+
+let leafletMap   = null;
+let mapLayers    = [];
+
+function ensureMap() {
+  if (leafletMap) return;
+  leafletMap = L.map("journey-map", { zoomControl: true }).setView([62.05, 6.95], 8);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+    maxZoom: 14
+  }).addTo(leafletMap);
+}
+
+function updateMap(legs) {
+  const mapEl = document.getElementById("journey-map");
+  mapEl.classList.remove("hidden");
+
+  ensureMap();
+  leafletMap.invalidateSize();
+
+  mapLayers.forEach(l => l.remove());
+  mapLayers = [];
+
+  const allBounds = [];
+
+  legs.forEach(leg => {
+    const color    = TYPE_COLORS[leg.route.type] || "#fff";
+    const allStops = [leg.from, ...leg.via, leg.to];
+    const coords   = allStops.map(s => COORDS[s]).filter(Boolean);
+
+    if (coords.length >= 2) {
+      const line = L.polyline(coords, {
+        color, weight: 4, opacity: 0.85,
+        dashArray: leg.route.type === "ferry" ? "10 8" : null
+      }).addTo(leafletMap);
+      mapLayers.push(line);
+      coords.forEach(c => allBounds.push(c));
+    }
+
+    allStops.forEach((stop, i) => {
+      const coord = COORDS[stop];
+      if (!coord) return;
+      allBounds.push(coord);
+      const isEndpoint = i === 0 || i === allStops.length - 1;
+      const marker = L.circleMarker(coord, {
+        radius:      isEndpoint ? 8 : 5,
+        fillColor:   color,
+        color:       "#0a1520",
+        weight:      2,
+        fillOpacity: 0.95,
+      }).bindTooltip(stop, { direction: "top", offset: [0, -6] })
+        .addTo(leafletMap);
+      mapLayers.push(marker);
+    });
+  });
+
+  if (allBounds.length) {
+    leafletMap.fitBounds(allBounds, { padding: [28, 28], maxZoom: 12 });
+  }
+}
+
+// ── Route browser cards ──────────────────────────────────────────────────────
+const ferryGrid = document.getElementById("ferry-grid");
+const busGrid   = document.getElementById("bus-grid");
+
+ROUTES.forEach(r => {
+  const card = document.createElement("a");
+  card.className = "route-card";
+  card.href      = `${BASE_URL}${r.slug}`;
+  card.target    = "_blank";
+  card.rel       = "noopener noreferrer";
+  card.dataset.search = `${r.id} ${r.name} ${r.stops.join(" ")}`.toLowerCase();
+  card.dataset.type   = r.type;
+
+  card.innerHTML = `
+    <div class="route-badge badge-${r.type}">${r.id}</div>
+    <div class="route-info">
+      <div class="route-name">${r.name.replace(/^\d+ – /, "")}</div>
+      <div class="route-type">${TYPE_LABEL[r.type]}</div>
+    </div>
+    <div class="route-arrow">›</div>`;
+
+  (r.type === "ferry" ? ferryGrid : busGrid).appendChild(card);
+});
+
+function filterRoutes() {
+  const q = document.getElementById("search").value.toLowerCase();
+  let fc = 0, bc = 0;
+  document.querySelectorAll(".route-card").forEach(c => {
+    const show = !q || c.dataset.search.includes(q);
+    c.classList.toggle("hidden", !show);
+    if (show) c.dataset.type === "ferry" ? fc++ : bc++;
+  });
+  document.getElementById("ferry-count").textContent = fc;
+  document.getElementById("bus-count").textContent   = bc;
+  document.getElementById("ferry-section").classList.toggle("hidden", fc === 0);
+  document.getElementById("bus-section").classList.toggle("hidden", bc === 0);
+  document.getElementById("no-results").classList.toggle("hidden", fc + bc > 0);
+}
+</script>
+</body>
+</html>
