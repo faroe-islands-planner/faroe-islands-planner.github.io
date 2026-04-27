@@ -1,0 +1,100 @@
+{
+  "route_id": "504",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "504 Kunoy - Klaksvík",
+      "seasonal": null,
+      "stops": [
+        "Klaksvík",
+        "Haraldssund",
+        "Kunoy",
+        "Haraldssund",
+        "Klaksvík"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "&nbsp;x",
+          "times": {
+            "Klaksvík": "08:00",
+            "Haraldssund": "07:40",
+            "Kunoy": "07:30"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "&nbsp;xT",
+          "times": {
+            "Klaksvík": "18:10",
+            "Haraldssund": "17:50",
+            "Kunoy": "17:40"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Years Day",
+      "change": "No route"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "No route"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christ´s Ascenion Day",
+      "change": "No route"
+    },
+    {
+      "day": "Whit Day &nbsp;",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "No route"
+    },
+    {
+      "day": "St. Olai Eve",
+      "change": "Like Saturdays"
+    },
+    {
+      "day": "St. Olai Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "No route"
+    },
+    {
+      "day": "New Years Eve",
+      "change": "No route"
+    }
+  ],
+  "route_name": "504 Kunoy - Klaksv&#xED;k"
+}

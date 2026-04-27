@@ -1,0 +1,43 @@
+{
+  "route_id": "444",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Kambsdalur",
+        "Søldafjørður",
+        "Skálafjørður",
+        "Toftir",
+        ""
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Kambsdalur": "13:35",
+            "Søldafjørður": "13:45",
+            "Skálafjørður": null,
+            "Toftir": null,
+            "": null
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Kambsdalur": "15:20",
+            "Søldafjørður": "15:30",
+            "Skálafjørður": "15:40",
+            "Toftir": null,
+            "": null
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [],
+  "route_name": "444 Kambsdalur - Sk&#xE1;lafj&#xF8;r&#xF0;ur/Toftir"
+}

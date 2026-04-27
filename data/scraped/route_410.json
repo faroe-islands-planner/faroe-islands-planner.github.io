@@ -1,0 +1,653 @@
+{
+  "route_id": "410",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "410 Fuglafj. - Gøtudalur - Klaksvík",
+      "seasonal": null,
+      "stops": [
+        "Fuglafjørður",
+        "Kambsdalur",
+        "Gøtudalur",
+        "Leirvík",
+        "",
+        "To Klaksvík",
+        "To Tórshavn"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "06:00",
+            "Kambsdalur": null,
+            "Gøtudalur": "06:10",
+            "Leirvík": null,
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": "06:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "06:25",
+            "Kambsdalur": "06:30",
+            "Gøtudalur": "06:35",
+            "Leirvík": null,
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "06:50",
+            "Kambsdalur": null,
+            "Gøtudalur": "07:00",
+            "Leirvík": "07:05",
+            "": "07:15",
+            "To Klaksvík": null,
+            "To Tórshavn": "07:05"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "07:10",
+            "Kambsdalur": "07:15",
+            "Gøtudalur": null,
+            "Leirvík": "07:30",
+            "": "07:40",
+            "To Klaksvík": "07:25",
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "07:45",
+            "Kambsdalur": "07:50",
+            "Gøtudalur": "07:57",
+            "Leirvík": null,
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": "08:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "07:55",
+            "Kambsdalur": "08:00",
+            "Gøtudalur": null,
+            "Leirvík": null,
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "08:15",
+            "Kambsdalur": "08:20",
+            "Gøtudalur": "08:25",
+            "Leirvík": "08:30",
+            "": "08:45",
+            "To Klaksvík": null,
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Fuglafjørður": "08:55",
+            "Kambsdalur": "09:00",
+            "Gøtudalur": null,
+            "Leirvík": null,
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": "09:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "08:55",
+            "Kambsdalur": "09:00",
+            "Gøtudalur": null,
+            "Leirvík": "09:15",
+            "": "09:35",
+            "To Klaksvík": "09:10",
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "10:50",
+            "Kambsdalur": "10:55",
+            "Gøtudalur": "11:00",
+            "Leirvík": "11:05",
+            "": "11:20",
+            "To Klaksvík": null,
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "11:30",
+            "Kambsdalur": "11:35",
+            "Gøtudalur": null,
+            "Leirvík": null,
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays_sun",
+          "day_raw": "x7",
+          "times": {
+            "Fuglafjørður": "11:55",
+            "Kambsdalur": "12:00",
+            "Gøtudalur": null,
+            "Leirvík": "12:15",
+            "": "12:25",
+            "To Klaksvík": "12:10",
+            "To Tórshavn": "12:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "12:40",
+            "Kambsdalur": "12:45",
+            "Gøtudalur": "12:55",
+            "Leirvík": "13:00",
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Fuglafjørður": "13:40",
+            "Kambsdalur": "13:45",
+            "Gøtudalur": "13:50",
+            "Leirvík": "13:55",
+            "": "14:15",
+            "To Klaksvík": null,
+            "To Tórshavn": "13:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "13:35",
+            "Kambsdalur": "13:40",
+            "Gøtudalur": "13:45",
+            "Leirvík": null,
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "14:35",
+            "Kambsdalur": "14:40",
+            "Gøtudalur": "14:45",
+            "Leirvík": null,
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "14:50",
+            "Kambsdalur": "14:55",
+            "Gøtudalur": "15:00",
+            "Leirvík": null,
+            "": null,
+            "To Klaksvík": null,
+            "To Tórshavn": "15:05"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "15:13",
+            "Kambsdalur": "15:20",
+            "Gøtudalur": null,
+            "Leirvík": "15:30",
+            "": "15:45",
+            "To Klaksvík": null,
+            "To Tórshavn": "15:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "16:30",
+            "Kambsdalur": "16:35",
+            "Gøtudalur": null,
+            "Leirvík": "16:50",
+            "": "17:00",
+            "To Klaksvík": "16:45",
+            "To Tórshavn": "16:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "17:20",
+            "Kambsdalur": "17:25",
+            "Gøtudalur": null,
+            "Leirvík": "17:45",
+            "": "17:55",
+            "To Klaksvík": "17:40",
+            "To Tórshavn": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Fuglafjørður": "18:10",
+            "Kambsdalur": "18:15",
+            "Gøtudalur": null,
+            "Leirvík": "18:40",
+            "": "19:00",
+            "To Klaksvík": "18:45",
+            "To Tórshavn": "18:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Fuglafjørður": "19:20",
+            "Kambsdalur": "19:25",
+            "Gøtudalur": null,
+            "Leirvík": "19:45",
+            "": "20:00",
+            "To Klaksvík": "19:35",
+            "To Tórshavn": "19:50"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Fuglafjørður": "21:40",
+            "Kambsdalur": "21:45",
+            "Gøtudalur": null,
+            "Leirvík": "22:00",
+            "": "22:10",
+            "To Klaksvík": "21:55",
+            "To Tórshavn": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Klaksvík",
+        "Leirvík",
+        "Gøtudalur",
+        "Kambsdalur",
+        "Fuglafjørður",
+        "from Klaksví",
+        "from Tórshavn"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": null,
+            "Leirvík": null,
+            "Gøtudalur": "06:10",
+            "Kambsdalur": null,
+            "Fuglafjørður": "06:20",
+            "from Klaksví": "06:10",
+            "from Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": null,
+            "Leirvík": null,
+            "Gøtudalur": "07:25",
+            "Kambsdalur": "07:35",
+            "Fuglafjørður": "07:45",
+            "from Klaksví": null,
+            "from Tórshavn": "07:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "07:20",
+            "Leirvík": "07:30",
+            "Gøtudalur": "07:40",
+            "Kambsdalur": null,
+            "Fuglafjørður": "07:50",
+            "from Klaksví": null,
+            "from Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "07:45",
+            "Leirvík": "07:55",
+            "Gøtudalur": "08:00",
+            "Kambsdalur": "08:05",
+            "Fuglafjørður": "08:15",
+            "from Klaksví": null,
+            "from Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Klaksvík": "08:50",
+            "Leirvík": "09:05",
+            "Gøtudalur": null,
+            "Kambsdalur": "09:15",
+            "Fuglafjørður": "09:25",
+            "from Klaksví": "09:10",
+            "from Tórshavn": "09:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "10:20",
+            "Leirvík": "10:30",
+            "Gøtudalur": null,
+            "Kambsdalur": "10:40",
+            "Fuglafjørður": "10:50",
+            "from Klaksví": null,
+            "from Tórshavn": "10:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": null,
+            "Leirvík": null,
+            "Gøtudalur": null,
+            "Kambsdalur": "11:35",
+            "Fuglafjørður": "11:40",
+            "from Klaksví": null,
+            "from Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays_sun",
+          "day_raw": "x7",
+          "times": {
+            "Klaksvík": "11:50",
+            "Leirvík": "12:05",
+            "Gøtudalur": null,
+            "Kambsdalur": "12:15",
+            "Fuglafjørður": "12:20",
+            "from Klaksví": "12:10",
+            "from Tórshavn": "12:10"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Klaksvík": "13:10",
+            "Leirvík": "13:20",
+            "Gøtudalur": null,
+            "Kambsdalur": null,
+            "Fuglafjørður": "13:40",
+            "from Klaksví": null,
+            "from Tórshavn": "13:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "14:10",
+            "Leirvík": "14:20",
+            "Gøtudalur": null,
+            "Kambsdalur": null,
+            "Fuglafjørður": "14:40",
+            "from Klaksví": null,
+            "from Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": null,
+            "Leirvík": null,
+            "Gøtudalur": null,
+            "Kambsdalur": "15:10",
+            "Fuglafjørður": "15:13",
+            "from Klaksví": null,
+            "from Tórshavn": "15:05"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "15:45",
+            "Leirvík": "15:55",
+            "Gøtudalur": null,
+            "Kambsdalur": "16:05",
+            "Fuglafjørður": "16:15",
+            "from Klaksví": null,
+            "from Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "16:25",
+            "Leirvík": "16:40",
+            "Gøtudalur": null,
+            "Kambsdalur": "16:50",
+            "Fuglafjørður": "17:00",
+            "from Klaksví": "16:45",
+            "from Tórshavn": "16:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": null,
+            "Leirvík": null,
+            "Gøtudalur": "17:05",
+            "Kambsdalur": "17:10",
+            "Fuglafjørður": "17:15",
+            "from Klaksví": null,
+            "from Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": null,
+            "Leirvík": null,
+            "Gøtudalur": null,
+            "Kambsdalur": "17:45",
+            "Fuglafjørður": "17:50",
+            "from Klaksví": null,
+            "from Tórshavn": "17:40"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Klaksvík": "18:05",
+            "Leirvík": "18:20",
+            "Gøtudalur": null,
+            "Kambsdalur": "18:50",
+            "Fuglafjørður": "19:00",
+            "from Klaksví": "18:25",
+            "from Tórshavn": "18:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": null,
+            "Leirvík": null,
+            "Gøtudalur": null,
+            "Kambsdalur": "19:40",
+            "Fuglafjørður": "19:45",
+            "from Klaksví": null,
+            "from Tórshavn": "19:35"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Klaksvík": "21:10",
+            "Leirvík": "21:20",
+            "Gøtudalur": "21:25",
+            "Kambsdalur": "21:30",
+            "Fuglafjørður": "21:35",
+            "from Klaksví": null,
+            "from Tórshavn": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Klaksvík": null,
+            "Leirvík": null,
+            "Gøtudalur": null,
+            "Kambsdalur": "22:00",
+            "Fuglafjørður": "22:10",
+            "from Klaksví": null,
+            "from Tórshavn": "21:55"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "Deviations",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "New Year´s Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Winther Holiday",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day &nbsp;",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascenion Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St Olaf Eve",
+      "change": "Like Sundays with extra route at 22:40 Gøtudalur-Fuglafj. (connection from Tórshavn)"
+    },
+    {
+      "day": "St Olaf Day",
+      "change": "Like Sundays with extra route at 22:40 Gøtudalur-Fuglafj. (connection from Tórshavn)"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "Like Sundays. Last route from Fuglafjørður at 11:55"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Year´s Eve",
+      "change": "Like Sundays. Last route from Fuglafjørður at 11:55 and Gøtudali at 12:10."
+    }
+  ],
+  "route_name": "410 Fuglafj. - G&#xF8;tudalur - Klaksv&#xED;k"
+}

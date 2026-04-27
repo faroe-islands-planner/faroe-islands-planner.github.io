@@ -1,0 +1,155 @@
+{
+  "route_id": "202",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "202 Oyrarbakki - Tjørnuvík",
+      "seasonal": null,
+      "stops": [
+        "Tjørnuvík",
+        "On Oyrabakka",
+        "From Oyrabakka",
+        "Í Tjørnuvík"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Tjørnuvík": "07:10",
+            "On Oyrabakka": "07:35",
+            "From Oyrabakka": "07:35",
+            "Í Tjørnuvík": "08:00"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Tjørnuvík": "08:00",
+            "On Oyrabakka": "08:25",
+            "From Oyrabakka": "08:40",
+            "Í Tjørnuvík": "09:15"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Tjørnuvík": "09:15",
+            "On Oyrabakka": "09:40",
+            "From Oyrabakka": null,
+            "Í Tjørnuvík": null
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Tjørnuvík": "13:50",
+            "On Oyrabakka": "14:15",
+            "From Oyrabakka": "14:15",
+            "Í Tjørnuvík": "14:40"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Tjørnuvík": "14:40",
+            "On Oyrabakka": "15:05",
+            "From Oyrabakka": "15:05",
+            "Í Tjørnuvík": "15:30"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Tjørnuvík": "15:30",
+            "On Oyrabakka": "15:55",
+            "From Oyrabakka": "16:15",
+            "Í Tjørnuvík": "16:40"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Tjørnuvík": "16:40",
+            "On Oyrabakka": "17:05",
+            "From Oyrabakka": null,
+            "Í Tjørnuvík": null
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Year´s Day",
+      "change": "No route"
+    },
+    {
+      "day": "Winther Holiday",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "No route"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christ´s Ascenion Day",
+      "change": "No route"
+    },
+    {
+      "day": "Whit Day&nbsp;",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "No route"
+    },
+    {
+      "day": "Olai Eve",
+      "change": "No route"
+    },
+    {
+      "day": "Olai Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "No route"
+    },
+    {
+      "day": "New Year´s Eve",
+      "change": "No route"
+    }
+  ],
+  "route_name": "202 Oyrarbakki - Tj&#xF8;rnuv&#xED;k"
+}

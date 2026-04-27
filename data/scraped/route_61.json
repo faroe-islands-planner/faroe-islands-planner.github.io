@@ -1,0 +1,214 @@
+{
+  "route_id": "61",
+  "route_type": "ferry",
+  "sections": [
+    {
+      "heading": "61 Gamlar&#xE6;tt - Hestur",
+      "seasonal": null,
+      "stops": [
+        "Mán.",
+        "Týs.",
+        "Mik.",
+        "Hós.",
+        "Frí.",
+        "Ley.",
+        "Sun."
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "Gamlarætt - Hestur",
+          "times": {
+            "Mán.": "06:55",
+            "Týs.": "06:55",
+            "Mik.": "06:55",
+            "Hós.": "06:55",
+            "Frí.": "06:55",
+            "Ley.": null,
+            "Sun.": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Hestur - Gamlarætt",
+          "times": {
+            "Mán.": "07:10",
+            "Týs.": "07:10",
+            "Mik.": "07:10",
+            "Hós.": "07:10",
+            "Frí.": "07:10",
+            "Ley.": null,
+            "Sun.": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Gamlarætt - Hestur",
+          "times": {
+            "Mán.": "09:05",
+            "Týs.": "09:05",
+            "Mik.": "09:05",
+            "Hós.": "09:05",
+            "Frí.": "09:05",
+            "Ley.": "08:35",
+            "Sun.": "08:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Hestur - Gamlarætt",
+          "times": {
+            "Mán.": "09:20",
+            "Týs.": "09:20",
+            "Mik.": "09:20",
+            "Hós.": "09:20",
+            "Frí.": "09:20",
+            "Ley.": "08:50",
+            "Sun.": "08:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Gamlarætt - Hestur",
+          "times": {
+            "Mán.": "14:35",
+            "Týs.": "14:35",
+            "Mik.": "14:35",
+            "Hós.": "14:35",
+            "Frí.": "14:35",
+            "Ley.": "14:35",
+            "Sun.": "14:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Hestur - Gamlarætt",
+          "times": {
+            "Mán.": "14:50",
+            "Týs.": "14:50",
+            "Mik.": "14:50",
+            "Hós.": "14:50",
+            "Frí.": "14:50",
+            "Ley.": "14:50",
+            "Sun.": "14:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Gamlarætt - Hestur",
+          "times": {
+            "Mán.": "17:05",
+            "Týs.": "17:05",
+            "Mik.": "17:05",
+            "Hós.": "17:05",
+            "Frí.": "17:05",
+            "Ley.": null,
+            "Sun.": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Hestur - Gamlarætt",
+          "times": {
+            "Mán.": "17:20",
+            "Týs.": "17:20",
+            "Mik.": "17:20",
+            "Hós.": "17:20",
+            "Frí.": "17:20",
+            "Ley.": null,
+            "Sun.": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Gamlarætt - Hestur",
+          "times": {
+            "Mán.": "19:05",
+            "Týs.": "19:05",
+            "Mik.": "19:05",
+            "Hós.": "19:05",
+            "Frí.": "19:05",
+            "Ley.": "19:05",
+            "Sun.": "19:05"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Hestur - Gamlarætt",
+          "times": {
+            "Mán.": "19:20",
+            "Týs.": "19:20",
+            "Mik.": "19:20",
+            "Hós.": "19:20",
+            "Frí.": "19:20",
+            "Ley.": "19:20",
+            "Sun.": "19:20"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "Maundy Thursday &nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday &nbsp;&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Easter Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "Like Sundays&nbsp;"
+    },
+    {
+      "day": "General Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascension Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St Olaf´s Eve",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St Olaf´s Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "Like Sunday: Last departure from Gamlarætt at 14:35 and from Hestur at 14:50. Only by request."
+    },
+    {
+      "day": "Christmas Day",
+      "change": "Departure from Gamlarætt at 14:35 and 19:15 and from Hestur at 14:50 and 19:20. Departures must be requested no later then 1.5 hour before departure.&nbsp;"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Year´s Eve",
+      "change": "Like Sunday: Last departure from Gamlarætt at 14:30 and from Hestur at 14:50"
+    },
+    {
+      "day": "New Year´s Day",
+      "change": "Like Sundays"
+    }
+  ],
+  "route_name": "61 Gamlar&#xE6;tt - Hestur"
+}

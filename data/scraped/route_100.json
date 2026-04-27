@@ -1,0 +1,392 @@
+{
+  "route_id": "100",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "100 Tórshavn - Vestmanna",
+      "seasonal": null,
+      "stops": [
+        "Tórshavn Terminal",
+        "Kollafjørður tunnel",
+        "Kollfjarðadalur við Effo",
+        "Kvívík",
+        "Vestmanna"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "06:45",
+            "Kollafjørður tunnel": "07:05",
+            "Kollfjarðadalur við Effo": "07:20",
+            "Kvívík": "07:25",
+            "Vestmanna": "07:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "07:50",
+            "Kollafjørður tunnel": "08:10",
+            "Kollfjarðadalur við Effo": "08:25",
+            "Kvívík": "08:30",
+            "Vestmanna": "08:55"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "09:15",
+            "Kollafjørður tunnel": "09:35",
+            "Kollfjarðadalur við Effo": "09:40",
+            "Kvívík": "09:45",
+            "Vestmanna": "10:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "13:15",
+            "Kollafjørður tunnel": "13:35",
+            "Kollfjarðadalur við Effo": "13:40",
+            "Kvívík": "13:45",
+            "Vestmanna": "14:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "15:25",
+            "Kollafjørður tunnel": "15:45",
+            "Kollfjarðadalur við Effo": "15:50",
+            "Kvívík": "15:55",
+            "Vestmanna": "16:20"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "16:30",
+            "Kollafjørður tunnel": "16:50",
+            "Kollfjarðadalur við Effo": "16:55",
+            "Kvívík": "17:00",
+            "Vestmanna": "17:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "17:45",
+            "Kollafjørður tunnel": "18:05",
+            "Kollfjarðadalur við Effo": "18:15",
+            "Kvívík": "18:20",
+            "Vestmanna": "18:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "19:00",
+            "Kollafjørður tunnel": "19:20",
+            "Kollfjarðadalur við Effo": "19:25",
+            "Kvívík": "19:30",
+            "Vestmanna": "19:55"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn Terminal": "10:15",
+            "Kollafjørður tunnel": "10:35",
+            "Kollfjarðadalur við Effo": "10:40",
+            "Kvívík": "10:45",
+            "Vestmanna": "11:10"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn Terminal": "15:25",
+            "Kollafjørður tunnel": "15:45",
+            "Kollfjarðadalur við Effo": "15:50",
+            "Kvívík": "15:55",
+            "Vestmanna": "16:20"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn Terminal": "20:20",
+            "Kollafjørður tunnel": "20:40",
+            "Kollfjarðadalur við Effo": "20:45",
+            "Kvívík": "20:50",
+            "Vestmanna": "21:15"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Tórshavn Terminal": "10:15",
+            "Kollafjørður tunnel": "10:35",
+            "Kollfjarðadalur við Effo": "10:40",
+            "Kvívík": "10:45",
+            "Vestmanna": "11:10"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Tórshavn Terminal": "15:25",
+            "Kollafjørður tunnel": "15:45",
+            "Kollfjarðadalur við Effo": "15:50",
+            "Kvívík": "15:55",
+            "Vestmanna": "16:20"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Tórshavn Terminal": "20:20",
+            "Kollafjørður tunnel": "20:40",
+            "Kollfjarðadalur við Effo": "20:45",
+            "Kvívík": "20:50",
+            "Vestmanna": "21:15"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Vestmanna",
+        "Kvívík",
+        "Kollfjarðadalur við Effo",
+        "Kollafjørður Tunnel",
+        "Tórshavn Terminal"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Vestmanna": "06:45",
+            "Kvívík": "07:00",
+            "Kollfjarðadalur við Effo": "07:10",
+            "Kollafjørður Tunnel": "07:25",
+            "Tórshavn Terminal": "07:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Vestmanna": "07:55",
+            "Kvívík": "08:10",
+            "Kollfjarðadalur við Effo": "08:20",
+            "Kollafjørður Tunnel": "08:30",
+            "Tórshavn Terminal": "08:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Vestmanna": "09:05",
+            "Kvívík": "09:20",
+            "Kollfjarðadalur við Effo": "09:30",
+            "Kollafjørður Tunnel": "09:40",
+            "Tórshavn Terminal": "10:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Vestmanna": "12:15",
+            "Kvívík": "12:30",
+            "Kollfjarðadalur við Effo": "12:40",
+            "Kollafjørður Tunnel": "12:45",
+            "Tórshavn Terminal": "13:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Vestmanna": "14:15",
+            "Kvívík": "14:30",
+            "Kollfjarðadalur við Effo": "14:35",
+            "Kollafjørður Tunnel": "14:40",
+            "Tórshavn Terminal": "15:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Vestmanna": "16:30",
+            "Kvívík": "16:45",
+            "Kollfjarðadalur við Effo": "16:55",
+            "Kollafjørður Tunnel": "17:15",
+            "Tórshavn Terminal": "17:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Vestmanna": "18:45",
+            "Kvívík": "19:00",
+            "Kollfjarðadalur við Effo": "19:10",
+            "Kollafjørður Tunnel": "19:15",
+            "Tórshavn Terminal": "19:40"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Vestmanna": "09:05",
+            "Kvívík": "09:20",
+            "Kollfjarðadalur við Effo": "09:30",
+            "Kollafjørður Tunnel": "09:35",
+            "Tórshavn Terminal": "10:00"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Vestmanna": "14:15",
+            "Kvívík": "14:30",
+            "Kollfjarðadalur við Effo": "14:35",
+            "Kollafjørður Tunnel": "14:40",
+            "Tórshavn Terminal": "15:10"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Vestmanna": "19:00",
+            "Kvívík": "19:15",
+            "Kollfjarðadalur við Effo": "19:25",
+            "Kollafjørður Tunnel": "19:30",
+            "Tórshavn Terminal": "19:55"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Vestmanna": "09:05",
+            "Kvívík": "09:20",
+            "Kollfjarðadalur við Effo": "09:30",
+            "Kollafjørður Tunnel": "09:35",
+            "Tórshavn Terminal": "10:00"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Vestmanna": "14:15",
+            "Kvívík": "14:30",
+            "Kollfjarðadalur við Effo": "14:35",
+            "Kollafjørður Tunnel": "14:40",
+            "Tórshavn Terminal": "15:10"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Vestmanna": "19:00",
+            "Kvívík": "19:15",
+            "Kollfjarðadalur við Effo": "19:25",
+            "Kollafjørður Tunnel": "19:30",
+            "Tórshavn Terminal": "19:55"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Year´s Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No departures"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No departures&nbsp;"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascention Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "The Eve of Saint Olaf´s Day",
+      "change": "As Sunday with extra departure from Vestmanna at 21:00 and from Tórshavn at 22:00"
+    },
+    {
+      "day": "St. Olaf´s Day",
+      "change": "As Sunday with extra departure from Vestmanna at 21:00 and from Tórshavn at 22:00"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "As Sunday; last departure from Vestmanna at 12:15 and from Tórshavn at 13:15"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No departures"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Year´s Eve",
+      "change": "As Sunday; last departure from Vestmanna at 12:15 and from Tórshavn at 13:15"
+    }
+  ],
+  "route_name": "100 T&#xF3;rshavn - Vestmanna"
+}

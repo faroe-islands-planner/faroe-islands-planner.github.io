@@ -1,0 +1,132 @@
+{
+  "route_id": "401",
+  "route_type": "express",
+  "sections": [
+    {
+      "heading": "401 Klaksvík - Tórshavn (Express Bus) (valid from Dec 1)",
+      "seasonal": null,
+      "stops": [
+        "Klaksvík",
+        "Leirvík",
+        "Gøtudalur",
+        "Søldarfjørður",
+        "Runavík",
+        "Tórshavn Terminal"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "06:25",
+            "Leirvík": "06:35",
+            "Gøtudalur": "06:40",
+            "Søldarfjørður": "06:50",
+            "Runavík": "07:00",
+            "Tórshavn Terminal": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "07:35",
+            "Leirvík": "07:45",
+            "Gøtudalur": "07:57",
+            "Søldarfjørður": "08:05",
+            "Runavík": "08:15",
+            "Tórshavn Terminal": "08:40"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "11:00",
+            "Leirvík": "11:10",
+            "Gøtudalur": "11:15",
+            "Søldarfjørður": "11:25",
+            "Runavík": "11:35",
+            "Tórshavn Terminal": "12:05"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "16:00",
+            "Leirvík": "16:10",
+            "Gøtudalur": "16:15",
+            "Søldarfjørður": "16:25",
+            "Runavík": "16:35",
+            "Tórshavn Terminal": "17:05"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Tórshavn Terminal",
+        "Runavík",
+        "Søldarfjørður",
+        "Gøtudalur",
+        "Leirvík",
+        "Klaksvík"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "06:25",
+            "Runavík": "06:45",
+            "Søldarfjørður": "06:55",
+            "Gøtudalur": "07:05",
+            "Leirvík": "07:10",
+            "Klaksvík": "07:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "09:50",
+            "Runavík": "10:10",
+            "Søldarfjørður": "10:20",
+            "Gøtudalur": "10:30",
+            "Leirvík": "10:35",
+            "Klaksvík": "10:55"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "14:45",
+            "Runavík": "15:05",
+            "Søldarfjørður": "15:15",
+            "Gøtudalur": "15:25",
+            "Leirvík": "15:30",
+            "Klaksvík": "15:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "16:15",
+            "Runavík": "16:35",
+            "Søldarfjørður": "16:45",
+            "Gøtudalur": "16:55",
+            "Leirvík": "17:00",
+            "Klaksvík": "17:20"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [],
+  "route_name": "401 Klaksv&#xED;k - T&#xF3;rshavn (Express Bus) (valid from Dec 1)"
+}

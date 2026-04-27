@@ -1,0 +1,333 @@
+{
+  "route_id": "650",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "650 Sandoy - Tórshavn",
+      "seasonal": null,
+      "stops": [
+        "Sandur",
+        "Traðir",
+        "Inni í Dal",
+        "Gamlarætt",
+        "LS",
+        "Steinatún",
+        "Glasir",
+        "Farstøðin"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "07:05",
+            "Traðir": "07:00",
+            "Inni í Dal": "07:10",
+            "Gamlarætt": "07:25",
+            "LS": "07:35",
+            "Steinatún": "07:37",
+            "Glasir": "07:50",
+            "Farstøðin": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "08:15",
+            "Traðir": "08:20",
+            "Inni í Dal": "08:25",
+            "Gamlarætt": "08:40",
+            "LS": "08:55",
+            "Steinatún": "08:55",
+            "Glasir": null,
+            "Farstøðin": "09:05"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": "09:50",
+            "Traðir": null,
+            "Inni í Dal": "09:55",
+            "Gamlarætt": "10:10",
+            "LS": "10:25",
+            "Steinatún": "10:25",
+            "Glasir": null,
+            "Farstøðin": "10:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "11:20",
+            "Traðir": null,
+            "Inni í Dal": "11:25",
+            "Gamlarætt": "11:40",
+            "LS": "11:55",
+            "Steinatún": "11:55",
+            "Glasir": null,
+            "Farstøðin": "12:05"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": "14:50",
+            "Traðir": null,
+            "Inni í Dal": "14:55",
+            "Gamlarætt": "15:10",
+            "LS": "15:25",
+            "Steinatún": "15:25",
+            "Glasir": null,
+            "Farstøðin": "15:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "16:20",
+            "Traðir": null,
+            "Inni í Dal": "16:25",
+            "Gamlarætt": "16:40",
+            "LS": "16:55",
+            "Steinatún": "16:55",
+            "Glasir": null,
+            "Farstøðin": "17:05"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": "17:50",
+            "Traðir": null,
+            "Inni í Dal": "17:55",
+            "Gamlarætt": "18:10",
+            "LS": "18:25",
+            "Steinatún": "18:25",
+            "Glasir": null,
+            "Farstøðin": "18:35"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": "19:20",
+            "Traðir": null,
+            "Inni í Dal": "19:25",
+            "Gamlarætt": "19:40",
+            "LS": "19:55",
+            "Steinatún": "19:55",
+            "Glasir": null,
+            "Farstøðin": "20:05"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Farstøðin",
+        "Steinatún",
+        "LS",
+        "Glasir",
+        "Gamlarætt",
+        "Inni í Dal",
+        "Traðir",
+        "Sandur"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Farstøðin": "07:00",
+            "Steinatún": "07:01",
+            "LS": "07:02",
+            "Glasir": null,
+            "Gamlarætt": "07:15",
+            "Inni í Dal": "07:40",
+            "Traðir": null,
+            "Sandur": "08:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Farstøðin": null,
+            "Steinatún": "07:37",
+            "LS": null,
+            "Glasir": "07:58",
+            "Gamlarætt": "08:15",
+            "Inni í Dal": "08:30",
+            "Traðir": null,
+            "Sandur": "08:40"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Farstøðin": "09:05",
+            "Steinatún": "09:06",
+            "LS": "09:07",
+            "Glasir": null,
+            "Gamlarætt": "09:20",
+            "Inni í Dal": "09:35",
+            "Traðir": "09:40",
+            "Sandur": "09:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Farstøðin": "10:35",
+            "Steinatún": "10:36",
+            "LS": "10:37",
+            "Glasir": null,
+            "Gamlarætt": "10:50",
+            "Inni í Dal": "11:05",
+            "Traðir": "11:10",
+            "Sandur": "11:20"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Farstøðin": "14:05",
+            "Steinatún": "14:06",
+            "LS": "14:07",
+            "Glasir": "14:15",
+            "Gamlarætt": "14:20",
+            "Inni í Dal": "14:35",
+            "Traðir": "14:40",
+            "Sandur": "14:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Farstøðin": "15:35",
+            "Steinatún": "15:36",
+            "LS": "15:37",
+            "Glasir": "15:45",
+            "Gamlarætt": "15:50",
+            "Inni í Dal": "16:05",
+            "Traðir": "16:10",
+            "Sandur": "16:20"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Farstøðin": "17:05",
+            "Steinatún": "17:06",
+            "LS": "17:07",
+            "Glasir": null,
+            "Gamlarætt": "17:20",
+            "Inni í Dal": "17:35",
+            "Traðir": "17:40",
+            "Sandur": "17:50"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Farstøðin": "18:35",
+            "Steinatún": "18:36",
+            "LS": "18:37",
+            "Glasir": null,
+            "Gamlarætt": "18:50",
+            "Inni í Dal": "19:05",
+            "Traðir": "19:10",
+            "Sandur": "19:20"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "Changes",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "January 1st",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No driving"
+    },
+    {
+      "day": "Easter Sunday",
+      "change": "No driving"
+    },
+    {
+      "day": "Easter Monday",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "Dýra biðidag",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "Christ's Ascension Day",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "Whitsun",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "Day after Whitsun",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "Ólavsøka Eve (28th of July)",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "Ólavsøka (29th of July)",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "&nbsp;",
+      "change": "Ólavsøka eve, Ólavsøka and before noon on the 30th of July, the bus drives along R.C. Effersøesgøta and Ringvegurin."
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "From Tórshavn at 9:05 and 10:35 and from Sandur at 9:50 and 11:20."
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No driving"
+    },
+    {
+      "day": "Boxing Day (26th of December)",
+      "change": "Like Sunday"
+    },
+    {
+      "day": "New Years Eve",
+      "change": "From Tórshavn at 9:05 and 10:35 and from Sandur at 9:50 and 11:20."
+    }
+  ],
+  "route_name": "650 Sandoy - T&#xF3;rshavn"
+}

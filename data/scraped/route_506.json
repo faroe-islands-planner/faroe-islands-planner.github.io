@@ -1,0 +1,546 @@
+{
+  "route_id": "506",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "Valid from 15th of September",
+      "seasonal": null,
+      "stops": [
+        "Trøllanes",
+        "Mikladalur",
+        "Húsar",
+        "Syðradalur",
+        "Syðradalur(ferry terminal)"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Trøllanes": "06:25",
+            "Mikladalur": "06:35",
+            "Húsar": "06:50",
+            "Syðradalur": null,
+            "Syðradalur(ferry terminal)": "07:00"
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Trøllanes": "07:45",
+            "Mikladalur": "07:55",
+            "Húsar": "08:10",
+            "Syðradalur": null,
+            "Syðradalur(ferry terminal)": "08:20"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "13567",
+          "times": {
+            "Trøllanes": "09:45",
+            "Mikladalur": "09:55",
+            "Húsar": "10:10",
+            "Syðradalur": null,
+            "Syðradalur(ferry terminal)": "10:20"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "67",
+          "times": {
+            "Trøllanes": "13:45",
+            "Mikladalur": "13:55",
+            "Húsar": "14:10",
+            "Syðradalur": null,
+            "Syðradalur(ferry terminal)": "14:20"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Trøllanes": "15:15",
+            "Mikladalur": "15:25",
+            "Húsar": "15:40",
+            "Syðradalur": null,
+            "Syðradalur(ferry terminal)": "15:50"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Trøllanes": "17:00",
+            "Mikladalur": "17:10",
+            "Húsar": "17:25",
+            "Syðradalur": null,
+            "Syðradalur(ferry terminal)": "17:35"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Trøllanes": "18:15",
+            "Mikladalur": "18:25",
+            "Húsar": "18:40",
+            "Syðradalur": null,
+            "Syðradalur(ferry terminal)": "18:50"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "xT6T7",
+          "times": {
+            "Trøllanes": "22:00",
+            "Mikladalur": "22:10",
+            "Húsar": "22:25",
+            "Syðradalur": null,
+            "Syðradalur(ferry terminal)": "22:35"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Syðradalur(ferry terminal)",
+        "Syðradalur",
+        "Húsar",
+        "Mikladalur",
+        "Trøllanes"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Syðradalur(ferry terminal)": "07:00",
+            "Syðradalur": null,
+            "Húsar": "07:05",
+            "Mikladalur": null,
+            "Trøllanes": "07:35"
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Syðradalur(ferry terminal)": "08:20",
+            "Syðradalur": null,
+            "Húsar": "08:25",
+            "Mikladalur": null,
+            "Trøllanes": "08:50"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "13567",
+          "times": {
+            "Syðradalur(ferry terminal)": "10:20",
+            "Syðradalur": null,
+            "Húsar": "10:25",
+            "Mikladalur": null,
+            "Trøllanes": "10:50"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "67",
+          "times": {
+            "Syðradalur(ferry terminal)": "14:20",
+            "Syðradalur": null,
+            "Húsar": "14:25",
+            "Mikladalur": null,
+            "Trøllanes": "14:50"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Syðradalur(ferry terminal)": "15:50",
+            "Syðradalur": null,
+            "Húsar": "15:55",
+            "Mikladalur": null,
+            "Trøllanes": "16:25"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Syðradalur(ferry terminal)": "17:35",
+            "Syðradalur": null,
+            "Húsar": "17:40",
+            "Mikladalur": null,
+            "Trøllanes": "18:05"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Syðradalur(ferry terminal)": "18:50",
+            "Syðradalur": null,
+            "Húsar": "18:55",
+            "Mikladalur": null,
+            "Trøllanes": "19:20"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "xT6T7",
+          "times": {
+            "Syðradalur(ferry terminal)": "22:35",
+            "Syðradalur": null,
+            "Húsar": "22:40",
+            "Mikladalur": "22:55",
+            "Trøllanes": "23:05"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Summer Route: valid from 1st of May to 14th of September",
+      "seasonal": {
+        "season": "summer",
+        "date_range": {
+          "from": "1st of May",
+          "to": "14th of September"
+        },
+        "raw": "Summer Route: valid from 1st of May to 14th of September"
+      },
+      "stops": [
+        "Syðradalur (Harbour)",
+        "Syðradalur (Village)",
+        "Húsar",
+        "Mikladalur",
+        "Trøllanes"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Syðradalur (Harbour)": "07:00",
+            "Syðradalur (Village)": null,
+            "Húsar": "07:05",
+            "Mikladalur": null,
+            "Trøllanes": "07:30"
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Syðradalur (Harbour)": "08:20",
+            "Syðradalur (Village)": null,
+            "Húsar": "08:25",
+            "Mikladalur": null,
+            "Trøllanes": "08:50"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "24G)",
+          "times": {
+            "Syðradalur (Harbour)": "09:30",
+            "Syðradalur (Village)": null,
+            "Húsar": "09:35",
+            "Mikladalur": null,
+            "Trøllanes": "10:00"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "13567",
+          "times": {
+            "Syðradalur (Harbour)": "10:20",
+            "Syðradalur (Village)": null,
+            "Húsar": "10:25",
+            "Mikladalur": null,
+            "Trøllanes": "10:50"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "XTTT)",
+          "times": {
+            "Syðradalur (Harbour)": null,
+            "Syðradalur (Village)": null,
+            "Húsar": null,
+            "Mikladalur": "13:25",
+            "Trøllanes": "13:35"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "67",
+          "times": {
+            "Syðradalur (Harbour)": "14:20",
+            "Syðradalur (Village)": null,
+            "Húsar": "14:25",
+            "Mikladalur": null,
+            "Trøllanes": "14:50"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Syðradalur (Harbour)": "15:10",
+            "Syðradalur (Village)": null,
+            "Húsar": "15:15",
+            "Mikladalur": null,
+            "Trøllanes": "15:40"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "67",
+          "times": {
+            "Syðradalur (Harbour)": "15:30",
+            "Syðradalur (Village)": null,
+            "Húsar": "15:35",
+            "Mikladalur": null,
+            "Trøllanes": "16:00"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Syðradalur (Harbour)": "16:30",
+            "Syðradalur (Village)": null,
+            "Húsar": "16:35",
+            "Mikladalur": null,
+            "Trøllanes": "17:00"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Syðradalur (Harbour)": "17:35",
+            "Syðradalur (Village)": null,
+            "Húsar": "17:40",
+            "Mikladalur": null,
+            "Trøllanes": "18:05"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Syðradalur (Harbour)": "18:50",
+            "Syðradalur (Village)": null,
+            "Húsar": "18:55",
+            "Mikladalur": null,
+            "Trøllanes": "19:20"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67TT)",
+          "times": {
+            "Syðradalur (Harbour)": "22:35",
+            "Syðradalur (Village)": null,
+            "Húsar": "22:40",
+            "Mikladalur": null,
+            "Trøllanes": "23:05"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Trøllanes",
+        "Mikladalur",
+        "Húsar",
+        "Syðradalur (Village)",
+        "Syðradalur (Harbour)"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Trøllanes": "06:25",
+            "Mikladalur": "06:35",
+            "Húsar": "06:50",
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": "07:00"
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Trøllanes": "07:45",
+            "Mikladalur": "07:55",
+            "Húsar": "08:10",
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": "08:20"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "13567",
+          "times": {
+            "Trøllanes": "09:45",
+            "Mikladalur": "09:55",
+            "Húsar": "10:10",
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": "10:20"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "XTTT",
+          "times": {
+            "Trøllanes": "13:15",
+            "Mikladalur": "13:25",
+            "Húsar": null,
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": null
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "67",
+          "times": {
+            "Trøllanes": "13:45",
+            "Mikladalur": "13:55",
+            "Húsar": "14:10",
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": "14:20"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Trøllanes": "14:35",
+            "Mikladalur": "14:45",
+            "Húsar": "15:00",
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": "15:10"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "67",
+          "times": {
+            "Trøllanes": "14:55",
+            "Mikladalur": "15:05",
+            "Húsar": "15:20",
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": "15:30"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Trøllanes": "15:55",
+            "Mikladalur": "16:05",
+            "Húsar": "16:20",
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": "16:30"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Trøllanes": "17:00",
+            "Mikladalur": "17:10",
+            "Húsar": "17:25",
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": "17:35"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Trøllanes": "18:15",
+            "Mikladalur": "18:25",
+            "Húsar": "18:40",
+            "Syðradalur (Village)": null,
+            "Syðradalur (Harbour)": "18:50"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Year's Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Monday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "General Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascension Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St. Olaf´s Eve",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St. Olaf´s Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "From Trøllanesi at 7:45, at 9:45 and at 12.15. From Syðradali at 8:20, 10:20 and at 12.50"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Year's Eve",
+      "change": "From Trøllanesi at 7:45, at 9:45 and at 12.15. From Syðradali at 8:20, 10:20 and at 12.50"
+    }
+  ],
+  "route_name": "506 Tr&#xF8;llanes - Sy&#xF0;radalur"
+}

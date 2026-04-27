@@ -1,0 +1,262 @@
+{
+  "route_id": "600",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "600 Skopun - Sandur",
+      "seasonal": null,
+      "stops": [
+        "Skopun",
+        "Inni í Dal",
+        "Sandur"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Skopun": "06:45",
+            "Inni í Dal": "06:55",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Skopun": null,
+            "Inni í Dal": "07:40",
+            "Sandur": "07:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Skopun": "07:50",
+            "Inni í Dal": "08:00",
+            "Sandur": "08:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Skopun": "08:15",
+            "Inni í Dal": "08:25",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Skopun": "09:25",
+            "Inni í Dal": "09:35",
+            "Sandur": "09:40"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Skopun": "10:55",
+            "Inni í Dal": "11:05",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Skopun": "14:25",
+            "Inni í Dal": "14:35",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Skopun": "15:55",
+            "Inni í Dal": "16:05",
+            "Sandur": "16:15"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Skopun": "17:25",
+            "Inni í Dal": "17:35",
+            "Sandur": "17:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Skopun": "18:50",
+            "Inni í Dal": "19:15",
+            "Sandur": "19:20"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Sandur",
+        "Inni í Dal",
+        "Skopun"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "06:45",
+            "Inni í Dal": "06:55",
+            "Skopun": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "07:30",
+            "Inni í Dal": "07:40",
+            "Skopun": "07:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "07:50",
+            "Inni í Dal": "08:00",
+            "Skopun": "08:15"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": null,
+            "Inni í Dal": "09:45",
+            "Skopun": "09:55"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": "10:55",
+            "Inni í Dal": "11:05",
+            "Skopun": "11:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": null,
+            "Inni í Dal": "14:45",
+            "Skopun": "14:55"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": null,
+            "Inni í Dal": "16:15",
+            "Skopun": "16:25"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": null,
+            "Inni í Dal": "17:45",
+            "Skopun": "17:55"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": null,
+            "Inni í Dal": "19:15",
+            "Skopun": "19:25"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Years Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascenion Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St. Olai Eve",
+      "change": "Like Saturdays"
+    },
+    {
+      "day": "St. Olai Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "Last departure from Skopun at 11:15 and from Sandur at 10:55."
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Years Eve&nbsp;",
+      "change": "Last departure from Skopun at 11:15 and from Sandur at 10:55."
+    }
+  ],
+  "route_name": "600 Skopun - Sandur"
+}

@@ -1,0 +1,456 @@
+{
+  "route_id": "400",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "400 Klaksvík - Tórshavn",
+      "seasonal": null,
+      "stops": [
+        "Klaksv.",
+        "Leirvík",
+        "Gøtud.",
+        "Søldarfj.",
+        "Skálafj.",
+        "Oyrarb.",
+        "Hósvík",
+        "Kollafj. t.",
+        "Tórshavn Terminal"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksv.": "05:55",
+            "Leirvík": "06:05",
+            "Gøtud.": "06:10",
+            "Søldarfj.": "06:20",
+            "Skálafj.": "06:25",
+            "Oyrarb.": "06:40",
+            "Hósvík": "06:47",
+            "Kollafj. t.": "07:05",
+            "Tórshavn Terminal": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksv.": "06:50",
+            "Leirvík": "07:00",
+            "Gøtud.": "07:05",
+            "Søldarfj.": "07:15",
+            "Skálafj.": "07:20",
+            "Oyrarb.": "07:35",
+            "Hósvík": "07:42",
+            "Kollafj. t.": "07:55",
+            "Tórshavn Terminal": "08:25"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Klaksv.": "07:45",
+            "Leirvík": "07:55",
+            "Gøtud.": "08:00",
+            "Søldarfj.": "08:10",
+            "Skálafj.": "08:15",
+            "Oyrarb.": "08:30",
+            "Hósvík": "08:37",
+            "Kollafj. t.": "08:50",
+            "Tórshavn Terminal": "09:15"
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Klaksv.": "08:50",
+            "Leirvík": "09:05",
+            "Gøtud.": "09:10",
+            "Søldarfj.": "09:20",
+            "Skálafj.": "09:25",
+            "Oyrarb.": "09:40",
+            "Hósvík": "09:47",
+            "Kollafj. t.": "10:00",
+            "Tórshavn Terminal": "10:25"
+          }
+        },
+        {
+          "service_id": "weekdays_sun",
+          "day_raw": "x7",
+          "times": {
+            "Klaksv.": "11:50",
+            "Leirvík": "12:05",
+            "Gøtud.": "12:10",
+            "Søldarfj.": "12:20",
+            "Skálafj.": "12:25",
+            "Oyrarb.": "12:40",
+            "Hósvík": "12:47",
+            "Kollafj. t.": "13:00",
+            "Tórshavn Terminal": "13:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksv.": null,
+            "Leirvík": null,
+            "Gøtud.": "13:50",
+            "Søldarfj.": "13:55",
+            "Skálafj.": "14:00",
+            "Oyrarb.": "14:15",
+            "Hósvík": "14:22",
+            "Kollafj. t.": "14:35",
+            "Tórshavn Terminal": "15:00"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Klaksv.": "13:25",
+            "Leirvík": "13:40",
+            "Gøtud.": "13:50",
+            "Søldarfj.": "13:55",
+            "Skálafj.": "14:00",
+            "Oyrarb.": "14:15",
+            "Hósvík": "14:22",
+            "Kollafj. t.": "14:35",
+            "Tórshavn Terminal": "15:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksv.": "14:15",
+            "Leirvík": "14:30",
+            "Gøtud.": "14:35",
+            "Søldarfj.": "14:45",
+            "Skálafj.": "14:50",
+            "Oyrarb.": "15:05",
+            "Hósvík": "15:12",
+            "Kollafj. t.": "15:25",
+            "Tórshavn Terminal": "15:55"
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Klaksv.": "15:05",
+            "Leirvík": "15:20",
+            "Gøtud.": "15:25",
+            "Søldarfj.": "15:35",
+            "Skálafj.": "15:40",
+            "Oyrarb.": "15:55",
+            "Hósvík": "16:02",
+            "Kollafj. t.": "16:15",
+            "Tórshavn Terminal": "16:40"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksv.": "16:25",
+            "Leirvík": "16:40",
+            "Gøtud.": "16:45",
+            "Søldarfj.": "16:55",
+            "Skálafj.": "17:00",
+            "Oyrarb.": "17:15",
+            "Hósvík": "17:22",
+            "Kollafj. t.": "17:35",
+            "Tórshavn Terminal": "18:00"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Klaksv.": "18:05",
+            "Leirvík": "18:20",
+            "Gøtud.": "18:25",
+            "Søldarfj.": "18:35",
+            "Skálafj.": "18:40",
+            "Oyrarb.": "18:55",
+            "Hósvík": "19:02",
+            "Kollafj. t.": "19:15",
+            "Tórshavn Terminal": "19:40"
+          }
+        },
+        {
+          "service_id": "weekdays_sun",
+          "day_raw": "x7",
+          "times": {
+            "Klaksv.": null,
+            "Leirvík": "19:45",
+            "Gøtud.": "19:50",
+            "Søldarfj.": "20:00",
+            "Skálafj.": "20:05",
+            "Oyrarb.": "20:20",
+            "Hósvík": "20:27",
+            "Kollafj. t.": "20:40",
+            "Tórshavn Terminal": "21:05"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Tórshavn Terminal",
+        "Kollaf. t.",
+        "Hósvík",
+        "Oyrarb.",
+        "Skálafj.",
+        "Søldafjørður",
+        "Gøtud.",
+        "Leirvík",
+        "Klaksv."
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "06:10",
+            "Kollaf. t.": "06:30",
+            "Hósvík": "06:40",
+            "Oyrarb.": "06:55",
+            "Skálafj.": "07:08",
+            "Søldafjørður": "07:15",
+            "Gøtud.": "07:25",
+            "Leirvík": "07:30",
+            "Klaksv.": "07:40"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "07:55",
+            "Kollaf. t.": "08:15",
+            "Hósvík": "08:25",
+            "Oyrarb.": "08:40",
+            "Skálafj.": "08:55",
+            "Søldafjørður": "09:00",
+            "Gøtud.": "09:10",
+            "Leirvík": "09:15",
+            "Klaksv.": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Tórshavn Terminal": "09:20",
+            "Kollaf. t.": "09:40",
+            "Hósvík": "09:50",
+            "Oyrarb.": "10:05",
+            "Skálafj.": "10:20",
+            "Søldafjørður": "10:25",
+            "Gøtud.": "10:35",
+            "Leirvík": "10:40",
+            "Klaksv.": null
+          }
+        },
+        {
+          "service_id": "weekdays_sun",
+          "day_raw": "x7",
+          "times": {
+            "Tórshavn Terminal": "10:50",
+            "Kollaf. t.": "11:10",
+            "Hósvík": "11:20",
+            "Oyrarb.": "11:35",
+            "Skálafj.": "11:50",
+            "Søldafjørður": "11:55",
+            "Gøtud.": "12:10",
+            "Leirvík": "12:15",
+            "Klaksv.": null
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Tórshavn Terminal": "12:10",
+            "Kollaf. t.": "12:30",
+            "Hósvík": "12:40",
+            "Oyrarb.": "12:55",
+            "Skálafj.": "13:10",
+            "Søldafjørður": "13:15",
+            "Gøtud.": "13:25",
+            "Leirvík": "13:30",
+            "Klaksv.": null
+          }
+        },
+        {
+          "service_id": "weekdays_sun",
+          "day_raw": "x7",
+          "times": {
+            "Tórshavn Terminal": "13:50",
+            "Kollaf. t.": "14:10",
+            "Hósvík": "14:20",
+            "Oyrarb.": "14:35",
+            "Skálafj.": "14:50",
+            "Søldafjørður": "14:55",
+            "Gøtud.": "15:05",
+            "Leirvík": "15:10",
+            "Klaksv.": null
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Tórshavn Terminal": "15:25",
+            "Kollaf. t.": "15:45",
+            "Hósvík": "15:55",
+            "Oyrarb.": "16:15",
+            "Skálafj.": "16:30",
+            "Søldafjørður": "16:35",
+            "Gøtud.": "16:45",
+            "Leirvík": "16:50",
+            "Klaksv.": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "16:20",
+            "Kollaf. t.": "16:40",
+            "Hósvík": "16:50",
+            "Oyrarb.": "17:10",
+            "Skálafj.": "17:25",
+            "Søldafjørður": "17:30",
+            "Gøtud.": "17:40",
+            "Leirvík": "17:45",
+            "Klaksv.": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Tórshavn Terminal": "17:30",
+            "Kollaf. t.": "17:50",
+            "Hósvík": "18:00",
+            "Oyrarb.": "18:15",
+            "Skálafj.": "18:30",
+            "Søldafjørður": "18:35",
+            "Gøtud.": "18:45",
+            "Leirvík": "18:50",
+            "Klaksv.": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "18:20",
+            "Kollaf. t.": "18:40",
+            "Hósvík": "18:50",
+            "Oyrarb.": "19:05",
+            "Skálafj.": "19:20",
+            "Søldafjørður": "19:25",
+            "Gøtud.": "19:35",
+            "Leirvík": "19:40",
+            "Klaksv.": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Tórshavn Terminal": "20:40",
+            "Kollaf. t.": "21:00",
+            "Hósvík": "21:10",
+            "Oyrarb.": "21:25",
+            "Skálafj.": "21:40",
+            "Søldafjørður": "21:45",
+            "Gøtud.": "21:55",
+            "Leirvík": "22:00",
+            "Klaksv.": null
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "Deviation:",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "New Year´s Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Winther Holiday",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No Route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No Route"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascension Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St Olaf Eve",
+      "change": "Like Sundays. Extra route from Tórshavn at 21:30"
+    },
+    {
+      "day": "St Olaf Day",
+      "change": "Like Sundays. Extra route from Tórshavn at 21:30"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "Like Sundays, last departure from Klaksvík at 11:55 and from Tórshavn at 13:50&nbsp;No route from Tórshavn at 10:50."
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Year´s Eve &nbsp;",
+      "change": "Like Sundays, last departure from Klaksvík at 11:55 and from Tórshavn at 13:50&nbsp;No route from Tórshavn at 10:50."
+    }
+  ],
+  "route_name": "400 Klaksv&#xED;k - T&#xF3;rshavn"
+}

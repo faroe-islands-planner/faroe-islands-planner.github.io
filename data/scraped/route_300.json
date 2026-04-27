@@ -1,0 +1,593 @@
+{
+  "route_id": "300",
+  "route_type": "airport",
+  "sections": [
+    {
+      "heading": "300 Tórshavn - Airport - Sørvágur",
+      "seasonal": null,
+      "stops": [
+        "Tórshavn Terminal",
+        "Kollafjarða tunnil",
+        "Kollafjarðadalur við Effo",
+        "Sandavágur",
+        "Miðvágur",
+        "Airport",
+        "Sørvágur"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "05:40",
+            "Kollafjarða tunnil": "06:00",
+            "Kollafjarðadalur við Effo": "06:05",
+            "Sandavágur": "06:20",
+            "Miðvágur": "06:25",
+            "Airport": "06:35",
+            "Sørvágur": "06:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "06:45",
+            "Kollafjarða tunnil": "07:05",
+            "Kollafjarðadalur við Effo": "07:10",
+            "Sandavágur": "07:25",
+            "Miðvágur": "07:30",
+            "Airport": "07:40",
+            "Sørvágur": "07:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "07:50",
+            "Kollafjarða tunnil": "08:10",
+            "Kollafjarðadalur við Effo": "08:15",
+            "Sandavágur": "08:30",
+            "Miðvágur": "08:35",
+            "Airport": "08:45",
+            "Sørvágur": "08:55"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "09:15",
+            "Kollafjarða tunnil": "09:35",
+            "Kollafjarðadalur við Effo": "09:40",
+            "Sandavágur": "09:55",
+            "Miðvágur": "10:00",
+            "Airport": "10:10",
+            "Sørvágur": "10:20"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "12:30",
+            "Kollafjarða tunnil": "12:50",
+            "Kollafjarðadalur við Effo": "12:55",
+            "Sandavágur": "13:10",
+            "Miðvágur": "13:15",
+            "Airport": "13:25",
+            "Sørvágur": "13:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "14:15",
+            "Kollafjarða tunnil": "14:35",
+            "Kollafjarðadalur við Effo": "14:40",
+            "Sandavágur": "14:55",
+            "Miðvágur": "15:00",
+            "Airport": "15:10",
+            "Sørvágur": "15:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "15:20",
+            "Kollafjarða tunnil": "15:45",
+            "Kollafjarðadalur við Effo": "15:50",
+            "Sandavágur": "16:05",
+            "Miðvágur": "16:10",
+            "Airport": "16:20",
+            "Sørvágur": "16:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "16:30",
+            "Kollafjarða tunnil": "16:50",
+            "Kollafjarðadalur við Effo": "16:55",
+            "Sandavágur": "17:10",
+            "Miðvágur": "17:15",
+            "Airport": "17:25",
+            "Sørvágur": "17:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "17:45",
+            "Kollafjarða tunnil": "18:05",
+            "Kollafjarðadalur við Effo": "18:10",
+            "Sandavágur": "18:25",
+            "Miðvágur": "18:30",
+            "Airport": "18:40",
+            "Sørvágur": "18:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn Terminal": "19:00",
+            "Kollafjarða tunnil": "19:20",
+            "Kollafjarðadalur við Effo": "19:25",
+            "Sandavágur": "19:40",
+            "Miðvágur": "19:45",
+            "Airport": "19:55",
+            "Sørvágur": "20:05"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn Terminal": "06:30",
+            "Kollafjarða tunnil": "06:50",
+            "Kollafjarðadalur við Effo": "06:55",
+            "Sandavágur": "07:10",
+            "Miðvágur": "07:15",
+            "Airport": "07:25",
+            "Sørvágur": "07:35"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn Terminal": "09:15",
+            "Kollafjarða tunnil": "09:35",
+            "Kollafjarðadalur við Effo": "09:40",
+            "Sandavágur": "09:55",
+            "Miðvágur": "10:00",
+            "Airport": "10:10",
+            "Sørvágur": "10:20"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn Terminal": "12:30",
+            "Kollafjarða tunnil": "12:50",
+            "Kollafjarðadalur við Effo": "12:55",
+            "Sandavágur": "13:10",
+            "Miðvágur": "13:15",
+            "Airport": "13:25",
+            "Sørvágur": "13:35"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn Terminal": "16:00",
+            "Kollafjarða tunnil": "16:20",
+            "Kollafjarðadalur við Effo": "16:25",
+            "Sandavágur": "16:40",
+            "Miðvágur": "16:45",
+            "Airport": "16:55",
+            "Sørvágur": "17:05"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn Terminal": "19:00",
+            "Kollafjarða tunnil": "19:20",
+            "Kollafjarðadalur við Effo": "19:25",
+            "Sandavágur": "19:40",
+            "Miðvágur": "19:45",
+            "Airport": "19:55",
+            "Sørvágur": "20:05"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Tórshavn Terminal": "06:30",
+            "Kollafjarða tunnil": "06:50",
+            "Kollafjarðadalur við Effo": "06:55",
+            "Sandavágur": "07:10",
+            "Miðvágur": "07:15",
+            "Airport": "07:25",
+            "Sørvágur": "07:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "&nbsp;",
+          "times": {
+            "Tórshavn Terminal": "09:15",
+            "Kollafjarða tunnil": "09:35",
+            "Kollafjarðadalur við Effo": "09:40",
+            "Sandavágur": "09:55",
+            "Miðvágur": "10:00",
+            "Airport": "10:10",
+            "Sørvágur": "10:20"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Tórshavn Terminal": "12:30",
+            "Kollafjarða tunnil": "12:50",
+            "Kollafjarðadalur við Effo": "12:55",
+            "Sandavágur": "13:10",
+            "Miðvágur": "13:15",
+            "Airport": "13:25",
+            "Sørvágur": "13:35"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Tórshavn Terminal": "16:00",
+            "Kollafjarða tunnil": "16:20",
+            "Kollafjarðadalur við Effo": "16:25",
+            "Sandavágur": "16:40",
+            "Miðvágur": "16:45",
+            "Airport": "16:55",
+            "Sørvágur": "17:05"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Tórshavn Terminal": "19:00",
+            "Kollafjarða tunnil": "19:20",
+            "Kollafjarðadalur við Effo": "19:25",
+            "Sandavágur": "19:40",
+            "Miðvágur": "19:45",
+            "Airport": "19:55",
+            "Sørvágur": "20:05"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Sørvágur",
+        "Fløgvøllurin",
+        "Miðvágur",
+        "Sandavágur",
+        "Kollafjarðadalur við Effo",
+        "Kollafjarða tunnel",
+        "Tórshavn Terminal"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sørvágur": "06:45",
+            "Fløgvøllurin": null,
+            "Miðvágur": "07:00",
+            "Sandavágur": "07:05",
+            "Kollafjarðadalur við Effo": "07:20",
+            "Kollafjarða tunnel": "07:25",
+            "Tórshavn Terminal": "07:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sørvágur": "07:50",
+            "Fløgvøllurin": "08:00",
+            "Miðvágur": "08:05",
+            "Sandavágur": "08:10",
+            "Kollafjarðadalur við Effo": "08:25",
+            "Kollafjarða tunnel": "08:30",
+            "Tórshavn Terminal": "08:50"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sørvágur": "08:55",
+            "Fløgvøllurin": "09:05",
+            "Miðvágur": "09:15",
+            "Sandavágur": "09:20",
+            "Kollafjarðadalur við Effo": "09:35",
+            "Kollafjarða tunnel": "09:40",
+            "Tórshavn Terminal": "10:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sørvágur": "10:20",
+            "Fløgvøllurin": "10:30",
+            "Miðvágur": "10:40",
+            "Sandavágur": "10:45",
+            "Kollafjarðadalur við Effo": "11:00",
+            "Kollafjarða tunnel": "11:05",
+            "Tórshavn Terminal": "11:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sørvágur": "13:50",
+            "Fløgvøllurin": "14:25",
+            "Miðvágur": "14:35",
+            "Sandavágur": "14:40",
+            "Kollafjarðadalur við Effo": "14:55",
+            "Kollafjarða tunnel": "15:00",
+            "Tórshavn Terminal": "15:20"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sørvágur": "16:30",
+            "Fløgvøllurin": "16:40",
+            "Miðvágur": "16:50",
+            "Sandavágur": "16:55",
+            "Kollafjarðadalur við Effo": "17:10",
+            "Kollafjarða tunnel": "17:15",
+            "Tórshavn Terminal": "17:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sørvágur": "17:35",
+            "Fløgvøllurin": "17:45",
+            "Miðvágur": "17:55",
+            "Sandavágur": "18:00",
+            "Kollafjarðadalur við Effo": "18:15",
+            "Kollafjarða tunnel": "18:20",
+            "Tórshavn Terminal": "18:40"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sørvágur": null,
+            "Fløgvøllurin": "20:30",
+            "Miðvágur": null,
+            "Sandavágur": "21:00",
+            "Kollafjarðadalur við Effo": "21:20",
+            "Kollafjarða tunnel": null,
+            "Tórshavn Terminal": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Sørvágur": "07:50",
+            "Fløgvøllurin": null,
+            "Miðvágur": "08:05",
+            "Sandavágur": "08:10",
+            "Kollafjarðadalur við Effo": "08:25",
+            "Kollafjarða tunnel": "08:30",
+            "Tórshavn Terminal": "08:50"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Sørvágur": "10:20",
+            "Fløgvøllurin": "10:30",
+            "Miðvágur": "10:40",
+            "Sandavágur": "10:45",
+            "Kollafjarðadalur við Effo": "11:00",
+            "Kollafjarða tunnel": "11:05",
+            "Tórshavn Terminal": "11:25"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Sørvágur": "13:50",
+            "Fløgvøllurin": "14:15",
+            "Miðvágur": "14:25",
+            "Sandavágur": "14:30",
+            "Kollafjarðadalur við Effo": "14:45",
+            "Kollafjarða tunnel": "14:50",
+            "Tórshavn Terminal": "15:10"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Sørvágur": "17:05",
+            "Fløgvøllurin": "17:15",
+            "Miðvágur": "17:25",
+            "Sandavágur": "17:30",
+            "Kollafjarðadalur við Effo": "17:45",
+            "Kollafjarða tunnel": "17:50",
+            "Tórshavn Terminal": "18:10"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Sørvágur": null,
+            "Fløgvøllurin": "20:30",
+            "Miðvágur": null,
+            "Sandavágur": null,
+            "Kollafjarðadalur við Effo": "20:55",
+            "Kollafjarða tunnel": "21:00",
+            "Tórshavn Terminal": "21:20"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Sørvágur": "07:50",
+            "Fløgvøllurin": null,
+            "Miðvágur": "08:05",
+            "Sandavágur": "08:10",
+            "Kollafjarðadalur við Effo": "08:25",
+            "Kollafjarða tunnel": "08:30",
+            "Tórshavn Terminal": "08:50"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Sørvágur": "10:20",
+            "Fløgvøllurin": "10:30",
+            "Miðvágur": "10:40",
+            "Sandavágur": "10:45",
+            "Kollafjarðadalur við Effo": "11:00",
+            "Kollafjarða tunnel": "11:05",
+            "Tórshavn Terminal": "11:25"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Sørvágur": "13:50",
+            "Fløgvøllurin": "14:15",
+            "Miðvágur": "14:25",
+            "Sandavágur": "14:30",
+            "Kollafjarðadalur við Effo": "14:45",
+            "Kollafjarða tunnel": "14:50",
+            "Tórshavn Terminal": "15:10"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Sørvágur": "17:05",
+            "Fløgvøllurin": "17:15",
+            "Miðvágur": "17:25",
+            "Sandavágur": "17:30",
+            "Kollafjarðadalur við Effo": "17:45",
+            "Kollafjarða tunnel": "17:50",
+            "Tórshavn Terminal": "18:10"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Sørvágur": null,
+            "Fløgvøllurin": "20:30",
+            "Miðvágur": null,
+            "Sandavágur": null,
+            "Kollafjarðadalur við Effo": "20:55",
+            "Kollafjarða tunnel": "21:00",
+            "Tórshavn Terminal": "21:20"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Year´s Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No routes"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No routes"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Chris´s Ascenion Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St Olaf Eve",
+      "change": "Like Sundays. Extra route from Tórshavn at 21:30."
+    },
+    {
+      "day": "St Olaf Day",
+      "change": "Like Sundays. Extra route from Tórshavn at 21:30."
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "Like Sundays; last departure from Sørvági at 14:00 and from Tórshavn at 12:45.No route at 05:50 from"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Christmas Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Year´s Eve&nbsp;",
+      "change": "Like Sundays; last departure from Sørvági at 14:00 and from Tórshavn at 12:15."
+    }
+  ],
+  "route_name": "300 T&#xF3;rshavn - Airport - S&#xF8;rv&#xE1;gur"
+}

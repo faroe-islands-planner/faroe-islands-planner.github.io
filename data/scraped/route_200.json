@@ -1,0 +1,229 @@
+{
+  "route_id": "200",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "200 Oyrarbakki - Eiði",
+      "seasonal": null,
+      "stops": [
+        "Eiði",
+        "Arrival Oyrarbakka",
+        "Departure from Oyrarbakka",
+        "Eiði"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "07:20",
+            "Arrival Oyrarbakka": "06:40",
+            "Departure from Oyrarbakka": "06:55"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "08:00",
+            "Arrival Oyrarbakka": "07:35",
+            "Departure from Oyrarbakka": "07:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x&nbsp;",
+          "times": {
+            "Eiði": null,
+            "Arrival Oyrarbakka": "07:55",
+            "Departure from Oyrarbakka": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "09:05",
+            "Arrival Oyrarbakka": "08:25",
+            "Departure from Oyrarbakka": "08:40"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": null,
+            "Arrival Oyrarbakka": "09:40",
+            "Departure from Oyrarbakka": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "12:00",
+            "Arrival Oyrarbakka": null,
+            "Departure from Oyrarbakka": "11:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "3&nbsp;",
+          "times": {
+            "Eiði": null,
+            "Arrival Oyrarbakka": "12:15",
+            "Departure from Oyrarbakka": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "13:05",
+            "Arrival Oyrarbakka": "12:40",
+            "Departure from Oyrarbakka": "12:40"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "3&nbsp;",
+          "times": {
+            "Eiði": "13:35",
+            "Arrival Oyrarbakka": null,
+            "Departure from Oyrarbakka": "13:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "3&nbsp;",
+          "times": {
+            "Eiði": null,
+            "Arrival Oyrarbakka": "13:15",
+            "Departure from Oyrarbakka": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "14:50",
+            "Arrival Oyrarbakka": "14:15",
+            "Departure from Oyrarbakka": "14:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x&nbsp;",
+          "times": {
+            "Eiði": "15:00",
+            "Arrival Oyrarbakka": "14:15",
+            "Departure from Oyrarbakka": "14:35"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "15:30",
+            "Arrival Oyrarbakka": "15:05",
+            "Departure from Oyrarbakka": "15:05"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "16:40",
+            "Arrival Oyrarbakka": "15:55",
+            "Departure from Oyrarbakka": "16:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "17:40",
+            "Arrival Oyrarbakka": "17:05",
+            "Departure from Oyrarbakka": "17:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Eiði": "19:30",
+            "Arrival Oyrarbakka": "18:55",
+            "Departure from Oyrarbakka": "19:05"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Year´s Day",
+      "change": "No route"
+    },
+    {
+      "day": "Winther Holiday",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "No route"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day&nbsp;",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christ´s Ascension Day",
+      "change": "No route"
+    },
+    {
+      "day": "Whit Sunday&nbsp;",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Whit Sunday",
+      "change": "No route"
+    },
+    {
+      "day": "Olai Eve",
+      "change": "No route"
+    },
+    {
+      "day": "Olai Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "No route"
+    },
+    {
+      "day": "New Year´s Eve",
+      "change": "No route"
+    }
+  ],
+  "route_name": "200 Oyrarbakki - Ei&#xF0;i"
+}

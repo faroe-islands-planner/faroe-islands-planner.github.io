@@ -1,0 +1,251 @@
+{
+  "route_id": "7",
+  "route_type": "ferry",
+  "sections": [
+    {
+      "heading": "7 Suðuroy - Tórshavn",
+      "seasonal": null,
+      "stops": [
+        "Tvøroyri",
+        "Tórshavn"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "Monday",
+          "times": {
+            "Tvøroyri": "06:00",
+            "Tórshavn": "08:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Monday",
+          "times": {
+            "Tvøroyri": "11:30",
+            "Tórshavn": "16:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Monday",
+          "times": {
+            "Tvøroyri": "18:45",
+            "Tórshavn": "21:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Tuesday",
+          "times": {
+            "Tvøroyri": "07:00",
+            "Tórshavn": "13:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Tuesday",
+          "times": {
+            "Tvøroyri": "16:00",
+            "Tórshavn": "19:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tvøroyri": "06:00",
+            "Tórshavn": "08:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tvøroyri": "11:30",
+            "Tórshavn": "16:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tvøroyri": "18:45",
+            "Tórshavn": "21:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Tvøroyri": "06:00",
+            "Tórshavn": "08:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Tvøroyri": "11:30",
+            "Tórshavn": "14:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Tvøroyri": "17:30",
+            "Tórshavn": "21:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Friday",
+          "times": {
+            "Tvøroyri": "07:00",
+            "Tórshavn": "13:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Friday",
+          "times": {
+            "Tvøroyri": "16:00",
+            "Tórshavn": "18:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Friday",
+          "times": {
+            "Tvøroyri": "21:00",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tvøroyri": "09:30",
+            "Tórshavn": "07:00"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tvøroyri": "18:30",
+            "Tórshavn": "16:00"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tvøroyri": null,
+            "Tórshavn": "21:15"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Tvøroyri": "08:30",
+            "Tórshavn": "11:00"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Tvøroyri": "17:30",
+            "Tórshavn": "20:00"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays - but the departure from Tórshavn is at 21.15 instead of at 20:00"
+    },
+    {
+      "day": "Good Friday &nbsp;&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Saturday before Easter Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Easter Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Easter Monday&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Easter Tuesday",
+      "change": "Like Tuesdays but the departure from Krambatangi is at 06:00"
+    },
+    {
+      "day": "General Prayer DayFriday, 1st of May 2026",
+      "change": "Like Fridays but the departure from Tórshavn is at 10:00 instead of at 13:00"
+    },
+    {
+      "day": "Christ´s Ascension DayThursday, 14th of May 2026",
+      "change": "Like&nbsp;Sundays"
+    },
+    {
+      "day": "Culture night, Tvøroyri,2025, Friday 29th of May",
+      "change": "Last departure from Tvøroyri - Tórshavn at 22:00 instead of at 21:00"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Sunday 25th of May:Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Monday 26th of of May:Like Sundays"
+    },
+    {
+      "day": "Jóansøka 2026(St John's Day)",
+      "change": "Friday, 19th of June:&nbsp;Tvøroyri - Tórshavn: &nbsp; &nbsp; 07:00Tórshavn - Tvøroyri: &nbsp; &nbsp;13:00Tvøroyri - Tórshavn: &nbsp; &nbsp; 16:00Tórshavn - Tvøroyri: &nbsp; &nbsp;19:00Saturday, 20th of June:Tvøroyri - Tórshavn:&nbsp; 06:00Tórshavn - Vágur:&nbsp; &nbsp; &nbsp;09:00Vágur - Tvøroyri:&nbsp; &nbsp; &nbsp; &nbsp; 20:30Sunday, 21st of June:&nbsp;Tórshavn kl. 7:00Tvøroyri 9:30Tórshavn kl. 12:00Tvøroyri kl. 15:30&nbsp;Tórshavn kl. 18:00Tvøroyri kl. 21:15The tour from Tvøroyri Monday 22nd of June at 06:00 is cancelled. First departure is from Tórshavn at 08:45"
+    },
+    {
+      "day": "St. Olaf´s Eve",
+      "change": "Tuesday, 28th of July:Tvøroyri - Tórshavn: 06:00Tórshavn - Tvøroyri: 08:30Tvøroyri - Tórshavn: 11.00Tórshavn - Tvøroyri: 21:15"
+    },
+    {
+      "day": "St. Olaf´s Day",
+      "change": "Wednesday 29th of July:Tvøroyri - Tórshavn: 07:00Tórshavn - Tvøroyri: 11:30Tvøroyri - Tórshavn: 14:30Tórshavn - Tvøroyri: 21:15"
+    },
+    {
+      "day": "Christmas Eve&nbsp;",
+      "change": "Tvøroyri – Tórshavn at 07:00Tórshavn – Tvøroyri at 10:00"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "Tvøroyri – Tórshavn at 08:30Tórshavn – Tvøroyri at 11:30"
+    },
+    {
+      "day": "Boxing Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "27th of December",
+      "change": "Like Saturdays, but he departure from Tórshavn at 7:00 is cancelled."
+    },
+    {
+      "day": "New Year´s Eve",
+      "change": "Tvøroyri – Tórshavn at 07:00Tórshavn – Tvøroyri at 13:00"
+    },
+    {
+      "day": "New Year´s Day",
+      "change": "Like&nbsp;Sunday"
+    }
+  ],
+  "route_name": "7 Su&#xF0;uroy - T&#xF3;rshavn"
+}

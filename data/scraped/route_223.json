@@ -1,0 +1,34 @@
+{
+  "route_id": "223",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "223 Sundalagið - Kambsdalur",
+      "seasonal": null,
+      "stops": [
+        "Hósvík",
+        "Hvalvík",
+        "Oyri",
+        "Oyrarbakki",
+        "Kambsdalur",
+        ""
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Hósvík": "07:10",
+            "Hvalvík": "07:15",
+            "Oyri": "07:30",
+            "Oyrarbakki": "07:35",
+            "Kambsdalur": "08:05",
+            "": null
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [],
+  "route_name": "223 Sundalagi&#xF0; - Kambsdalur"
+}

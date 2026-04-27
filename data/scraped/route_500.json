@@ -1,0 +1,216 @@
+{
+  "route_id": "500",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "500 Klaksvík - Viðareiði",
+      "seasonal": null,
+      "stops": [
+        "Klaksvík",
+        "Hvannasund",
+        "Viðareiði"
+      ],
+      "trips": [
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Klaksvík": "08:15",
+            "Hvannasund": "08:35",
+            "Viðareiði": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "11:30",
+            "Hvannasund": "11:55",
+            "Viðareiði": "12:15"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Klaksvík": "12:25",
+            "Hvannasund": "12:40",
+            "Viðareiði": "12:50"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Klaksvík": "14:15",
+            "Hvannasund": "14:35",
+            "Viðareiði": "14:55"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Klaksvík": "15:45",
+            "Hvannasund": "16:05",
+            "Viðareiði": "16:25"
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Klaksvík": "18:00",
+            "Hvannasund": "18:20",
+            "Viðareiði": "18:40"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Viðareiði",
+        "Hvannasund",
+        "Kunoy",
+        "Klaksvík"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Viðareiði": "06:45",
+            "Hvannasund": "06:53",
+            "Kunoy": null,
+            "Klaksvík": "07:30"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Viðareiði": null,
+            "Hvannasund": "08:33",
+            "Kunoy": null,
+            "Klaksvík": "08:55"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Viðareiði": "12:15",
+            "Hvannasund": "12:23",
+            "Kunoy": null,
+            "Klaksvík": "12:50"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Viðareiði": "12:50",
+            "Hvannasund": "12:57",
+            "Kunoy": null,
+            "Klaksvík": "13:20"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Viðareiði": "15:00",
+            "Hvannasund": "15:08",
+            "Kunoy": null,
+            "Klaksvík": "15:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Viðareiði": "16:25",
+            "Hvannasund": "16:33",
+            "Kunoy": null,
+            "Klaksvík": "17:00"
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "Viðareiði": "18:45",
+            "Hvannasund": "18:53",
+            "Kunoy": null,
+            "Klaksvík": "19:20"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Years Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Great Prayer Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascenion Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St Olai Eve",
+      "change": "Like Saturdays"
+    },
+    {
+      "day": "St Olai Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "Like Saturdays, only by request"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Years Eve",
+      "change": "Like Saturdays, only by request"
+    }
+  ],
+  "route_name": "500 Klaksv&#xED;k - Vi&#xF0;arei&#xF0;i"
+}

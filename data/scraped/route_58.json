@@ -1,0 +1,180 @@
+{
+  "route_id": "58",
+  "route_type": "ferry",
+  "sections": [
+    {
+      "heading": "Summer Route: valid from 1st of April to 31st of August",
+      "seasonal": {
+        "season": "summer",
+        "date_range": {
+          "from": "1st of April",
+          "to": "31st of August"
+        },
+        "raw": "Summer Route: valid from 1st of April to 31st of August"
+      },
+      "stops": [
+        "From Hvannasund",
+        "Period"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "1T)3T)",
+          "times": {
+            "From Hvannasund": "06:00",
+            "Period": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "From Hvannasund": "08:45",
+            "Period": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "From Hvannasund": "14:45",
+            "Period": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "xT)6T)7T)",
+          "times": {
+            "From Hvannasund": "18:30",
+            "Period": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Winter: Valid from 1. September to 31. Mars",
+      "seasonal": {
+        "season": "winter",
+        "date_range": null,
+        "raw": "Winter: Valid from 1. September to 31. Mars"
+      },
+      "stops": [
+        "From Hvannasund",
+        "Winter"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "x6",
+          "times": {
+            "From Hvannasund": "08:45",
+            "Winter": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "From Hvannasund": "13:00",
+            "Winter": null
+          }
+        },
+        {
+          "service_id": "weekdays_sat",
+          "day_raw": "xT)6T)",
+          "times": {
+            "From Hvannasund": "14:45",
+            "Winter": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "5T)",
+          "times": {
+            "From Hvannasund": "18:30",
+            "Winter": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "xT)6T)7T)",
+          "times": {
+            "From Hvannasund": "18:30",
+            "Winter": null
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Year´s Day 2021",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Wednesday 13th of April",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "Good Friday&nbsp;",
+      "change": "Departure from Hvannasund at 13:00"
+    },
+    {
+      "day": "Easter Day",
+      "change": "Departure from Hvannasund at 13:00"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "General Prayer´s Eve",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "General Prayer Day",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "Ascention Day",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "Eve of St. Olaf´s Day",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "St. Olaf´s Day&nbsp;",
+      "change": "Departure from Hvannasund at 08:45, 14:45 and 18:30 (only by request)"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "From Hvannasund at 08.45 (only this route). Only by request no later then 8 o'clock the evening before.&nbsp;"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "From Hvannasund at 08.45 (only this route). Only by request no later then 8 o'clock the evening before.&nbsp;"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Departure from Hvannasund at 13:00"
+    },
+    {
+      "day": "New Year´s Eve&nbsp;",
+      "change": "From Hvannasund at 08.45 (only this route)"
+    }
+  ],
+  "route_name": "58 Hvannasund - Hattarv&#xED;k"
+}

@@ -1,0 +1,107 @@
+{
+  "route_id": "442",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "442 Glyvrar - &#xC6;ðuvík - Rituvík",
+      "seasonal": null,
+      "stops": [
+        "Glyvrar",
+        "Runavík",
+        "Rituvík",
+        "Æðuvík",
+        "Rituvík",
+        "Runavík"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Glyvrar": null,
+            "Runavík": "07:40",
+            "Rituvík": "07:30",
+            "Æðuvík": "07:20"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Glyvrar": "15:40",
+            "Runavík": "16:15",
+            "Rituvík": null,
+            "Æðuvík": "16:05"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Years Day",
+      "change": "No route"
+    },
+    {
+      "day": "Winther Holiday",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "No route"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christ´s Ascenion Day",
+      "change": "No route"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "No route"
+    },
+    {
+      "day": "St. Olaf's Eve",
+      "change": "No route"
+    },
+    {
+      "day": "St. Olaf's Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "No route"
+    },
+    {
+      "day": "New Years Eve",
+      "change": "No route"
+    }
+  ],
+  "route_name": "442 Glyvrar - &#xC6;&#xF0;uv&#xED;k - Rituv&#xED;k"
+}

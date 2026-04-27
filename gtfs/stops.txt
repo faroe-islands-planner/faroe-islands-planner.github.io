@@ -1,0 +1,120 @@
+stop_id,stop_name,stop_desc,stop_lat,stop_lon
+airport,Vága Airport (Fløgvøllurin),,62.063600,-7.277200
+b_ur,Bøur,,62.091700,-7.358300
+bus_terminal_torshavn,Tórshavn,,62.010700,-6.772600
+dalur,Dalur,,61.790000,-6.821700
+effo_i_kollfjd,Kollafjarðadalur við Effo,,62.117000,-6.983000
+ei_i,Eiði,,62.296700,-7.096700
+exceptions,Exceptions:,,,
+famjin,Fámjin,,61.528300,-6.876700
+farst_in,Farstøðin,,,
+ferjulega,Ferjulega,,,
+ferjulegan,Ferjulegan,,,
+fl_gv_llurin,Vága Airport (Fløgvøllurin),,62.063600,-7.277200
+fri,Frí.,,,
+from_hvannasund,Hvannasund,,62.286700,-6.528300
+from_klaksvi,Klaksvík,,62.227600,-6.588700
+from_oyrabakka,Oyrarbakki,,62.205000,-7.000000
+from_torshavn,Tórshavn,,62.010700,-6.772600
+fuglafj_r_ur,Fuglafjørður,,62.243300,-6.813300
+funningur,Funningur,,62.281700,-7.020000
+g_tud,Gøtudalur,,62.130000,-6.755000
+g_tudalur,Gøtudalur,,62.130000,-6.755000
+gamlar_tt,Gamlarætt,,62.075000,-6.992000
+gjogv,Gjógv,,62.318300,-7.130000
+glasir,Glasir,,62.020000,-6.790000
+glyvrar,Glyvrar,,62.118300,-6.718300
+haraldssund,Haraldssund,,62.276700,-6.578300
+hattarvik,Hattarvík,,62.330000,-6.303300
+hellurnar,Hellurnar,,62.235000,-6.840000
+hestur,Hestur,,62.050000,-6.900000
+hos,Hósvík,,62.130000,-6.953300
+hosvik,Hósvík,,62.130000,-6.953300
+hov,Hov,,61.508300,-6.736700
+husar,Húsar,,62.276700,-6.700000
+husavik,Húsavík,,61.820000,-6.733300
+hvalba,Hvalba,,61.603300,-6.816700
+hvalvik,Hvalvík,,62.193300,-7.003300
+hvannasund,Hvannasund,,62.286700,-6.528300
+i_tj_rnuvik,Tjørnuvík,,62.291700,-7.130000
+inni_i_dal,Inni í Dal,,61.878300,-6.823300
+kambsdalur,Kambsdalur,,62.143300,-6.798300
+kirkja,Kirkja,,62.345000,-6.326700
+klaksv,Klaksvík,,62.227600,-6.588700
+klaksvik,Klaksvík,,62.227600,-6.588700
+kollaf_t,Kollafjørður Tunnel,,62.105000,-6.965000
+kollafj_r_ur_tunnel,Kollafjørður Tunnel,,62.105000,-6.965000
+kollafj_r_ur_tunnel_2,Kollafjørður Tunnel,,62.105000,-6.965000
+kollafj_r_ur_vi_sjogv,Kollafjørður Tunnel,,62.105000,-6.965000
+kollafj_t,Kollafjørður Tunnel,,62.105000,-6.965000
+kollafjar_a_tunnel,Kollafjørður Tunnel,,62.105000,-6.965000
+kollafjar_a_tunnil,Kollafjørður Tunnel,,62.105000,-6.965000
+kollafjar_adalur,Kollafjarðadalur,,62.117000,-6.983000
+kollafjar_adalur_vi_effo,Kollafjarðadalur við Effo,,62.117000,-6.983000
+kollf_tunnil,Kollafjørður Tunnel,,62.105000,-6.965000
+kollfjar_adalur,Kollafjarðadalur við Effo,,62.117000,-6.983000
+kollfjar_adalur_vi_effo,Kollafjarðadalur við Effo,,62.117000,-6.983000
+kunoy,Kunoy,,62.321700,-6.671700
+kvivik,Kvívík,,62.116700,-7.115000
+leirvik,Leirvík,,62.108300,-6.716700
+ley,Ley.,,,
+lopra,Lopra,,61.451700,-6.790000
+ls,LS,,,
+man,Mán.,,,
+mi_vagur,Miðvágur,,62.053300,-7.261700
+mik,Mik.,,,
+mikladalur,Mikladalur,,62.318300,-6.728300
+mykines,Mykines,,62.101700,-7.645000
+nes,Nes,,61.580000,-6.851700
+nolsoy,Nólsoy,,62.002800,-6.613900
+nor_skala,Norðskála,,62.213300,-6.986700
+on_oyrabakka,Oyrarbakki,,62.205000,-7.000000
+oyndafj_r_ur,Oyndarfjørður,,62.251700,-6.851700
+oyndarfj_r_ur,Oyndarfjørður,,62.251700,-6.851700
+oyrarb,Oyrarbakki,,62.205000,-7.000000
+oyrarbakki,Oyrarbakki,,62.205000,-7.000000
+oyri,Oyri,,62.201700,-6.993300
+pals_h_ll,Páls Høll,,,
+period,Period,,,
+porkeri,Porkeri,,61.490000,-6.738300
+ravik,Øravík,,61.533300,-6.803300
+rituvik,Rituvík,,62.090000,-6.716700
+runavik,Runavík,,62.106700,-6.728300
+s_ldafj_r_ur,Søldarfjørður,,62.123300,-6.731700
+s_ldarfj,Søldarfjørður,,62.123300,-6.731700
+s_ldarfj_r_ur,Søldarfjørður,,62.123300,-6.731700
+s_rvagur,Sørvágur,,62.073300,-7.306700
+sandavagur,Sandavágur,,62.051700,-7.215000
+sandur,Sandur,,61.846700,-6.808300
+sandvik,Sandvík,,61.638300,-6.816700
+selatra,Selatrað,,62.136700,-6.791700
+skala,Skála,,62.076700,-6.721700
+skalafj,Skálafjørður,,62.113300,-6.786700
+skalafj_r_ur,Skálafjørður,,62.113300,-6.786700
+skalavik,Skálavík,,61.833300,-6.705000
+skopun,Skopun,,61.910000,-6.878300
+skuvoy,Skúvoy,,61.771700,-6.808300
+steinatun,Tórshavn,,62.010700,-6.772600
+strendur,Strendur,,62.106700,-6.808300
+sumba,Sumba,,61.406700,-6.730000
+sun,Sun.,,,
+svinair,Svínáir,,62.246700,-7.020000
+svinoy,Svínoy,,62.286700,-6.321700
+sy_radalur,Syðradalur (Harbour),,62.246700,-6.691700
+sy_radalur_ferry_terminal,Syðradalur (Harbour),,62.246700,-6.691700
+sy_radalur_harbour,Syðradalur (Harbour),,62.246700,-6.691700
+sy_radalur_village,Syðradalur (Village),,,
+tj_rnuvik,Tjørnuvík,,62.291700,-7.130000
+toftir,Toftir,,62.103300,-6.738300
+torshavn,Tórshavn,,62.010700,-6.772600
+torshavn_terminal,Tórshavn,,62.010700,-6.772600
+tr_llanes,Trøllanes,,62.360000,-6.738300
+tra_ir,Traðir,,61.863300,-6.816700
+tv_royri,Tvøroyri,,61.556700,-6.808300
+tys,Týs.,,,
+uvik,Æðuvík,,62.086700,-6.683300
+vaga_airport,Vága Airport (Fløgvøllurin),,62.063600,-7.277200
+vagur,Vágur,,61.473300,-6.813300
+vestmanna,Vestmanna,,62.156700,-7.166600
+vi_arei_i,Viðareiði,,62.360000,-6.540000
+winter,Winter,,,

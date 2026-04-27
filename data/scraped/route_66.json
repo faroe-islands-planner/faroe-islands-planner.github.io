@@ -1,0 +1,151 @@
+{
+  "route_id": "66",
+  "route_type": "ferry",
+  "sections": [
+    {
+      "heading": "66 Sandur - Skúvoy",
+      "seasonal": null,
+      "stops": [
+        "Sandur",
+        "Skúvoy"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "Monday",
+          "times": {
+            "Sandur": "08:30",
+            "Skúvoy": "09:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sandur": "08:30",
+            "Skúvoy": "09:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sandur": "15:00",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sandur": "08:30",
+            "Skúvoy": "09:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Sandur": "08:30",
+            "Skúvoy": "09:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Sandur": "15:00",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Friday",
+          "times": {
+            "Sandur": "08:30",
+            "Skúvoy": "09:00"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "Deviation&nbsp;",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "New Year´s Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "The Eve of Maundy Thursday",
+      "change": "Like Fridays"
+    },
+    {
+      "day": "Maundy Thursday&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "Departure from Sandur at 10:35 &amp; 18:15 and from Skúvoy at 11:05 &amp; 18:45"
+    },
+    {
+      "day": "Easter Day",
+      "change": "Departure from Sandur at 10:35 &amp; 18:15 and from Skúvoy at 11:05 &amp; 18:45"
+    },
+    {
+      "day": "2nd Easter Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "The Eve of Great Prayer Day",
+      "change": "Like Fridays"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "The Eve of Christ´s Acension Day",
+      "change": "Like Fridays"
+    },
+    {
+      "day": "Christ´s Acension Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "The Eve of Saint Olaf´s Day",
+      "change": "Like Saturday"
+    },
+    {
+      "day": "Saint Olaf´s Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christmas Eve &nbsp;",
+      "change": "From Sandur at 10:35 and from Skúvoy 11:05"
+    },
+    {
+      "day": "Christmas Day&nbsp;",
+      "change": "From Sandur at 09:00 and from Skúvoy 09:30"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Years Eve",
+      "change": "From Sandur at 10:35 and from Skúvoy 11:05"
+    }
+  ],
+  "route_name": "66 Sandur - Sk&#xFA;voy"
+}

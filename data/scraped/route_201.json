@@ -1,0 +1,180 @@
+{
+  "route_id": "201",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "201 Oyrarbakki - Gjógv",
+      "seasonal": null,
+      "stops": [
+        "Oyrarbakki",
+        "Funningur",
+        "Gjógv",
+        "Funningur",
+        "Oyrarbakki"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "xT",
+          "times": {
+            "Oyrarbakki": "07:35",
+            "Funningur": "07:07",
+            "Gjógv": "07:00"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "xT",
+          "times": {
+            "Oyrarbakki": "09:40",
+            "Funningur": null,
+            "Gjógv": "09:05"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "xT",
+          "times": {
+            "Oyrarbakki": "15:55",
+            "Funningur": "15:35",
+            "Gjógv": "15:10"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Oyrarbakki",
+        "Eiði",
+        "Gjógv",
+        "Eiði",
+        "Oyrarbakki"
+      ],
+      "trips": [
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Oyrarbakki": "09:40",
+            "Eiði": "09:15",
+            "Gjógv": "08:55"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyrarbakki": "09:40",
+            "Eiði": null,
+            "Gjógv": "09:05"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyrarbakki": "11:35",
+            "Eiði": "11:10",
+            "Gjógv": "10:50"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Oyrarbakki": "15:55",
+            "Eiði": "15:35",
+            "Gjógv": "15:10"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyrarbakki": "15:55",
+            "Eiði": "15:35",
+            "Gjógv": "15:10"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyrarbakki": "18:55",
+            "Eiði": "18:30",
+            "Gjógv": "18:05"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Year´s Day",
+      "change": "No route"
+    },
+    {
+      "day": "Winther Holiday",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "No route"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christ´s Ascension Day",
+      "change": "No route"
+    },
+    {
+      "day": "Whit Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "No route"
+    },
+    {
+      "day": "Olav Eve",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Olav Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "No route"
+    },
+    {
+      "day": "New Year´s Eve",
+      "change": "No route"
+    }
+  ],
+  "route_name": "201 Oyrarbakki - Gj&#xF3;gv"
+}

@@ -1,0 +1,286 @@
+{
+  "route_id": "36",
+  "route_type": "ferry",
+  "sections": [
+    {
+      "heading": "36 Sørvágur - Mykines",
+      "seasonal": null,
+      "stops": [
+        "Sørvágur",
+        "Mykines"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Sørvágur",
+        "Mykines"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "Monday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": "10:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Monday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": "14:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Monday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": "18:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": "10:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": "14:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": "18:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": "10:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": "14:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": "18:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": "10:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": "14:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": "18:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Friday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": "10:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Friday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": "14:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Friday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": "18:15"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": "10:15"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": "14:15"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": "18:15"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": "10:15"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": "14:15"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": "18:15"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Sørvágur",
+        "Mykines"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "Monday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Thursday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "Friday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sørvágur": "10:45",
+            "Mykines": "11:30"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [],
+  "route_name": "36 S&#xF8;rv&#xE1;gur - Mykines"
+}

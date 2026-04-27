@@ -1,0 +1,194 @@
+{
+  "route_id": "450",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "450 Tórshavn - Eysturoy (Jellyfish Roundabout)",
+      "seasonal": null,
+      "stops": [
+        "Tórshavn",
+        "Runavík",
+        "Toftir",
+        "Strendur",
+        "Runavík",
+        "Toftir",
+        "Tórshavn Terminal"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "07:20",
+            "Runavík": "07:55",
+            "Toftir": "08:00",
+            "Strendur": "07:45",
+            "Tórshavn Terminal": "08:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "08:25",
+            "Runavík": null,
+            "Toftir": null,
+            "Strendur": "08:55",
+            "Tórshavn Terminal": "09:15"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn": "08:35",
+            "Runavík": null,
+            "Toftir": null,
+            "Strendur": "09:05",
+            "Tórshavn Terminal": "09:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "11:20",
+            "Runavík": "12:30",
+            "Toftir": null,
+            "Strendur": null,
+            "Tórshavn Terminal": "12:50"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Tórshavn": "13:05",
+            "Runavík": "13:40",
+            "Toftir": "13:45",
+            "Strendur": "13:30",
+            "Tórshavn Terminal": "14:10"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "14:10",
+            "Runavík": "14:40",
+            "Toftir": null,
+            "Strendur": null,
+            "Tórshavn Terminal": "15:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "15:20",
+            "Runavík": null,
+            "Toftir": null,
+            "Strendur": "16:05",
+            "Tórshavn Terminal": "16:25"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "16:25",
+            "Runavík": null,
+            "Toftir": null,
+            "Strendur": "17:00",
+            "Tórshavn Terminal": "17:25"
+          }
+        },
+        {
+          "service_id": "weekend",
+          "day_raw": "67",
+          "times": {
+            "Tórshavn": "17:40",
+            "Runavík": "18:20",
+            "Toftir": null,
+            "Strendur": "18:05",
+            "Tórshavn Terminal": "18:40"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "18:25",
+            "Runavík": "19:00",
+            "Toftir": "19:05",
+            "Strendur": "18:50",
+            "Tórshavn Terminal": "19:25"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Years Day",
+      "change": "No route"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascenion Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St Olaf Eve",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St Olaf Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Years Eve",
+      "change": "No route"
+    }
+  ],
+  "route_name": "450 T&#xF3;rshavn - Eysturoy (Jellyfish Roundabout)"
+}

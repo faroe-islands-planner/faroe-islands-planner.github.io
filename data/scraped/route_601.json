@@ -1,0 +1,217 @@
+{
+  "route_id": "601",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "601 Dalur - Húsavík - Skálavík - Sandur",
+      "seasonal": null,
+      "stops": [
+        "Dalur",
+        "Húsavík",
+        "Skálavík",
+        "Sandur"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Dalur": "06:10",
+            "Húsavík": "06:20",
+            "Skálavík": "06:30",
+            "Sandur": "06:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Dalur": null,
+            "Húsavík": null,
+            "Skálavík": "07:15",
+            "Sandur": "07:30"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Dalur": "08:55",
+            "Húsavík": "09:05",
+            "Skálavík": "09:15",
+            "Sandur": "09:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Dalur": "12:40",
+            "Húsavík": "12:55",
+            "Skálavík": "13:05",
+            "Sandur": "13:20"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Dalur": "15:25",
+            "Húsavík": "15:35",
+            "Skálavík": "15:45",
+            "Sandur": "16:20"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Dalur": "16:55",
+            "Húsavík": "17:05",
+            "Skálavík": "17:15",
+            "Sandur": "17:30"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Sandur",
+        "Skálavík",
+        "Húsavík",
+        "Dalur"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "08:20",
+            "Skálavík": "08:35",
+            "Húsavík": "08:45",
+            "Dalur": "08:55"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": "09:40",
+            "Skálavík": "09:55",
+            "Húsavík": "10:05",
+            "Dalur": "10:15"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "13:35",
+            "Skálavík": "13:50",
+            "Húsavík": "14:00",
+            "Dalur": "14:10"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": "16:15",
+            "Skálavík": "16:30",
+            "Húsavík": "16:40",
+            "Dalur": "16:50"
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Sandur": "17:45",
+            "Skálavík": "18:00",
+            "Húsavík": "18:10",
+            "Dalur": "18:20"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Sandur": "19:20",
+            "Skálavík": "19:35",
+            "Húsavík": "19:45",
+            "Dalur": "19:55"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "Deviation:",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "New Years Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Maundy Thursday&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascenion Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St. Olai Eve",
+      "change": "Like Saturdays"
+    },
+    {
+      "day": "St. Olai Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "Last departure from Dalur at 12:40"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day&nbsp;",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Years Eve",
+      "change": "Last departure from Dalur at 12:40"
+    }
+  ],
+  "route_name": "601 Dalur - H&#xFA;sav&#xED;k - Sk&#xE1;lav&#xED;k - Sandur"
+}

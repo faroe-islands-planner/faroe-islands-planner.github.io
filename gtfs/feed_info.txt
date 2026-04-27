@@ -1,0 +1,2 @@
+feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date
+Faroe Islands Planner,https://faroe-islands-planner.github.io,fo,20250101,20261231

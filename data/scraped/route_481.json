@@ -1,0 +1,153 @@
+{
+  "route_id": "481",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "481 Skálafjørður - Oyndarfjørður",
+      "seasonal": null,
+      "stops": [
+        "Skálafjørður",
+        "Hellurnar",
+        "Oyndarfjørður"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Skálafjørður": "14:00",
+            "Hellurnar": null,
+            "Oyndarfjørður": "14:20"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Skálafjørður": "15:40",
+            "Hellurnar": null,
+            "Oyndarfjørður": "16:00"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Skálafjørður": "17:25",
+            "Hellurnar": "17:35",
+            "Oyndarfjørður": "17:45"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Oyndafjørður",
+        "Skálafjørður"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyndafjørður": "07:05",
+            "Skálafjørður": "07:20"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyndafjørður": "14:20",
+            "Skálafjørður": "14:45"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyndafjørður": "16:00",
+            "Skálafjørður": "16:25"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyndafjørður": "17:45",
+            "Skálafjørður": "18:10"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "day": "New Years Day",
+      "change": "No route"
+    },
+    {
+      "day": "Winther Holiday",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "No route"
+    },
+    {
+      "day": "Good Friday",
+      "change": "No route"
+    },
+    {
+      "day": "Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "No route"
+    },
+    {
+      "day": "Great Prayer Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christ´s Ascenion Day",
+      "change": "No route"
+    },
+    {
+      "day": "Whit Day",
+      "change": "No route"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "No route"
+    },
+    {
+      "day": "St Olaf Eve",
+      "change": "No route"
+    },
+    {
+      "day": "St Olaf Day",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "No route"
+    },
+    {
+      "day": "Christmas Day",
+      "change": "No route"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "No route"
+    },
+    {
+      "day": "New Years Day",
+      "change": "No route"
+    }
+  ],
+  "route_name": "481 Sk&#xE1;lafj&#xF8;r&#xF0;ur - Oyndarfj&#xF8;r&#xF0;ur"
+}

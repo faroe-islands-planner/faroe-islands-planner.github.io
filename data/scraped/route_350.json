@@ -1,0 +1,102 @@
+{
+  "route_id": "350",
+  "route_type": "airport",
+  "sections": [
+    {
+      "heading": "350 Tórshavn - Vága Airport - Sørvágur/Bø",
+      "seasonal": null,
+      "stops": [
+        "Bus Terminal Tórshavn",
+        "Glasir",
+        "Kollf.Tunnil",
+        "Effo í Kollfjd.",
+        "Sandavágur",
+        "Miðvágur",
+        "Vága Airport",
+        "Sørvágur",
+        "Bøur"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Bus Terminal Tórshavn": "11:30",
+            "Glasir": null,
+            "Kollf.Tunnil": "11:50",
+            "Effo í Kollfjd.": "11:55",
+            "Sandavágur": "12:10",
+            "Miðvágur": "12:15",
+            "Vága Airport": "12:25",
+            "Sørvágur": "12:35",
+            "Bøur": "12:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Bus Terminal Tórshavn": null,
+            "Glasir": "15:30",
+            "Kollf.Tunnil": "15:50",
+            "Effo í Kollfjd.": "15:55",
+            "Sandavágur": "16:15",
+            "Miðvágur": "16:10",
+            "Vága Airport": null,
+            "Sørvágur": "16:25",
+            "Bøur": "16:35"
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Bøur",
+        "Sørvágur",
+        "Vága Airport",
+        "Miðvágur",
+        "Sandavágur",
+        "Effo í Kollfjd.",
+        "Kollf.Tunnil",
+        "Glasir",
+        "Bus Terminal Tórshavn"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Bøur": "06:35",
+            "Sørvágur": "06:45",
+            "Vága Airport": null,
+            "Miðvágur": "06:55",
+            "Sandavágur": "07:00",
+            "Effo í Kollfjd.": "07:15",
+            "Kollf.Tunnil": "07:20",
+            "Glasir": "07:50",
+            "Bus Terminal Tórshavn": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Bøur": "12:45",
+            "Sørvágur": "13:00",
+            "Vága Airport": "13:30",
+            "Miðvágur": "13:40",
+            "Sandavágur": "13:45",
+            "Effo í Kollfjd.": "14:00",
+            "Kollf.Tunnil": "14:05",
+            "Glasir": null,
+            "Bus Terminal Tórshavn": "14:30"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [],
+  "route_name": "350 T&#xF3;rshavn - V&#xE1;ga Airport - S&#xF8;rv&#xE1;gur/B&#xF8;"
+}

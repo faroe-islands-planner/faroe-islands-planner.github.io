@@ -1,0 +1,32 @@
+{
+  "route_id": "222",
+  "route_type": "bus",
+  "sections": [
+    {
+      "heading": "222 Kollafjarðadalur Effo - Oyrarbakki",
+      "seasonal": null,
+      "stops": [
+        "Kollfjarðadalur",
+        "Kollafjørður við Sjógv",
+        "Hósvík",
+        "Hvalvík",
+        "Oyrarbakki"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "X",
+          "times": {
+            "Kollfjarðadalur": "14:35",
+            "Kollafjørður við Sjógv": "14:45",
+            "Hósvík": "14:55",
+            "Hvalvík": "15:00",
+            "Oyrarbakki": "15:05"
+          }
+        }
+      ]
+    }
+  ],
+  "deviations": [],
+  "route_name": "222 Kollafjar&#xF0;adalur Effo - Oyrarbakki"
+}
