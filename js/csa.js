@@ -5,7 +5,7 @@
 
 import { getActiveServices } from './calendar.js';
 
-const TRANSFER_MINS = 2; // minimum connection time at a transfer stop
+const TRANSFER_MINS = 0; // minimum connection time at a transfer stop
 
 // Binary search: index of first element where el.dep_mins >= targetMins
 function lowerBound(conns, targetMins) {
@@ -166,6 +166,7 @@ function makeLeg(conns, tripById) {
     via_stops:  via,
     dep_mins:   first.dep_mins,
     arr_mins:   last.arr_mins,
+    on_demand:  conns.some(c => c.pickup_type === 3),
   };
 }
 
@@ -220,6 +221,7 @@ export function nextDepartures(
   tripById,
   calendarMap,
   exceptionMap,
+  stopTimesForTrip,
   n = 4,
 ) {
   const activeServices = getActiveServices(date, calendarMap, exceptionMap);
@@ -234,8 +236,13 @@ export function nextDepartures(
     if (!trip || trip.route_id !== routeId) continue;
     if (!activeServices.has(trip.service_id)) continue;
 
-    // Check that this trip actually serves toStopId after fromStopId
-    // (use the trip's headsign direction heuristic — arr_stop reachable)
+    // Verify toStopId is downstream of fromStopId in this trip's stop sequence
+    const stops = stopTimesForTrip.get(conn.trip_id);
+    if (!stops) continue;
+    const fromSeq = stops.find(s => s.stop_id === fromStopId)?.stop_sequence;
+    const toSeq   = stops.find(s => s.stop_id === toStopId)?.stop_sequence;
+    if (fromSeq === undefined || toSeq === undefined || toSeq <= fromSeq) continue;
+
     results.push({ dep_mins: conn.dep_mins, trip_id: conn.trip_id });
     if (results.length >= n) break;
   }

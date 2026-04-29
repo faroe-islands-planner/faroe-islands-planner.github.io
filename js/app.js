@@ -125,12 +125,15 @@ function renderJourneyCard(legs, fromName, toName, gtfs, isActive) {
     return `<span class="jc-badge badge-${cls}">${leg.route_id}</span>`;
   }).join('');
 
+  const hasOnDemand = legs.some(l => l.on_demand);
+
   let html = `<div class="journey-card${isActive ? ' active' : ''}">
   <div class="journey-card-header">
     <div class="jc-time">${minsToHHMM(depMins)} → ${minsToHHMM(arrMins)}</div>
     ${routeBadges}
     <div class="jc-dur">${durationStr}</div>
     <div class="jc-xfer${xferCls}">${xferLabel}</div>
+    ${hasOnDemand ? `<span class="jc-on-demand">📞 Book ahead</span>` : ''}
   </div>
   <div class="journey-card-body">`;
 
@@ -154,6 +157,7 @@ function renderJourneyCard(legs, fromName, toName, gtfs, isActive) {
       leg.route_id, leg.from_stop, leg.to_stop,
       leg.dep_mins, date,
       connections, tripById, calendarMap, exceptionMap,
+      gtfs.stopTimesForTrip,
       4,
     );
 
@@ -162,6 +166,7 @@ function renderJourneyCard(legs, fromName, toName, gtfs, isActive) {
         <div class="leg-badge badge-${typeCls}">${leg.route_id}</div>
         <div class="leg-body">
           <div class="leg-route">${label} · ${route ? route.route_long_name.replace(/^\d+ /, '') : leg.route_id}</div>
+          ${leg.on_demand ? `<div class="leg-on-demand">⚠ On-demand stop — book by phone at least 24h in advance</div>` : ''}
           <div class="leg-direction">
             <strong>${minsToHHMM(leg.dep_mins)}</strong> ${fromName}
             → <strong>${minsToHHMM(leg.arr_mins)}</strong> ${toName}

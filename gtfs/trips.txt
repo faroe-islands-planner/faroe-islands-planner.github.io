@@ -287,7 +287,7 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 506,daily,506_0008,Syðradalur(ferry terminal),0
 506,school,506_0009,Trøllanes,1
 506,weekdays_sat,506_0010,Trøllanes,1
-506,weekend,506_0011,Trøllanes,1
+506,mon_wed_fri_weekend,506_0011,Trøllanes,1
 506,weekend,506_0012,Trøllanes,1
 506,school,506_0013,Trøllanes,1
 506,daily,506_0014,Trøllanes,1
