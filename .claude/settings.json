@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import sys; line = sys.stdin.read\\(\\); print\\([hex\\(ord\\(c\\)\\) for c in 'Vága Airport \\(Fløgvøllurin\\)']\\)\")",
+      "Bash(python3)",
+      "Bash(awk -F',' 'NR>1 {if\\(NF!=5\\) print NR\": \"$0}' /Users/danli/Library/CloudStorage/OneDrive-Personal/others/faroe-islands-planner.github.io/gtfs/stops.txt)",
+      "Bash(awk -F',' 'NR>1 {print $1}' /Users/danli/Library/CloudStorage/OneDrive-Personal/others/faroe-islands-planner.github.io/gtfs/stops.txt)",
+      "Bash(awk -F',' 'NR>1 {print $1}' /Users/danli/Library/CloudStorage/OneDrive-Personal/others/faroe-islands-planner.github.io/gtfs/stop_times.txt)",
+      "Read(//tmp/**)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
+    ]
+  }
+}

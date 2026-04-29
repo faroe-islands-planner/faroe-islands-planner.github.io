@@ -51,6 +51,10 @@ export function findJourney(
   // B[stop_id] = the connection that brought us here (for backtracking)
   const B = new Map();
 
+  // N[stop_id] = number of transfers on the best path to this stop
+  const N = new Map();
+  N.set(fromStopId, 0);
+
   // inTrip[trip_id] = true if we've boarded this trip already
   // (so we can continue riding even after departure time passes)
   const inTrip = new Map();
@@ -71,14 +75,34 @@ export function findJourney(
     // Board / continue riding
     if (!alreadyRiding) inTrip.set(conn.trip_id, conn.dep_stop);
 
-    // Update earliest arrival at destination stop
-    const curArr = T.get(conn.arr_stop);
-    if (curArr === undefined || conn.arr_mins < curArr) {
+    // Compute transfer count for arriving at arr_stop via this connection.
+    // A transfer occurs when the trip that brought us to dep_stop differs
+    // from the current connection's trip.
+    const transfersAtDep = N.get(conn.dep_stop) ?? 0;
+    const tripAtDep      = B.get(conn.dep_stop)?.trip_id;  // undefined at origin
+    const isNewTransfer  = tripAtDep !== undefined && conn.trip_id !== tripAtDep;
+    const newTransfers   = transfersAtDep + (isNewTransfer ? 1 : 0);
+
+    // Update if: (a) earlier arrival, or (b) same arrival with <= transfers.
+    // The <= (not strict <) lets a later-processed same-trip connection overwrite
+    // an earlier different-trip one, preserving continuation and avoiding a
+    // forced future transfer.
+    const curArr       = T.get(conn.arr_stop);
+    const curTransfers = N.get(conn.arr_stop) ?? Infinity;
+    const improvesByTime      = curArr === undefined || conn.arr_mins < curArr;
+    const improvesByTransfers = curArr !== undefined
+                             && conn.arr_mins === curArr
+                             && newTransfers <= curTransfers;
+
+    if (improvesByTime || improvesByTransfers) {
       T.set(conn.arr_stop, conn.arr_mins);
       B.set(conn.arr_stop, conn);
+      N.set(conn.arr_stop, newTransfers);
     }
 
-    if (conn.arr_stop === toStopId) break; // found destination
+    // Stop only when future connections cannot beat the best known arrival
+    // (neither by time nor by transfers).
+    if (conn.arr_stop === toStopId && conn.arr_mins > T.get(toStopId)) break;
   }
 
   if (!T.has(toStopId)) return null; // no journey found
