@@ -1,32 +1,12 @@
 table_name,field_name,language,record_id,translation
-stops,stop_name,fo,airport,Airport
-stops,stop_name,en,airport,Airport
-stops,stop_name,fo,bus_terminal_torshavn,Bus Terminal Tórshavn
-stops,stop_name,en,bus_terminal_torshavn,Bus Terminal Tórshavn
 stops,stop_name,fo,b_ur,Bøur
 stops,stop_name,en,b_ur,Bøur
 stops,stop_name,fo,dalur,Dalur
 stops,stop_name,en,dalur,Dalur
-stops,stop_name,fo,effo_i_kollfjd,Effo í Kollfjd.
-stops,stop_name,en,effo_i_kollfjd,Effo í Kollfjd.
 stops,stop_name,fo,ei_i,Eiði
 stops,stop_name,en,ei_i,Eiði
-stops,stop_name,fo,exceptions,Exceptions:
-stops,stop_name,en,exceptions,Exceptions:
-stops,stop_name,fo,farst_in,Farstøðin
-stops,stop_name,en,farst_in,Farstøðin
 stops,stop_name,fo,ferjulega,Ferjulega
 stops,stop_name,en,ferjulega,Ferjulega
-stops,stop_name,fo,ferjulegan,Ferjulegan
-stops,stop_name,en,ferjulegan,Ferjulegan
-stops,stop_name,fo,fl_gv_llurin,Fløgvøllurin
-stops,stop_name,en,fl_gv_llurin,Fløgvøllurin
-stops,stop_name,fo,from_hvannasund,From Hvannasund
-stops,stop_name,en,from_hvannasund,From Hvannasund
-stops,stop_name,fo,from_oyrabakka,From Oyrabakka
-stops,stop_name,en,from_oyrabakka,From Oyrabakka
-stops,stop_name,fo,fri,Frí.
-stops,stop_name,en,fri,Frí.
 stops,stop_name,fo,fuglafj_r_ur,Fuglafjørður
 stops,stop_name,en,fuglafj_r_ur,Fuglafjørður
 stops,stop_name,fo,funningur,Funningur
@@ -41,8 +21,6 @@ stops,stop_name,fo,glasir,Glasir
 stops,stop_name,en,glasir,Glasir
 stops,stop_name,fo,glyvrar,Glyvrar
 stops,stop_name,en,glyvrar,Glyvrar
-stops,stop_name,fo,g_tud,Gøtud.
-stops,stop_name,en,g_tud,Gøtud.
 stops,stop_name,fo,g_tudalur,Gøtudalur
 stops,stop_name,en,g_tudalur,Gøtudalur
 stops,stop_name,fo,haraldssund,Haraldssund
@@ -61,8 +39,6 @@ stops,stop_name,fo,hvalvik,Hvalvík
 stops,stop_name,en,hvalvik,Hvalvík
 stops,stop_name,fo,hvannasund,Hvannasund
 stops,stop_name,en,hvannasund,Hvannasund
-stops,stop_name,fo,hos,Hós.
-stops,stop_name,en,hos,Hós.
 stops,stop_name,fo,hosvik,Hósvík
 stops,stop_name,en,hosvik,Hósvík
 stops,stop_name,fo,husar,Húsar
@@ -75,76 +51,40 @@ stops,stop_name,fo,kambsdalur,Kambsdalur
 stops,stop_name,en,kambsdalur,Kambsdalur
 stops,stop_name,fo,kirkja,Kirkja
 stops,stop_name,en,kirkja,Kirkja
-stops,stop_name,fo,klaksv,Klaksv.
-stops,stop_name,en,klaksv,Klaksv.
 stops,stop_name,fo,klaksvik,Klaksvík
 stops,stop_name,en,klaksvik,Klaksvík
-stops,stop_name,fo,kollaf_t,Kollaf. t.
-stops,stop_name,en,kollaf_t,Kollaf. t.
-stops,stop_name,fo,kollafj_t,Kollafj. t.
-stops,stop_name,en,kollafj_t,Kollafj. t.
-stops,stop_name,fo,kollafjar_a_tunnel,Kollafjarða tunnel
-stops,stop_name,en,kollafjar_a_tunnel,Kollafjarða tunnel
-stops,stop_name,fo,kollafjar_a_tunnil,Kollafjarða tunnil
-stops,stop_name,en,kollafjar_a_tunnil,Kollafjarða tunnil
 stops,stop_name,fo,kollafjar_adalur,Kollafjarðadalur
 stops,stop_name,en,kollafjar_adalur,Kollafjarðadalur
 stops,stop_name,fo,kollafjar_adalur_vi_effo,Kollafjarðadalur við Effo
 stops,stop_name,en,kollafjar_adalur_vi_effo,Kollafjarðadalur við Effo
 stops,stop_name,fo,kollafj_r_ur_tunnel,Kollafjørður Tunnel
 stops,stop_name,en,kollafj_r_ur_tunnel,Kollafjørður Tunnel
-stops,stop_name,fo,kollafj_r_ur_tunnel_2,Kollafjørður tunnel
-stops,stop_name,en,kollafj_r_ur_tunnel_2,Kollafjørður tunnel
-stops,stop_name,fo,kollafj_r_ur_vi_sjogv,Kollafjørður við Sjógv
-stops,stop_name,en,kollafj_r_ur_vi_sjogv,Kollafjørður við Sjógv
-stops,stop_name,fo,kollf_tunnil,Kollf.Tunnil
-stops,stop_name,en,kollf_tunnil,Kollf.Tunnil
-stops,stop_name,fo,kollfjar_adalur,Kollfjarðadalur
-stops,stop_name,en,kollfjar_adalur,Kollfjarðadalur
-stops,stop_name,fo,kollfjar_adalur_vi_effo,Kollfjarðadalur við Effo
-stops,stop_name,en,kollfjar_adalur_vi_effo,Kollfjarðadalur við Effo
 stops,stop_name,fo,kunoy,Kunoy
 stops,stop_name,en,kunoy,Kunoy
 stops,stop_name,fo,kvivik,Kvívík
 stops,stop_name,en,kvivik,Kvívík
-stops,stop_name,fo,ls,LS
-stops,stop_name,en,ls,LS
 stops,stop_name,fo,leirvik,Leirvík
 stops,stop_name,en,leirvik,Leirvík
-stops,stop_name,fo,ley,Ley.
-stops,stop_name,en,ley,Ley.
 stops,stop_name,fo,lopra,Lopra
 stops,stop_name,en,lopra,Lopra
-stops,stop_name,fo,mik,Mik.
-stops,stop_name,en,mik,Mik.
 stops,stop_name,fo,mikladalur,Mikladalur
 stops,stop_name,en,mikladalur,Mikladalur
 stops,stop_name,fo,mi_vagur,Miðvágur
 stops,stop_name,en,mi_vagur,Miðvágur
 stops,stop_name,fo,mykines,Mykines
 stops,stop_name,en,mykines,Mykines
-stops,stop_name,fo,man,Mán.
-stops,stop_name,en,man,Mán.
 stops,stop_name,fo,nes,Nes
 stops,stop_name,en,nes,Nes
 stops,stop_name,fo,nor_skala,Norðskála
 stops,stop_name,en,nor_skala,Norðskála
 stops,stop_name,fo,nolsoy,Nólsoy
 stops,stop_name,en,nolsoy,Nólsoy
-stops,stop_name,fo,on_oyrabakka,On Oyrabakka
-stops,stop_name,en,on_oyrabakka,On Oyrabakka
-stops,stop_name,fo,oyndafj_r_ur,Oyndafjørður
-stops,stop_name,en,oyndafj_r_ur,Oyndafjørður
 stops,stop_name,fo,oyndarfj_r_ur,Oyndarfjørður
 stops,stop_name,en,oyndarfj_r_ur,Oyndarfjørður
-stops,stop_name,fo,oyrarb,Oyrarb.
-stops,stop_name,en,oyrarb,Oyrarb.
 stops,stop_name,fo,oyrarbakki,Oyrarbakki
 stops,stop_name,en,oyrarbakki,Oyrarbakki
 stops,stop_name,fo,oyri,Oyri
 stops,stop_name,en,oyri,Oyri
-stops,stop_name,fo,period,Period
-stops,stop_name,en,period,Period
 stops,stop_name,fo,porkeri,Porkeri
 stops,stop_name,en,porkeri,Porkeri
 stops,stop_name,fo,pals_h_ll,Páls Høll
@@ -165,38 +105,22 @@ stops,stop_name,fo,skopun,Skopun
 stops,stop_name,en,skopun,Skopun
 stops,stop_name,fo,skala,Skála
 stops,stop_name,en,skala,Skála
-stops,stop_name,fo,skalafj,Skálafj.
-stops,stop_name,en,skalafj,Skálafj.
 stops,stop_name,fo,skalafj_r_ur,Skálafjørður
 stops,stop_name,en,skalafj_r_ur,Skálafjørður
 stops,stop_name,fo,skalavik,Skálavík
 stops,stop_name,en,skalavik,Skálavík
 stops,stop_name,fo,skuvoy,Skúvoy
 stops,stop_name,en,skuvoy,Skúvoy
-stops,stop_name,fo,steinatun,Steinatún
-stops,stop_name,en,steinatun,Steinatún
 stops,stop_name,fo,strendur,Strendur
 stops,stop_name,en,strendur,Strendur
 stops,stop_name,fo,sumba,Sumba
 stops,stop_name,en,sumba,Sumba
-stops,stop_name,fo,sun,Sun.
-stops,stop_name,en,sun,Sun.
 stops,stop_name,fo,svinoy,Svínoy
 stops,stop_name,en,svinoy,Svínoy
 stops,stop_name,fo,svinair,Svínáir
 stops,stop_name,en,svinair,Svínáir
-stops,stop_name,fo,sy_radalur,Syðradalur
-stops,stop_name,en,sy_radalur,Syðradalur
 stops,stop_name,fo,sy_radalur_harbour,Syðradalur (Harbour)
 stops,stop_name,en,sy_radalur_harbour,Syðradalur (Harbour)
-stops,stop_name,fo,sy_radalur_village,Syðradalur (Village)
-stops,stop_name,en,sy_radalur_village,Syðradalur (Village)
-stops,stop_name,fo,sy_radalur_ferry_terminal,Syðradalur(ferry terminal)
-stops,stop_name,en,sy_radalur_ferry_terminal,Syðradalur(ferry terminal)
-stops,stop_name,fo,s_ldafj_r_ur,Søldafjørður
-stops,stop_name,en,s_ldafj_r_ur,Søldafjørður
-stops,stop_name,fo,s_ldarfj,Søldarfj.
-stops,stop_name,en,s_ldarfj,Søldarfj.
 stops,stop_name,fo,s_ldarfj_r_ur,Søldarfjørður
 stops,stop_name,en,s_ldarfj_r_ur,Søldarfjørður
 stops,stop_name,fo,s_rvagur,Sørvágur
@@ -213,27 +137,15 @@ stops,stop_name,fo,tv_royri,Tvøroyri
 stops,stop_name,en,tv_royri,Tvøroyri
 stops,stop_name,fo,torshavn,Tórshavn
 stops,stop_name,en,torshavn,Tórshavn
-stops,stop_name,fo,torshavn_terminal,Tórshavn Terminal
-stops,stop_name,en,torshavn_terminal,Tórshavn Terminal
-stops,stop_name,fo,tys,Týs.
-stops,stop_name,en,tys,Týs.
 stops,stop_name,fo,vestmanna,Vestmanna
 stops,stop_name,en,vestmanna,Vestmanna
 stops,stop_name,fo,vi_arei_i,Viðareiði
 stops,stop_name,en,vi_arei_i,Viðareiði
-stops,stop_name,fo,vaga_airport,Vága Airport
-stops,stop_name,en,vaga_airport,Vága Airport
+stops,stop_name,fo,vaga_airport_fl_gv_llurin,Vága Airport (Fløgvøllurin)
+stops,stop_name,en,vaga_airport_fl_gv_llurin,Vága Airport (Fløgvøllurin)
 stops,stop_name,fo,vagur,Vágur
 stops,stop_name,en,vagur,Vágur
-stops,stop_name,fo,winter,Winter
-stops,stop_name,en,winter,Winter
-stops,stop_name,fo,from_klaksvi,from Klaksví
-stops,stop_name,en,from_klaksvi,from Klaksví
-stops,stop_name,fo,from_torshavn,from Tórshavn
-stops,stop_name,en,from_torshavn,from Tórshavn
 stops,stop_name,fo,uvik,Æðuvík
 stops,stop_name,en,uvik,Æðuvík
-stops,stop_name,fo,i_tj_rnuvik,Í Tjørnuvík
-stops,stop_name,en,i_tj_rnuvik,Í Tjørnuvík
 stops,stop_name,fo,ravik,Øravík
 stops,stop_name,en,ravik,Øravík
