@@ -94,8 +94,18 @@ export function findJourney(
                              && conn.arr_mins === curArr
                              && newTransfers <= curTransfers;
 
-    if (improvesByTime || improvesByTransfers) {
+    // When already riding, also update B (not T) so backtracking follows this
+    // continuous trip rather than an earlier-arriving alien trip at this stop.
+    const preservesContinuity = alreadyRiding
+                             && curArr !== undefined
+                             && conn.arr_mins <= curArr
+                             && newTransfers <= curTransfers;
+
+    if (improvesByTime) {
       T.set(conn.arr_stop, conn.arr_mins);
+      B.set(conn.arr_stop, conn);
+      N.set(conn.arr_stop, newTransfers);
+    } else if (improvesByTransfers || preservesContinuity) {
       B.set(conn.arr_stop, conn);
       N.set(conn.arr_stop, newTransfers);
     }
@@ -157,6 +167,45 @@ function makeLeg(conns, tripById) {
     dep_mins:   first.dep_mins,
     arr_mins:   last.arr_mins,
   };
+}
+
+// Find up to maxResults journeys from fromStopId to toStopId, starting at or
+// after departureDate, by repeatedly calling findJourney and advancing the
+// start time past each result's departure minute.
+export function findJourneys(
+  fromStopId,
+  toStopId,
+  departureDate,
+  connections,
+  tripById,
+  calendarMap,
+  exceptionMap,
+  maxResults = 5,
+) {
+  const results = [];
+  let date = departureDate;
+  const startMins = departureDate.getHours() * 60 + departureDate.getMinutes();
+
+  while (results.length < maxResults) {
+    const legs = findJourney(fromStopId, toStopId, date, connections, tripById, calendarMap, exceptionMap);
+    if (!legs || legs.length === 0) break;
+
+    results.push(legs);
+
+    // Advance 1 minute past this journey's departure so the next call finds a
+    // different (later) trip.
+    const depMins = legs[0].dep_mins;
+    const nextMins = depMins + 1;
+    const nextDate = new Date(departureDate);
+    nextDate.setHours(Math.floor(nextMins / 60) % 24, nextMins % 60, 0, 0);
+    // If nextMins wrapped past midnight or is before original startMins, advance by a day
+    if (nextMins >= 1440 || nextMins < startMins) {
+      nextDate.setDate(nextDate.getDate() + 1);
+    }
+    date = nextDate;
+  }
+
+  return results;
 }
 
 // Find the next N departures on the same route+direction between two stops,

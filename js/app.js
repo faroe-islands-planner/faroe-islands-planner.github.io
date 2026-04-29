@@ -4,7 +4,7 @@
 
 import { loadGTFS }          from './gtfs-loader.js';
 import { initNetworkMap, updateMap } from './map.js';
-import { findJourney, nextDepartures } from './csa.js';
+import { findJourneys, nextDepartures } from './csa.js';
 
 // ssl.fo timetable URL slugs (keyed by route_id)
 const ROUTE_SLUGS = {
@@ -103,7 +103,7 @@ function renderDeparturePills(deps, minsToHHMM) {
 }
 
 // ── Journey result rendering ──────────────────────────────────────────────────
-function renderJourney(legs, fromName, toName, gtfs) {
+function renderJourneyCard(legs, fromName, toName, gtfs, isActive) {
   const { stopById, routeById, connections, tripById, calendarMap, exceptionMap, minsToHHMM } = gtfs;
   const date = getTravelTime();
 
@@ -115,13 +115,24 @@ function renderJourney(legs, fromName, toName, gtfs) {
   const durationStr = totalMins >= 60
     ? `${Math.floor(totalMins / 60)}h ${totalMins % 60}m`
     : `${totalMins}m`;
+  const xferLabel = transfers === 0 ? 'Direct' : transfers + ' transfer' + (transfers > 1 ? 's' : '');
+  const xferCls   = transfers > 0 ? ' has-xfer' : '';
 
-  let html = `<div class="journey-summary">
-    ${legs.length} leg${legs.length > 1 ? 's' : ''} ·
-    ${transfers === 0 ? 'No transfers' : transfers + ' transfer' + (transfers > 1 ? 's' : '')} ·
-    ${durationStr} ·
-    <strong>${fromName}</strong> → <strong>${toName}</strong>
-  </div>`;
+  // Route badges for collapsed header (one per leg)
+  const routeBadges = legs.map(leg => {
+    const route = routeById.get(leg.route_id);
+    const cls   = route ? routeTypeClass(route) : 'bus';
+    return `<span class="jc-badge badge-${cls}">${leg.route_id}</span>`;
+  }).join('');
+
+  let html = `<div class="journey-card${isActive ? ' active' : ''}">
+  <div class="journey-card-header">
+    <div class="jc-time">${minsToHHMM(depMins)} → ${minsToHHMM(arrMins)}</div>
+    ${routeBadges}
+    <div class="jc-dur">${durationStr}</div>
+    <div class="jc-xfer${xferCls}">${xferLabel}</div>
+  </div>
+  <div class="journey-card-body">`;
 
   legs.forEach((leg, i) => {
     const route   = routeById.get(leg.route_id);
@@ -171,6 +182,7 @@ function renderJourney(legs, fromName, toName, gtfs) {
     }
   });
 
+  html += `</div></div>`; // close journey-card-body and journey-card
   return html;
 }
 
@@ -282,14 +294,14 @@ async function main() {
     }
 
     const date = getTravelTime();
-    const legs = findJourney(fromId, toId, date, connections, tripById, calendarMap, exceptionMap);
+    const journeyList = findJourneys(fromId, toId, date, connections, tripById, calendarMap, exceptionMap, 5);
 
     const fromStop = stopById.get(fromId);
     const toStop   = stopById.get(toId);
     const fromName = fromStop ? fromStop.stop_name : fromId;
     const toName   = toStop   ? toStop.stop_name   : toId;
 
-    if (!legs || legs.length === 0) {
+    if (!journeyList.length) {
       out.innerHTML = `<div class="journey-error">
         No service found from <strong>${fromName}</strong> to <strong>${toName}</strong>
         at the selected time. Try a different time or check if these stops are connected.
@@ -298,8 +310,21 @@ async function main() {
       return;
     }
 
-    out.innerHTML = renderJourney(legs, fromName, toName, gtfs);
-    updateMap(legs, stopById, routeById);
+    out.innerHTML = journeyList
+      .map((legs, i) => renderJourneyCard(legs, fromName, toName, gtfs, i === 0))
+      .join('');
+
+    // Map shows the first (active) journey
+    updateMap(journeyList[0], stopById, routeById);
+
+    // Click-to-expand: clicking a card makes it active, updates the map
+    out.querySelectorAll('.journey-card').forEach((card, i) => {
+      card.addEventListener('click', () => {
+        out.querySelectorAll('.journey-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        updateMap(journeyList[i], stopById, routeById);
+      });
+    });
   }
 
   // Wire up the button and the "Now" button
