@@ -43,6 +43,19 @@ const ROUTE_SLUGS = {
 
 const BASE_URL = 'https://www.ssl.fo/en/timetable/';
 
+// Hub stops that appear first in both dropdowns (most commonly used)
+const PINNED_STOP_IDS = [
+  'torshavn',                    // Tórshavn — capital, central hub
+  'klaksvik',                    // Klaksvík — northern hub
+  'oyrarbakki',                  // Oyrarbakki — Eysturoy junction
+  'vaga_airport_fl_gv_llurin',   // Vága Airport
+  's_rvagur',                    // Sørvágur — Vágar ferry terminal
+  'tv_royri',                    // Tvøroyri — Suðuroy hub
+  'sandur',                      // Sandur — Sandoy hub
+  'vestmanna',                   // Vestmanna — ferry terminal
+  'gamlar_tt',                   // Gamlarætt — ferry terminal
+];
+
 const ROUTE_TYPE_LABEL = {
   3:   'Bus',
   4:   'Ferry',
@@ -68,6 +81,17 @@ function setNow() {
     `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
   document.getElementById('travel-time').value =
     `${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+  updateDOW();
+}
+
+const DOW_FULL = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+function updateDOW() {
+  const dateStr = document.getElementById('travel-date').value;
+  const el = document.getElementById('travel-dow-display');
+  if (!el || !dateStr) return;
+  const [y, mo, da] = dateStr.split('-').map(Number);
+  el.textContent = DOW_FULL[new Date(y, mo - 1, da).getDay()];
 }
 
 function getTravelTime() {
@@ -274,6 +298,25 @@ async function main() {
     a.stop_name.localeCompare(b.stop_name)
   );
 
+  // Pinned hub stops at top
+  for (const id of PINNED_STOP_IDS) {
+    const stop = stopById.get(id);
+    if (!stop) continue;
+    for (const sel of [fromSel, toSel]) {
+      const opt = document.createElement('option');
+      opt.value = stop.stop_id;
+      opt.textContent = stop.stop_name;
+      sel.appendChild(opt);
+    }
+  }
+  // Separator
+  for (const sel of [fromSel, toSel]) {
+    const sep = document.createElement('option');
+    sep.disabled = true;
+    sep.textContent = '──────────────';
+    sel.appendChild(sep);
+  }
+  // All stops alphabetically
   for (const stop of sortedStops) {
     for (const sel of [fromSel, toSel]) {
       const opt = document.createElement('option');
@@ -284,6 +327,8 @@ async function main() {
   }
 
   // ── Journey planner ──────────────────────────────────────────────────────
+  const plannerCard = document.querySelector('.planner-card');
+
   function planJourney() {
     const fromId = fromSel.value;
     const toId   = toSel.value;
@@ -291,10 +336,12 @@ async function main() {
 
     if (!fromId || !toId) {
       out.innerHTML = '<div class="journey-error">Please select both a start and destination.</div>';
+      plannerCard.classList.remove('has-results');
       return;
     }
     if (fromId === toId) {
       out.innerHTML = '<div class="journey-error">Start and destination are the same.</div>';
+      plannerCard.classList.remove('has-results');
       return;
     }
 
@@ -312,12 +359,16 @@ async function main() {
         at the selected time. Try a different time or check if these stops are connected.
       </div>`;
       document.getElementById('journey-map').classList.add('hidden');
+      plannerCard.classList.remove('has-results');
       return;
     }
 
     out.innerHTML = journeyList
       .map((legs, i) => renderJourneyCard(legs, fromName, toName, gtfs, i === 0))
       .join('');
+
+    // Expand to two-column layout on desktop
+    plannerCard.classList.add('has-results');
 
     // Map shows the first (active) journey
     updateMap(journeyList[0], stopById, routeById);
@@ -335,6 +386,7 @@ async function main() {
   // Wire up the button and the "Now" button
   document.querySelector('.find-btn').addEventListener('click', planJourney);
   document.querySelector('.now-btn').addEventListener('click', setNow);
+  document.getElementById('travel-date').addEventListener('input', updateDOW);
   document.getElementById('swap-btn').addEventListener('click', () => {
     const tmp = fromSel.value;
     fromSel.value = toSel.value;

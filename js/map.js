@@ -3,19 +3,21 @@
 // initNetworkMap() draws all routes and stops on the network overview map.
 // updateMap(legs) draws a specific journey on the journey planner map.
 
-// GTFS route_type → display color (matches route_color in routes.txt)
-// Fallback colors by route_type number
-const TYPE_COLORS_BY_TYPE = {
-  3:   '#4dff8a', // bus
-  4:   '#4db8ff', // ferry
-  700: '#ffb84d', // airport bus / express
+// Canonical display colors — must match the legend in index.html
+// Palette drawn from Faroe Islands imagery: Atlantic ocean blue, coastal moss green,
+// puffin-beak orange for high-priority express, site amber for airport.
+const ROUTE_COLORS = {
+  3:   '#3D7A56', // bus — coastal moss green (ground network)
+  4:   '#1878B8', // ferry — Atlantic ocean blue (water routes)
+  700: '#C4981A', // airport — golden amber (matches site accent)
+};
+// Route 401 is the express service — highest priority, most salient
+const ROUTE_COLOR_OVERRIDES = {
+  '401': '#E05E20', // express — puffin-beak orange (fast, stands out)
 };
 
 function routeColor(route) {
-  if (route.route_color && route.route_color !== '000000') {
-    return '#' + route.route_color;
-  }
-  return TYPE_COLORS_BY_TYPE[route.route_type] || '#aaa';
+  return ROUTE_COLOR_OVERRIDES[route.route_id] || ROUTE_COLORS[route.route_type] || '#aaa';
 }
 
 function isFerry(route) {
@@ -59,30 +61,42 @@ export function initNetworkMap(gtfs) {
 
   const allCoords = [];
 
-  // Draw each route as a polyline (white halo + colored core)
-  for (const [route_id, route] of routeById) {
-    const color = routeColor(route);
-    const stopObjs = getRouteStopSequence(route_id, tripById, stopTimesForTrip, stopById);
-    const coords = stopObjs.map(s => [s.lat, s.lon]);
-    if (coords.length < 2) continue;
+  // Draw routes in z-order: bus (bottom) → ferry → airport/express (top)
+  // This ensures express/airport routes are visible on top of bus lines where they overlap.
+  const DRAW_ORDER = [3, 4, 700];
 
-    L.polyline(coords, {
-      color: '#fff', weight: 6, opacity: 0.7,
-      lineCap: 'round', lineJoin: 'round',
-    }).addTo(map);
+  for (const typeGroup of DRAW_ORDER) {
+    for (const [route_id, route] of routeById) {
+      if (route.route_type !== typeGroup) continue;
+      const color = routeColor(route);
+      const stopObjs = getRouteStopSequence(route_id, tripById, stopTimesForTrip, stopById);
+      const coords = stopObjs.map(s => [s.lat, s.lon]);
+      if (coords.length < 2) continue;
 
-    L.polyline(coords, {
-      color, weight: 3.5, opacity: 0.95,
-      lineCap: 'round', lineJoin: 'round',
-      dashArray: isFerry(route) ? '10 8' : null,
-    })
-      .bindTooltip(
-        `${route.route_short_name} – ${route.route_long_name}`,
-        { sticky: true, direction: 'top' }
-      )
-      .addTo(map);
+      const isHighPriority = route.route_type === 700; // airport/express
+      const weight = isHighPriority ? 4.5 : 3.5;
+      const dashArray = isFerry(route) ? '10 8' : (isHighPriority ? '6 4' : null);
 
-    coords.forEach(c => allCoords.push(c));
+      // White halo
+      L.polyline(coords, {
+        color: '#fff', weight: weight + 2.5, opacity: 0.7,
+        lineCap: 'round', lineJoin: 'round',
+      }).addTo(map);
+
+      // Colored core
+      L.polyline(coords, {
+        color, weight, opacity: 0.95,
+        lineCap: 'round', lineJoin: 'round',
+        dashArray,
+      })
+        .bindTooltip(
+          `${route.route_short_name} – ${route.route_long_name}`,
+          { sticky: true, direction: 'top' }
+        )
+        .addTo(map);
+
+      coords.forEach(c => allCoords.push(c));
+    }
   }
 
   // Draw every stop that appears on at least one route
@@ -94,8 +108,8 @@ export function initNetworkMap(gtfs) {
       drawnStops.add(s.stop_id);
       L.circleMarker([s.lat, s.lon], {
         radius: 4,
-        fillColor: '#1a3a5a',
-        color: '#fff',
+        fillColor: '#fff',
+        color: '#0D0D0D',
         weight: 1.5,
         fillOpacity: 1,
       })
@@ -117,15 +131,14 @@ function ensureMap() {
   if (leafletMap) return;
   leafletMap = L.map('journey-map', { zoomControl: true }).setView([62.0, -6.95], 9);
   L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
     {
-      attribution: 'Imagery © Esri, Maxar, Earthstar Geographics',
-      maxZoom: 18,
+      attribution:
+        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ' +
+        '© <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19,
     }
-  ).addTo(leafletMap);
-  L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 18, opacity: 0.85 }
   ).addTo(leafletMap);
 }
 
@@ -173,13 +186,18 @@ export function updateMap(legs, stopById, routeById) {
       allBounds.push(coord);
       const isEndpoint = i === 0 || i === allStopIds.length - 1;
       const marker = L.circleMarker(coord, {
-        radius:      isEndpoint ? 9 : 6,
-        fillColor:   color,
-        color:       '#fff',
+        radius:      isEndpoint ? 10 : 6,
+        fillColor:   isEndpoint ? '#fff' : color,
+        color:       isEndpoint ? color : '#fff',
         weight:      isEndpoint ? 3 : 2,
         fillOpacity: 1,
       })
-        .bindTooltip(stop.stop_name, { direction: 'top', offset: [0, -6] })
+        .bindTooltip(stop.stop_name, {
+          direction: 'top',
+          offset: [0, -8],
+          permanent: isEndpoint,
+          className: 'map-stop-label',
+        })
         .addTo(leafletMap);
       mapLayers.push(marker);
     });
