@@ -24,6 +24,76 @@ function isFerry(route) {
   return route.route_type === 4;
 }
 
+function shapeCoordsForRoute(routeShapes, routeId, fallbackCoords) {
+  const shape = routeShapes?.[routeId];
+  return shape?.geometry?.length >= 2 ? shape.geometry : fallbackCoords;
+}
+
+function shapeCoordsForStops(routeShapes, routeId, stopIds, stopById) {
+  const shape = routeShapes?.[routeId];
+  const coords = [];
+
+  function sameCoord(a, b) {
+    return a && b && a[0] === b[0] && a[1] === b[1];
+  }
+
+  function append(segment) {
+    if (!segment || segment.length < 2) return;
+    if (!coords.length) {
+      coords.push(...segment);
+    } else {
+      coords.push(...(sameCoord(coords[coords.length - 1], segment[0]) ? segment.slice(1) : segment));
+    }
+  }
+
+  for (let i = 0; i < stopIds.length - 1; i++) {
+    const fromId = stopIds[i];
+    const toId = stopIds[i + 1];
+    const forward = shape?.segments?.[`${fromId}|${toId}`];
+    const reverse = shape?.segments?.[`${toId}|${fromId}`];
+
+    if (forward) {
+      append(forward);
+    } else if (reverse) {
+      append([...reverse].reverse());
+    } else {
+      const from = stopById.get(fromId);
+      const to = stopById.get(toId);
+      if (from && to) append([[from.lat, from.lon], [to.lat, to.lon]]);
+    }
+  }
+
+  return coords;
+}
+
+function shapeCoordForStop(routeShapes, routeId, stopId, stopById) {
+  const shape = routeShapes?.[routeId];
+  const stop = stopById.get(stopId);
+  const fallback = stop ? [stop.lat, stop.lon] : null;
+
+  if (!shape?.segments) return fallback;
+
+  for (const [key, segment] of Object.entries(shape.segments)) {
+    if (!segment || segment.length < 2) continue;
+    const [fromId, toId] = key.split('|');
+    if (fromId === stopId) return segment[0];
+    if (toId === stopId) return segment[segment.length - 1];
+  }
+
+  return fallback;
+}
+
+function routeStopCoord(routeShapes, routeId, stopId, stopById) {
+  const coord = shapeCoordForStop(routeShapes, routeId, stopId, stopById);
+  if (coord) return coord;
+  const stop = stopById.get(stopId);
+  return stop ? [stop.lat, stop.lon] : null;
+}
+
+function coordKey(coord) {
+  return coord.map(n => Number(n).toFixed(5)).join(',');
+}
+
 // Build a de-duplicated ordered stop list for a route from its trips' stop_times.
 // Uses the longest trip in either direction to get the full stop sequence.
 function getRouteStopSequence(routeId, tripById, stopTimesForTrip, stopById) {
@@ -40,7 +110,7 @@ function getRouteStopSequence(routeId, tripById, stopTimesForTrip, stopById) {
 
 // ── Network map ───────────────────────────────────────────────────────────────
 export function initNetworkMap(gtfs) {
-  const { stopById, routeById, tripById, stopTimesForTrip } = gtfs;
+  const { stopById, routeById, tripById, stopTimesForTrip, routeShapes } = gtfs;
 
   const map = L.map('network-map', {
     zoomControl: true,
@@ -70,7 +140,8 @@ export function initNetworkMap(gtfs) {
       if (route.route_type !== typeGroup) continue;
       const color = routeColor(route);
       const stopObjs = getRouteStopSequence(route_id, tripById, stopTimesForTrip, stopById);
-      const coords = stopObjs.map(s => [s.lat, s.lon]);
+      const stopCoords = stopObjs.map(s => [s.lat, s.lon]);
+      const coords = shapeCoordsForRoute(routeShapes, route_id, stopCoords);
       if (coords.length < 2) continue;
 
       const isHighPriority = route.route_type === 700; // airport/express
@@ -104,9 +175,12 @@ export function initNetworkMap(gtfs) {
   for (const [route_id] of routeById) {
     const stopObjs = getRouteStopSequence(route_id, tripById, stopTimesForTrip, stopById);
     for (const s of stopObjs) {
-      if (drawnStops.has(s.stop_id)) continue;
-      drawnStops.add(s.stop_id);
-      L.circleMarker([s.lat, s.lon], {
+      const coord = routeStopCoord(routeShapes, route_id, s.stop_id, stopById);
+      if (!coord) continue;
+      const markerKey = `${s.stop_id}:${coordKey(coord)}`;
+      if (drawnStops.has(markerKey)) continue;
+      drawnStops.add(markerKey);
+      L.circleMarker(coord, {
         radius: 4,
         fillColor: '#fff',
         color: '#0D0D0D',
@@ -142,7 +216,7 @@ function ensureMap() {
   ).addTo(leafletMap);
 }
 
-export function updateMap(legs, stopById, routeById) {
+export function updateMap(legs, stopById, routeById, routeShapes = {}) {
   const mapEl = document.getElementById('journey-map');
   mapEl.classList.remove('hidden');
 
@@ -160,10 +234,7 @@ export function updateMap(legs, stopById, routeById) {
     const ferry = route ? isFerry(route) : false;
 
     const allStopIds = [leg.from_stop, ...leg.via_stops, leg.to_stop];
-    const coords = allStopIds
-      .map(id => stopById.get(id))
-      .filter(Boolean)
-      .map(s => [s.lat, s.lon]);
+    const coords = shapeCoordsForStops(routeShapes, leg.route_id, allStopIds, stopById);
 
     if (coords.length >= 2) {
       const halo = L.polyline(coords, {
@@ -182,7 +253,8 @@ export function updateMap(legs, stopById, routeById) {
     allStopIds.forEach((stopId, i) => {
       const stop = stopById.get(stopId);
       if (!stop) return;
-      const coord = [stop.lat, stop.lon];
+      const coord = routeStopCoord(routeShapes, leg.route_id, stopId, stopById);
+      if (!coord) return;
       allBounds.push(coord);
       const isEndpoint = i === 0 || i === allStopIds.length - 1;
       const marker = L.circleMarker(coord, {

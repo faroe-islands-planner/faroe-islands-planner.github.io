@@ -24,6 +24,17 @@ async function fetchCSV(path) {
   return parseCSV(await res.text());
 }
 
+async function fetchOptionalJSON(path) {
+  try {
+    const res = await fetch(path);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (err) {
+    console.warn(`Optional data not loaded: ${path}`, err);
+    return null;
+  }
+}
+
 function timeMins(hhmm) {
   // "06:45" → 405, "25:10" → 1510 (GTFS allows >24h for after-midnight)
   if (!hhmm) return null;
@@ -40,7 +51,7 @@ function minsToHHMM(mins) {
 export async function loadGTFS() {
   const BASE = 'gtfs/';
 
-  const [stopRows, routeRows, tripRows, stRows, calRows, calDateRows] =
+  const [stopRows, routeRows, tripRows, stRows, calRows, calDateRows, routeShapes] =
     await Promise.all([
       fetchCSV(BASE + 'stops.txt'),
       fetchCSV(BASE + 'routes.txt'),
@@ -48,6 +59,7 @@ export async function loadGTFS() {
       fetchCSV(BASE + 'stop_times.txt'),
       fetchCSV(BASE + 'calendar.txt'),
       fetchCSV(BASE + 'calendar_dates.txt'),
+      fetchOptionalJSON('data/route_shapes.json'),
     ]);
 
   // ── Build stopTimesForTrip first so we know which stop_ids are used ──────
@@ -199,5 +211,6 @@ export async function loadGTFS() {
     calendarMap,
     exceptionMap,
     minsToHHMM,
+    routeShapes: routeShapes?.routes || {},
   };
 }

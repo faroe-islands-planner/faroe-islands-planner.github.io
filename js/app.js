@@ -371,14 +371,14 @@ async function main() {
     plannerCard.classList.add('has-results');
 
     // Map shows the first (active) journey
-    updateMap(journeyList[0], stopById, routeById);
+    updateMap(journeyList[0], stopById, routeById, gtfs.routeShapes);
 
     // Click-to-expand: clicking a card makes it active, updates the map
     out.querySelectorAll('.journey-card').forEach((card, i) => {
       card.addEventListener('click', () => {
         out.querySelectorAll('.journey-card').forEach(c => c.classList.remove('active'));
         card.classList.add('active');
-        updateMap(journeyList[i], stopById, routeById);
+        updateMap(journeyList[i], stopById, routeById, gtfs.routeShapes);
       });
     });
   }
