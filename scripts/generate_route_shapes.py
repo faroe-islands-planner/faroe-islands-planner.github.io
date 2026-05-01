@@ -233,6 +233,67 @@ def nearest_water_node(point, origin_lat, origin_lon, ports):
     return (row, col)
 
 
+def nearest_water_point(point, max_radius=60):
+    if not point_in_land(point):
+        return [round(point[0], 6), round(point[1], 6)]
+
+    origin_lat = point[0] - max_radius * WATER_GRID_STEP
+    origin_lon = point[1] - max_radius * WATER_GRID_STEP
+    center = (max_radius, max_radius)
+    best = None
+    best_dist = float("inf")
+
+    for radius in range(1, max_radius + 1):
+        for dr in range(-radius, radius + 1):
+            for dc in range(-radius, radius + 1):
+                if max(abs(dr), abs(dc)) != radius:
+                    continue
+                candidate = (center[0] + dr, center[1] + dc)
+                candidate_point = grid_point(origin_lat, origin_lon, candidate)
+                if point_in_land(candidate_point):
+                    continue
+                dist = coord_distance(point, candidate_point)
+                if dist < best_dist:
+                    best = candidate_point
+                    best_dist = dist
+        if best:
+            return best
+
+    return [round(point[0], 6), round(point[1], 6)]
+
+
+def nearest_visible_water_point(point, approach, max_radius=60):
+    origin_lat = point[0] - max_radius * WATER_GRID_STEP
+    origin_lon = point[1] - max_radius * WATER_GRID_STEP
+    center = (max_radius, max_radius)
+    best = None
+    best_dist = float("inf")
+
+    candidates = [[round(point[0], 6), round(point[1], 6)]]
+    for radius in range(1, max_radius + 1):
+        for dr in range(-radius, radius + 1):
+            for dc in range(-radius, radius + 1):
+                if max(abs(dr), abs(dc)) != radius:
+                    continue
+                candidates.append(grid_point(origin_lat, origin_lon, (center[0] + dr, center[1] + dc)))
+
+        for candidate_point in candidates:
+            if point_in_land(candidate_point):
+                continue
+            if line_touches_land(candidate_point, approach):
+                continue
+            dist = coord_distance(point, candidate_point)
+            if dist < best_dist:
+                best = candidate_point
+                best_dist = dist
+
+        if best:
+            return best
+        candidates = []
+
+    return nearest_water_point(point, max_radius=max_radius)
+
+
 def simplify_grid_path(points):
     if len(points) <= 2:
         return points
@@ -345,18 +406,28 @@ def water_route(points):
 
 def ferry_segment(route_id, a, b):
     channel = FERRY_CHANNELS.get(route_id)
-    if not channel:
-        return water_route(straight_segment(a, b))
+    raw_start = [a["lat"], a["lon"]]
+    raw_end = [b["lat"], b["lon"]]
 
-    start = [a["lat"], a["lon"]]
-    end = [b["lat"], b["lon"]]
-    forward_distance = coord_distance(start, channel[0]) + coord_distance(end, channel[-1])
-    reverse_distance = coord_distance(start, channel[-1]) + coord_distance(end, channel[0])
+    if not channel:
+        start = nearest_water_point(raw_start)
+        end = nearest_water_point(raw_end)
+        sea_path = water_route([start, end])
+        return [raw_start, *sea_path, raw_end]
+
+    rough_start = nearest_water_point(raw_start)
+    rough_end = nearest_water_point(raw_end)
+    forward_distance = coord_distance(rough_start, channel[0]) + coord_distance(rough_end, channel[-1])
+    reverse_distance = coord_distance(rough_start, channel[-1]) + coord_distance(rough_end, channel[0])
     if forward_distance <= reverse_distance:
-        return water_route(channel)
-    if reverse_distance < forward_distance:
-        return list(reversed(water_route(channel)))
-    return water_route(straight_segment(a, b))
+        oriented_channel = channel
+    else:
+        oriented_channel = list(reversed(channel))
+
+    start = nearest_visible_water_point(raw_start, oriented_channel[0])
+    end = nearest_visible_water_point(raw_end, oriented_channel[-1])
+    sea_path = water_route([start, *oriented_channel, end])
+    return [raw_start, *sea_path, raw_end]
 
 
 def count_land_crossings(path):
@@ -395,6 +466,13 @@ def append_segment(route_coords, segment):
         route_coords.extend(segment)
         return
     route_coords.extend(segment[1:] if route_coords[-1] == segment[0] else segment)
+
+
+def ferry_segment_land_crossings(segment):
+    if len(segment) <= 3:
+        return count_land_crossings(segment)
+    sea_segment = segment[1:-1]
+    return count_land_crossings(sea_segment)
 
 
 def main():
@@ -446,7 +524,7 @@ def main():
 
             if route_type == 4:
                 segment = ferry_segment(route_id, a, b)
-                if count_land_crossings(segment):
+                if ferry_segment_land_crossings(segment):
                     failures.append(f"{route_id}: ferry segment still intersects land: {a['name']} -> {b['name']}")
             elif key in cache:
                 segment = cache[key]

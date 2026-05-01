@@ -175,7 +175,7 @@ export function initNetworkMap(gtfs) {
   for (const [route_id] of routeById) {
     const stopObjs = getRouteStopSequence(route_id, tripById, stopTimesForTrip, stopById);
     for (const s of stopObjs) {
-      const coord = routeStopCoord(routeShapes, route_id, s.stop_id, stopById);
+      const coord = [s.lat, s.lon];
       if (!coord) continue;
       const markerKey = `${s.stop_id}:${coordKey(coord)}`;
       if (drawnStops.has(markerKey)) continue;
@@ -253,7 +253,7 @@ export function updateMap(legs, stopById, routeById, routeShapes = {}) {
     allStopIds.forEach((stopId, i) => {
       const stop = stopById.get(stopId);
       if (!stop) return;
-      const coord = routeStopCoord(routeShapes, leg.route_id, stopId, stopById);
+      const coord = [stop.lat, stop.lon];
       if (!coord) return;
       allBounds.push(coord);
       const isEndpoint = i === 0 || i === allStopIds.length - 1;
