@@ -188,7 +188,7 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 36,fri,36_0060,Sørvágur,1
 36,sat,36_0061,Sørvágur,1
 36,sun,36_0062,Sørvágur,1
-400,weekdays,400_0001,Kollafj. t.,0
+400,weekdays,400_0001,Tórshavn Terminal,0
 400,weekdays,400_0002,Tórshavn Terminal,0
 400,daily,400_0003,Tórshavn Terminal,0
 400,weekdays_sat,400_0004,Tórshavn Terminal,0
@@ -201,16 +201,16 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 400,daily,400_0011,Tórshavn Terminal,0
 400,weekdays_sun,400_0012,Tórshavn Terminal,0
 400,weekdays,400_0013,Klaksv.,1
-400,weekdays,400_0014,Leirvík,1
-400,daily,400_0015,Leirvík,1
-400,weekdays_sun,400_0016,Leirvík,1
-400,weekdays_sat,400_0017,Leirvík,1
-400,weekdays_sun,400_0018,Leirvík,1
-400,weekdays_sat,400_0019,Leirvík,1
-400,weekdays,400_0020,Leirvík,1
-400,daily,400_0021,Leirvík,1
-400,weekdays,400_0022,Leirvík,1
-400,daily,400_0023,Leirvík,1
+400,weekdays,400_0014,Klaksv.,1
+400,daily,400_0015,Klaksv.,1
+400,weekdays_sun,400_0016,Klaksv.,1
+400,weekdays_sat,400_0017,Klaksv.,1
+400,weekdays_sun,400_0018,Klaksv.,1
+400,weekdays_sat,400_0019,Klaksv.,1
+400,weekdays,400_0020,Klaksv.,1
+400,daily,400_0021,Klaksv.,1
+400,weekdays,400_0022,Klaksv.,1
+400,daily,400_0023,Klaksv.,1
 401,weekdays,401_0001,Runavík,0
 401,weekdays,401_0002,Tórshavn Terminal,0
 401,weekdays,401_0003,Tórshavn Terminal,0

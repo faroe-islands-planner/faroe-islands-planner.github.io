@@ -682,6 +682,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0001,06:40,06:40,oyrarbakki,6,0,0
 400_0001,06:47,06:47,hosvik,7,0,0
 400_0001,07:05,07:05,kollafj_r_ur_tunnel,8,0,0
+400_0001,07:35,07:35,torshavn,9,0,0
 400_0002,06:50,06:50,klaksvik,1,0,0
 400_0002,07:00,07:00,leirvik,2,0,0
 400_0002,07:05,07:05,g_tudalur,3,0,0
@@ -718,13 +719,14 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0005,12:47,12:47,hosvik,7,0,0
 400_0005,13:00,13:00,kollafj_r_ur_tunnel,8,0,0
 400_0005,13:25,13:25,torshavn,9,0,0
-400_0006,13:50,13:50,g_tudalur,1,0,0
-400_0006,13:55,13:55,s_ldarfj_r_ur,2,0,0
-400_0006,14:00,14:00,skalafj_r_ur,3,0,0
-400_0006,14:15,14:15,oyrarbakki,4,0,0
-400_0006,14:22,14:22,hosvik,5,0,0
-400_0006,14:35,14:35,kollafj_r_ur_tunnel,6,0,0
-400_0006,15:00,15:00,torshavn,7,0,0
+400_0006,13:05,13:05,klaksvik,1,0,0
+400_0006,13:50,13:50,g_tudalur,2,0,0
+400_0006,13:55,13:55,s_ldarfj_r_ur,3,0,0
+400_0006,14:00,14:00,skalafj_r_ur,4,0,0
+400_0006,14:15,14:15,oyrarbakki,5,0,0
+400_0006,14:22,14:22,hosvik,6,0,0
+400_0006,14:35,14:35,kollafj_r_ur_tunnel,7,0,0
+400_0006,15:00,15:00,torshavn,8,0,0
 400_0007,13:25,13:25,klaksvik,1,0,0
 400_0007,13:40,13:40,leirvik,2,0,0
 400_0007,13:50,13:50,g_tudalur,3,0,0
@@ -770,14 +772,15 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0011,19:02,19:02,hosvik,7,0,0
 400_0011,19:15,19:15,kollafj_r_ur_tunnel,8,0,0
 400_0011,19:40,19:40,torshavn,9,0,0
-400_0012,19:45,19:45,leirvik,1,0,0
-400_0012,19:50,19:50,g_tudalur,2,0,0
-400_0012,20:00,20:00,s_ldarfj_r_ur,3,0,0
-400_0012,20:05,20:05,skalafj_r_ur,4,0,0
-400_0012,20:20,20:20,oyrarbakki,5,0,0
-400_0012,20:27,20:27,hosvik,6,0,0
-400_0012,20:40,20:40,kollafj_r_ur_tunnel,7,0,0
-400_0012,21:05,21:05,torshavn,8,0,0
+400_0012,19:30,19:30,klaksvik,1,0,0
+400_0012,19:45,19:45,leirvik,2,0,0
+400_0012,19:50,19:50,g_tudalur,3,0,0
+400_0012,20:00,20:00,s_ldarfj_r_ur,4,0,0
+400_0012,20:05,20:05,skalafj_r_ur,5,0,0
+400_0012,20:20,20:20,oyrarbakki,6,0,0
+400_0012,20:27,20:27,hosvik,7,0,0
+400_0012,20:40,20:40,kollafj_r_ur_tunnel,8,0,0
+400_0012,21:05,21:05,torshavn,9,0,0
 400_0013,06:10,06:10,torshavn,1,0,0
 400_0013,06:30,06:30,kollafj_r_ur_tunnel,2,0,0
 400_0013,06:40,06:40,hosvik,3,0,0
@@ -795,6 +798,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0014,09:00,09:00,s_ldarfj_r_ur,6,0,0
 400_0014,09:10,09:10,g_tudalur,7,0,0
 400_0014,09:15,09:15,leirvik,8,0,0
+400_0014,09:25,09:25,klaksvik,9,0,0
 400_0015,09:20,09:20,torshavn,1,0,0
 400_0015,09:40,09:40,kollafj_r_ur_tunnel,2,0,0
 400_0015,09:50,09:50,hosvik,3,0,0
@@ -803,6 +807,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0015,10:25,10:25,s_ldarfj_r_ur,6,0,0
 400_0015,10:35,10:35,g_tudalur,7,0,0
 400_0015,10:40,10:40,leirvik,8,0,0
+400_0015,10:50,10:50,klaksvik,9,0,0
 400_0016,10:50,10:50,torshavn,1,0,0
 400_0016,11:10,11:10,kollafj_r_ur_tunnel,2,0,0
 400_0016,11:20,11:20,hosvik,3,0,0
@@ -811,6 +816,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0016,11:55,11:55,s_ldarfj_r_ur,6,0,0
 400_0016,12:10,12:10,g_tudalur,7,0,0
 400_0016,12:15,12:15,leirvik,8,0,0
+400_0016,12:25,12:25,klaksvik,9,0,0
 400_0017,12:10,12:10,torshavn,1,0,0
 400_0017,12:30,12:30,kollafj_r_ur_tunnel,2,0,0
 400_0017,12:40,12:40,hosvik,3,0,0
@@ -819,6 +825,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0017,13:15,13:15,s_ldarfj_r_ur,6,0,0
 400_0017,13:25,13:25,g_tudalur,7,0,0
 400_0017,13:30,13:30,leirvik,8,0,0
+400_0017,13:40,13:40,klaksvik,9,0,0
 400_0018,13:50,13:50,torshavn,1,0,0
 400_0018,14:10,14:10,kollafj_r_ur_tunnel,2,0,0
 400_0018,14:20,14:20,hosvik,3,0,0
@@ -827,6 +834,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0018,14:55,14:55,s_ldarfj_r_ur,6,0,0
 400_0018,15:05,15:05,g_tudalur,7,0,0
 400_0018,15:10,15:10,leirvik,8,0,0
+400_0018,15:20,15:20,klaksvik,9,0,0
 400_0019,15:25,15:25,torshavn,1,0,0
 400_0019,15:45,15:45,kollafj_r_ur_tunnel,2,0,0
 400_0019,15:55,15:55,hosvik,3,0,0
@@ -835,6 +843,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0019,16:35,16:35,s_ldarfj_r_ur,6,0,0
 400_0019,16:45,16:45,g_tudalur,7,0,0
 400_0019,16:50,16:50,leirvik,8,0,0
+400_0019,17:00,17:00,klaksvik,9,0,0
 400_0020,16:20,16:20,torshavn,1,0,0
 400_0020,16:40,16:40,kollafj_r_ur_tunnel,2,0,0
 400_0020,16:50,16:50,hosvik,3,0,0
@@ -843,6 +852,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0020,17:30,17:30,s_ldarfj_r_ur,6,0,0
 400_0020,17:40,17:40,g_tudalur,7,0,0
 400_0020,17:45,17:45,leirvik,8,0,0
+400_0020,17:55,17:55,klaksvik,9,0,0
 400_0021,17:30,17:30,torshavn,1,0,0
 400_0021,17:50,17:50,kollafj_r_ur_tunnel,2,0,0
 400_0021,18:00,18:00,hosvik,3,0,0
@@ -851,6 +861,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0021,18:35,18:35,s_ldarfj_r_ur,6,0,0
 400_0021,18:45,18:45,g_tudalur,7,0,0
 400_0021,18:50,18:50,leirvik,8,0,0
+400_0021,19:00,19:00,klaksvik,9,0,0
 400_0022,18:20,18:20,torshavn,1,0,0
 400_0022,18:40,18:40,kollafj_r_ur_tunnel,2,0,0
 400_0022,18:50,18:50,hosvik,3,0,0
@@ -859,6 +870,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0022,19:25,19:25,s_ldarfj_r_ur,6,0,0
 400_0022,19:35,19:35,g_tudalur,7,0,0
 400_0022,19:40,19:40,leirvik,8,0,0
+400_0022,19:50,19:50,klaksvik,9,0,0
 400_0023,20:40,20:40,torshavn,1,0,0
 400_0023,21:00,21:00,kollafj_r_ur_tunnel,2,0,0
 400_0023,21:10,21:10,hosvik,3,0,0
@@ -867,6 +879,7 @@ trip_id,arrival_time,departure_time,stop_id,stop_sequence,pickup_type,drop_off_t
 400_0023,21:45,21:45,s_ldarfj_r_ur,6,0,0
 400_0023,21:55,21:55,g_tudalur,7,0,0
 400_0023,22:00,22:00,leirvik,8,0,0
+400_0023,22:10,22:10,klaksvik,9,0,0
 401_0001,06:25,06:25,klaksvik,1,0,0
 401_0001,06:35,06:35,leirvik,2,0,0
 401_0001,06:40,06:40,g_tudalur,3,0,0

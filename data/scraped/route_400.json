@@ -29,7 +29,7 @@
             "Oyrarb.": "06:40",
             "Hósvík": "06:47",
             "Kollafj. t.": "07:05",
-            "Tórshavn Terminal": null
+            "Tórshavn Terminal": "07:35"
           }
         },
         {
@@ -96,7 +96,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Klaksv.": null,
+            "Klaksv.": "13:05",
             "Leirvík": null,
             "Gøtud.": "13:50",
             "Søldarfj.": "13:55",
@@ -186,7 +186,7 @@
           "service_id": "weekdays_sun",
           "day_raw": "x7",
           "times": {
-            "Klaksv.": null,
+            "Klaksv.": "19:30",
             "Leirvík": "19:45",
             "Gøtud.": "19:50",
             "Søldarfj.": "20:00",
@@ -241,7 +241,7 @@
             "Søldafjørður": "09:00",
             "Gøtud.": "09:10",
             "Leirvík": "09:15",
-            "Klaksv.": null
+            "Klaksv.": "09:25"
           }
         },
         {
@@ -256,7 +256,7 @@
             "Søldafjørður": "10:25",
             "Gøtud.": "10:35",
             "Leirvík": "10:40",
-            "Klaksv.": null
+            "Klaksv.": "10:50"
           }
         },
         {
@@ -271,7 +271,7 @@
             "Søldafjørður": "11:55",
             "Gøtud.": "12:10",
             "Leirvík": "12:15",
-            "Klaksv.": null
+            "Klaksv.": "12:25"
           }
         },
         {
@@ -286,7 +286,7 @@
             "Søldafjørður": "13:15",
             "Gøtud.": "13:25",
             "Leirvík": "13:30",
-            "Klaksv.": null
+            "Klaksv.": "13:40"
           }
         },
         {
@@ -301,7 +301,7 @@
             "Søldafjørður": "14:55",
             "Gøtud.": "15:05",
             "Leirvík": "15:10",
-            "Klaksv.": null
+            "Klaksv.": "15:20"
           }
         },
         {
@@ -316,7 +316,7 @@
             "Søldafjørður": "16:35",
             "Gøtud.": "16:45",
             "Leirvík": "16:50",
-            "Klaksv.": null
+            "Klaksv.": "17:00"
           }
         },
         {
@@ -331,7 +331,7 @@
             "Søldafjørður": "17:30",
             "Gøtud.": "17:40",
             "Leirvík": "17:45",
-            "Klaksv.": null
+            "Klaksv.": "17:55"
           }
         },
         {
@@ -346,7 +346,7 @@
             "Søldafjørður": "18:35",
             "Gøtud.": "18:45",
             "Leirvík": "18:50",
-            "Klaksv.": null
+            "Klaksv.": "19:00"
           }
         },
         {
@@ -361,7 +361,7 @@
             "Søldafjørður": "19:25",
             "Gøtud.": "19:35",
             "Leirvík": "19:40",
-            "Klaksv.": null
+            "Klaksv.": "19:50"
           }
         },
         {
@@ -376,7 +376,7 @@
             "Søldafjørður": "21:45",
             "Gøtud.": "21:55",
             "Leirvík": "22:00",
-            "Klaksv.": null
+            "Klaksv.": "22:10"
           }
         }
       ]

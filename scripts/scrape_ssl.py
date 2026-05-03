@@ -230,7 +230,7 @@ def extract_section_headings_and_tables(html):
 # Time normalisation
 # ---------------------------------------------------------------------------
 
-TIME_RE = re.compile(r'\b(\d{1,2})[:.:](\d{2})\b')
+TIME_RE = re.compile(r'\b(\d{1,2})[:.](\d{2})(?!\d)')
 
 def clean_time(raw: str):
     """Extract HH:MM from a cell that may have notes/superscripts."""
