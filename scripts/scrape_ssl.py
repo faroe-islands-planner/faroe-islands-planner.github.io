@@ -295,6 +295,28 @@ def day_types_to_service_id(day_types: list[str], is_school: bool = False) -> st
     return "weekdays"
 
 
+def service_ids_from_day_raw(raw: str, is_school: bool = False) -> list[str]:
+    raw_lower = raw.strip().lower()
+    if "x" in raw_lower:
+        return [day_types_to_service_id(parse_day_types(raw_lower), is_school)]
+
+    explicit_day_services = {
+        "1": "mon",
+        "2": "tue",
+        "3": "wed",
+        "4": "thu",
+        "5": "fri",
+        "6": "sat",
+        "7": "sun",
+    }
+    services = []
+    for digit in re.findall(r"\d", raw_lower):
+        service_id = explicit_day_services.get(digit)
+        if service_id and service_id not in services:
+            services.append(service_id)
+    return services or [day_types_to_service_id(parse_day_types(raw_lower), is_school)]
+
+
 # ---------------------------------------------------------------------------
 # Request-only detection
 # ---------------------------------------------------------------------------
@@ -393,8 +415,7 @@ def parse_bus_table_sections(rows, route_id, is_school=False):
             if not row:
                 continue
             day_raw = row[0].strip()
-            day_types = parse_day_types(day_raw)
-            service_id = day_types_to_service_id(day_types, is_school)
+            service_ids = service_ids_from_day_raw(day_raw, is_school)
 
             # Extract time cells while preserving alignment with the header.
             time_cells = row[1:]
@@ -410,11 +431,12 @@ def parse_bus_table_sections(rows, route_id, is_school=False):
             if not any(v for v in times.values()):
                 continue
 
-            trips.append({
-                "service_id": service_id,
-                "day_raw": day_raw,
-                "times": times,
-            })
+            for service_id in service_ids:
+                trips.append({
+                    "service_id": service_id,
+                    "day_raw": day_raw,
+                    "times": times,
+                })
 
         sections.append({"stops": stops, "trips": trips})
 
@@ -424,6 +446,32 @@ def parse_bus_table_sections(rows, route_id, is_school=False):
 def parse_bus_table(rows, route_id, is_school=False):
     sections = parse_bus_table_sections(rows, route_id, is_school)
     return sections[0] if sections else {"stops": [], "trips": []}
+
+
+def is_day_column_label(label: str) -> bool:
+    return clean_stop_name(label) in {
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
+        "Mán.", "Týs.", "Mik.", "Hós.", "Frí.", "Ley.", "Sun.",
+    }
+
+
+def day_column_service_id(label: str) -> str:
+    return {
+        "Monday": "mon",
+        "Tuesday": "tue",
+        "Wednesday": "wed",
+        "Thursday": "thu",
+        "Friday": "fri",
+        "Saturday": "sat",
+        "Sunday": "sun",
+        "Mán.": "mon",
+        "Týs.": "tue",
+        "Mik.": "wed",
+        "Hós.": "thu",
+        "Frí.": "fri",
+        "Ley.": "sat",
+        "Sun.": "sun",
+    }.get(clean_stop_name(label), "daily")
 
 
 def is_connection_column_label(label: str) -> bool:
@@ -501,6 +549,126 @@ def split_paired_direction_bus_table(rows):
         split_tables.append(new_rows)
 
     return split_tables
+
+
+def parse_direction_day_column_sections(rows):
+    """
+    Parse tables where rows are directions and columns are days:
+
+      |        | Mán. | Týs. | ...
+      | A - B  | 09:05 | ... |
+      | B - A  | 09:20 | ... |
+    """
+    if len(rows) < 2:
+        return []
+
+    header_idx = None
+    day_cols = {}
+    for i, row in enumerate(rows):
+        labels = [clean_stop_name(cell) for cell in row[1:]]
+        if labels and sum(1 for label in labels if is_day_column_label(label)) >= 2:
+            header_idx = i
+            for col_idx, cell in enumerate(row):
+                if is_day_column_label(cell):
+                    day_cols[col_idx] = clean_stop_name(cell)
+            break
+
+    if header_idx is None or not day_cols:
+        return []
+
+    sections_by_direction = {}
+    for row in rows[header_idx + 1:]:
+        if not row:
+            continue
+        direction = clean_stop_name(row[0])
+        if " - " not in direction:
+            continue
+        origin, destination = [clean_stop_name(part) for part in direction.split(" - ", 1)]
+        if not origin or not destination:
+            continue
+
+        section = sections_by_direction.setdefault((origin, destination), {
+            "stops": [origin, destination],
+            "trips": [],
+        })
+        for col_idx, day_label in day_cols.items():
+            dep_time = clean_time(row[col_idx]) if col_idx < len(row) else None
+            if not dep_time:
+                continue
+            section["trips"].append({
+                "service_id": day_column_service_id(day_label),
+                "day_raw": day_label,
+                "times": {origin: dep_time, destination: None},
+            })
+
+    return list(sections_by_direction.values())
+
+
+def infer_route_destination(route_name: str, origin: str) -> str | None:
+    route_name = clean_stop_name(route_name)
+    route_name = re.sub(r"^\d+\s+", "", route_name)
+    parts = [clean_stop_name(part) for part in re.split(r"\s+[-–]\s+", route_name) if clean_stop_name(part)]
+    if len(parts) < 2:
+        return None
+    origin_folded = origin.casefold()
+    for part in reversed(parts):
+        if part.casefold() != origin_folded:
+            return part
+    return None
+
+
+def parse_single_departure_column_sections(rows, route_name):
+    """
+    Parse tables with one departure column and non-time metadata columns:
+
+      Day | From Hvannasund | Period
+      x67 | 08:45          | From 1/4 - 31/8
+    """
+    if len(rows) < 2:
+        return []
+
+    header_idx = None
+    departure_col_idx = None
+    origin = None
+    for i, row in enumerate(rows):
+        first = clean_stop_name(row[0]).lower() if row else ""
+        if first not in ("day", "days", "dag"):
+            continue
+        for col_idx, cell in enumerate(row[1:], start=1):
+            label = clean_stop_name(cell)
+            if label.lower().startswith("from "):
+                header_idx = i
+                departure_col_idx = col_idx
+                origin = clean_split_stop_label(label)
+                break
+        if header_idx is not None:
+            break
+
+    if header_idx is None or departure_col_idx is None or not origin:
+        return []
+
+    destination = infer_route_destination(route_name, origin)
+    if not destination:
+        return []
+
+    trips = []
+    for row in rows[header_idx + 1:]:
+        if not row:
+            continue
+        day_raw = clean_stop_name(row[0])
+        dep_time = clean_time(row[departure_col_idx]) if departure_col_idx < len(row) else None
+        if not day_raw or not dep_time:
+            continue
+        for service_id in service_ids_from_day_raw(day_raw):
+            trips.append({
+                "service_id": service_id,
+                "day_raw": day_raw,
+                "times": {origin: dep_time, destination: None},
+            })
+
+    if not trips:
+        return []
+    return [{"stops": [origin, destination], "trips": trips}]
 
 
 # ---------------------------------------------------------------------------
@@ -812,6 +980,7 @@ def parse_page(html, route_id, route_type):
     title_m = re.search(r'<h1[^>]*>(.*?)</h1>', html, re.IGNORECASE | re.DOTALL)
     if title_m:
         result["route_name"] = re.sub(r'<[^>]+>', '', title_m.group(1)).strip()
+    route_name = result.get("route_name") or ""
 
     is_school = route_id in {"201", "202", "223", "444", "442", "481", "504", "506"}
 
@@ -828,9 +997,12 @@ def parse_page(html, route_id, route_type):
 
         seasonal_info = parse_seasonal_heading(heading)
 
-        if looks_like_ferry_format(rows):
+        parsed_tables = parse_direction_day_column_sections(rows)
+        if not parsed_tables:
+            parsed_tables = parse_single_departure_column_sections(rows, route_name)
+        if not parsed_tables and looks_like_ferry_format(rows):
             parsed_tables = parse_ferry_departure_sections(rows) or [parse_ferry_table(rows)]
-        else:
+        if not parsed_tables:
             parsed_tables = []
             for split_rows in split_paired_direction_bus_table(rows):
                 parsed_tables.extend(parse_bus_table_sections(split_rows, route_id, is_school))

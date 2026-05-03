@@ -9,6 +9,125 @@
         "Tórshavn",
         "Runavík",
         "Toftir",
+        "Strendur"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "07:20",
+            "Runavík": null,
+            "Toftir": null,
+            "Strendur": "07:45"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "08:25",
+            "Runavík": "08:45",
+            "Toftir": null,
+            "Strendur": "08:55"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "6",
+          "times": {
+            "Tórshavn": "08:35",
+            "Runavík": null,
+            "Toftir": "08:55",
+            "Strendur": "09:05"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "11:20",
+            "Runavík": "11:45",
+            "Toftir": null,
+            "Strendur": null
+          }
+        },
+        {
+          "service_id": "daily",
+          "day_raw": "x67",
+          "times": {
+            "Tórshavn": "13:05",
+            "Runavík": null,
+            "Toftir": null,
+            "Strendur": "13:30"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "14:10",
+            "Runavík": "14:30",
+            "Toftir": null,
+            "Strendur": null
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "15:20",
+            "Runavík": "15:45",
+            "Toftir": "15:50",
+            "Strendur": "16:05"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "16:25",
+            "Runavík": null,
+            "Toftir": "16:50",
+            "Strendur": "17:00"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "67",
+          "times": {
+            "Tórshavn": "17:40",
+            "Runavík": null,
+            "Toftir": null,
+            "Strendur": "18:05"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "67",
+          "times": {
+            "Tórshavn": "17:40",
+            "Runavík": null,
+            "Toftir": null,
+            "Strendur": "18:05"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Tórshavn": "18:25",
+            "Runavík": null,
+            "Toftir": null,
+            "Strendur": "18:50"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "450 Tórshavn - Eysturoy (Jellyfish Roundabout)",
+      "seasonal": null,
+      "stops": [
         "Strendur",
         "Runavík",
         "Toftir",
@@ -19,10 +138,9 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Tórshavn": "07:20",
+            "Strendur": "07:45",
             "Runavík": "07:55",
             "Toftir": "08:00",
-            "Strendur": "07:45",
             "Tórshavn Terminal": "08:25"
           }
         },
@@ -30,10 +148,9 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Tórshavn": "08:25",
+            "Strendur": "08:55",
             "Runavík": null,
             "Toftir": null,
-            "Strendur": "08:55",
             "Tórshavn Terminal": "09:15"
           }
         },
@@ -41,10 +158,9 @@
           "service_id": "sat",
           "day_raw": "6",
           "times": {
-            "Tórshavn": "08:35",
+            "Strendur": "09:05",
             "Runavík": null,
             "Toftir": null,
-            "Strendur": "09:05",
             "Tórshavn Terminal": "09:25"
           }
         },
@@ -52,10 +168,9 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Tórshavn": "11:20",
+            "Strendur": null,
             "Runavík": "12:30",
             "Toftir": null,
-            "Strendur": null,
             "Tórshavn Terminal": "12:50"
           }
         },
@@ -63,10 +178,9 @@
           "service_id": "daily",
           "day_raw": "x67",
           "times": {
-            "Tórshavn": "13:05",
+            "Strendur": "13:30",
             "Runavík": "13:40",
             "Toftir": "13:45",
-            "Strendur": "13:30",
             "Tórshavn Terminal": "14:10"
           }
         },
@@ -74,10 +188,9 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Tórshavn": "14:10",
+            "Strendur": null,
             "Runavík": "14:40",
             "Toftir": null,
-            "Strendur": null,
             "Tórshavn Terminal": "15:00"
           }
         },
@@ -85,10 +198,9 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Tórshavn": "15:20",
+            "Strendur": "16:05",
             "Runavík": null,
             "Toftir": null,
-            "Strendur": "16:05",
             "Tórshavn Terminal": "16:25"
           }
         },
@@ -96,21 +208,29 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Tórshavn": "16:25",
+            "Strendur": "17:00",
             "Runavík": null,
             "Toftir": null,
-            "Strendur": "17:00",
             "Tórshavn Terminal": "17:25"
           }
         },
         {
-          "service_id": "weekend",
+          "service_id": "sat",
           "day_raw": "67",
           "times": {
-            "Tórshavn": "17:40",
+            "Strendur": "18:05",
             "Runavík": "18:20",
             "Toftir": null,
+            "Tórshavn Terminal": "18:40"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "67",
+          "times": {
             "Strendur": "18:05",
+            "Runavík": "18:20",
+            "Toftir": null,
             "Tórshavn Terminal": "18:40"
           }
         },
@@ -118,10 +238,9 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Tórshavn": "18:25",
+            "Strendur": "18:50",
             "Runavík": "19:00",
             "Toftir": "19:05",
-            "Strendur": "18:50",
             "Tórshavn Terminal": "19:25"
           }
         }

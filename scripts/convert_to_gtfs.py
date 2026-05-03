@@ -402,146 +402,15 @@ def build_stop_registry(routes_data, coords):
 
 
 # ---------------------------------------------------------------------------
-# Route-specific data normalisers
+# Generic data normalisers
 # ---------------------------------------------------------------------------
-
-# Day-of-week abbreviations used by route 61 as column headers, mapped to the
-# GTFS service_id that covers that day.
-_ROUTE61_DAY_COLS = {
-    "Mán.": "weekdays",   # Monday
-    "Týs.": "weekdays",   # Tuesday
-    "Mik.": "weekdays",   # Wednesday
-    "Hós.": "weekdays",   # Thursday
-    "Frí.": "weekdays",   # Friday
-    "Ley.": "sat",        # Saturday
-    "Sun.": "sun",        # Sunday
-}
-
-def normalise_route_61(route_data):
-    """
-    Route 61 (Gamlarætt – Hestur ferry) is scraped with day-of-week
-    abbreviations as "stops" and departure times per day as "times".
-    The actual direction is in trip["day_raw"].
-
-    This function rewrites the section so that:
-      - stops = ["Gamlarætt", "Hestur"]  (outbound) or reversed (inbound)
-      - each trip becomes one entry per non-null day column, with a single
-        departure time and the correct service_id.
-    """
-    new_sections = []
-    for sec in route_data.get("sections", []):
-        raw_trips = sec.get("trips", [])
-        outbound_trips = []
-        inbound_trips  = []
-
-        for raw_trip in raw_trips:
-            direction = raw_trip.get("day_raw", "")
-            # Pick the first non-null time across all day columns as the departure
-            times_by_day = raw_trip.get("times", {})
-            # Collect one trip per service_id (combining days that share the same time)
-            per_service: dict[str, str] = {}  # service_id -> time
-            for day_col, service_id in _ROUTE61_DAY_COLS.items():
-                t = times_by_day.get(day_col)
-                if t is None:
-                    continue
-                # If same service_id already has a time, they match — keep first
-                if service_id not in per_service:
-                    per_service[service_id] = t
-
-            is_outbound = "Gamlarætt - Hestur" in direction or not inbound_trips
-            # Use day_raw to distinguish direction; both stops always served
-            if "Hestur" in direction and "Gamlarætt" not in direction.split("-")[0].strip():
-                is_outbound = False
-            # Simpler heuristic: alternate outbound/inbound as they appear
-            # The raw data alternates: G→H, H→G, G→H, H→G …
-            idx = raw_trips.index(raw_trip)
-            is_outbound = (idx % 2 == 0)
-
-            for service_id, dep_time in per_service.items():
-                entry = {
-                    "service_id": service_id,
-                    "times": {"Gamlarætt": dep_time, "Hestur": dep_time},
-                    "_offset_hestur": 15,  # ferry is ~15 min crossing
-                }
-                if is_outbound:
-                    outbound_trips.append(entry)
-                else:
-                    inbound_trips.append(entry)
-
-        # Build proper arrival times: Gamlarætt dep → Hestur arr +15 min
-        def add_offset(trips, from_stop, to_stop):
-            result = []
-            for t in trips:
-                dep = t["times"][from_stop]
-                if dep:
-                    h, m = map(int, dep.split(":"))
-                    arr_m = h * 60 + m + 15
-                    arr = f"{arr_m // 60:02d}:{arr_m % 60:02d}"
-                else:
-                    arr = dep
-                result.append({
-                    "service_id": t["service_id"],
-                    "times": {from_stop: dep, to_stop: arr},
-                })
-            return result
-
-        if outbound_trips:
-            new_sections.append({
-                "heading": sec.get("heading", ""),
-                "seasonal": sec.get("seasonal"),
-                "stops": ["Gamlarætt", "Hestur"],
-                "trips": add_offset(outbound_trips, "Gamlarætt", "Hestur"),
-            })
-        if inbound_trips:
-            new_sections.append({
-                "heading": sec.get("heading", ""),
-                "seasonal": sec.get("seasonal"),
-                "stops": ["Hestur", "Gamlarætt"],
-                "trips": add_offset(inbound_trips, "Hestur", "Gamlarætt"),
-            })
-
-    route_data["sections"] = new_sections
-    return route_data
-
-
-def normalise_route_58(route_data):
-    """
-    Route 58 (Hvannasund – Hattarvík ferry) is scraped with only one real
-    stop ("From Hvannasund") plus a season-label ("Period" / "Winter") as the
-    second "stop".  The destination Hattarvík is never captured.
-
-    This function rewrites each section so stops = ["Hvannasund", "Hattarvík"]
-    and uses a 30-minute crossing estimate for the arrival time at Hattarvík.
-    """
-    new_sections = []
-    for sec in route_data.get("sections", []):
-        new_trips = []
-        for trip in sec.get("trips", []):
-            dep_time = trip["times"].get("From Hvannasund")
-            if not dep_time:
-                continue
-            h, m = map(int, dep_time.split(":"))
-            arr_m = h * 60 + m + 30
-            arr_time = f"{arr_m // 60:02d}:{arr_m % 60:02d}"
-            new_trips.append({
-                "service_id": trip["service_id"],
-                "times": {"Hvannasund": dep_time, "Hattarvík": arr_time},
-            })
-        if new_trips:
-            new_sections.append({
-                "heading": sec.get("heading", ""),
-                "seasonal": sec.get("seasonal"),
-                "stops": ["Hvannasund", "Hattarvík"],
-                "trips": new_trips,
-            })
-    route_data["sections"] = new_sections
-    return route_data
-
 
 FERRY_CROSSING_MINS_BY_ROUTE = {
     "7": 165,   # Tvøroyri ↔ Tórshavn
     "36": 45,   # Sørvágur ↔ Mykines
     "56": 20,   # Klaksvík ↔ Syðradalur
+    "58": 30,   # Hvannasund → Hattarvík
+    "61": 15,   # Gamlarætt ↔ Hestur
     "66": 30,   # Sandur ↔ Skúvoy
     "90": 25,   # Tórshavn ↔ Nólsoy
 }
@@ -579,15 +448,10 @@ def normalise_departure_only_ferry(route_data):
 
 
 def normalise_routes(routes_data):
-    """Apply route-specific normalisers before generic processing."""
+    """Apply generic normalisers before GTFS processing."""
     result = []
     for route in routes_data:
-        if route["route_id"] == "61":
-            route = normalise_route_61(route)
-        elif route["route_id"] == "58":
-            route = normalise_route_58(route)
-        else:
-            route = normalise_departure_only_ferry(route)
+        route = normalise_departure_only_ferry(route)
         result.append(route)
     return result
 

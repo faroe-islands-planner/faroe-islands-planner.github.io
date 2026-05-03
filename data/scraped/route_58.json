@@ -13,40 +13,48 @@
         "raw": "Summer Route: valid from 1st of April to 31st of August"
       },
       "stops": [
-        "From Hvannasund",
-        "Period"
+        "Hvannasund",
+        "Hattarvík"
       ],
       "trips": [
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
           "day_raw": "1T)3T)",
           "times": {
-            "From Hvannasund": "06:00",
-            "Period": null
+            "Hvannasund": "06:00",
+            "Hattarvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "1T)3T)",
+          "times": {
+            "Hvannasund": "06:00",
+            "Hattarvík": null
           }
         },
         {
           "service_id": "daily",
           "day_raw": "x67",
           "times": {
-            "From Hvannasund": "08:45",
-            "Period": null
+            "Hvannasund": "08:45",
+            "Hattarvík": null
           }
         },
         {
           "service_id": "daily",
           "day_raw": "x67",
           "times": {
-            "From Hvannasund": "14:45",
-            "Period": null
+            "Hvannasund": "14:45",
+            "Hattarvík": null
           }
         },
         {
           "service_id": "daily",
           "day_raw": "xT)6T)7T)",
           "times": {
-            "From Hvannasund": "18:30",
-            "Period": null
+            "Hvannasund": "18:30",
+            "Hattarvík": null
           }
         }
       ]
@@ -59,48 +67,48 @@
         "raw": "Winter: Valid from 1. September to 31. Mars"
       },
       "stops": [
-        "From Hvannasund",
-        "Winter"
+        "Hvannasund",
+        "Hattarvík"
       ],
       "trips": [
         {
           "service_id": "weekdays_sat",
           "day_raw": "x6",
           "times": {
-            "From Hvannasund": "08:45",
-            "Winter": null
+            "Hvannasund": "08:45",
+            "Hattarvík": null
           }
         },
         {
           "service_id": "sun",
           "day_raw": "7",
           "times": {
-            "From Hvannasund": "13:00",
-            "Winter": null
+            "Hvannasund": "13:00",
+            "Hattarvík": null
           }
         },
         {
           "service_id": "weekdays_sat",
           "day_raw": "xT)6T)",
           "times": {
-            "From Hvannasund": "14:45",
-            "Winter": null
+            "Hvannasund": "14:45",
+            "Hattarvík": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "5T)",
           "times": {
-            "From Hvannasund": "18:30",
-            "Winter": null
+            "Hvannasund": "18:30",
+            "Hattarvík": null
           }
         },
         {
           "service_id": "daily",
           "day_raw": "xT)6T)7T)",
           "times": {
-            "From Hvannasund": "18:30",
-            "Winter": null
+            "Hvannasund": "18:30",
+            "Hattarvík": null
           }
         }
       ]

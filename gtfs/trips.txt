@@ -31,9 +31,9 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 200,weekdays,200_0003,Oyrarbakki,0
 200,weekdays,200_0004,Oyrarbakki,0
 200,weekdays,200_0005,Oyrarbakki,0
-200,weekdays,200_0006,Oyrarbakki,0
+200,wed,200_0006,Oyrarbakki,0
 200,weekdays,200_0007,Oyrarbakki,0
-200,weekdays,200_0008,Oyrarbakki,0
+200,wed,200_0008,Oyrarbakki,0
 200,weekdays,200_0009,Oyrarbakki,0
 200,weekdays,200_0010,Oyrarbakki,0
 200,weekdays,200_0011,Oyrarbakki,0
@@ -45,7 +45,7 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 200,weekdays,200_0017,Eiði,1
 200,weekdays,200_0018,Eiði,1
 200,weekdays,200_0019,Eiði,1
-200,weekdays,200_0020,Eiði,1
+200,wed,200_0020,Eiði,1
 200,weekdays,200_0021,Eiði,1
 200,weekdays,200_0022,Eiði,1
 200,weekdays,200_0023,Eiði,1
@@ -271,8 +271,8 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 440,sat,440_0008,Toftir,0
 440,sat,440_0009,Toftir,0
 440,weekdays,440_0010,Runavík,0
-440,weekdays,440_0011,Skálafjørður,0
-440,weekdays,440_0012,Toftir,0
+440,fri,440_0011,Skálafjørður,0
+440,fri,440_0012,Toftir,0
 440,daily,440_0013,Toftir,0
 440,weekdays_sun,440_0014,Toftir,0
 440,weekdays,440_0015,Skálafjørður,0
@@ -290,8 +290,8 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 440,sat,440_0027,Strendur,1
 440,sat,440_0028,Søldarfj.,1
 440,weekdays,440_0029,Strendur,1
-440,weekdays,440_0030,Søldarfj.,1
-440,weekdays,440_0031,Strendur,1
+440,fri,440_0030,Søldarfj.,1
+440,fri,440_0031,Strendur,1
 440,daily,440_0032,Strendur,1
 440,weekdays_sun,440_0033,Selatrað,1
 440,weekdays,440_0034,Strendur,1
@@ -306,20 +306,28 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 442,school,442_0004,Runavík,1
 444,school,444_0001,Søldafjørður,0
 444,school,444_0002,Skálafjørður,0
-450,weekdays,450_0001_part1,Toftir,0
-450,weekdays,450_0001_part2,Tórshavn,0
-450,weekdays,450_0002,Tórshavn Terminal,0
-450,sat,450_0003,Tórshavn Terminal,0
-450,weekdays,450_0004,Tórshavn Terminal,0
-450,daily,450_0005_part1,Toftir,0
-450,daily,450_0005_part2,Tórshavn,0
-450,weekdays,450_0006,Tórshavn Terminal,0
-450,weekdays,450_0007,Tórshavn Terminal,0
-450,weekdays,450_0008,Tórshavn Terminal,0
-450,weekend,450_0009_part1,Runavík,0
-450,weekend,450_0009_part2,Tórshavn,0
-450,weekdays,450_0010_part1,Toftir,0
-450,weekdays,450_0010_part2,Tórshavn,0
+450,weekdays,450_0001,Strendur,0
+450,weekdays,450_0002,Strendur,0
+450,sat,450_0003,Strendur,0
+450,weekdays,450_0004,Runavík,0
+450,daily,450_0005,Strendur,0
+450,weekdays,450_0006,Runavík,0
+450,weekdays,450_0007,Strendur,0
+450,weekdays,450_0008,Strendur,0
+450,sat,450_0009,Strendur,0
+450,sun,450_0010,Strendur,0
+450,weekdays,450_0011,Strendur,0
+450,weekdays,450_0012,Tórshavn Terminal,1
+450,weekdays,450_0013,Tórshavn Terminal,1
+450,sat,450_0014,Tórshavn Terminal,1
+450,weekdays,450_0015,Tórshavn Terminal,1
+450,daily,450_0016,Tórshavn Terminal,1
+450,weekdays,450_0017,Tórshavn Terminal,1
+450,weekdays,450_0018,Tórshavn Terminal,1
+450,weekdays,450_0019,Tórshavn Terminal,1
+450,sat,450_0020,Tórshavn Terminal,1
+450,sun,450_0021,Tórshavn Terminal,1
+450,weekdays,450_0022,Tórshavn Terminal,1
 481,school,481_0001,Oyndarfjørður,0
 481,school,481_0002,Oyndarfjørður,0
 481,school,481_0003,Oyndarfjørður,0
@@ -344,44 +352,68 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 504,school,504_0002,Kunoy,0
 504,school,504_0003,Klaksvík,1
 504,school,504_0004,Klaksvík,1
-506,school,506_0001,Syðradalur(ferry terminal),0
-506,weekdays_sat,506_0002,Syðradalur(ferry terminal),0
-506,weekend,506_0003,Syðradalur(ferry terminal),0
-506,weekend,506_0004,Syðradalur(ferry terminal),0
-506,school,506_0005,Syðradalur(ferry terminal),0
-506,daily,506_0006,Syðradalur(ferry terminal),0
-506,school,506_0007,Syðradalur(ferry terminal),0
-506,daily,506_0008,Syðradalur(ferry terminal),0
-506,school,506_0009,Trøllanes,1
-506,weekdays_sat,506_0010,Trøllanes,1
-506,weekend,506_0011,Trøllanes,1
-506,weekend,506_0012,Trøllanes,1
-506,school,506_0013,Trøllanes,1
-506,daily,506_0014,Trøllanes,1
-506,school,506_0015,Trøllanes,1
-506,daily,506_0016,Trøllanes,1
-506,school_summer,506_0017,Trøllanes,0
-506,weekdays_sat_summer,506_0018,Trøllanes,0
-506,school_summer,506_0019,Trøllanes,0
-506,weekend_summer,506_0020,Trøllanes,0
-506,school_summer,506_0021,Trøllanes,0
-506,weekend_summer,506_0022,Trøllanes,0
-506,school_summer,506_0023,Trøllanes,0
-506,weekend_summer,506_0024,Trøllanes,0
-506,school_summer,506_0025,Trøllanes,0
-506,daily_summer,506_0026,Trøllanes,0
-506,daily_summer,506_0027,Trøllanes,0
-506,daily_summer,506_0028,Trøllanes,0
-506,school,506_0029,Syðradalur (Harbour),1
-506,weekdays_sat,506_0030,Syðradalur (Harbour),1
-506,weekend,506_0031,Syðradalur (Harbour),1
-506,school,506_0032,Mikladalur,1
-506,weekend,506_0033,Syðradalur (Harbour),1
-506,school,506_0034,Syðradalur (Harbour),1
-506,weekend,506_0035,Syðradalur (Harbour),1
-506,school,506_0036,Syðradalur (Harbour),1
-506,daily,506_0037,Syðradalur (Harbour),1
-506,daily,506_0038,Syðradalur (Harbour),1
+506,school_summer,506_0001,Trøllanes,0
+506,weekdays_sat_summer,506_0002,Trøllanes,0
+506,tue_summer,506_0003,Trøllanes,0
+506,thu_summer,506_0004,Trøllanes,0
+506,mon_summer,506_0005,Trøllanes,0
+506,wed_summer,506_0006,Trøllanes,0
+506,fri_summer,506_0007,Trøllanes,0
+506,sat_summer,506_0008,Trøllanes,0
+506,sun_summer,506_0009,Trøllanes,0
+506,school_summer,506_0010,Trøllanes,0
+506,sat_summer,506_0011,Trøllanes,0
+506,sun_summer,506_0012,Trøllanes,0
+506,school_summer,506_0013,Trøllanes,0
+506,sat_summer,506_0014,Trøllanes,0
+506,sun_summer,506_0015,Trøllanes,0
+506,school_summer,506_0016,Trøllanes,0
+506,daily_summer,506_0017,Trøllanes,0
+506,daily_summer,506_0018,Trøllanes,0
+506,daily_summer,506_0019,Trøllanes,0
+506,school,506_0020,Syðradalur (Harbour),1
+506,weekdays_sat,506_0021,Syðradalur (Harbour),1
+506,mon,506_0022,Syðradalur (Harbour),1
+506,wed,506_0023,Syðradalur (Harbour),1
+506,fri,506_0024,Syðradalur (Harbour),1
+506,sat,506_0025,Syðradalur (Harbour),1
+506,sun,506_0026,Syðradalur (Harbour),1
+506,school,506_0027,Mikladalur,1
+506,sat,506_0028,Syðradalur (Harbour),1
+506,sun,506_0029,Syðradalur (Harbour),1
+506,school,506_0030,Syðradalur (Harbour),1
+506,sat,506_0031,Syðradalur (Harbour),1
+506,sun,506_0032,Syðradalur (Harbour),1
+506,school,506_0033,Syðradalur (Harbour),1
+506,daily,506_0034,Syðradalur (Harbour),1
+506,daily,506_0035,Syðradalur (Harbour),1
+506,daily,506_0036,Syðradalur (Harbour),1
+506,school_winter,506_0037,Syðradalur(ferry terminal),0
+506,weekdays_sat_winter,506_0038,Syðradalur(ferry terminal),0
+506,mon_winter,506_0039,Syðradalur(ferry terminal),0
+506,wed_winter,506_0040,Syðradalur(ferry terminal),0
+506,fri_winter,506_0041,Syðradalur(ferry terminal),0
+506,sat_winter,506_0042,Syðradalur(ferry terminal),0
+506,sun_winter,506_0043,Syðradalur(ferry terminal),0
+506,sat_winter,506_0044,Syðradalur(ferry terminal),0
+506,sun_winter,506_0045,Syðradalur(ferry terminal),0
+506,school_winter,506_0046,Syðradalur(ferry terminal),0
+506,daily_winter,506_0047,Syðradalur(ferry terminal),0
+506,school_winter,506_0048,Syðradalur(ferry terminal),0
+506,daily_winter,506_0049,Syðradalur(ferry terminal),0
+506,school,506_0050,Trøllanes,1
+506,weekdays_sat,506_0051,Trøllanes,1
+506,mon,506_0052,Trøllanes,1
+506,wed,506_0053,Trøllanes,1
+506,fri,506_0054,Trøllanes,1
+506,sat,506_0055,Trøllanes,1
+506,sun,506_0056,Trøllanes,1
+506,sat,506_0057,Trøllanes,1
+506,sun,506_0058,Trøllanes,1
+506,school,506_0059,Trøllanes,1
+506,daily,506_0060,Trøllanes,1
+506,school,506_0061,Trøllanes,1
+506,daily,506_0062,Trøllanes,1
 56,mon_summer,56_0001,Syðradalur,0
 56,tue_summer,56_0002,Syðradalur,0
 56,wed_summer,56_0003,Syðradalur,0
@@ -544,15 +576,16 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 56,wed_winter,56_0160,Klaksvík,1
 56,thu_winter,56_0161,Klaksvík,1
 56,fri_winter,56_0162,Klaksvík,1
-58,weekdays_summer,58_0001,Hattarvík,0
-58,daily_summer,58_0002,Hattarvík,0
+58,mon_summer,58_0001,Hattarvík,0
+58,wed_summer,58_0002,Hattarvík,0
 58,daily_summer,58_0003,Hattarvík,0
 58,daily_summer,58_0004,Hattarvík,0
-58,weekdays_sat_winter,58_0005,Hattarvík,1
-58,sun_winter,58_0006,Hattarvík,1
-58,weekdays_sat_winter,58_0007,Hattarvík,1
-58,weekdays_winter,58_0008,Hattarvík,1
-58,daily_winter,58_0009,Hattarvík,1
+58,daily_summer,58_0005,Hattarvík,0
+58,weekdays_sat_winter,58_0006,Hattarvík,1
+58,sun_winter,58_0007,Hattarvík,1
+58,weekdays_sat_winter,58_0008,Hattarvík,1
+58,fri_winter,58_0009,Hattarvík,1
+58,daily_winter,58_0010,Hattarvík,1
 600,weekdays,600_0001,Inni í Dal,0
 600,weekdays,600_0002,Sandur,0
 600,weekdays,600_0003,Sandur,0
@@ -584,28 +617,68 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 601,daily,601_0010,Dalur,1
 601,daily,601_0011,Dalur,1
 601,weekdays,601_0012,Dalur,1
-61,weekdays,61_0001,Hestur,0
-61,weekdays,61_0002,Hestur,0
-61,sat,61_0003,Hestur,0
-61,sun,61_0004,Hestur,0
-61,weekdays,61_0005,Hestur,0
-61,sat,61_0006,Hestur,0
-61,sun,61_0007,Hestur,0
-61,weekdays,61_0008,Hestur,0
-61,weekdays,61_0009,Hestur,0
-61,sat,61_0010,Hestur,0
-61,sun,61_0011,Hestur,0
-61,weekdays,61_0012,Gamlarætt,1
-61,weekdays,61_0013,Gamlarætt,1
-61,sat,61_0014,Gamlarætt,1
-61,sun,61_0015,Gamlarætt,1
-61,weekdays,61_0016,Gamlarætt,1
-61,sat,61_0017,Gamlarætt,1
-61,sun,61_0018,Gamlarætt,1
-61,weekdays,61_0019,Gamlarætt,1
-61,weekdays,61_0020,Gamlarætt,1
-61,sat,61_0021,Gamlarætt,1
-61,sun,61_0022,Gamlarætt,1
+61,mon,61_0001,Hestur,0
+61,tue,61_0002,Hestur,0
+61,wed,61_0003,Hestur,0
+61,thu,61_0004,Hestur,0
+61,fri,61_0005,Hestur,0
+61,mon,61_0006,Hestur,0
+61,tue,61_0007,Hestur,0
+61,wed,61_0008,Hestur,0
+61,thu,61_0009,Hestur,0
+61,fri,61_0010,Hestur,0
+61,sat,61_0011,Hestur,0
+61,sun,61_0012,Hestur,0
+61,mon,61_0013,Hestur,0
+61,tue,61_0014,Hestur,0
+61,wed,61_0015,Hestur,0
+61,thu,61_0016,Hestur,0
+61,fri,61_0017,Hestur,0
+61,sat,61_0018,Hestur,0
+61,sun,61_0019,Hestur,0
+61,mon,61_0020,Hestur,0
+61,tue,61_0021,Hestur,0
+61,wed,61_0022,Hestur,0
+61,thu,61_0023,Hestur,0
+61,fri,61_0024,Hestur,0
+61,mon,61_0025,Hestur,0
+61,tue,61_0026,Hestur,0
+61,wed,61_0027,Hestur,0
+61,thu,61_0028,Hestur,0
+61,fri,61_0029,Hestur,0
+61,sat,61_0030,Hestur,0
+61,sun,61_0031,Hestur,0
+61,mon,61_0032,Gamlarætt,1
+61,tue,61_0033,Gamlarætt,1
+61,wed,61_0034,Gamlarætt,1
+61,thu,61_0035,Gamlarætt,1
+61,fri,61_0036,Gamlarætt,1
+61,mon,61_0037,Gamlarætt,1
+61,tue,61_0038,Gamlarætt,1
+61,wed,61_0039,Gamlarætt,1
+61,thu,61_0040,Gamlarætt,1
+61,fri,61_0041,Gamlarætt,1
+61,sat,61_0042,Gamlarætt,1
+61,sun,61_0043,Gamlarætt,1
+61,mon,61_0044,Gamlarætt,1
+61,tue,61_0045,Gamlarætt,1
+61,wed,61_0046,Gamlarætt,1
+61,thu,61_0047,Gamlarætt,1
+61,fri,61_0048,Gamlarætt,1
+61,sat,61_0049,Gamlarætt,1
+61,sun,61_0050,Gamlarætt,1
+61,mon,61_0051,Gamlarætt,1
+61,tue,61_0052,Gamlarætt,1
+61,wed,61_0053,Gamlarætt,1
+61,thu,61_0054,Gamlarætt,1
+61,fri,61_0055,Gamlarætt,1
+61,mon,61_0056,Gamlarætt,1
+61,tue,61_0057,Gamlarætt,1
+61,wed,61_0058,Gamlarætt,1
+61,thu,61_0059,Gamlarætt,1
+61,fri,61_0060,Gamlarætt,1
+61,sat,61_0061,Gamlarætt,1
+61,sun,61_0062,Gamlarætt,1
 650,weekdays,650_0001_part1,Glasir,0
 650,weekdays,650_0002,Farstøðin,0
 650,daily,650_0003,Farstøðin,0
@@ -724,68 +797,110 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 7,wed,7_0034,Tvøroyri,1
 7,thu,7_0035,Tvøroyri,1
 7,sat,7_0036,Tvøroyri,1
-700,weekdays,700_0001,Tvøroyri,0
-700,weekdays,700_0002,Tvøroyri,0
-700,weekdays,700_0003,Tvøroyri,0
-700,weekdays_sun,700_0004,Tvøroyri,0
-700,sat,700_0005,Ferjulegan,0
+700,mon,700_0001,Tvøroyri,0
+700,wed,700_0002,Tvøroyri,0
+700,thu,700_0003,Tvøroyri,0
+700,tue,700_0004,Tvøroyri,0
+700,fri,700_0005,Tvøroyri,0
 700,weekdays,700_0006,Tvøroyri,0
-700,weekdays,700_0007,Tvøroyri,0
-700,weekdays,700_0008,Tvøroyri,0
-700,weekdays,700_0009,Tvøroyri,0
-700,weekdays,700_0010,Tvøroyri,0
-700,sun,700_0011,Ferjulegan,0
-700,sat,700_0012,Ferjulegan,0
-700,weekdays,700_0013,Ferjulegan,0
-700,weekdays,700_0014,Ferjulegan,0
-700,sun,700_0015,Ferjulegan,0
-700,sat,700_0016,Ferjulegan,0
-700,weekdays,700_0017,Sumba,1
-700,weekdays,700_0018,Vágur,1
-700,sat,700_0019,Vágur,1
-700,weekdays,700_0020,Vágur,1
-700,sun,700_0021,Vágur,1
-700,weekdays,700_0022,Vágur,1
-700,weekdays,700_0023,Sumba,1
-700,weekdays,700_0024,Vágur,1
-700,weekdays,700_0025,Sumba,1
-700,weekdays,700_0026,Vágur,1
-700,sat,700_0027,Ferjulega,1
+700,weekdays_sun,700_0007,Tvøroyri,0
+700,sat,700_0008,Ferjulegan,0
+700,mon,700_0009,Tvøroyri,0
+700,wed,700_0010,Tvøroyri,0
+700,thu,700_0011,Tvøroyri,0
+700,weekdays,700_0012,Tvøroyri,0
+700,weekdays,700_0013,Tvøroyri,0
+700,weekdays,700_0014,Tvøroyri,0
+700,weekdays,700_0015,Tvøroyri,0
+700,sun,700_0016,Ferjulegan,0
+700,mon,700_0017,Ferjulegan,0
+700,wed,700_0018,Ferjulegan,0
+700,sat,700_0019,Ferjulegan,0
+700,fri,700_0020,Ferjulegan,0
+700,tue,700_0021,Ferjulegan,0
+700,sun,700_0022,Ferjulegan,0
+700,mon,700_0023,Ferjulegan,0
+700,wed,700_0024,Ferjulegan,0
+700,thu,700_0025,Ferjulegan,0
+700,sat,700_0026,Ferjulegan,0
+700,weekdays,700_0027,Sumba,1
 700,weekdays,700_0028,Vágur,1
-700,weekdays,700_0029,Ferjulega,1
-700,sun,700_0030,Vágur,1
-700,sat,700_0031,Vágur,1
-701,weekdays,701_0001,Øravík,0
-701,weekdays,701_0002,Øravík,0
-701,weekdays,701_0003,Øravík,0
-701,sun,701_0004,Øravík,0
-701,sat,701_0005,Sandvík,0
-701,weekdays,701_0006,Sandvík,0
-701,weekdays,701_0007,Sandvík,0
-701,sun,701_0008,Sandvík,0
-701,weekdays,701_0009,Sandvík,0
-701,weekdays,701_0010,Sandvík,0
-701,weekdays_sun,701_0011,Sandvík,0
-701,sat,701_0012,Sandvík,0
-701,weekdays,701_0013,Sandvík,0
-701,weekdays,701_0014,Sandvík,0
+700,sat,700_0029,Sumba,1
+700,mon,700_0030,Sumba,1
+700,wed,700_0031,Sumba,1
+700,thu,700_0032,Sumba,1
+700,sun,700_0033,Sumba,1
+700,weekdays,700_0034,Sumba,1
+700,weekdays,700_0035,Sumba,1
+700,weekdays,700_0036,Sumba,1
+700,weekdays,700_0037,Sumba,1
+700,weekdays,700_0038,Sumba,1
+700,mon,700_0039,Sumba,1
+700,wed,700_0040,Sumba,1
+700,sat,700_0041,Sumba,1
+700,fri,700_0042,Sumba,1
+700,tue,700_0043,Sumba,1
+700,sun,700_0044_part1,Porkeri,1
+700,sun,700_0044_part2,Sumba,1
+700,mon,700_0045_part1,Lopra,1
+700,wed,700_0046_part1,Lopra,1
+700,thu,700_0047_part1,Lopra,1
+700,sat,700_0048_part1,Lopra,1
+701,mon,701_0001,Øravík,0
+701,wed,701_0002,Øravík,0
+701,thu,701_0003,Øravík,0
+701,tue,701_0004,Øravík,0
+701,fri,701_0005,Øravík,0
+701,weekdays,701_0006,Øravík,0
+701,sun,701_0007,Øravík,0
+701,sat,701_0008,Sandvík,0
+701,mon,701_0009,Sandvík,0
+701,wed,701_0010,Sandvík,0
+701,thu,701_0011,Sandvík,0
+701,mon,701_0012,Sandvík,0
+701,wed,701_0013,Sandvík,0
+701,fri,701_0014,Sandvík,0
 701,sun,701_0015,Sandvík,0
-701,sat,701_0016,Sandvík,0
-701,weekdays,701_0017,Ferjulegan,1
-701,weekdays,701_0018,Ferjulegan,1
-701,weekdays,701_0019,Tvøroyri,1
-701,sun,701_0020,Ferjulegan,1
-701,sat,701_0021,Fámjin,1
-701,weekdays,701_0022,Fámjin,1
-701,sun,701_0023,Fámjin,1
-701,weekdays,701_0024,Tvøroyri,1
-701,weekdays,701_0025,Fámjin,1
-701,weekdays_sun,701_0026,Fámjin,1
-701,sat,701_0027,Fámjin,1
-701,weekdays,701_0028,Fámjin,1
-701,weekdays,701_0029,Fámjin,1
-701,sun,701_0030,Fámjin,1
-701,sat,701_0031,Fámjin,1
+701,mon,701_0016,Sandvík,0
+701,wed,701_0017,Sandvík,0
+701,thu,701_0018,Sandvík,0
+701,weekdays,701_0019,Sandvík,0
+701,weekdays_sun,701_0020,Sandvík,0
+701,mon,701_0021,Sandvík,0
+701,wed,701_0022,Sandvík,0
+701,sat,701_0023,Sandvík,0
+701,tue,701_0024,Sandvík,0
+701,fri,701_0025,Sandvík,0
+701,sun,701_0026,Sandvík,0
+701,mon,701_0027,Sandvík,0
+701,wed,701_0028,Sandvík,0
+701,thu,701_0029,Sandvík,0
+701,sat,701_0030,Sandvík,0
+701,mon,701_0031,Ferjulegan,1
+701,wed,701_0032,Ferjulegan,1
+701,thu,701_0033,Ferjulegan,1
+701,tue,701_0034,Ferjulegan,1
+701,fri,701_0035,Ferjulegan,1
+701,weekdays,701_0036,Tvøroyri,1
+701,sun,701_0037,Ferjulegan,1
+701,sat,701_0038,Fámjin,1
+701,mon,701_0039,Fámjin,1
+701,wed,701_0040,Fámjin,1
+701,thu,701_0041,Fámjin,1
+701,sun,701_0042,Fámjin,1
+701,weekdays,701_0043,Tvøroyri,1
+701,weekdays,701_0044,Fámjin,1
+701,weekdays_sun,701_0045,Fámjin,1
+701,mon,701_0046,Fámjin,1
+701,wed,701_0047,Fámjin,1
+701,sat,701_0048,Fámjin,1
+701,tue,701_0049,Fámjin,1
+701,fri,701_0050,Fámjin,1
+701,sun,701_0051,Fámjin,1
+701,mon,701_0052,Fámjin,1
+701,wed,701_0053,Fámjin,1
+701,thu,701_0054,Fámjin,1
+701,sat,701_0055,Fámjin,1
 90,mon,90_0001,Nólsoy,0
 90,tue,90_0002,Nólsoy,0
 90,wed,90_0003,Nólsoy,0

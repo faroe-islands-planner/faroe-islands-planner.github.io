@@ -146,7 +146,7 @@
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "5",
           "times": {
             "Selatrað": null,
@@ -159,7 +159,7 @@
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "5",
           "times": {
             "Selatrað": null,
@@ -408,7 +408,7 @@
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "5",
           "times": {
             "Toftir": "12:55",
@@ -421,7 +421,7 @@
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "5",
           "times": {
             "Toftir": null,

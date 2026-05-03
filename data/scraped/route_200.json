@@ -51,7 +51,7 @@
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "wed",
           "day_raw": "3&nbsp;",
           "times": {
             "Eiði": "11:50",
@@ -67,7 +67,7 @@
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "wed",
           "day_raw": "3&nbsp;",
           "times": {
             "Eiði": "12:50",
@@ -173,7 +173,7 @@
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "wed",
           "day_raw": "3&nbsp;",
           "times": {
             "Oyrarbakki": "13:15",
