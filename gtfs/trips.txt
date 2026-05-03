@@ -219,48 +219,48 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 401,weekdays,401_0006,Klaksvík,1
 401,weekdays,401_0007,Klaksvík,1
 401,weekdays,401_0008,Klaksvík,1
-410,weekdays,410_0001,To Tórshavn,0
+410,weekdays,410_0001,Gøtudalur,0
 410,weekdays,410_0002,Gøtudalur,0
-410,weekdays,410_0003,To Tórshavn,0
-410,weekdays,410_0004,To Klaksvík,0
-410,weekdays,410_0005,To Tórshavn,0
+410,weekdays,410_0003,Leirvík,0
+410,weekdays,410_0004,Leirvík,0
+410,weekdays,410_0005,Gøtudalur,0
 410,weekdays,410_0006,Kambsdalur,0
-410,weekdays,410_0007,,0
-410,weekdays_sat,410_0008,To Tórshavn,0
-410,weekdays,410_0009,To Klaksvík,0
-410,weekdays,410_0010,,0
+410,weekdays,410_0007,Leirvík,0
+410,weekdays_sat,410_0008,Gøtudalur,0
+410,weekdays,410_0009,Leirvík,0
+410,weekdays,410_0010,Leirvík,0
 410,weekdays,410_0011,Kambsdalur,0
-410,weekdays_sun,410_0012,To Tórshavn,0
+410,weekdays_sun,410_0012,Leirvík,0
 410,weekdays,410_0013,Leirvík,0
-410,daily,410_0014,To Tórshavn,0
+410,daily,410_0014,Leirvík,0
 410,weekdays,410_0015,Gøtudalur,0
 410,weekdays,410_0016,Gøtudalur,0
-410,weekdays,410_0017,To Tórshavn,0
-410,weekdays,410_0018,To Tórshavn,0
-410,weekdays,410_0019,To Tórshavn,0
-410,weekdays,410_0020,To Klaksvík,0
-410,daily,410_0021,To Tórshavn,0
-410,weekdays,410_0022,To Tórshavn,0
-410,daily,410_0023,To Klaksvík,0
-410,weekdays,410_0024,from Klaksví,1
-410,weekdays,410_0025,from Tórshavn,1
+410,weekdays,410_0017,Gøtudalur,0
+410,weekdays,410_0018,Leirvík,0
+410,weekdays,410_0019,Leirvík,0
+410,weekdays,410_0020,Leirvík,0
+410,daily,410_0021,Leirvík,0
+410,weekdays,410_0022,Leirvík,0
+410,daily,410_0023,Leirvík,0
+410,weekdays,410_0024,Fuglafjørður,1
+410,weekdays,410_0025,Fuglafjørður,1
 410,weekdays,410_0026,Fuglafjørður,1
 410,weekdays,410_0027,Fuglafjørður,1
-410,weekdays_sat,410_0028,from Tórshavn,1
-410,weekdays,410_0029,from Tórshavn,1
+410,weekdays_sat,410_0028,Fuglafjørður,1
+410,weekdays,410_0029,Fuglafjørður,1
 410,weekdays,410_0030,Fuglafjørður,1
-410,weekdays_sun,410_0031,from Tórshavn,1
-410,daily,410_0032,from Tórshavn,1
+410,weekdays_sun,410_0031,Fuglafjørður,1
+410,daily,410_0032,Fuglafjørður,1
 410,weekdays,410_0033,Fuglafjørður,1
-410,weekdays,410_0034,from Tórshavn,1
+410,weekdays,410_0034,Fuglafjørður,1
 410,weekdays,410_0035,Fuglafjørður,1
-410,weekdays,410_0036,from Tórshavn,1
+410,weekdays,410_0036,Fuglafjørður,1
 410,weekdays,410_0037,Fuglafjørður,1
-410,weekdays,410_0038,from Tórshavn,1
-410,daily,410_0039,from Tórshavn,1
-410,weekdays,410_0040,from Tórshavn,1
+410,weekdays,410_0038,Fuglafjørður,1
+410,daily,410_0039,Fuglafjørður,1
+410,weekdays,410_0040,Fuglafjørður,1
 410,daily,410_0041,Fuglafjørður,1
-410,daily,410_0042,from Tórshavn,1
+410,daily,410_0042,Fuglafjørður,1
 440,weekdays,440_0001,Runavík,0
 440,weekdays,440_0002,Skálafjørður,0
 440,weekdays,440_0003,Runavík,0
@@ -627,13 +627,67 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 66,wed,66_0003,Skúvoy,0
 66,thu,66_0004,Skúvoy,0
 66,fri,66_0005,Skúvoy,0
-66,tue,66_0006,Skúvoy,0
-66,thu,66_0007,Skúvoy,0
-66,mon,66_0008,Sandur,1
-66,tue,66_0009,Sandur,1
-66,wed,66_0010,Sandur,1
-66,thu,66_0011,Sandur,1
-66,fri,66_0012,Sandur,1
+66,mon,66_0006,Skúvoy,0
+66,tue,66_0007,Skúvoy,0
+66,wed,66_0008,Skúvoy,0
+66,thu,66_0009,Skúvoy,0
+66,fri,66_0010,Skúvoy,0
+66,sat,66_0011,Skúvoy,0
+66,sun,66_0012,Skúvoy,0
+66,sat,66_0013,Skúvoy,0
+66,sun,66_0014,Skúvoy,0
+66,mon,66_0015,Skúvoy,0
+66,tue,66_0016,Skúvoy,0
+66,wed,66_0017,Skúvoy,0
+66,thu,66_0018,Skúvoy,0
+66,fri,66_0019,Skúvoy,0
+66,sat,66_0020,Skúvoy,0
+66,sun,66_0021,Skúvoy,0
+66,mon,66_0022,Skúvoy,0
+66,tue,66_0023,Skúvoy,0
+66,wed,66_0024,Skúvoy,0
+66,thu,66_0025,Skúvoy,0
+66,fri,66_0026,Skúvoy,0
+66,sat,66_0027,Skúvoy,0
+66,sun,66_0028,Skúvoy,0
+66,wed,66_0029,Skúvoy,0
+66,thu,66_0030,Skúvoy,0
+66,fri,66_0031,Skúvoy,0
+66,sat,66_0032,Skúvoy,0
+66,sun,66_0033,Skúvoy,0
+66,mon,66_0034,Sandur,1
+66,tue,66_0035,Sandur,1
+66,wed,66_0036,Sandur,1
+66,thu,66_0037,Sandur,1
+66,fri,66_0038,Sandur,1
+66,mon,66_0039,Sandur,1
+66,tue,66_0040,Sandur,1
+66,wed,66_0041,Sandur,1
+66,thu,66_0042,Sandur,1
+66,fri,66_0043,Sandur,1
+66,sat,66_0044,Sandur,1
+66,sun,66_0045,Sandur,1
+66,sat,66_0046,Sandur,1
+66,sun,66_0047,Sandur,1
+66,mon,66_0048,Sandur,1
+66,tue,66_0049,Sandur,1
+66,wed,66_0050,Sandur,1
+66,thu,66_0051,Sandur,1
+66,fri,66_0052,Sandur,1
+66,sat,66_0053,Sandur,1
+66,sun,66_0054,Sandur,1
+66,mon,66_0055,Sandur,1
+66,tue,66_0056,Sandur,1
+66,wed,66_0057,Sandur,1
+66,thu,66_0058,Sandur,1
+66,fri,66_0059,Sandur,1
+66,sat,66_0060,Sandur,1
+66,sun,66_0061,Sandur,1
+66,wed,66_0062,Sandur,1
+66,thu,66_0063,Sandur,1
+66,fri,66_0064,Sandur,1
+66,sat,66_0065,Sandur,1
+66,sun,66_0066,Sandur,1
 7,mon,7_0001,Tórshavn,0
 7,tue,7_0002,Tórshavn,0
 7,wed,7_0003,Tórshavn,0
@@ -701,30 +755,37 @@ route_id,service_id,trip_id,trip_headsign,direction_id
 700,weekdays,700_0029,Ferjulega,1
 700,sun,700_0030,Vágur,1
 700,sat,700_0031,Vágur,1
-701,sat,701_0004,Hvalba,0
-701,weekdays,701_0005,Hvalba,0
+701,weekdays,701_0001,Øravík,0
+701,weekdays,701_0002,Øravík,0
+701,weekdays,701_0003,Øravík,0
+701,sun,701_0004,Øravík,0
+701,sat,701_0005,Sandvík,0
 701,weekdays,701_0006,Sandvík,0
-701,sun,701_0007,Hvalba,0
-701,weekdays,701_0008,Hvalba,0
-701,weekdays,701_0009,Hvalba,0
-701,weekdays_sun,701_0010,Hvalba,0
-701,sat,701_0011,Hvalba,0
-701,weekdays,701_0012,Hvalba,0
-701,weekdays,701_0013,Hvalba,0
-701,sun,701_0014,Hvalba,0
-701,sat,701_0015,Hvalba,0
-701,weekdays,701_0016,Ferjulegan,1
+701,weekdays,701_0007,Sandvík,0
+701,sun,701_0008,Sandvík,0
+701,weekdays,701_0009,Sandvík,0
+701,weekdays,701_0010,Sandvík,0
+701,weekdays_sun,701_0011,Sandvík,0
+701,sat,701_0012,Sandvík,0
+701,weekdays,701_0013,Sandvík,0
+701,weekdays,701_0014,Sandvík,0
+701,sun,701_0015,Sandvík,0
+701,sat,701_0016,Sandvík,0
 701,weekdays,701_0017,Ferjulegan,1
-701,weekdays,701_0018,Tvøroyri,1
-701,sun,701_0019,Ferjulegan,1
-701,sat,701_0020,Ferjulegan,1
-701,weekdays,701_0021,Tvøroyri,1
-701,sun,701_0022,Ferjulegan,1
-701,weekdays,701_0023,Tvøroyri,1
-701,weekdays,701_0024,Ferjulegan,1
-701,weekdays_sun,701_0025,Ferjulegan,1
-701,sat,701_0026,Ferjulegan,1
-701,weekdays,701_0028,Ferjulegan,1
+701,weekdays,701_0018,Ferjulegan,1
+701,weekdays,701_0019,Tvøroyri,1
+701,sun,701_0020,Ferjulegan,1
+701,sat,701_0021,Fámjin,1
+701,weekdays,701_0022,Fámjin,1
+701,sun,701_0023,Fámjin,1
+701,weekdays,701_0024,Tvøroyri,1
+701,weekdays,701_0025,Fámjin,1
+701,weekdays_sun,701_0026,Fámjin,1
+701,sat,701_0027,Fámjin,1
+701,weekdays,701_0028,Fámjin,1
+701,weekdays,701_0029,Fámjin,1
+701,sun,701_0030,Fámjin,1
+701,sat,701_0031,Fámjin,1
 90,mon,90_0001,Nólsoy,0
 90,tue,90_0002,Nólsoy,0
 90,wed,90_0003,Nólsoy,0

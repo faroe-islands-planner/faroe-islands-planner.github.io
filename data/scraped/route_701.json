@@ -6,6 +6,7 @@
       "heading": "701 Fámjin - Tvøroyri - Sandvík",
       "seasonal": null,
       "stops": [
+        "Fámjin",
         "Øravík",
         "Ferjulega",
         "Tvøroyri",
@@ -18,6 +19,7 @@
           "service_id": "weekdays",
           "day_raw": "134",
           "times": {
+            "Fámjin": "05:30",
             "Øravík": "05:45",
             "Ferjulega": null,
             "Tvøroyri": null,
@@ -30,6 +32,7 @@
           "service_id": "weekdays",
           "day_raw": "25",
           "times": {
+            "Fámjin": "06:30",
             "Øravík": "06:45",
             "Ferjulega": null,
             "Tvøroyri": null,
@@ -42,7 +45,21 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Fámjin": "07:15",
             "Øravík": "07:30",
+            "Ferjulega": null,
+            "Tvøroyri": null,
+            "Nes": null,
+            "Hvalba": null,
+            "Sandvík": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Fámjin": "08:00",
+            "Øravík": "08:15",
             "Ferjulega": null,
             "Tvøroyri": null,
             "Nes": null,
@@ -54,30 +71,33 @@
           "service_id": "sat",
           "day_raw": "6",
           "times": {
+            "Fámjin": "08:40",
             "Øravík": null,
             "Ferjulega": "09:00",
             "Tvøroyri": "09:10",
             "Nes": null,
             "Hvalba": "09:35",
-            "Sandvík": null
+            "Sandvík": "09:40"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "134",
           "times": {
+            "Fámjin": "10:30",
             "Øravík": null,
             "Ferjulega": "10:50",
             "Tvøroyri": "11:00",
             "Nes": null,
             "Hvalba": "11:25",
-            "Sandvík": null
+            "Sandvík": "11:30"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "135",
           "times": {
+            "Fámjin": null,
             "Øravík": null,
             "Ferjulega": null,
             "Tvøroyri": "13:10",
@@ -90,108 +110,117 @@
           "service_id": "sun",
           "day_raw": "7",
           "times": {
+            "Fámjin": "12:30",
             "Øravík": null,
             "Ferjulega": "12:50",
             "Tvøroyri": "13:00",
             "Nes": null,
             "Hvalba": "13:25",
-            "Sandvík": null
+            "Sandvík": "13:30"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "134",
           "times": {
+            "Fámjin": null,
             "Øravík": null,
             "Ferjulega": null,
             "Tvøroyri": "14:30",
             "Nes": null,
             "Hvalba": "14:55",
-            "Sandvík": null
+            "Sandvík": "15:00"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Fámjin": "14:40",
             "Øravík": null,
             "Ferjulega": "15:00",
             "Tvøroyri": "15:10",
             "Nes": null,
             "Hvalba": "15:35",
-            "Sandvík": null
+            "Sandvík": "15:40"
           }
         },
         {
           "service_id": "weekdays_sun",
           "day_raw": "x7",
           "times": {
+            "Fámjin": "16:35",
             "Øravík": null,
-            "Ferjulega": null,
+            "Ferjulega": "17:00",
             "Tvøroyri": "17:05",
             "Nes": null,
             "Hvalba": "17:30",
-            "Sandvík": null
+            "Sandvík": "17:35"
           }
         },
         {
           "service_id": "sat",
           "day_raw": "136",
           "times": {
+            "Fámjin": "17:40",
             "Øravík": null,
             "Ferjulega": "18:00",
             "Tvøroyri": "18:10",
             "Nes": null,
             "Hvalba": "18:35",
-            "Sandvík": null
+            "Sandvík": "18:40"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "2",
           "times": {
+            "Fámjin": null,
             "Øravík": null,
             "Ferjulega": "20:20",
             "Tvøroyri": "20:30",
             "Nes": null,
             "Hvalba": "21:05",
-            "Sandvík": null
+            "Sandvík": "21:10"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "5",
           "times": {
+            "Fámjin": "20:10",
             "Øravík": null,
             "Ferjulega": "20:20",
             "Tvøroyri": "20:30",
             "Nes": null,
             "Hvalba": "21:05",
-            "Sandvík": null
+            "Sandvík": "21:10"
           }
         },
         {
           "service_id": "sun",
           "day_raw": "7",
           "times": {
+            "Fámjin": null,
             "Øravík": null,
             "Ferjulega": "22:00",
             "Tvøroyri": "22:10",
             "Nes": null,
             "Hvalba": "22:35",
-            "Sandvík": null
+            "Sandvík": "22:40"
           }
         },
         {
           "service_id": "sat",
           "day_raw": "1346",
           "times": {
+            "Fámjin": null,
             "Øravík": null,
             "Ferjulega": "23:15",
             "Tvøroyri": "23:25",
             "Nes": null,
             "Hvalba": "23:50",
-            "Sandvík": null
+            "Sandvík": "23:55"
           }
         }
       ]
@@ -200,6 +229,7 @@
       "heading": null,
       "seasonal": null,
       "stops": [
+        "Sandvík",
         "Hvalba",
         "Nes",
         "Tvøroyri",
@@ -212,6 +242,7 @@
           "service_id": "weekdays",
           "day_raw": "134",
           "times": {
+            "Sandvík": "05:10",
             "Hvalba": "05:15",
             "Nes": null,
             "Tvøroyri": "05:40",
@@ -224,6 +255,7 @@
           "service_id": "weekdays",
           "day_raw": "25",
           "times": {
+            "Sandvík": "06:10",
             "Hvalba": "06:15",
             "Nes": null,
             "Tvøroyri": "06:40",
@@ -236,6 +268,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Sandvík": "07:15",
             "Hvalba": "07:20",
             "Nes": null,
             "Tvøroyri": "07:45",
@@ -248,6 +281,7 @@
           "service_id": "sun",
           "day_raw": "7",
           "times": {
+            "Sandvík": "07:40",
             "Hvalba": "07:45",
             "Nes": null,
             "Tvøroyri": "08:10",
@@ -260,42 +294,46 @@
           "service_id": "sat",
           "day_raw": "6",
           "times": {
+            "Sandvík": "08:20",
             "Hvalba": "08:25",
             "Nes": null,
             "Tvøroyri": "08:50",
             "Ferjulegan": "09:00",
             "Øravík": null,
-            "Fámjin": null
+            "Fámjin": "09:20"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "134",
           "times": {
+            "Sandvík": "10:10",
             "Hvalba": "10:15",
             "Nes": null,
             "Tvøroyri": "10:40",
-            "Ferjulegan": null,
+            "Ferjulegan": "10:50",
             "Øravík": null,
-            "Fámjin": null
+            "Fámjin": "11:10"
           }
         },
         {
           "service_id": "sun",
           "day_raw": "7",
           "times": {
+            "Sandvík": null,
             "Hvalba": null,
             "Nes": null,
             "Tvøroyri": "13:10",
             "Ferjulegan": "13:20",
             "Øravík": null,
-            "Fámjin": null
+            "Fámjin": "13:40"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Sandvík": "14:00",
             "Hvalba": "14:05",
             "Nes": null,
             "Tvøroyri": "14:30",
@@ -308,60 +346,91 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Sandvík": "14:50",
             "Hvalba": "14:55",
             "Nes": null,
             "Tvøroyri": "15:10",
             "Ferjulegan": "15:20",
             "Øravík": null,
-            "Fámjin": null
+            "Fámjin": "15:40"
           }
         },
         {
           "service_id": "weekdays_sun",
           "day_raw": "x7",
           "times": {
+            "Sandvík": "16:35",
             "Hvalba": "16:40",
             "Nes": null,
             "Tvøroyri": "17:05",
             "Ferjulegan": "17:15",
             "Øravík": null,
-            "Fámjin": null
+            "Fámjin": "17:35"
           }
         },
         {
           "service_id": "sat",
           "day_raw": "136",
           "times": {
+            "Sandvík": "17:20",
             "Hvalba": "17:25",
             "Nes": null,
             "Tvøroyri": "17:50",
             "Ferjulegan": "18:00",
             "Øravík": null,
-            "Fámjin": null
+            "Fámjin": "18:20"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "2",
           "times": {
+            "Sandvík": null,
             "Hvalba": null,
             "Nes": null,
             "Tvøroyri": "20:50",
-            "Ferjulegan": null,
+            "Ferjulegan": "21:00",
             "Øravík": null,
-            "Fámjin": null
+            "Fámjin": "21:20"
           }
         },
         {
           "service_id": "weekdays",
           "day_raw": "5",
           "times": {
+            "Sandvík": "19:50",
             "Hvalba": "19:55",
             "Nes": null,
             "Tvøroyri": "20:20",
             "Ferjulegan": "20:30",
             "Øravík": null,
-            "Fámjin": null
+            "Fámjin": "20:50"
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "7",
+          "times": {
+            "Sandvík": null,
+            "Hvalba": null,
+            "Nes": null,
+            "Tvøroyri": null,
+            "Ferjulegan": "22:00",
+            "Øravík": null,
+            "Fámjin": "22:20"
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "1346",
+          "times": {
+            "Sandvík": null,
+            "Hvalba": null,
+            "Nes": null,
+            "Tvøroyri": null,
+            "Ferjulegan": "23:15",
+            "Øravík": null,
+            "Fámjin": "23:35"
           }
         }
       ]

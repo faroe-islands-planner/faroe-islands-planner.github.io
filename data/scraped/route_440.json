@@ -6,6 +6,7 @@
       "heading": "440 Skálafjarðarleiðin",
       "seasonal": null,
       "stops": [
+        "Selatrað",
         "Strendur",
         "Skála",
         "Skálafjørður",
@@ -18,6 +19,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": null,
             "Skála": null,
             "Skálafjørður": null,
@@ -30,6 +32,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": "06:45",
             "Skála": "06:55",
             "Skálafjørður": "07:08",
@@ -42,6 +45,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": "07:10",
             "Skála": "07:15",
             "Skálafjørður": "07:30",
@@ -54,6 +58,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": "07:05",
             "Strendur": "07:30",
             "Skála": "07:35",
             "Skálafjørður": "07:50",
@@ -66,6 +71,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": null,
             "Skála": null,
             "Skálafjørður": null,
@@ -78,6 +84,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": "07:45",
             "Skála": "07:50",
             "Skálafjørður": "08:00",
@@ -90,6 +97,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": "08:35",
             "Strendur": "08:55",
             "Skála": "09:00",
             "Skálafjørður": "09:20",
@@ -102,6 +110,7 @@
           "service_id": "sat",
           "day_raw": "6",
           "times": {
+            "Selatrað": null,
             "Strendur": "09:05",
             "Skála": "09:10",
             "Skálafjørður": "09:25",
@@ -114,6 +123,7 @@
           "service_id": "sat",
           "day_raw": "6",
           "times": {
+            "Selatrað": null,
             "Strendur": null,
             "Skála": null,
             "Skálafjørður": null,
@@ -126,6 +136,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": null,
             "Skála": null,
             "Skálafjørður": null,
@@ -138,6 +149,7 @@
           "service_id": "weekdays",
           "day_raw": "5",
           "times": {
+            "Selatrað": null,
             "Strendur": "12:45",
             "Skála": "12:50",
             "Skálafjørður": "13:10",
@@ -150,6 +162,7 @@
           "service_id": "weekdays",
           "day_raw": "5",
           "times": {
+            "Selatrað": null,
             "Strendur": null,
             "Skála": null,
             "Skálafjørður": null,
@@ -162,6 +175,7 @@
           "service_id": "daily",
           "day_raw": "x67",
           "times": {
+            "Selatrað": null,
             "Strendur": "13:30",
             "Skála": "13:35",
             "Skálafjørður": "13:45",
@@ -174,6 +188,7 @@
           "service_id": "weekdays_sun",
           "day_raw": "x7",
           "times": {
+            "Selatrað": null,
             "Strendur": "14:25",
             "Skála": "14:30",
             "Skálafjørður": "14:50",
@@ -186,6 +201,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": "15:15",
             "Skála": "15:20",
             "Skálafjørður": "15:40",
@@ -198,6 +214,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": null,
             "Skála": null,
             "Skálafjørður": null,
@@ -210,6 +227,7 @@
           "service_id": "weekdays_sat",
           "day_raw": "x6",
           "times": {
+            "Selatrað": "15:30",
             "Strendur": "16:05",
             "Skála": "16:10",
             "Skálafjørður": "16:30",
@@ -222,6 +240,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": "17:00",
             "Skála": "17:05",
             "Skálafjørður": "17:25",
@@ -234,6 +253,7 @@
           "service_id": "daily",
           "day_raw": "x67",
           "times": {
+            "Selatrað": null,
             "Strendur": "18:05",
             "Skála": "18:10",
             "Skálafjørður": "18:30",
@@ -246,6 +266,7 @@
           "service_id": "daily",
           "day_raw": "x67",
           "times": {
+            "Selatrað": null,
             "Strendur": null,
             "Skála": null,
             "Skálafjørður": null,
@@ -258,6 +279,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Selatrað": null,
             "Strendur": "18:55",
             "Skála": "19:00",
             "Skálafjørður": "19:25",
@@ -276,7 +298,6 @@
         "Runavík",
         "Søldarfj.",
         "Skálafjørður",
-        "",
         "Skála",
         "Strendur",
         "Selatrað"
@@ -290,7 +311,6 @@
             "Runavík": "06:05",
             "Søldarfj.": "06:15",
             "Skálafjørður": "06:25",
-            "": null,
             "Skála": "06:35",
             "Strendur": "06:50",
             "Selatrað": null
@@ -304,7 +324,6 @@
             "Runavík": "07:00",
             "Søldarfj.": "07:15",
             "Skálafjørður": "07:20",
-            "": null,
             "Skála": "07:25",
             "Strendur": "07:45",
             "Selatrað": null
@@ -318,7 +337,6 @@
             "Runavík": "07:40",
             "Søldarfj.": "07:50",
             "Skálafjørður": null,
-            "": null,
             "Skála": null,
             "Strendur": null,
             "Selatrað": null
@@ -332,7 +350,6 @@
             "Runavík": "07:55",
             "Søldarfj.": "08:10",
             "Skálafjørður": "08:15",
-            "": null,
             "Skála": "08:20",
             "Strendur": "08:40",
             "Selatrað": null
@@ -346,7 +363,6 @@
             "Runavík": "08:45",
             "Søldarfj.": "09:00",
             "Skálafjørður": "09:25",
-            "": null,
             "Skála": "09:30",
             "Strendur": null,
             "Selatrað": null
@@ -360,7 +376,6 @@
             "Runavík": "09:00",
             "Søldarfj.": "09:10",
             "Skálafjørður": "09:25",
-            "": null,
             "Skála": "09:30",
             "Strendur": "09:40",
             "Selatrað": null
@@ -374,7 +389,6 @@
             "Runavík": "10:10",
             "Søldarfj.": "10:25",
             "Skálafjørður": null,
-            "": null,
             "Skála": null,
             "Strendur": null,
             "Selatrað": null
@@ -388,7 +402,6 @@
             "Runavík": "11:45",
             "Søldarfj.": "11:55",
             "Skálafjørður": "12:00",
-            "": null,
             "Skála": "12:10",
             "Strendur": "12:20",
             "Selatrað": null
@@ -402,7 +415,6 @@
             "Runavík": "13:00",
             "Søldarfj.": "13:15",
             "Skálafjørður": null,
-            "": null,
             "Skála": null,
             "Strendur": null,
             "Selatrað": null
@@ -416,7 +428,6 @@
             "Runavík": null,
             "Søldarfj.": null,
             "Skálafjørður": "13:10",
-            "": null,
             "Skála": "13:15",
             "Strendur": "13:30",
             "Selatrað": null
@@ -430,7 +441,6 @@
             "Runavík": "13:40",
             "Søldarfj.": "13:50",
             "Skálafjørður": "14:00",
-            "": null,
             "Skála": "14:05",
             "Strendur": "14:20",
             "Selatrað": null
@@ -444,7 +454,6 @@
             "Runavík": "14:30",
             "Søldarfj.": "14:40",
             "Skálafjørður": "14:50",
-            "": null,
             "Skála": "14:55",
             "Strendur": "15:10",
             "Selatrað": "15:30"
@@ -456,10 +465,9 @@
           "times": {
             "Toftir": null,
             "Runavík": "15:20",
-            "Søldarfj.": null,
+            "Søldarfj.": "15:30",
             "Skálafjørður": "15:40",
-            "": null,
-            "Skála": null,
+            "Skála": "15:45",
             "Strendur": "16:05",
             "Selatrað": null
           }
@@ -472,7 +480,6 @@
             "Runavík": "16:05",
             "Søldarfj.": "16:15",
             "Skálafjørður": "16:30",
-            "": null,
             "Skála": "16:40",
             "Strendur": "17:00",
             "Selatrað": null
@@ -486,7 +493,6 @@
             "Runavík": "17:00",
             "Søldarfj.": "17:10",
             "Skálafjørður": "17:25",
-            "": null,
             "Skála": "17:35",
             "Strendur": "17:50",
             "Selatrað": null
@@ -500,7 +506,6 @@
             "Runavík": "18:20",
             "Søldarfj.": "18:35",
             "Skálafjørður": null,
-            "": null,
             "Skála": null,
             "Strendur": null,
             "Selatrað": null
@@ -514,7 +519,6 @@
             "Runavík": null,
             "Søldarfj.": null,
             "Skálafjørður": "18:30",
-            "": null,
             "Skála": "18:35",
             "Strendur": "18:50",
             "Selatrað": null
@@ -528,7 +532,6 @@
             "Runavík": "19:00",
             "Søldarfj.": "19:10",
             "Skálafjørður": "19:20",
-            "": null,
             "Skála": "19:25",
             "Strendur": "19:40",
             "Selatrað": null
@@ -550,6 +553,14 @@
           "times": {
             "Selatrað": null,
             "Runavík": "07:00"
+          }
+        },
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Selatrað": null,
+            "Runavík": "12:30"
           }
         },
         {

@@ -230,7 +230,7 @@ def extract_section_headings_and_tables(html):
 # Time normalisation
 # ---------------------------------------------------------------------------
 
-TIME_RE = re.compile(r'\b(\d{1,2})[:.](\d{2})(?!\d)')
+TIME_RE = re.compile(r'(?<!\d)(\d{1,2})\s*[:.]\s*(\d{2})')
 
 def clean_time(raw: str):
     """Extract HH:MM from a cell that may have notes/superscripts."""
@@ -350,7 +350,7 @@ def parse_bus_table_sections(rows, route_id, is_school=False):
     # Find header row: first row where col[1] looks like a stop name (not a time)
     header_row_idx = 1
     for i, row in enumerate(rows):
-        if len(row) > 1 and row[0].strip().lower() in ("day", "dag", ""):
+        if len(row) > 1 and row[0].strip().lower() in ("day", "days", "dag", ""):
             header_row_idx = i
             break
 
@@ -370,15 +370,20 @@ def parse_bus_table_sections(rows, route_id, is_school=False):
             has_note_col = (non_time / max(len(note_candidates), 1)) > 0.6
         break
 
+    first_header_label = clean_stop_name(raw_header_cells[0]) if raw_header_cells else ""
+    if first_header_label:
+        has_note_col = False
+
     # If header has an extra col at position 1 that is blank/note, adjust
-    if has_note_col and raw_header_cells and not is_time_cell(raw_header_cells[0]):
+    if has_note_col and raw_header_cells and not first_header_label:
         raw_header_cells = raw_header_cells[1:]  # drop note column from stops
 
-    stop_columns = [
-        (idx, clean_stop_name(html_lib.unescape(stop)))
-        for idx, stop in enumerate(raw_header_cells)
-        if stop and not is_time_cell(stop)
-    ]
+    stop_columns = []
+    for idx, stop in enumerate(raw_header_cells):
+        stop_label = clean_stop_name(html_lib.unescape(stop))
+        if not stop_label or is_time_cell(stop_label) or is_connection_column_label(stop_label):
+            continue
+        stop_columns.append((idx, stop_label))
     sections = []
 
     for section_columns in split_duplicate_stop_columns(stop_columns):
@@ -421,6 +426,15 @@ def parse_bus_table(rows, route_id, is_school=False):
     return sections[0] if sections else {"stops": [], "trips": []}
 
 
+def is_connection_column_label(label: str) -> bool:
+    label = clean_stop_name(html_lib.unescape(label)).lower()
+    return (
+        label.startswith("to ") or
+        label.startswith("from ") or
+        "connection" in label
+    )
+
+
 def clean_split_stop_label(label: str) -> str:
     label = html_lib.unescape(label)
     label = clean_stop_name(label)
@@ -451,7 +465,7 @@ def split_paired_direction_bus_table(rows):
     header_row_idx = None
     for i, row in enumerate(rows):
         first_cell = clean_stop_name(html_lib.unescape(row[0])).lower() if row else ""
-        if len(row) > 1 and first_cell in ("day", "dag", ""):
+        if len(row) > 1 and first_cell in ("day", "days", "dag", ""):
             header_row_idx = i
             break
     if header_row_idx is None:

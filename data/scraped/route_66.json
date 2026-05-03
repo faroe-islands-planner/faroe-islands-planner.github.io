@@ -14,6 +14,46 @@
           "service_id": "mon",
           "day_raw": "Monday",
           "times": {
+            "Sandur": "06:15",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sandur": "06:15",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sandur": "06:15",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Sandur": "06:15",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Sandur": "06:15",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
             "Sandur": "08:30",
             "Skúvoy": null
           }
@@ -51,8 +91,56 @@
           }
         },
         {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sandur": "08:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sandur": "08:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sandur": "10:35",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sandur": "10:35",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Sandur": "15:00",
+            "Skúvoy": null
+          }
+        },
+        {
           "service_id": "tue",
           "day_raw": "Tuesday",
+          "times": {
+            "Sandur": "15:00",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
           "times": {
             "Sandur": "15:00",
             "Skúvoy": null
@@ -63,6 +151,126 @@
           "day_raw": "Thursday",
           "times": {
             "Sandur": "15:00",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Sandur": "15:00",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sandur": "15:00",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sandur": "15:00",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Sandur": "16:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sandur": "16:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sandur": "16:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Sandur": "16:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Sandur": "16:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sandur": "16:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sandur": "16:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sandur": "18:15",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Sandur": "18:15",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Sandur": "18:15",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sandur": "18:15",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sandur": "18:15",
             "Skúvoy": null
           }
         }
@@ -76,6 +284,46 @@
         "Sandur"
       ],
       "trips": [
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Skúvoy": "06:50",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Skúvoy": "06:50",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Skúvoy": "06:50",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Skúvoy": "06:50",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Skúvoy": "06:50",
+            "Sandur": null
+          }
+        },
         {
           "service_id": "mon",
           "day_raw": "Monday",
@@ -113,6 +361,190 @@
           "day_raw": "Friday",
           "times": {
             "Skúvoy": "09:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Skúvoy": "09:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Skúvoy": "09:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Skúvoy": "11:05",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Skúvoy": "11:05",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Skúvoy": "15:30",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Skúvoy": "15:30",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Skúvoy": "15:30",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Skúvoy": "15:30",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Skúvoy": "15:30",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Skúvoy": "15:30",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Skúvoy": "15:30",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Skúvoy": "17:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Skúvoy": "17:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Skúvoy": "17:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Skúvoy": "17:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Skúvoy": "17:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Skúvoy": "17:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Skúvoy": "17:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Skúvoy": "18:45",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Skúvoy": "18:45",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Skúvoy": "18:45",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Skúvoy": "18:45",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Skúvoy": "18:45",
             "Sandur": null
           }
         }
