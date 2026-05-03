@@ -11,299 +11,107 @@
       ],
       "trips": [
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
           "day_raw": "Monday",
           "times": {
             "Tórshavn": "06:45",
-            "Nólsoy": "07:15"
+            "Nólsoy": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Tórshavn": "07:45",
-            "Nólsoy": "08:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Tórshavn": "12:30",
-            "Nólsoy": "13:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Tórshavn": "16:20",
-            "Nólsoy": "16:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Tórshavn": "18:00",
-            "Nólsoy": "18:25"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Tórshavn": "22:00",
-            "Nólsoy": "22:25"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "tue",
           "day_raw": "Tuesday",
           "times": {
             "Tórshavn": "06:45",
-            "Nólsoy": "07:15"
+            "Nólsoy": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Tórshavn": "07:45",
-            "Nólsoy": "08:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Tórshavn": "12:30",
-            "Nólsoy": "13:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Tórshavn": "16:20",
-            "Nólsoy": "16:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Tórshavn": "18:00",
-            "Nólsoy": "18:25"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Tórshavn": "22:00",
-            "Nólsoy": "22:25"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "wed",
           "day_raw": "Wednesday",
           "times": {
             "Tórshavn": "06:45",
-            "Nólsoy": "07:15"
+            "Nólsoy": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tórshavn": "06:45",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tórshavn": "06:45",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tórshavn": "07:45",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Tórshavn": "07:45",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "wed",
           "day_raw": "Wednesday",
           "times": {
             "Tórshavn": "07:45",
-            "Nólsoy": "08:15"
+            "Nólsoy": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tórshavn": "07:45",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tórshavn": "07:45",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tórshavn": "07:45",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "wed",
           "day_raw": "Wednesday",
           "times": {
             "Tórshavn": "09:30",
-            "Nólsoy": "10:30"
+            "Nólsoy": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Tórshavn": "12:30",
-            "Nólsoy": "13:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Tórshavn": "16:20",
-            "Nólsoy": "16:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Tórshavn": "18:00",
-            "Nólsoy": "18:25"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Tórshavn": "22:00",
-            "Nólsoy": "22:25"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Tórshavn": "06:45",
-            "Nólsoy": "07:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Tórshavn": "07:45",
-            "Nólsoy": "08:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Tórshavn": "12:30",
-            "Nólsoy": "13:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Tórshavn": "16:20",
-            "Nólsoy": "16:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Tórshavn": "18:00",
-            "Nólsoy": "18:25"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Tórshavn": "22:00",
-            "Nólsoy": "22:25"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Tórshavn": "06:45",
-            "Nólsoy": "07:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Tórshavn": "07:45",
-            "Nólsoy": "08:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "Friday",
           "times": {
             "Tórshavn": "09:30",
-            "Nólsoy": "10:30"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Tórshavn": "12:30",
-            "Nólsoy": "13:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Tórshavn": "16:20",
-            "Nólsoy": "16:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Tórshavn": "18:00",
-            "Nólsoy": "18:25"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Tórshavn": "22:00",
-            "Nólsoy": "22:25"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Tórshavn": "07:45",
-            "Nólsoy": "08:15"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Tórshavn": "12:30",
-            "Nólsoy": "13:00"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Tórshavn": "16:20",
-            "Nólsoy": "16:50"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Tórshavn": "19:00",
-            "Nólsoy": "19:25"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Tórshavn": "22:00",
-            "Nólsoy": "22:25"
+            "Nólsoy": null
           }
         },
         {
@@ -311,7 +119,55 @@
           "day_raw": "Sunday",
           "times": {
             "Tórshavn": "09:30",
-            "Nólsoy": "09:55"
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tórshavn": "12:30",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Tórshavn": "12:30",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tórshavn": "12:30",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tórshavn": "12:30",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tórshavn": "12:30",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tórshavn": "12:30",
+            "Nólsoy": null
           }
         },
         {
@@ -319,7 +175,55 @@
           "day_raw": "Sunday",
           "times": {
             "Tórshavn": "13:00",
-            "Nólsoy": "13:25"
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tórshavn": "16:20",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Tórshavn": "16:20",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tórshavn": "16:20",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tórshavn": "16:20",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tórshavn": "16:20",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tórshavn": "16:20",
+            "Nólsoy": null
           }
         },
         {
@@ -327,7 +231,55 @@
           "day_raw": "Sunday",
           "times": {
             "Tórshavn": "16:20",
-            "Nólsoy": "16:50"
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tórshavn": "18:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Tórshavn": "18:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tórshavn": "18:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tórshavn": "18:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tórshavn": "18:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tórshavn": "19:00",
+            "Nólsoy": null
           }
         },
         {
@@ -335,7 +287,55 @@
           "day_raw": "Sunday",
           "times": {
             "Tórshavn": "19:00",
-            "Nólsoy": "19:25"
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tórshavn": "22:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Tórshavn": "22:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tórshavn": "22:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tórshavn": "22:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tórshavn": "22:00",
+            "Nólsoy": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tórshavn": "22:00",
+            "Nólsoy": null
           }
         },
         {
@@ -343,63 +343,427 @@
           "day_raw": "Sunday",
           "times": {
             "Tórshavn": "22:00",
-            "Nólsoy": "22:25"
+            "Nólsoy": null
           }
         }
       ]
     },
     {
-      "heading": null,
+      "heading": "90 Tórshavn - Nólsoy",
       "seasonal": null,
       "stops": [
-        "Exceptions:"
+        "Nólsoy",
+        "Tórshavn"
       ],
       "trips": [
         {
-          "service_id": "weekdays",
-          "day_raw": "Good Friday",
+          "service_id": "mon",
+          "day_raw": "Monday",
           "times": {
-            "Exceptions:": "09:30"
+            "Nólsoy": "07:15",
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Easter Day",
+          "service_id": "tue",
+          "day_raw": "Tuesday",
           "times": {
-            "Exceptions:": "09:30"
+            "Nólsoy": "07:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Nólsoy": "07:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Nólsoy": "07:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Nólsoy": "07:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Nólsoy": "08:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Nólsoy": "08:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Nólsoy": "08:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Nólsoy": "08:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Nólsoy": "08:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Nólsoy": "08:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Nólsoy": "10:30",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Nólsoy": "10:30",
+            "Tórshavn": null
           }
         },
         {
           "service_id": "sun",
-          "day_raw": "St Olaf´s Eve 28/7",
+          "day_raw": "Sunday",
           "times": {
-            "Exceptions:": "08:30"
+            "Nólsoy": "09:55",
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Christmas Eve",
+          "service_id": "mon",
+          "day_raw": "Monday",
           "times": {
-            "Exceptions:": "13:00"
+            "Nólsoy": "13:15",
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Christmas Day",
+          "service_id": "tue",
+          "day_raw": "Tuesday",
           "times": {
-            "Exceptions:": "09:30"
+            "Nólsoy": "13:00",
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "New Year´s Eve",
+          "service_id": "wed",
+          "day_raw": "Wednesday",
           "times": {
-            "Exceptions:": "13:00"
+            "Nólsoy": "13:00",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Nólsoy": "13:15",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Nólsoy": "13:00",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Nólsoy": "13:00",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Nólsoy": "13:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Nólsoy": "16:50",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Nólsoy": "16:50",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Nólsoy": "16:50",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Nólsoy": "16:50",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Nólsoy": "16:50",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Nólsoy": "16:50",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Nólsoy": "16:50",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Nólsoy": "18:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Nólsoy": "18:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Nólsoy": "18:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Nólsoy": "18:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Nólsoy": "18:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Nólsoy": "19:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Nólsoy": "19:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Nólsoy": "22:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Nólsoy": "22:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Nólsoy": "22:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Nólsoy": "22:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Nólsoy": "22:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Nólsoy": "22:25",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Nólsoy": "22:25",
+            "Tórshavn": null
           }
         }
       ]
     }
   ],
-  "deviations": [],
+  "deviations": [
+    {
+      "day": "Broytingar",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "Maundy Thursday",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Good Friday",
+      "change": "Tórshavn 09:30, kl 13:00 &amp; 22:00 and Nólsoy 09:55, 13:25 &amp; 22:20"
+    },
+    {
+      "day": "Easter Day",
+      "change": "Tórshavn 09:30, 13:00 &amp; 22:00 and Nólsoy 09:55, 13:25 &amp; 22:20"
+    },
+    {
+      "day": "2nd Easter Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "General Prayer Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Christ´s Ascension Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "2nd Whit Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "St Olaf´s Eve 28/7",
+      "change": "Tórshavn – Nólsoy kl. 08:30, 09:30, 11:30 , 20:00 &amp; 23:00. Nólsoy - Tórshavn kl. 09:00, 10:00, 12:00 , 20:25 &amp; 23:25."
+    },
+    {
+      "day": "St Olaf´s Day 29/7",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "Ovastevna 2025",
+      "change": "&nbsp;"
+    },
+    {
+      "day": "Christmas Eve",
+      "change": "Like Sunday: last departure from Tórshavn at 13:00 and from Nólsoy at 13:25."
+    },
+    {
+      "day": "Christmas Day",
+      "change": "From Tórshavn 9:30 and 15:30.From Nólsoy at 10:00 and 16:00"
+    },
+    {
+      "day": "Boxing Day",
+      "change": "Like Sundays"
+    },
+    {
+      "day": "New Year´s Eve",
+      "change": "Like Sunday: last departure from Tórshavn at 13:00 and from Nólsoy at 13:25."
+    },
+    {
+      "day": "New Year´s Day",
+      "change": "Like Sundays"
+    }
+  ],
   "route_name": "90 T&#xF3;rshavn - N&#xF3;lsoy"
 }

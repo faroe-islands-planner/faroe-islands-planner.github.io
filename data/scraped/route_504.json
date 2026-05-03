@@ -8,6 +8,33 @@
       "stops": [
         "Klaksvík",
         "Haraldssund",
+        "Kunoy"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "&nbsp;x",
+          "times": {
+            "Klaksvík": "07:10",
+            "Haraldssund": "07:20",
+            "Kunoy": "07:30"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "&nbsp;xT",
+          "times": {
+            "Klaksvík": "17:10",
+            "Haraldssund": "17:25",
+            "Kunoy": "17:40"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "504 Kunoy - Klaksvík",
+      "seasonal": null,
+      "stops": [
         "Kunoy",
         "Haraldssund",
         "Klaksvík"
@@ -17,18 +44,18 @@
           "service_id": "school",
           "day_raw": "&nbsp;x",
           "times": {
-            "Klaksvík": "08:00",
+            "Kunoy": "07:30",
             "Haraldssund": "07:40",
-            "Kunoy": "07:30"
+            "Klaksvík": "08:00"
           }
         },
         {
           "service_id": "school",
           "day_raw": "&nbsp;xT",
           "times": {
-            "Klaksvík": "18:10",
+            "Kunoy": "17:40",
             "Haraldssund": "17:50",
-            "Kunoy": "17:40"
+            "Klaksvík": "18:10"
           }
         }
       ]

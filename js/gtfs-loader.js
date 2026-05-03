@@ -171,6 +171,7 @@ export async function loadGTFS() {
       const from = stops[i];
       const to   = stops[i + 1];
       if (from.dep_mins === null || to.arr_mins === null) continue;
+      if (to.arr_mins < from.dep_mins) continue;
       connections.push({
         dep_stop:    from.stop_id,   // already remapped
         dep_mins:    from.dep_mins,

@@ -11,59 +11,109 @@
       ],
       "trips": [
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
           "day_raw": "Monday",
           "times": {
             "Sandur": "08:30",
-            "Skúvoy": "09:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Sandur": "08:30",
-            "Skúvoy": "09:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Sandur": "15:00",
             "Skúvoy": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sandur": "08:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "wed",
           "day_raw": "Wednesday",
           "times": {
             "Sandur": "08:30",
-            "Skúvoy": "09:00"
+            "Skúvoy": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "thu",
           "day_raw": "Thursday",
           "times": {
             "Sandur": "08:30",
-            "Skúvoy": "09:00"
+            "Skúvoy": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Sandur": "08:30",
+            "Skúvoy": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
           "times": {
             "Sandur": "15:00",
             "Skúvoy": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Sandur": "15:00",
+            "Skúvoy": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": "66 Sandur - Skúvoy",
+      "seasonal": null,
+      "stops": [
+        "Skúvoy",
+        "Sandur"
+      ],
+      "trips": [
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Skúvoy": "09:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Skúvoy": "09:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Skúvoy": "09:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Skúvoy": "09:00",
+            "Sandur": null
+          }
+        },
+        {
+          "service_id": "fri",
           "day_raw": "Friday",
           "times": {
-            "Sandur": "08:30",
-            "Skúvoy": "09:00"
+            "Skúvoy": "09:00",
+            "Sandur": null
           }
         }
       ]

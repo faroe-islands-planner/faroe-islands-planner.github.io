@@ -11,111 +11,135 @@
       ],
       "trips": [
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
           "day_raw": "Monday",
           "times": {
             "Tvøroyri": "06:00",
-            "Tórshavn": "08:45"
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Tvøroyri": "11:30",
-            "Tórshavn": "16:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Tvøroyri": "18:45",
-            "Tórshavn": "21:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "tue",
           "day_raw": "Tuesday",
           "times": {
             "Tvøroyri": "07:00",
-            "Tórshavn": "13:00"
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tvøroyri": "06:00",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tvøroyri": "06:00",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tvøroyri": "07:00",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Tvøroyri": "08:30",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tvøroyri": "11:30",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "tue",
           "day_raw": "Tuesday",
           "times": {
             "Tvøroyri": "16:00",
-            "Tórshavn": "19:00"
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Tvøroyri": "06:00",
-            "Tórshavn": "08:45"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "wed",
           "day_raw": "Wednesday",
           "times": {
             "Tvøroyri": "11:30",
-            "Tórshavn": "16:00"
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tvøroyri": "11:30",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tvøroyri": "16:00",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tvøroyri": "09:30",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Tvøroyri": "17:30",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tvøroyri": "18:45",
+            "Tórshavn": null
+          }
+        },
+        {
+          "service_id": "wed",
           "day_raw": "Wednesday",
           "times": {
             "Tvøroyri": "18:45",
-            "Tórshavn": "21:15"
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Tvøroyri": "06:00",
-            "Tórshavn": "08:45"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Tvøroyri": "11:30",
-            "Tórshavn": "14:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "thu",
           "day_raw": "Thursday",
           "times": {
             "Tvøroyri": "17:30",
-            "Tórshavn": "21:15"
+            "Tórshavn": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Tvøroyri": "07:00",
-            "Tórshavn": "13:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Tvøroyri": "16:00",
-            "Tórshavn": "18:30"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "Friday",
           "times": {
             "Tvøroyri": "21:00",
@@ -126,40 +150,162 @@
           "service_id": "sat",
           "day_raw": "Saturday",
           "times": {
-            "Tvøroyri": "09:30",
-            "Tórshavn": "07:00"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
             "Tvøroyri": "18:30",
-            "Tórshavn": "16:00"
+            "Tórshavn": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": "7 Suðuroy - Tórshavn",
+      "seasonal": null,
+      "stops": [
+        "Tórshavn",
+        "Tvøroyri"
+      ],
+      "trips": [
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tórshavn": "08:45",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Tórshavn": "13:00",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tórshavn": "08:45",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tórshavn": "08:45",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tórshavn": "13:00",
+            "Tvøroyri": null
           }
         },
         {
           "service_id": "sat",
           "day_raw": "Saturday",
           "times": {
-            "Tvøroyri": null,
-            "Tórshavn": "21:15"
+            "Tórshavn": "07:00",
+            "Tvøroyri": null
           }
         },
         {
           "service_id": "sun",
           "day_raw": "Sunday",
           "times": {
-            "Tvøroyri": "08:30",
-            "Tórshavn": "11:00"
+            "Tórshavn": "11:00",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tórshavn": "16:00",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Tórshavn": "19:00",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tórshavn": "16:00",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tórshavn": "14:15",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Tórshavn": "18:30",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tórshavn": "16:00",
+            "Tvøroyri": null
           }
         },
         {
           "service_id": "sun",
           "day_raw": "Sunday",
           "times": {
-            "Tvøroyri": "17:30",
-            "Tórshavn": "20:00"
+            "Tórshavn": "20:00",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Tórshavn": "21:15",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Tórshavn": "21:15",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Tórshavn": "21:15",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Tórshavn": "21:15",
+            "Tvøroyri": null
           }
         }
       ]

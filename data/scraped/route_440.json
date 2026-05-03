@@ -279,8 +279,7 @@
         "",
         "Skála",
         "Strendur",
-        "Selatrað",
-        "Runavík"
+        "Selatrað"
       ],
       "trips": [
         {
@@ -288,7 +287,7 @@
           "day_raw": "x",
           "times": {
             "Toftir": "06:00",
-            "Runavík": "07:00",
+            "Runavík": "06:05",
             "Søldarfj.": "06:15",
             "Skálafjørður": "06:25",
             "": null,
@@ -302,7 +301,7 @@
           "day_raw": "x",
           "times": {
             "Toftir": "06:55",
-            "Runavík": null,
+            "Runavík": "07:00",
             "Søldarfj.": "07:15",
             "Skálafjørður": "07:20",
             "": null,
@@ -316,7 +315,7 @@
           "day_raw": "x",
           "times": {
             "Toftir": "07:35",
-            "Runavík": null,
+            "Runavík": "07:40",
             "Søldarfj.": "07:50",
             "Skálafjørður": null,
             "": null,
@@ -330,7 +329,7 @@
           "day_raw": "x",
           "times": {
             "Toftir": null,
-            "Runavík": null,
+            "Runavík": "07:55",
             "Søldarfj.": "08:10",
             "Skálafjørður": "08:15",
             "": null,
@@ -344,7 +343,7 @@
           "day_raw": "x",
           "times": {
             "Toftir": "08:40",
-            "Runavík": null,
+            "Runavík": "08:45",
             "Søldarfj.": "09:00",
             "Skálafjørður": "09:25",
             "": null,
@@ -358,7 +357,7 @@
           "day_raw": "6",
           "times": {
             "Toftir": "08:55",
-            "Runavík": null,
+            "Runavík": "09:00",
             "Søldarfj.": "09:10",
             "Skálafjørður": "09:25",
             "": null,
@@ -372,7 +371,7 @@
           "day_raw": "6",
           "times": {
             "Toftir": "10:05",
-            "Runavík": null,
+            "Runavík": "10:10",
             "Søldarfj.": "10:25",
             "Skálafjørður": null,
             "": null,
@@ -386,7 +385,7 @@
           "day_raw": "x",
           "times": {
             "Toftir": null,
-            "Runavík": null,
+            "Runavík": "11:45",
             "Søldarfj.": "11:55",
             "Skálafjørður": "12:00",
             "": null,
@@ -400,7 +399,7 @@
           "day_raw": "5",
           "times": {
             "Toftir": "12:55",
-            "Runavík": null,
+            "Runavík": "13:00",
             "Søldarfj.": "13:15",
             "Skálafjørður": null,
             "": null,
@@ -428,7 +427,7 @@
           "day_raw": "x67",
           "times": {
             "Toftir": "13:35",
-            "Runavík": null,
+            "Runavík": "13:40",
             "Søldarfj.": "13:50",
             "Skálafjørður": "14:00",
             "": null,
@@ -442,7 +441,7 @@
           "day_raw": "x7",
           "times": {
             "Toftir": "14:25",
-            "Runavík": null,
+            "Runavík": "14:30",
             "Søldarfj.": "14:40",
             "Skálafjørður": "14:50",
             "": null,
@@ -456,7 +455,7 @@
           "day_raw": "x",
           "times": {
             "Toftir": null,
-            "Runavík": null,
+            "Runavík": "15:20",
             "Søldarfj.": null,
             "Skálafjørður": "15:40",
             "": null,
@@ -470,7 +469,7 @@
           "day_raw": "x6",
           "times": {
             "Toftir": "15:55",
-            "Runavík": null,
+            "Runavík": "16:05",
             "Søldarfj.": "16:15",
             "Skálafjørður": "16:30",
             "": null,
@@ -484,7 +483,7 @@
           "day_raw": "x",
           "times": {
             "Toftir": "16:55",
-            "Runavík": null,
+            "Runavík": "17:00",
             "Søldarfj.": "17:10",
             "Skálafjørður": "17:25",
             "": null,
@@ -498,7 +497,7 @@
           "day_raw": "x67",
           "times": {
             "Toftir": "18:15",
-            "Runavík": null,
+            "Runavík": "18:20",
             "Søldarfj.": "18:35",
             "Skálafjørður": null,
             "": null,
@@ -526,13 +525,39 @@
           "day_raw": "x",
           "times": {
             "Toftir": "18:55",
-            "Runavík": null,
+            "Runavík": "19:00",
             "Søldarfj.": "19:10",
             "Skálafjørður": "19:20",
             "": null,
             "Skála": "19:25",
             "Strendur": "19:40",
             "Selatrað": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Selatrað",
+        "Runavík"
+      ],
+      "trips": [
+        {
+          "service_id": "weekdays",
+          "day_raw": "x",
+          "times": {
+            "Selatrað": null,
+            "Runavík": "07:00"
+          }
+        },
+        {
+          "service_id": "weekdays_sun",
+          "day_raw": "x7",
+          "times": {
+            "Selatrað": "15:30",
+            "Runavík": null
           }
         }
       ]
