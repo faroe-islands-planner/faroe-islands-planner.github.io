@@ -57,11 +57,19 @@ ROUTE_META = {
     "701": {"type": "bus",     "long_name": "701 Fámjin – Tvøroyri – Sandvík"},
 }
 
+# Same colours as the site (the --*-color variables in index.html, which the maps
+# and badges use). Text colour = black or white, whichever is more legible on it.
 TYPE_COLORS = {
-    "ferry":   "4db8ff",
-    "bus":     "4dff8a",
-    "express": "d48dff",
-    "airport": "ffb84d",
+    "ferry":   "8ED4D7",
+    "bus":     "85C584",
+    "express": "EAB3D6",
+    "airport": "9C82BF",
+}
+TYPE_TEXT_COLORS = {
+    "ferry":   "FFFFFF",
+    "bus":     "000000",
+    "express": "000000",
+    "airport": "000000",
 }
 
 # GTFS route_type codes
@@ -94,9 +102,9 @@ COORDS = {
     "Kollafjørður Tunnel":          (62.1050, -6.9650),
     "Kollafjarðadalur":             (62.1170, -6.9830),
     "Kollafjarðadalur við Effo":    (62.1170, -6.9830),
-    "Kvívík":                       (62.1167, -7.1150),
+    "Kvívík":                       (62.1186, -7.0765),  # corrected Nov 2026 (OSM bus stop)
     "Vestmanna":                    (62.1552, -7.1750),
-    "Hósvík":                       (62.1300, -6.9533),
+    "Hósvík":                       (62.1518, -6.9437),  # corrected Nov 2026 (OSM bus stop)
     "Hvalvík":                      (62.1870, -7.0363),
     "Oyri":                         (62.2017, -6.9933),
     "Oyrarbakki":                   (62.2050, -7.0000),
@@ -110,8 +118,8 @@ COORDS = {
     # Eysturoy (Skálafjørður peninsula — west side N→S)
     "Selatrað":                     (62.1601, -6.8779),
     "Strendur":                     (62.1095, -6.7612),
-    "Skála":                        (62.0767, -6.7217),
-    "Skálafjørður":                 (62.1133, -6.7867),
+    "Skála":                        (62.1632, -6.7873),  # corrected Nov 2026 (OSM village)
+    "Skálafjørður":                 (62.1953, -6.8557),  # corrected Nov 2026 (OSM bus stop)
     # Eysturoy (Skálafjørður peninsula — east side N→S)
     "Søldarfjørður":                (62.1575, -6.7526),
     "Runavík":                      (62.1084, -6.7217),
@@ -124,7 +132,7 @@ COORDS = {
     "Oyndarfjørður":                (62.2772, -6.8541),
     "Fuglafjørður":                 (62.2438, -6.8133),
     "Kambsdalur":                   (62.2204, -6.8088),
-    "Gøtudalur":                    (62.1300, -6.7550),
+    "Gøtudalur":                    (62.2048, -6.7622),  # corrected Nov 2026 (road junction Leirvík/Søldarfjørður/Fuglafjørður)
     "Leirvík":                      (62.2096, -6.7079),
     # Norðoyar
     "Klaksvík":                     (62.2255, -6.5838),
@@ -134,7 +142,7 @@ COORDS = {
     "Viðareiði":                    (62.3602, -6.5355),
     # Kalsoy
     "Syðradalur (Harbour)":         (62.2453, -6.6678),
-    "Húsar":                        (62.2767, -6.7000),
+    "Húsar":                        (62.2652, -6.6965),  # corrected Nov 2026 (OSM bus stop)
     "Mikladalur":                   (62.3352, -6.7661),
     "Trøllanes":                    (62.3613, -6.7875),
     # Svínoy / Fugloy
@@ -150,7 +158,7 @@ COORDS = {
     # Mykines
     "Mykines":                      (62.1043, -7.6476),
     # Nólsoy
-    "Nólsoy":                       (61.9854, -6.6531),
+    "Nólsoy":                       (62.0097, -6.6736),  # corrected Nov 2026 (OSM village (ferry harbour))
     # Hestur
     "Hestur":                       (61.9556, -6.8831),
     # Sandoy
@@ -198,8 +206,9 @@ STOP_ALIASES = {
     "On Oyrabakka":                 "Oyrarbakki",
     "Í Tjørnuvík":                  "Tjørnuvík",
     "From Hvannasund":              "Hvannasund",
-    "from Klaksví":                 "Klaksvík",
-    "from Tórshavn":                "Tórshavn",
+    # NB: route 410's "from Klaksví" / "from Tórshavn" rows are connection times,
+    # not stops — they're in STOP_BLOCKLIST (mapping them to Klaksvík/Tórshavn
+    # appended phantom stops after Fuglafjørður).
     "Effo í Kollfjd.":              "Kollafjarðadalur við Effo",
 
     # ── Tórshavn terminal / bus-terminal variants ─────────────────────────
@@ -352,9 +361,11 @@ def build_stop_registry(routes_data, coords):
     # not real stop names.  Match is case-insensitive (canonical.strip().lower()).
     STOP_BLOCKLIST = {
         "",
-        # Directional column headers
+        # Directional column headers / connection rows (route 410: the time of
+        # the connecting bus to/from Klaksvík or Tórshavn — not a stop on 410)
         "to klaksvík", "to tórshavn", "to klaksvik", "to torshavn",
         "to klaksví",
+        "from klaksví", "from tórshavn",
         # Day-of-week abbreviations (route 61 uses these as column headers)
         "mán.", "týs.", "mik.", "hós.", "frí.", "ley.", "sun.",
         # Noise / season labels
@@ -749,7 +760,7 @@ def main():
             "route_long_name": meta["long_name"],
             "route_type": ROUTE_TYPE[rtype],
             "route_color": TYPE_COLORS[rtype],
-            "route_text_color": "000000",
+            "route_text_color": TYPE_TEXT_COLORS[rtype],
         })
     write_csv(os.path.join(GTFS_DIR, "routes.txt"),
         ["route_id", "agency_id", "route_short_name", "route_long_name",

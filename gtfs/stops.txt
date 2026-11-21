@@ -6,7 +6,7 @@ famjin,Fámjin,,61.528300,-6.876700
 ferjulega,Ferjulega,,61.547000,-6.810000
 fuglafj_r_ur,Fuglafjørður,,62.243800,-6.813300
 funningur,Funningur,,62.287100,-6.966300
-g_tudalur,Gøtudalur,,62.130000,-6.755000
+g_tudalur,Gøtudalur,,62.204800,-6.762200
 gamlar_tt,Gamlarætt,,61.962600,-6.818900
 gjogv,Gjógv,,62.325700,-6.943000
 glasir,Glasir,,62.020000,-6.790000
@@ -15,9 +15,9 @@ haraldssund,Haraldssund,,62.273800,-6.606300
 hattarvik,Hattarvík,,62.329600,-6.275600
 hellurnar,Hellurnar,,62.263000,-6.845100
 hestur,Hestur,,61.955600,-6.883100
-hosvik,Hósvík,,62.130000,-6.953300
+hosvik,Hósvík,,62.151800,-6.943700
 hov,Hov,,61.508300,-6.736700
-husar,Húsar,,62.276700,-6.700000
+husar,Húsar,,62.265200,-6.696500
 husavik,Húsavík,,61.809900,-6.679600
 hvalba,Hvalba,,61.600600,-6.956800
 hvalvik,Hvalvík,,62.187000,-7.036300
@@ -30,14 +30,14 @@ kollafj_r_ur_tunnel,Kollafjørður Tunnel,,62.105000,-6.965000
 kollafjar_adalur,Kollafjarðadalur,,62.117000,-6.983000
 kollafjar_adalur_vi_effo,Kollafjarðadalur við Effo,,62.117000,-6.983000
 kunoy,Kunoy,,62.292100,-6.671100
-kvivik,Kvívík,,62.116700,-7.115000
+kvivik,Kvívík,,62.118600,-7.076500
 leirvik,Leirvík,,62.209600,-6.707900
 lopra,Lopra,,61.443500,-6.772400
 mi_vagur,Miðvágur,,62.048000,-7.192200
 mikladalur,Mikladalur,,62.335200,-6.766100
 mykines,Mykines,,62.104300,-7.647600
 nes,Nes,,61.593200,-6.929600
-nolsoy,Nólsoy,,61.985400,-6.653100
+nolsoy,Nólsoy,,62.009700,-6.673600
 nor_skala,Norðskála,,62.215900,-7.005900
 oyndarfj_r_ur,Oyndarfjørður,,62.277200,-6.854100
 oyrarbakki,Oyrarbakki,,62.205000,-7.000000
@@ -53,8 +53,8 @@ sandavagur,Sandavágur,,62.054500,-7.151100
 sandur,Sandur,,61.834800,-6.817600
 sandvik,Sandvík,,61.634200,-6.928800
 selatra,Selatrað,,62.160100,-6.877900
-skala,Skála,,62.076700,-6.721700
-skalafj_r_ur,Skálafjørður,,62.113300,-6.786700
+skala,Skála,,62.163200,-6.787300
+skalafj_r_ur,Skálafjørður,,62.195300,-6.855700
 skalavik,Skálavík,,61.830300,-6.664000
 skopun,Skopun,,61.902800,-6.878400
 skuvoy,Skúvoy,,61.766400,-6.827000

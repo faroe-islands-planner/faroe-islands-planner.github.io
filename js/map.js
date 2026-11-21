@@ -3,44 +3,121 @@
 // initNetworkMap() draws all routes and stops on the network overview map.
 // updateMap(legs) draws a specific journey on the journey planner map.
 
-// Canonical display colors — must match the legend in index.html
-// Palette drawn from Faroe Islands imagery: Atlantic ocean blue, coastal moss green,
-// puffin-beak orange for high-priority express, site amber for airport.
-const ROUTE_COLORS = {
-  3:   '#3D7A56', // bus — coastal moss green (ground network)
-  4:   '#1878B8', // ferry — Atlantic ocean blue (water routes)
-  700: '#C4981A', // airport — golden amber (matches site accent)
-};
-// Route 401 is the express service — highest priority, most salient
-const ROUTE_COLOR_OVERRIDES = {
-  '401': '#E05E20', // express — puffin-beak orange (fast, stands out)
-};
+// Route 401 is the express service; it has route_type 700 like the airport buses.
+const EXPRESS_ROUTE_ID = '401';
 
+// 'ferry' | 'express' | 'airport' | 'bus' (also the badge-* CSS class in index.html)
+export function routeCategory(route) {
+  if (route.route_type === 4) return 'ferry';
+  if (route.route_id === EXPRESS_ROUTE_ID) return 'express';
+  if (route.route_type === 700) return 'airport';
+  return 'bus';
+}
+
+// Line colour of a route = its category's --*-color variable in index.html, the
+// same colour the legend and the badges use. Change a route colour there only.
+const categoryColors = new Map();
 function routeColor(route) {
-  return ROUTE_COLOR_OVERRIDES[route.route_id] || ROUTE_COLORS[route.route_type] || '#aaa';
+  const cat = routeCategory(route);
+  if (!categoryColors.has(cat)) {
+    const css = getComputedStyle(document.documentElement).getPropertyValue(`--${cat}-color`).trim();
+    categoryColors.set(cat, css || '#888');
+  }
+  return categoryColors.get(cat);
 }
 
 function isFerry(route) {
   return route.route_type === 4;
 }
 
-// Build a de-duplicated ordered stop list for a route from its trips' stop_times.
-// Uses the longest trip in either direction to get the full stop sequence.
-function getRouteStopSequence(routeId, tripById, stopTimesForTrip, stopById) {
-  let best = [];
+// Network-map line styles, drawn bottom → top. Where routes share a road, each
+// wider line shows as a colored edge around the narrower one on top of it, so
+// every route stays visible. Keep the .type-label line samples in index.html
+// (legend, route list, journey legs) in step.
+const NETWORK_LINE_STYLES = {
+  express: { order: 0, weight: 10 },
+  airport: { order: 1, weight: 6.5 },
+  bus:     { order: 2, weight: 3 },
+  ferry:   { order: 3, weight: 3, dashArray: '10 8' },
+};
+
+// Base map: OpenStreetMap's standard tiles — free, no API key.
+// (CARTO's basemaps started requiring an API key and now return watermark tiles.)
+// Usage policy: https://operations.osmfoundation.org/policies/tiles/
+// The tiles are muted via CSS (.leaflet-tile-pane in index.html) so route colors stand out.
+function addBaseLayer(map) {
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:
+      '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19,
+  }).addTo(map);
+}
+
+// Lat/lon path through a run of stops. Between each consecutive pair it follows
+// the road (or car-ferry lane) from data/road_shapes.json when there is one, and
+// falls back to a straight line otherwise. roadShapes keys are "stopA|stopB" in
+// sorted order with the path running A→B, so the other direction is reversed.
+function stopPath(stops, roadShapes) {
+  const coords = [];
+  stops.forEach((s, i) => {
+    if (i === 0) { coords.push([s.lat, s.lon]); return; }
+    const prev = stops[i - 1];
+    const pts = roadShapes.get(`${prev.stop_id}|${s.stop_id}`)
+             ?? roadShapes.get(`${s.stop_id}|${prev.stop_id}`)?.slice().reverse();
+    if (pts) coords.push(...pts.slice(1)); // pts[0] is prev stop, already added
+    else coords.push([s.lat, s.lon]);
+  });
+  return coords;
+}
+
+// The distinct stop patterns a route runs (branches, short turns), as arrays of
+// stop objects. A pattern already contained in a longer one, in either direction,
+// is dropped. Drawing only the longest trip left branch stops such as Lopra,
+// Sandvík and Selatrað off the network map. Trips are split at impossible hops
+// (bad_hop, see gtfs-loader.js) so a corrupted timetable tail isn't drawn as
+// part of the route.
+function getRoutePatterns(routeId, tripById, stopTimesForTrip, stopById) {
+  const unique = new Map(); // "id|id|…" → stop_id[]
   for (const [trip_id, trip] of tripById) {
     if (trip.route_id !== routeId) continue;
-    const stops = stopTimesForTrip.get(trip_id) || [];
-    if (stops.length > best.length) best = stops;
+    let run = [];
+    const flush = () => { if (run.length >= 2) unique.set(run.join('|'), run); run = []; };
+    for (const s of stopTimesForTrip.get(trip_id) || []) {
+      if (!stopById.has(s.stop_id)) continue;
+      if (s.bad_hop) flush();
+      run.push(s.stop_id);
+    }
+    flush();
   }
-  return best
-    .map(s => stopById.get(s.stop_id))
-    .filter(Boolean);
+
+  const key = ids => `|${ids.join('|')}|`;
+  const kept = [];
+  for (const ids of [...unique.values()].sort((a, b) => b.length - a.length)) {
+    const fwd = key(ids);
+    const rev = key([...ids].reverse());
+    if (!kept.some(k => key(k).includes(fwd) || key(k).includes(rev))) kept.push(ids);
+  }
+  return kept.map(ids => ids.map(id => stopById.get(id)));
 }
 
 // ── Network map ───────────────────────────────────────────────────────────────
-export function initNetworkMap(gtfs) {
-  const { stopById, routeById, tripById, stopTimesForTrip } = gtfs;
+const HALO_OPACITY   = 0.85;
+const DIMMED_OPACITY = 0.15;
+const STOP_STYLE     = { radius: 4, fillColor: '#fff', color: '#0D0D0D', weight: 1.5, opacity: 1, fillOpacity: 1 };
+const STOP_HOVER_TIP = { direction: 'top', offset: [0, -4] };
+const STOP_LABEL_TIP = { direction: 'top', offset: [0, -6], permanent: true, className: 'map-stop-label' };
+
+// Draws every route and stop. Clicking a line highlights its whole route (others
+// fade, its stops get labels) and calls onRouteSelect(route, patterns), where
+// patterns are the route's stop sequences, longest first; clicking it again, the
+// empty map or Esc clears it and calls onRouteSelect(null).
+// Returns { clearSelection }.
+export function initNetworkMap(gtfs, { onRouteSelect = () => {} } = {}) {
+  const { stopById, routeById, tripById, stopTimesForTrip, roadShapes } = gtfs;
+
+  // One canvas renderer for every network layer; its click tolerance makes the
+  // thin bus lines easy to hit.
+  const renderer = L.canvas({ tolerance: 6 });
 
   const map = L.map('network-map', {
     zoomControl: true,
@@ -48,79 +125,117 @@ export function initNetworkMap(gtfs) {
     maxZoom: 16,
   }).setView([62.0, -6.95], 9);
 
-  L.tileLayer(
-    'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-    {
-      attribution:
-        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ' +
-        '© <a href="https://carto.com/attributions">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19,
-    }
-  ).addTo(map);
+  addBaseLayer(map);
 
   const allCoords = [];
+  const servedStops = new Map();      // stop_id → stop, every stop on any drawn pattern
+  const patternsByRoute = new Map();  // route_id → stop[][] (longest first)
+  const lines = [];                   // { route, coords, style, halo, core }
 
-  // Draw routes in z-order: bus (bottom) → ferry → airport/express (top)
-  // This ensures express/airport routes are visible on top of bus lines where they overlap.
-  const DRAW_ORDER = [3, 4, 700];
-
-  for (const typeGroup of DRAW_ORDER) {
-    for (const [route_id, route] of routeById) {
-      if (route.route_type !== typeGroup) continue;
-      const color = routeColor(route);
-      const stopObjs = getRouteStopSequence(route_id, tripById, stopTimesForTrip, stopById);
-      const coords = stopObjs.map(s => [s.lat, s.lon]);
-      if (coords.length < 2) continue;
-
-      const isHighPriority = route.route_type === 700; // airport/express
-      const weight = isHighPriority ? 4.5 : 3.5;
-      const dashArray = isFerry(route) ? '10 8' : (isHighPriority ? '6 4' : null);
-
-      // White halo
-      L.polyline(coords, {
-        color: '#fff', weight: weight + 2.5, opacity: 0.7,
-        lineCap: 'round', lineJoin: 'round',
-      }).addTo(map);
-
-      // Colored core
-      L.polyline(coords, {
-        color, weight, opacity: 0.95,
-        lineCap: 'round', lineJoin: 'round',
-        dashArray,
-      })
-        .bindTooltip(
-          `${route.route_short_name} – ${route.route_long_name}`,
-          { sticky: true, direction: 'top' }
-        )
-        .addTo(map);
-
+  for (const [route_id, route] of routeById) {
+    const style = NETWORK_LINE_STYLES[routeCategory(route)];
+    const patterns = getRoutePatterns(route_id, tripById, stopTimesForTrip, stopById);
+    patternsByRoute.set(route_id, patterns);
+    for (const stopObjs of patterns) {
+      const coords = stopPath(stopObjs, roadShapes);
+      lines.push({ route, coords, style });
       coords.forEach(c => allCoords.push(c));
+      stopObjs.forEach(s => servedStops.set(s.stop_id, s));
     }
+  }
+  lines.sort((a, b) => a.style.order - b.style.order);
+
+  // White halos all go beneath every colored line: they lift the routes off the
+  // base map without cutting through the wider lines stacked underneath.
+  for (const line of lines) {
+    line.halo = L.polyline(line.coords, {
+      renderer, interactive: false,
+      color: '#fff', weight: line.style.weight + 3, opacity: HALO_OPACITY,
+      lineCap: 'round', lineJoin: 'round',
+    }).addTo(map);
+  }
+
+  // Colored lines: express (widest, bottom) → airport → bus (thinnest) → ferry
+  for (const line of lines) {
+    const { route } = line;
+    line.core = L.polyline(line.coords, {
+      renderer, bubblingMouseEvents: false,
+      color: routeColor(route), weight: line.style.weight, opacity: 1,
+      lineCap: 'round', lineJoin: 'round',
+      dashArray: line.style.dashArray ?? null,
+    })
+      .bindTooltip(
+        route.route_long_name, // already starts with the route number
+        { sticky: true, direction: 'top' }
+      )
+      .on('click', () => select(selectedId === route.route_id ? null : route.route_id))
+      .addTo(map);
   }
 
   // Draw every stop that appears on at least one route
-  const drawnStops = new Set();
-  for (const [route_id] of routeById) {
-    const stopObjs = getRouteStopSequence(route_id, tripById, stopTimesForTrip, stopById);
-    for (const s of stopObjs) {
-      if (drawnStops.has(s.stop_id)) continue;
-      drawnStops.add(s.stop_id);
-      L.circleMarker([s.lat, s.lon], {
-        radius: 4,
-        fillColor: '#fff',
-        color: '#0D0D0D',
-        weight: 1.5,
-        fillOpacity: 1,
-      })
-        .bindTooltip(s.stop_name, { direction: 'top', offset: [0, -4] })
-        .addTo(map);
-    }
+  const markers = [];
+  for (const stop of servedStops.values()) {
+    const marker = L.circleMarker([stop.lat, stop.lon], { renderer, bubblingMouseEvents: false, ...STOP_STYLE })
+      .bindTooltip(stop.stop_name, STOP_HOVER_TIP)
+      .addTo(map);
+    markers.push({ marker, stop });
   }
 
   if (allCoords.length) {
     map.fitBounds(allCoords, { padding: [40, 40] });
   }
+
+  // ── Route highlight ─────────────────────────────────────────────────────────
+  let selectedId = null;
+
+  function select(routeId) {
+    selectedId = routeId;
+    const route = routeId ? routeById.get(routeId) : null;
+    const isSelected = line => line.route.route_id === routeId;
+
+    for (const line of lines) {
+      const on = !route || isSelected(line);
+      line.halo.setStyle({ opacity: on ? HALO_OPACITY : DIMMED_OPACITY });
+      line.core.setStyle({
+        opacity: on ? 1 : DIMMED_OPACITY,
+        weight: route && on ? Math.max(line.style.weight, 5) : line.style.weight,
+      });
+    }
+
+    // Restore the normal stacking, lift the selected route above it, stops on top
+    for (const line of lines) line.halo.bringToFront();
+    for (const line of lines) line.core.bringToFront();
+    if (route) {
+      for (const line of lines) if (isSelected(line)) line.halo.bringToFront();
+      for (const line of lines) if (isSelected(line)) line.core.bringToFront();
+    }
+
+    const routeStops = route ? new Set(patternsByRoute.get(routeId).flat().map(s => s.stop_id)) : null;
+    for (const { marker, stop } of markers) {
+      const onRoute = routeStops?.has(stop.stop_id);
+      marker.setStyle(
+        onRoute ? { ...STOP_STYLE, radius: 6, color: routeColor(route), weight: 2.5 }
+        : route ? { ...STOP_STYLE, opacity: DIMMED_OPACITY * 2, fillOpacity: DIMMED_OPACITY * 2 }
+        : STOP_STYLE
+      );
+      marker.unbindTooltip().bindTooltip(stop.stop_name, onRoute ? STOP_LABEL_TIP : STOP_HOVER_TIP);
+      marker.bringToFront();
+    }
+
+    if (route) {
+      const bounds = L.latLngBounds(lines.filter(isSelected).flatMap(l => l.coords));
+      // extra bottom padding keeps the route clear of the info panel
+      map.fitBounds(bounds, { paddingTopLeft: [50, 50], paddingBottomRight: [50, 170], maxZoom: 12 });
+      onRouteSelect(route, patternsByRoute.get(routeId));
+    } else {
+      onRouteSelect(null);
+    }
+  }
+
+  map.on('click', () => { if (selectedId) select(null); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && selectedId) select(null); });
+
+  return { clearSelection: () => select(null) };
 }
 
 // ── Journey map ───────────────────────────────────────────────────────────────
@@ -130,19 +245,10 @@ let mapLayers  = [];
 function ensureMap() {
   if (leafletMap) return;
   leafletMap = L.map('journey-map', { zoomControl: true }).setView([62.0, -6.95], 9);
-  L.tileLayer(
-    'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-    {
-      attribution:
-        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ' +
-        '© <a href="https://carto.com/attributions">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19,
-    }
-  ).addTo(leafletMap);
+  addBaseLayer(leafletMap);
 }
 
-export function updateMap(legs, stopById, routeById) {
+export function updateMap(legs, stopById, routeById, roadShapes = new Map()) {
   const mapEl = document.getElementById('journey-map');
   mapEl.classList.remove('hidden');
 
@@ -160,10 +266,7 @@ export function updateMap(legs, stopById, routeById) {
     const ferry = route ? isFerry(route) : false;
 
     const allStopIds = [leg.from_stop, ...leg.via_stops, leg.to_stop];
-    const coords = allStopIds
-      .map(id => stopById.get(id))
-      .filter(Boolean)
-      .map(s => [s.lat, s.lon]);
+    const coords = stopPath(allStopIds.map(id => stopById.get(id)).filter(Boolean), roadShapes);
 
     if (coords.length >= 2) {
       const halo = L.polyline(coords, {

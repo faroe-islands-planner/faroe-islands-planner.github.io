@@ -18,10 +18,31 @@ function parseCSV(text) {
   return rows;
 }
 
+// Data files are always revalidated with the server (an unchanged file costs a
+// 304). Otherwise browsers may reuse a cached stops.txt next to a newer
+// road_shapes.json — every route then starts with a straight line from the
+// stop's old position.
+const FETCH_OPTS = { cache: 'no-cache' };
+
 async function fetchCSV(path) {
-  const res = await fetch(path);
+  const res = await fetch(path, FETCH_OPTS);
   if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
   return parseCSV(await res.text());
+}
+
+// Optional road/ferry geometry between consecutive stops, built by
+// scripts/build_road_shapes.mjs. Returns Map "stopA|stopB" → [[lat, lon], …]
+// (keys sorted, path runs A→B). If it's missing, the maps draw straight lines.
+async function fetchRoadShapes(path) {
+  try {
+    const res = await fetch(path, FETCH_OPTS);
+    if (!res.ok) return new Map();
+    const { segments } = await res.json();
+    return new Map(Object.entries(segments).filter(([, pts]) => pts));
+  } catch (err) {
+    console.warn('Road shapes unavailable, drawing straight lines:', err);
+    return new Map();
+  }
 }
 
 function timeMins(hhmm) {
@@ -29,6 +50,26 @@ function timeMins(hhmm) {
   if (!hhmm) return null;
   const [h, m] = hhmm.split(':').map(Number);
   return h * 60 + m;
+}
+
+// Scraping errors in stop_times.txt produce hops no vehicle can make: arriving
+// before departing ("Eiði 07:20 → Oyrarbakki 06:40") or phantom tails like
+// "Fuglafjørður 09:25 → Klaksvík 09:10 → Tórshavn 09:10" (26 km in 0 min).
+// Real hops top out around 85 km/h in a straight line; timetable minutes are
+// rounded, so every hop is given at least 1 minute. Besides nonsense journeys,
+// backwards hops let the CSA back-pointers form a cycle, which froze the page.
+const MAX_STRAIGHT_KMH = 150;
+
+function isImpossibleHop(from, to, stopById) {
+  if (from.dep_mins === null || to.arr_mins === null) return false;
+  if (to.arr_mins < from.dep_mins) return true;
+  const a = stopById.get(from.stop_id), b = stopById.get(to.stop_id);
+  if (!a || !b) return false;
+  const t = Math.PI / 180;
+  const h = Math.sin((b.lat - a.lat) * t / 2) ** 2 +
+            Math.cos(a.lat * t) * Math.cos(b.lat * t) * Math.sin((b.lon - a.lon) * t / 2) ** 2;
+  const km = 2 * 6371 * Math.asin(Math.sqrt(h));
+  return km / (Math.max(to.arr_mins - from.dep_mins, 1) / 60) > MAX_STRAIGHT_KMH;
 }
 
 function minsToHHMM(mins) {
@@ -40,7 +81,7 @@ function minsToHHMM(mins) {
 export async function loadGTFS() {
   const BASE = 'gtfs/';
 
-  const [stopRows, routeRows, tripRows, stRows, calRows, calDateRows] =
+  const [stopRows, routeRows, tripRows, stRows, calRows, calDateRows, roadShapes] =
     await Promise.all([
       fetchCSV(BASE + 'stops.txt'),
       fetchCSV(BASE + 'routes.txt'),
@@ -48,6 +89,7 @@ export async function loadGTFS() {
       fetchCSV(BASE + 'stop_times.txt'),
       fetchCSV(BASE + 'calendar.txt'),
       fetchCSV(BASE + 'calendar_dates.txt'),
+      fetchRoadShapes('data/road_shapes.json'),
     ]);
 
   // ── Build stopTimesForTrip first so we know which stop_ids are used ──────
@@ -138,17 +180,43 @@ export async function loadGTFS() {
     });
   }
 
-  // ── stopTimesForTrip (with minutes, stop_ids remapped to primary) ───────────
-  const stopTimesForTrip = new Map();
+  // ── Drop duplicate trips ──────────────────────────────────────────────────
+  // The scraped feed lists some trips twice (same route, service days, stops
+  // and times; 113 of them, mostly ferries), which showed up as repeated
+  // times under "Next departures". Keep the first copy.
+  const seenTrips = new Set();
   for (const [trip_id, rows] of rawByTrip) {
-    stopTimesForTrip.set(trip_id, rows.map(r => ({
+    const trip = tripById.get(trip_id);
+    const key = [trip?.route_id, trip?.service_id,
+                 ...rows.map(r => `${remap(r.stop_id)}@${r.arrival_time}/${r.departure_time}`)].join('|');
+    if (seenTrips.has(key)) rawByTrip.delete(trip_id);
+    else seenTrips.add(key);
+  }
+
+  // ── stopTimesForTrip (with minutes, stop_ids remapped to primary) ───────────
+  // Each stop_time gets bad_hop = true when the hop from the previous stop is
+  // impossible (see isImpossibleHop). Routing skips those hops and the network
+  // map splits the trip there.
+  const stopTimesForTrip = new Map();
+  let impossibleHops = 0;
+  for (const [trip_id, rows] of rawByTrip) {
+    const sts = rows.map(r => ({
       stop_id: remap(r.stop_id),
       arr_mins: timeMins(r.arrival_time),
       dep_mins: timeMins(r.departure_time),
       stop_sequence: Number(r.stop_sequence),
       pickup_type: Number(r.pickup_type || 0),
       drop_off_type: Number(r.drop_off_type || 0),
-    })));
+      bad_hop: false,
+    }));
+    for (let i = 1; i < sts.length; i++) {
+      sts[i].bad_hop = isImpossibleHop(sts[i - 1], sts[i], stopById);
+      if (sts[i].bad_hop) impossibleHops++;
+    }
+    stopTimesForTrip.set(trip_id, sts);
+  }
+  if (impossibleHops) {
+    console.warn(`GTFS: ignoring ${impossibleHops} stop-to-stop hops with impossible times (bad stop_times data)`);
   }
 
   // ── connections: sorted array for CSA (stop_ids remapped to primary) ────────
@@ -159,6 +227,7 @@ export async function loadGTFS() {
       const from = stops[i];
       const to   = stops[i + 1];
       if (from.dep_mins === null || to.arr_mins === null) continue;
+      if (to.bad_hop) continue;
       connections.push({
         dep_stop:    from.stop_id,   // already remapped
         dep_mins:    from.dep_mins,
@@ -198,6 +267,7 @@ export async function loadGTFS() {
     stopTimesForTrip,
     calendarMap,
     exceptionMap,
+    roadShapes,
     minsToHHMM,
   };
 }

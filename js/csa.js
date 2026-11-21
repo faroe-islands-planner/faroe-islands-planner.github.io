@@ -125,7 +125,12 @@ function reconstructLegs(fromStopId, toStopId, B, tripById) {
   // Walk backwards from toStopId to fromStopId via backtrack pointers
   const connPath = [];
   let cur = toStopId;
+  const visited = new Set();
   while (B.has(cur)) {
+    // Back-pointer cycle (only possible with inconsistent data): give up on this
+    // search instead of looping forever and freezing the page.
+    if (visited.has(cur)) return null;
+    visited.add(cur);
     const conn = B.get(cur);
     connPath.unshift(conn);
     cur = conn.dep_stop;
@@ -170,9 +175,17 @@ function makeLeg(conns, tripById) {
   };
 }
 
+const arrOf       = legs => legs[legs.length - 1].arr_mins;
+const transfersOf = legs => legs.length - 1;
+
 // Find up to maxResults journeys from fromStopId to toStopId, starting at or
 // after departureDate, by repeatedly calling findJourney and advancing the
 // start time past each result's departure minute.
+//
+// Each search starts after the previous result's departure, so every new journey
+// departs later than all earlier ones. An earlier journey that the new one matches
+// or beats on arrival time and transfer count is never the better choice, so it is
+// dropped — e.g. two local buses to catch the same express you could board directly.
 export function findJourneys(
   fromStopId,
   toStopId,
@@ -184,26 +197,29 @@ export function findJourneys(
   maxResults = 5,
 ) {
   const results = [];
-  let date = departureDate;
-  const startMins = departureDate.getHours() * 60 + departureDate.getMinutes();
+  let fromMins = departureDate.getHours() * 60 + departureDate.getMinutes();
 
-  while (results.length < maxResults) {
+  // Results are same-day only (the UI shows times without dates). The search cap
+  // bounds the work when many dominated journeys are skipped.
+  for (let searches = 0; searches < maxResults * 6 && fromMins < 1440; searches++) {
+    const date = new Date(departureDate);
+    date.setHours(Math.floor(fromMins / 60), fromMins % 60, 0, 0);
+
     const legs = findJourney(fromStopId, toStopId, date, connections, tripById, calendarMap, exceptionMap);
     if (!legs || legs.length === 0) break;
 
-    results.push(legs);
+    // List is full and this journey arrives later than the last one, so it
+    // can't beat any of them: stop.
+    if (results.length >= maxResults && arrOf(legs) > arrOf(results[results.length - 1])) break;
 
-    // Advance 1 minute past this journey's departure so the next call finds a
-    // different (later) trip.
-    const depMins = legs[0].dep_mins;
-    const nextMins = depMins + 1;
-    const nextDate = new Date(departureDate);
-    nextDate.setHours(Math.floor(nextMins / 60) % 24, nextMins % 60, 0, 0);
-    // If nextMins wrapped past midnight or is before original startMins, advance by a day
-    if (nextMins >= 1440 || nextMins < startMins) {
-      nextDate.setDate(nextDate.getDate() + 1);
+    for (let i = results.length - 1; i >= 0; i--) {
+      if (arrOf(results[i]) >= arrOf(legs) && transfersOf(results[i]) >= transfersOf(legs)) {
+        results.splice(i, 1);
+      }
     }
-    date = nextDate;
+    if (results.length < maxResults) results.push(legs);
+
+    fromMins = legs[0].dep_mins + 1;
   }
 
   return results;
@@ -239,19 +255,17 @@ export function nextDepartures(
     // Verify toStopId is downstream of fromStopId in this trip's stop sequence
     const stops = stopTimesForTrip.get(conn.trip_id);
     if (!stops) continue;
-    const fromSeq = stops.find(s => s.stop_id === fromStopId)?.stop_sequence;
-    const toSeq   = stops.find(s => s.stop_id === toStopId)?.stop_sequence;
-    if (fromSeq === undefined || toSeq === undefined || toSeq <= fromSeq) continue;
+    // Round trips (Eiði → Oyrarbakki → Eiði) visit a stop twice, so look for
+    // toStopId after this particular visit to fromStopId.
+    const fromIdx = stops.findIndex(s => s.stop_id === fromStopId && s.dep_mins === conn.dep_mins);
+    if (fromIdx < 0 || !stops.slice(fromIdx + 1).some(s => s.stop_id === toStopId)) continue;
 
+    // List each trip once, and each time once: overlapping timetables (e.g.
+    // "daily" and "weekdays") and route variants can leave at the same minute.
+    if (results.some(r => r.trip_id === conn.trip_id || r.dep_mins === conn.dep_mins)) continue;
     results.push({ dep_mins: conn.dep_mins, trip_id: conn.trip_id });
     if (results.length >= n) break;
   }
 
-  // Deduplicate by trip (same trip can appear multiple times if route has many stops)
-  const seen = new Set();
-  return results.filter(r => {
-    if (seen.has(r.trip_id)) return false;
-    seen.add(r.trip_id);
-    return true;
-  }).slice(0, n);
+  return results;
 }

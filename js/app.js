@@ -3,7 +3,7 @@
 // renders results, and initialises the network map and route browser.
 
 import { loadGTFS }          from './gtfs-loader.js';
-import { initNetworkMap, updateMap } from './map.js';
+import { initNetworkMap, updateMap, routeCategory } from './map.js';
 import { findJourneys, nextDepartures } from './csa.js';
 
 // ssl.fo timetable URL slugs (keyed by route_id)
@@ -11,7 +11,7 @@ const ROUTE_SLUGS = {
   '7':   'ferry/7-suduroy-torshavn',
   '36':  'ferry/36-soervagur-mykines',
   '56':  'ferry/56-klaksvik-kalsoy',
-  '58':  'ferry/58-hvannasund-hattarvik',
+  '58':  'ferry/58-hvannasund-svinoy-fugloy-kirkja-hattarvik',
   '61':  'ferry/61-gamlaraett-hestur',
   '66':  'ferry/66-sandur-skuvoy',
   '90':  'ferry/90-torshavn-nolsoy',
@@ -19,12 +19,12 @@ const ROUTE_SLUGS = {
   '200': 'bus/200-oyrarbakki-eidi',
   '201': 'bus/201-oyrarbakki-gjogv',
   '202': 'bus/202-oyrarbakki-tjoernuvik',
-  '222': 'bus/222-kollafjardadalur-effo-oyrarbakki',
-  '223': 'bus/223-sundalagid-kambsdalur',
-  '300': 'bus/300-torshavn-airport-soervagur',
+  // 222 is no longer listed on ssl.fo (checked Nov 2026) — falls back to the timetable index
+  '223': 'bus/223-hosvik-kambsdalur',
+  '300': 'bus/300-torshavn-airport-soervagur-1',
   '350': 'bus/350-torshavn-vaga-airport-soervagurboe',
   '400': 'bus/400-klaksvik-torshavn',
-  '401': 'bus/401-klaksvik-torshavn-express-bus-valid-from-dec-1',
+  '401': 'bus/401-klaksvik-torshavn-express-bus-1',
   '410': 'bus/410-fuglafj-goetudalur-klaksvik',
   '440': 'bus/440-skalafjardarleidin',
   '442': 'bus/442-glyvrar-aeduvik-rituvik',
@@ -56,21 +56,13 @@ const PINNED_STOP_IDS = [
   'gamlar_tt',                   // Gamlarætt — ferry terminal
 ];
 
-const ROUTE_TYPE_LABEL = {
-  3:   'Bus',
-  4:   'Ferry',
-  700: 'Express / Airport Bus',
+// Label per route category (see routeCategory() in map.js)
+const CATEGORY_LABEL = {
+  ferry:   'Ferry',
+  bus:     'Bus',
+  express: 'Express bus',
+  airport: 'Airport bus',
 };
-
-function routeTypeClass(route) {
-  if (route.route_type === 4) return 'ferry';
-  if (route.route_type === 700) {
-    // distinguish express vs airport by color
-    if (route.route_color === 'd48dff') return 'express';
-    return 'airport';
-  }
-  return 'bus';
-}
 
 // ── Date / time helpers (kept identical to the original index.html) ───────────
 function pad2(n) { return String(n).padStart(2, '0'); }
@@ -140,12 +132,11 @@ function renderJourneyCard(legs, fromName, toName, gtfs, isActive) {
     ? `${Math.floor(totalMins / 60)}h ${totalMins % 60}m`
     : `${totalMins}m`;
   const xferLabel = transfers === 0 ? 'Direct' : transfers + ' transfer' + (transfers > 1 ? 's' : '');
-  const xferCls   = transfers > 0 ? ' has-xfer' : '';
 
   // Route badges for collapsed header (one per leg)
   const routeBadges = legs.map(leg => {
     const route = routeById.get(leg.route_id);
-    const cls   = route ? routeTypeClass(route) : 'bus';
+    const cls   = route ? routeCategory(route) : 'bus';
     return `<span class="jc-badge badge-${cls}">${leg.route_id}</span>`;
   }).join('');
 
@@ -156,15 +147,15 @@ function renderJourneyCard(legs, fromName, toName, gtfs, isActive) {
     <div class="jc-time">${minsToHHMM(depMins)} → ${minsToHHMM(arrMins)}</div>
     ${routeBadges}
     <div class="jc-dur">${durationStr}</div>
-    <div class="jc-xfer${xferCls}">${xferLabel}</div>
+    <div class="jc-xfer">${xferLabel}</div>
     ${hasOnDemand ? `<span class="jc-on-demand">📞 Book ahead</span>` : ''}
   </div>
   <div class="journey-card-body">`;
 
   legs.forEach((leg, i) => {
     const route   = routeById.get(leg.route_id);
-    const typeCls = route ? routeTypeClass(route) : 'bus';
-    const label   = route ? (ROUTE_TYPE_LABEL[route.route_type] || 'Bus') : 'Bus';
+    const typeCls = route ? routeCategory(route) : 'bus';
+    const label   = CATEGORY_LABEL[typeCls];
     const slug    = ROUTE_SLUGS[leg.route_id] || '';
 
     const fromStop = stopById.get(leg.from_stop);
@@ -189,7 +180,7 @@ function renderJourneyCard(legs, fromName, toName, gtfs, isActive) {
       <div class="leg">
         <div class="leg-badge badge-${typeCls}">${leg.route_id}</div>
         <div class="leg-body">
-          <div class="leg-route">${label} · ${route ? route.route_long_name.replace(/^\d+ /, '') : leg.route_id}</div>
+          <div class="leg-route"><span class="type-label type-${typeCls}">${label}</span> · ${route ? route.route_long_name.replace(/^\d+ /, '') : leg.route_id}</div>
           ${leg.on_demand ? `<div class="leg-on-demand">⚠ On-demand stop — book by phone at least 24h in advance</div>` : ''}
           <div class="leg-direction">
             <strong>${minsToHHMM(leg.dep_mins)}</strong> ${fromName}
@@ -228,13 +219,13 @@ function buildRouteBrowser(routeById) {
   let fc = 0, bc = 0;
   for (const route of sorted) {
     const slug    = ROUTE_SLUGS[route.route_id] || '';
-    const typeCls = routeTypeClass(route);
-    const label   = ROUTE_TYPE_LABEL[route.route_type] || 'Bus';
+    const typeCls = routeCategory(route);
+    const label   = CATEGORY_LABEL[typeCls];
     const isFerry = route.route_type === 4;
 
     const card = document.createElement('a');
-    card.className = 'route-card';
-    card.href      = slug ? `${BASE_URL}${slug}` : '#';
+    card.className = `route-card type-${typeCls}`;
+    card.href      = `${BASE_URL}${slug}`; // no slug → SSL's timetable index
     card.target    = '_blank';
     card.rel       = 'noopener noreferrer';
     card.dataset.search = `${route.route_id} ${route.route_long_name}`.toLowerCase();
@@ -244,7 +235,7 @@ function buildRouteBrowser(routeById) {
       <div class="route-badge badge-${typeCls}">${route.route_id}</div>
       <div class="route-info">
         <div class="route-name">${route.route_long_name.replace(/^\d+ /, '')}</div>
-        <div class="route-type">${label}</div>
+        <div class="route-type type-label type-${typeCls}">${label}</div>
       </div>
       <div class="route-arrow">›</div>`;
 
@@ -269,6 +260,34 @@ function filterRoutes() {
   document.getElementById('ferry-section').classList.toggle('hidden', fc === 0);
   document.getElementById('bus-section').classList.toggle('hidden', bc === 0);
   document.getElementById('no-results').classList.toggle('hidden', fc + bc > 0);
+}
+
+// ── Network map: highlighted-route panel ──────────────────────────────────────
+// patterns: the route's stop sequences, longest first (from initNetworkMap)
+function renderRoutePanel(route, patterns) {
+  const panel = document.getElementById('route-panel');
+  if (!route) {
+    panel.classList.add('hidden');
+    panel.innerHTML = '';
+    return;
+  }
+  const main    = patterns[0] || [];
+  const mainIds = new Set(main.map(s => s.stop_id));
+  const extra   = [...new Map(
+    patterns.flat().filter(s => !mainIds.has(s.stop_id)).map(s => [s.stop_id, s])
+  ).values()];
+  const slug = ROUTE_SLUGS[route.route_id] || '';
+
+  panel.innerHTML = `
+    <div class="route-panel-head">
+      <span class="jc-badge badge-${routeCategory(route)}">${route.route_id}</span>
+      <span class="route-panel-name">${route.route_long_name.replace(/^\d+ /, '')}</span>
+      <button type="button" class="route-panel-close" aria-label="Clear highlighted route">×</button>
+    </div>
+    <div class="route-panel-stops">${main.map(s => s.stop_name).join(' → ')}</div>
+    ${extra.length ? `<div class="route-panel-extra">Some trips also serve ${extra.map(s => s.stop_name).join(', ')}</div>` : ''}
+    <a class="leg-timetable" href="${BASE_URL}${slug}" target="_blank" rel="noopener">Full timetable ↗</a>`;
+  panel.classList.remove('hidden');
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
@@ -371,14 +390,14 @@ async function main() {
     plannerCard.classList.add('has-results');
 
     // Map shows the first (active) journey
-    updateMap(journeyList[0], stopById, routeById);
+    updateMap(journeyList[0], stopById, routeById, gtfs.roadShapes);
 
     // Click-to-expand: clicking a card makes it active, updates the map
     out.querySelectorAll('.journey-card').forEach((card, i) => {
       card.addEventListener('click', () => {
         out.querySelectorAll('.journey-card').forEach(c => c.classList.remove('active'));
         card.classList.add('active');
-        updateMap(journeyList[i], stopById, routeById);
+        updateMap(journeyList[i], stopById, routeById, gtfs.roadShapes);
       });
     });
   }
@@ -398,7 +417,10 @@ async function main() {
   document.getElementById('search').addEventListener('input', filterRoutes);
 
   // ── Network map ──────────────────────────────────────────────────────────
-  initNetworkMap(gtfs);
+  const network = initNetworkMap(gtfs, { onRouteSelect: renderRoutePanel });
+  document.getElementById('route-panel').addEventListener('click', e => {
+    if (e.target.closest('.route-panel-close')) network.clearSelection();
+  });
 }
 
 main();
