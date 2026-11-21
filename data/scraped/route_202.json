@@ -7,9 +7,7 @@
       "seasonal": null,
       "stops": [
         "Tjørnuvík",
-        "On Oyrabakka",
-        "From Oyrabakka",
-        "Í Tjørnuvík"
+        "Oyrarbakki"
       ],
       "trips": [
         {
@@ -17,9 +15,7 @@
           "day_raw": "x",
           "times": {
             "Tjørnuvík": "07:10",
-            "On Oyrabakka": "07:35",
-            "From Oyrabakka": "07:35",
-            "Í Tjørnuvík": "08:00"
+            "Oyrarbakki": "07:35"
           }
         },
         {
@@ -27,9 +23,7 @@
           "day_raw": "x",
           "times": {
             "Tjørnuvík": "08:00",
-            "On Oyrabakka": "08:25",
-            "From Oyrabakka": "08:40",
-            "Í Tjørnuvík": "09:15"
+            "Oyrarbakki": "08:25"
           }
         },
         {
@@ -37,9 +31,7 @@
           "day_raw": "x",
           "times": {
             "Tjørnuvík": "09:15",
-            "On Oyrabakka": "09:40",
-            "From Oyrabakka": null,
-            "Í Tjørnuvík": null
+            "Oyrarbakki": "09:40"
           }
         },
         {
@@ -47,9 +39,7 @@
           "day_raw": "x",
           "times": {
             "Tjørnuvík": "13:50",
-            "On Oyrabakka": "14:15",
-            "From Oyrabakka": "14:15",
-            "Í Tjørnuvík": "14:40"
+            "Oyrarbakki": "14:15"
           }
         },
         {
@@ -57,9 +47,7 @@
           "day_raw": "x",
           "times": {
             "Tjørnuvík": "14:40",
-            "On Oyrabakka": "15:05",
-            "From Oyrabakka": "15:05",
-            "Í Tjørnuvík": "15:30"
+            "Oyrarbakki": "15:05"
           }
         },
         {
@@ -67,9 +55,7 @@
           "day_raw": "x",
           "times": {
             "Tjørnuvík": "15:30",
-            "On Oyrabakka": "15:55",
-            "From Oyrabakka": "16:15",
-            "Í Tjørnuvík": "16:40"
+            "Oyrarbakki": "15:55"
           }
         },
         {
@@ -77,9 +63,57 @@
           "day_raw": "x",
           "times": {
             "Tjørnuvík": "16:40",
-            "On Oyrabakka": "17:05",
-            "From Oyrabakka": null,
-            "Í Tjørnuvík": null
+            "Oyrarbakki": "17:05"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "202 Oyrarbakki - Tjørnuvík",
+      "seasonal": null,
+      "stops": [
+        "Oyrarbakki",
+        "Tjørnuvík"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyrarbakki": "07:35",
+            "Tjørnuvík": "08:00"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyrarbakki": "08:40",
+            "Tjørnuvík": "09:15"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyrarbakki": "14:15",
+            "Tjørnuvík": "14:40"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyrarbakki": "15:05",
+            "Tjørnuvík": "15:30"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Oyrarbakki": "16:15",
+            "Tjørnuvík": "16:40"
           }
         }
       ]

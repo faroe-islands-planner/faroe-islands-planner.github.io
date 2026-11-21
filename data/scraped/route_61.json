@@ -6,143 +6,514 @@
       "heading": "61 Gamlar&#xE6;tt - Hestur",
       "seasonal": null,
       "stops": [
-        "Mán.",
-        "Týs.",
-        "Mik.",
-        "Hós.",
-        "Frí.",
-        "Ley.",
-        "Sun."
+        "Gamlarætt",
+        "Hestur"
       ],
       "trips": [
         {
-          "service_id": "weekdays",
-          "day_raw": "Gamlarætt - Hestur",
+          "service_id": "mon",
+          "day_raw": "Mán.",
           "times": {
-            "Mán.": "06:55",
-            "Týs.": "06:55",
-            "Mik.": "06:55",
-            "Hós.": "06:55",
-            "Frí.": "06:55",
-            "Ley.": null,
-            "Sun.": null
+            "Gamlarætt": "06:55",
+            "Hestur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Hestur - Gamlarætt",
+          "service_id": "tue",
+          "day_raw": "Týs.",
           "times": {
-            "Mán.": "07:10",
-            "Týs.": "07:10",
-            "Mik.": "07:10",
-            "Hós.": "07:10",
-            "Frí.": "07:10",
-            "Ley.": null,
-            "Sun.": null
+            "Gamlarætt": "06:55",
+            "Hestur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Gamlarætt - Hestur",
+          "service_id": "wed",
+          "day_raw": "Mik.",
           "times": {
-            "Mán.": "09:05",
-            "Týs.": "09:05",
-            "Mik.": "09:05",
-            "Hós.": "09:05",
-            "Frí.": "09:05",
-            "Ley.": "08:35",
-            "Sun.": "08:35"
+            "Gamlarætt": "06:55",
+            "Hestur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Hestur - Gamlarætt",
+          "service_id": "thu",
+          "day_raw": "Hós.",
           "times": {
-            "Mán.": "09:20",
-            "Týs.": "09:20",
-            "Mik.": "09:20",
-            "Hós.": "09:20",
-            "Frí.": "09:20",
-            "Ley.": "08:50",
-            "Sun.": "08:50"
+            "Gamlarætt": "06:55",
+            "Hestur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Gamlarætt - Hestur",
+          "service_id": "fri",
+          "day_raw": "Frí.",
           "times": {
-            "Mán.": "14:35",
-            "Týs.": "14:35",
-            "Mik.": "14:35",
-            "Hós.": "14:35",
-            "Frí.": "14:35",
-            "Ley.": "14:35",
-            "Sun.": "14:35"
+            "Gamlarætt": "06:55",
+            "Hestur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Hestur - Gamlarætt",
+          "service_id": "mon",
+          "day_raw": "Mán.",
           "times": {
-            "Mán.": "14:50",
-            "Týs.": "14:50",
-            "Mik.": "14:50",
-            "Hós.": "14:50",
-            "Frí.": "14:50",
-            "Ley.": "14:50",
-            "Sun.": "14:50"
+            "Gamlarætt": "09:05",
+            "Hestur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Gamlarætt - Hestur",
+          "service_id": "tue",
+          "day_raw": "Týs.",
           "times": {
-            "Mán.": "17:05",
-            "Týs.": "17:05",
-            "Mik.": "17:05",
-            "Hós.": "17:05",
-            "Frí.": "17:05",
-            "Ley.": null,
-            "Sun.": null
+            "Gamlarætt": "09:05",
+            "Hestur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Hestur - Gamlarætt",
+          "service_id": "wed",
+          "day_raw": "Mik.",
           "times": {
-            "Mán.": "17:20",
-            "Týs.": "17:20",
-            "Mik.": "17:20",
-            "Hós.": "17:20",
-            "Frí.": "17:20",
-            "Ley.": null,
-            "Sun.": null
+            "Gamlarætt": "09:05",
+            "Hestur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Gamlarætt - Hestur",
+          "service_id": "thu",
+          "day_raw": "Hós.",
           "times": {
-            "Mán.": "19:05",
-            "Týs.": "19:05",
-            "Mik.": "19:05",
-            "Hós.": "19:05",
-            "Frí.": "19:05",
-            "Ley.": "19:05",
-            "Sun.": "19:05"
+            "Gamlarætt": "09:05",
+            "Hestur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Hestur - Gamlarætt",
+          "service_id": "fri",
+          "day_raw": "Frí.",
           "times": {
-            "Mán.": "19:20",
-            "Týs.": "19:20",
-            "Mik.": "19:20",
-            "Hós.": "19:20",
-            "Frí.": "19:20",
-            "Ley.": "19:20",
-            "Sun.": "19:20"
+            "Gamlarætt": "09:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Ley.",
+          "times": {
+            "Gamlarætt": "08:35",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sun.",
+          "times": {
+            "Gamlarætt": "08:35",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Mán.",
+          "times": {
+            "Gamlarætt": "14:35",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Týs.",
+          "times": {
+            "Gamlarætt": "14:35",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Mik.",
+          "times": {
+            "Gamlarætt": "14:35",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Hós.",
+          "times": {
+            "Gamlarætt": "14:35",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Frí.",
+          "times": {
+            "Gamlarætt": "14:35",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Ley.",
+          "times": {
+            "Gamlarætt": "14:35",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sun.",
+          "times": {
+            "Gamlarætt": "14:35",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Mán.",
+          "times": {
+            "Gamlarætt": "17:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Týs.",
+          "times": {
+            "Gamlarætt": "17:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Mik.",
+          "times": {
+            "Gamlarætt": "17:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Hós.",
+          "times": {
+            "Gamlarætt": "17:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Frí.",
+          "times": {
+            "Gamlarætt": "17:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Mán.",
+          "times": {
+            "Gamlarætt": "19:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Týs.",
+          "times": {
+            "Gamlarætt": "19:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Mik.",
+          "times": {
+            "Gamlarætt": "19:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Hós.",
+          "times": {
+            "Gamlarætt": "19:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Frí.",
+          "times": {
+            "Gamlarætt": "19:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Ley.",
+          "times": {
+            "Gamlarætt": "19:05",
+            "Hestur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sun.",
+          "times": {
+            "Gamlarætt": "19:05",
+            "Hestur": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": "61 Gamlar&#xE6;tt - Hestur",
+      "seasonal": null,
+      "stops": [
+        "Hestur",
+        "Gamlarætt"
+      ],
+      "trips": [
+        {
+          "service_id": "mon",
+          "day_raw": "Mán.",
+          "times": {
+            "Hestur": "07:10",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Týs.",
+          "times": {
+            "Hestur": "07:10",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Mik.",
+          "times": {
+            "Hestur": "07:10",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Hós.",
+          "times": {
+            "Hestur": "07:10",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Frí.",
+          "times": {
+            "Hestur": "07:10",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Mán.",
+          "times": {
+            "Hestur": "09:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Týs.",
+          "times": {
+            "Hestur": "09:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Mik.",
+          "times": {
+            "Hestur": "09:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Hós.",
+          "times": {
+            "Hestur": "09:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Frí.",
+          "times": {
+            "Hestur": "09:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Ley.",
+          "times": {
+            "Hestur": "08:50",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sun.",
+          "times": {
+            "Hestur": "08:50",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Mán.",
+          "times": {
+            "Hestur": "14:50",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Týs.",
+          "times": {
+            "Hestur": "14:50",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Mik.",
+          "times": {
+            "Hestur": "14:50",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Hós.",
+          "times": {
+            "Hestur": "14:50",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Frí.",
+          "times": {
+            "Hestur": "14:50",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Ley.",
+          "times": {
+            "Hestur": "14:50",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sun.",
+          "times": {
+            "Hestur": "14:50",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Mán.",
+          "times": {
+            "Hestur": "17:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Týs.",
+          "times": {
+            "Hestur": "17:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Mik.",
+          "times": {
+            "Hestur": "17:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Hós.",
+          "times": {
+            "Hestur": "17:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Frí.",
+          "times": {
+            "Hestur": "17:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Mán.",
+          "times": {
+            "Hestur": "19:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Týs.",
+          "times": {
+            "Hestur": "19:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Mik.",
+          "times": {
+            "Hestur": "19:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Hós.",
+          "times": {
+            "Hestur": "19:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Frí.",
+          "times": {
+            "Hestur": "19:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Ley.",
+          "times": {
+            "Hestur": "19:20",
+            "Gamlarætt": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sun.",
+          "times": {
+            "Hestur": "19:20",
+            "Gamlarætt": null
           }
         }
       ]

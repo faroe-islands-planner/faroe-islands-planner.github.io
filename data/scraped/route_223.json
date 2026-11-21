@@ -10,8 +10,7 @@
         "Hvalvík",
         "Oyri",
         "Oyrarbakki",
-        "Kambsdalur",
-        ""
+        "Kambsdalur"
       ],
       "trips": [
         {
@@ -22,8 +21,7 @@
             "Hvalvík": "07:15",
             "Oyri": "07:30",
             "Oyrarbakki": "07:35",
-            "Kambsdalur": "08:05",
-            "": null
+            "Kambsdalur": "08:05"
           }
         }
       ]

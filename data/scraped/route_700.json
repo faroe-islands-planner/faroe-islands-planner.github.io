@@ -6,6 +6,7 @@
       "heading": "700 Sumba - Vágur - Tvøroyri",
       "seasonal": null,
       "stops": [
+        "Sumba",
         "Lopra",
         "Páls Høll",
         "Vágur",
@@ -17,29 +18,76 @@
       ],
       "trips": [
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
           "day_raw": "134",
           "times": {
-            "Lopra": null,
+            "Sumba": "05:00",
+            "Lopra": "05:10",
             "Páls Høll": null,
             "Vágur": "05:25",
-            "Porkeri": null,
-            "Hov": null,
-            "Øravík": null,
+            "Porkeri": "05:30",
+            "Hov": "05:40",
+            "Øravík": "05:45",
             "Ferjulegan": "05:50",
             "Tvøroyri": "06:00"
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "wed",
+          "day_raw": "134",
+          "times": {
+            "Sumba": "05:00",
+            "Lopra": "05:10",
+            "Páls Høll": null,
+            "Vágur": "05:25",
+            "Porkeri": "05:30",
+            "Hov": "05:40",
+            "Øravík": "05:45",
+            "Ferjulegan": "05:50",
+            "Tvøroyri": "06:00"
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "134",
+          "times": {
+            "Sumba": "05:00",
+            "Lopra": "05:10",
+            "Páls Høll": null,
+            "Vágur": "05:25",
+            "Porkeri": "05:30",
+            "Hov": "05:40",
+            "Øravík": "05:45",
+            "Ferjulegan": "05:50",
+            "Tvøroyri": "06:00"
+          }
+        },
+        {
+          "service_id": "tue",
           "day_raw": "25",
           "times": {
-            "Lopra": null,
+            "Sumba": "06:00",
+            "Lopra": "06:10",
             "Páls Høll": null,
             "Vágur": "06:25",
-            "Porkeri": null,
-            "Hov": null,
-            "Øravík": null,
+            "Porkeri": "06:30",
+            "Hov": "06:40",
+            "Øravík": "06:45",
+            "Ferjulegan": "06:50",
+            "Tvøroyri": "07:00"
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "25",
+          "times": {
+            "Sumba": "06:00",
+            "Lopra": "06:10",
+            "Páls Høll": null,
+            "Vágur": "06:25",
+            "Porkeri": "06:30",
+            "Hov": "06:40",
+            "Øravík": "06:45",
             "Ferjulegan": "06:50",
             "Tvøroyri": "07:00"
           }
@@ -48,11 +96,12 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Lopra": null,
+            "Sumba": "07:00",
+            "Lopra": "07:05",
             "Páls Høll": null,
             "Vágur": "07:15",
-            "Porkeri": null,
-            "Hov": null,
+            "Porkeri": "07:25",
+            "Hov": "07:30",
             "Øravík": "07:35",
             "Ferjulegan": null,
             "Tvøroyri": "07:45"
@@ -62,11 +111,12 @@
           "service_id": "weekdays_sun",
           "day_raw": "x7",
           "times": {
-            "Lopra": null,
-            "Páls Høll": null,
+            "Sumba": "07:25",
+            "Lopra": "07:35",
+            "Páls Høll": "07:40",
             "Vágur": "07:50",
-            "Porkeri": null,
-            "Hov": null,
+            "Porkeri": "07:55",
+            "Hov": "08:10",
             "Øravík": null,
             "Ferjulegan": "08:20",
             "Tvøroyri": "08:30"
@@ -76,25 +126,57 @@
           "service_id": "sat",
           "day_raw": "6",
           "times": {
-            "Lopra": null,
+            "Sumba": "08:15",
+            "Lopra": "08:25",
             "Páls Høll": null,
             "Vágur": "08:40",
-            "Porkeri": null,
-            "Hov": null,
+            "Porkeri": "08:45",
+            "Hov": "08:55",
             "Øravík": null,
             "Ferjulegan": "09:00",
             "Tvøroyri": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
           "day_raw": "134",
           "times": {
-            "Lopra": null,
+            "Sumba": "10:05",
+            "Lopra": "10:15",
             "Páls Høll": null,
             "Vágur": "10:25",
-            "Porkeri": null,
-            "Hov": null,
+            "Porkeri": "10:30",
+            "Hov": "10:40",
+            "Øravík": null,
+            "Ferjulegan": "10:50",
+            "Tvøroyri": "11:00"
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "134",
+          "times": {
+            "Sumba": "10:05",
+            "Lopra": "10:15",
+            "Páls Høll": null,
+            "Vágur": "10:25",
+            "Porkeri": "10:30",
+            "Hov": "10:40",
+            "Øravík": null,
+            "Ferjulegan": "10:50",
+            "Tvøroyri": "11:00"
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "134",
+          "times": {
+            "Sumba": "10:05",
+            "Lopra": "10:15",
+            "Páls Høll": null,
+            "Vágur": "10:25",
+            "Porkeri": "10:30",
+            "Hov": "10:40",
             "Øravík": null,
             "Ferjulegan": "10:50",
             "Tvøroyri": "11:00"
@@ -104,13 +186,14 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Lopra": null,
+            "Sumba": "12:40",
+            "Lopra": "12:50",
             "Páls Høll": null,
             "Vágur": "13:15",
-            "Porkeri": null,
-            "Hov": null,
+            "Porkeri": "13:20",
+            "Hov": "13:30",
             "Øravík": "13:35",
-            "Ferjulegan": null,
+            "Ferjulegan": "13:40",
             "Tvøroyri": "13:45"
           }
         },
@@ -118,6 +201,7 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Sumba": null,
             "Lopra": null,
             "Páls Høll": null,
             "Vágur": "14:15",
@@ -132,11 +216,12 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
-            "Lopra": null,
+            "Sumba": "14:30",
+            "Lopra": "14:40",
             "Páls Høll": null,
             "Vágur": "14:55",
-            "Porkeri": null,
-            "Hov": null,
+            "Porkeri": "15:00",
+            "Hov": "15:10",
             "Øravík": null,
             "Ferjulegan": "15:20",
             "Tvøroyri": "15:30"
@@ -146,11 +231,12 @@
           "service_id": "weekdays",
           "day_raw": "x",
           "times": {
+            "Sumba": null,
             "Lopra": null,
             "Páls Høll": null,
             "Vágur": "16:30",
-            "Porkeri": null,
-            "Hov": null,
+            "Porkeri": "16:35",
+            "Hov": "16:40",
             "Øravík": null,
             "Ferjulegan": "17:00",
             "Tvøroyri": "17:05"
@@ -160,13 +246,44 @@
           "service_id": "sun",
           "day_raw": "7",
           "times": {
-            "Lopra": null,
+            "Sumba": "16:30",
+            "Lopra": "16:35",
             "Páls Høll": null,
             "Vágur": "16:50",
-            "Porkeri": null,
-            "Hov": null,
-            "Øravík": null,
+            "Porkeri": "16:55",
+            "Hov": "17:05",
+            "Øravík": "17:15",
             "Ferjulegan": "17:25",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "136",
+          "times": {
+            "Sumba": "17:15",
+            "Lopra": "17:20",
+            "Páls Høll": null,
+            "Vágur": "17:35",
+            "Porkeri": "17:40",
+            "Hov": "17:50",
+            "Øravík": "18:00",
+            "Ferjulegan": "18:05",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "136",
+          "times": {
+            "Sumba": "17:15",
+            "Lopra": "17:20",
+            "Páls Høll": null,
+            "Vágur": "17:35",
+            "Porkeri": "17:40",
+            "Hov": "17:50",
+            "Øravík": "18:00",
+            "Ferjulegan": "18:05",
             "Tvøroyri": null
           }
         },
@@ -174,22 +291,24 @@
           "service_id": "sat",
           "day_raw": "136",
           "times": {
-            "Lopra": null,
+            "Sumba": "17:15",
+            "Lopra": "17:20",
             "Páls Høll": null,
             "Vágur": "17:35",
-            "Porkeri": null,
-            "Hov": null,
-            "Øravík": null,
+            "Porkeri": "17:40",
+            "Hov": "17:50",
+            "Øravík": "18:00",
             "Ferjulegan": "18:05",
             "Tvøroyri": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "5",
           "times": {
-            "Lopra": null,
-            "Páls Høll": null,
+            "Sumba": "19:40",
+            "Lopra": "19:45",
+            "Páls Høll": "19:50",
             "Vágur": "20:00",
             "Porkeri": null,
             "Hov": null,
@@ -199,9 +318,10 @@
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "tue",
           "day_raw": "2",
           "times": {
+            "Sumba": null,
             "Lopra": null,
             "Páls Høll": null,
             "Vágur": "20:35",
@@ -216,6 +336,7 @@
           "service_id": "sun",
           "day_raw": "7",
           "times": {
+            "Sumba": null,
             "Lopra": null,
             "Páls Høll": null,
             "Vágur": "21:30",
@@ -227,9 +348,55 @@
           }
         },
         {
+          "service_id": "mon",
+          "day_raw": "1346",
+          "times": {
+            "Sumba": null,
+            "Lopra": null,
+            "Páls Høll": null,
+            "Vágur": "22:45",
+            "Porkeri": null,
+            "Hov": null,
+            "Øravík": null,
+            "Ferjulegan": "23:05",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "1346",
+          "times": {
+            "Sumba": null,
+            "Lopra": null,
+            "Páls Høll": null,
+            "Vágur": "22:45",
+            "Porkeri": null,
+            "Hov": null,
+            "Øravík": null,
+            "Ferjulegan": "23:05",
+            "Tvøroyri": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "1346",
+          "times": {
+            "Sumba": null,
+            "Lopra": null,
+            "Páls Høll": null,
+            "Vágur": "22:45",
+            "Porkeri": null,
+            "Hov": null,
+            "Øravík": null,
+            "Ferjulegan": "23:05",
+            "Tvøroyri": null
+          }
+        },
+        {
           "service_id": "sat",
           "day_raw": "1346",
           "times": {
+            "Sumba": null,
             "Lopra": null,
             "Páls Høll": null,
             "Vágur": "22:45",
@@ -263,12 +430,12 @@
           "times": {
             "Tvøroyri": "07:15",
             "Ferjulega": null,
-            "Øravík": null,
+            "Øravík": "07:25",
             "Hov": "07:30",
             "Porkeri": "07:40",
             "Vágur": "07:50",
             "Páls Høll": null,
-            "Lopra": null,
+            "Lopra": "08:00",
             "Sumba": "08:10"
           }
         },
@@ -278,9 +445,9 @@
           "times": {
             "Tvøroyri": "07:45",
             "Ferjulega": null,
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Øravík": "08:05",
+            "Hov": "08:10",
+            "Porkeri": "08:20",
             "Vágur": "08:25",
             "Páls Høll": null,
             "Lopra": null,
@@ -293,28 +460,58 @@
           "times": {
             "Tvøroyri": "08:50",
             "Ferjulega": "09:00",
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Øravík": "09:10",
+            "Hov": "09:20",
+            "Porkeri": "09:30",
             "Vágur": "09:35",
             "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Lopra": "09:50",
+            "Sumba": "10:00"
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
           "day_raw": "134",
           "times": {
             "Tvøroyri": "10:35",
             "Ferjulega": "10:45",
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Øravík": "10:55",
+            "Hov": "11:05",
+            "Porkeri": "11:15",
             "Vágur": "11:20",
             "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Lopra": "11:25",
+            "Sumba": "11:45"
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "134",
+          "times": {
+            "Tvøroyri": "10:35",
+            "Ferjulega": "10:45",
+            "Øravík": "10:55",
+            "Hov": "11:05",
+            "Porkeri": "11:15",
+            "Vágur": "11:20",
+            "Páls Høll": null,
+            "Lopra": "11:25",
+            "Sumba": "11:45"
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "134",
+          "times": {
+            "Tvøroyri": "10:35",
+            "Ferjulega": "10:45",
+            "Øravík": "10:55",
+            "Hov": "11:05",
+            "Porkeri": "11:15",
+            "Vágur": "11:20",
+            "Páls Høll": null,
+            "Lopra": "11:25",
+            "Sumba": "11:45"
           }
         },
         {
@@ -323,13 +520,13 @@
           "times": {
             "Tvøroyri": "12:50",
             "Ferjulega": "13:00",
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Øravík": "13:10",
+            "Hov": "13:15",
+            "Porkeri": "13:25",
             "Vágur": "13:30",
             "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Lopra": "13:45",
+            "Sumba": "14:00"
           }
         },
         {
@@ -339,12 +536,12 @@
             "Tvøroyri": "13:10",
             "Ferjulega": null,
             "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Hov": "13:30",
+            "Porkeri": "13:35",
             "Vágur": "13:40",
             "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Lopra": "13:55",
+            "Sumba": "14:00"
           }
         },
         {
@@ -357,7 +554,7 @@
             "Hov": null,
             "Porkeri": null,
             "Vágur": "14:15",
-            "Páls Høll": null,
+            "Páls Høll": "14:20",
             "Lopra": "14:25",
             "Sumba": "14:30"
           }
@@ -369,12 +566,12 @@
             "Tvøroyri": "14:50",
             "Ferjulega": "15:00",
             "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Hov": "15:10",
+            "Porkeri": "15:20",
             "Vágur": "15:25",
-            "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Páls Høll": "15:30",
+            "Lopra": "15:35",
+            "Sumba": "15:40"
           }
         },
         {
@@ -383,12 +580,12 @@
           "times": {
             "Tvøroyri": "16:05",
             "Ferjulega": null,
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Øravík": "16:15",
+            "Hov": "16:20",
+            "Porkeri": "16:25",
             "Vágur": "16:30",
-            "Páls Høll": null,
-            "Lopra": null,
+            "Páls Høll": "16:35",
+            "Lopra": "16:35",
             "Sumba": "16:55"
           }
         },
@@ -398,13 +595,43 @@
           "times": {
             "Tvøroyri": "17:05",
             "Ferjulega": null,
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Øravík": "17:20",
+            "Hov": "17:30",
+            "Porkeri": "17:35",
             "Vágur": "17:40",
-            "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Páls Høll": "17:45",
+            "Lopra": "17:55",
+            "Sumba": "18:05"
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "136",
+          "times": {
+            "Tvøroyri": "18:05",
+            "Ferjulega": "18:15",
+            "Øravík": "18:20",
+            "Hov": "18:25",
+            "Porkeri": "18:30",
+            "Vágur": "18:35",
+            "Páls Høll": "18:40",
+            "Lopra": "18:50",
+            "Sumba": "18:55"
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "136",
+          "times": {
+            "Tvøroyri": "18:05",
+            "Ferjulega": "18:15",
+            "Øravík": "18:20",
+            "Hov": "18:25",
+            "Porkeri": "18:30",
+            "Vágur": "18:35",
+            "Páls Høll": "18:40",
+            "Lopra": "18:50",
+            "Sumba": "18:55"
           }
         },
         {
@@ -413,43 +640,43 @@
           "times": {
             "Tvøroyri": "18:05",
             "Ferjulega": "18:15",
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
-            "Vágur": null,
-            "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Øravík": "18:20",
+            "Hov": "18:25",
+            "Porkeri": "18:30",
+            "Vágur": "18:35",
+            "Páls Høll": "18:40",
+            "Lopra": "18:50",
+            "Sumba": "18:55"
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "5",
           "times": {
             "Tvøroyri": "20:20",
             "Ferjulega": "20:30",
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Øravík": "20:35",
+            "Hov": "20:45",
+            "Porkeri": "20:55",
             "Vágur": "21:00",
             "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Lopra": "21:15",
+            "Sumba": "21:25"
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "tue",
           "day_raw": "2",
           "times": {
             "Tvøroyri": "20:50",
             "Ferjulega": "21:00",
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
-            "Vágur": null,
+            "Øravík": "21:05",
+            "Hov": "21:15",
+            "Porkeri": "21:20",
+            "Vágur": "21:25",
             "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Lopra": "21:35",
+            "Sumba": "21:40"
           }
         },
         {
@@ -458,13 +685,58 @@
           "times": {
             "Tvøroyri": null,
             "Ferjulega": "22:15",
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Øravík": "22:20",
+            "Hov": "22:30",
+            "Porkeri": "22:40",
             "Vágur": "22:15",
             "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Lopra": "23:00",
+            "Sumba": "23:10"
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "1346",
+          "times": {
+            "Tvøroyri": null,
+            "Ferjulega": "23:15",
+            "Øravík": "23:20",
+            "Hov": "23:30",
+            "Porkeri": "23:40",
+            "Vágur": "23:45",
+            "Páls Høll": null,
+            "Lopra": "23:55",
+            "Sumba": "00:00"
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "1346",
+          "times": {
+            "Tvøroyri": null,
+            "Ferjulega": "23:15",
+            "Øravík": "23:20",
+            "Hov": "23:30",
+            "Porkeri": "23:40",
+            "Vágur": "23:45",
+            "Páls Høll": null,
+            "Lopra": "23:55",
+            "Sumba": "00:00"
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "1346",
+          "times": {
+            "Tvøroyri": null,
+            "Ferjulega": "23:15",
+            "Øravík": "23:20",
+            "Hov": "23:30",
+            "Porkeri": "23:40",
+            "Vágur": "23:45",
+            "Páls Høll": null,
+            "Lopra": "23:55",
+            "Sumba": "00:00"
           }
         },
         {
@@ -473,13 +745,13 @@
           "times": {
             "Tvøroyri": null,
             "Ferjulega": "23:15",
-            "Øravík": null,
-            "Hov": null,
-            "Porkeri": null,
+            "Øravík": "23:20",
+            "Hov": "23:30",
+            "Porkeri": "23:40",
             "Vágur": "23:45",
             "Páls Høll": null,
-            "Lopra": null,
-            "Sumba": null
+            "Lopra": "23:55",
+            "Sumba": "00:00"
           }
         }
       ]

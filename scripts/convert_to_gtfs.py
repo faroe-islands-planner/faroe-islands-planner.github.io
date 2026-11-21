@@ -9,6 +9,7 @@ GTFS files produced:
 """
 
 import csv
+from datetime import date, timedelta
 import json
 import os
 import re
@@ -60,7 +61,7 @@ ROUTE_META = {
 # Same colours as the site (the --*-color variables in index.html, which the maps
 # and badges use). Text colour = black or white, whichever is more legible on it.
 TYPE_COLORS = {
-    "ferry":   "8ED4D7",
+    "ferry":   "2F5298",
     "bus":     "85C584",
     "express": "EAB3D6",
     "airport": "9C82BF",
@@ -202,13 +203,11 @@ STOP_ALIASES = {
     # ── Directional / arrival / departure labels ──────────────────────────
     "Arrival Oyrarbakka":           "Oyrarbakki",
     "Departure from Oyrarbakka":    "Oyrarbakki",
+    "Oyrarbakka":                   "Oyrarbakki",
     "From Oyrabakka":               "Oyrarbakki",
     "On Oyrabakka":                 "Oyrarbakki",
     "Í Tjørnuvík":                  "Tjørnuvík",
     "From Hvannasund":              "Hvannasund",
-    # NB: route 410's "from Klaksví" / "from Tórshavn" rows are connection times,
-    # not stops — they're in STOP_BLOCKLIST (mapping them to Klaksvík/Tórshavn
-    # appended phantom stops after Fuglafjørður).
     "Effo í Kollfjd.":              "Kollafjarðadalur við Effo",
 
     # ── Tórshavn terminal / bus-terminal variants ─────────────────────────
@@ -290,6 +289,11 @@ FEED_END   = "20261231"
 
 BASE_SERVICES = {
     "daily":         (1,1,1,1,1,1,1),
+    "mon":           (1,0,0,0,0,0,0),
+    "tue":           (0,1,0,0,0,0,0),
+    "wed":           (0,0,1,0,0,0,0),
+    "thu":           (0,0,0,1,0,0,0),
+    "fri":           (0,0,0,0,1,0,0),
     "weekdays":      (1,1,1,1,1,0,0),
     "weekdays_sat":  (1,1,1,1,1,1,0),
     "weekdays_sun":  (1,1,1,1,1,0,1),
@@ -333,7 +337,7 @@ EASTER_HOLIDAYS = {
 
 def write_csv(path, fieldnames, rows):
     with open(path, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     print(f"  Wrote {path} ({len(rows)} rows)")
@@ -361,11 +365,10 @@ def build_stop_registry(routes_data, coords):
     # not real stop names.  Match is case-insensitive (canonical.strip().lower()).
     STOP_BLOCKLIST = {
         "",
-        # Directional column headers / connection rows (route 410: the time of
-        # the connecting bus to/from Klaksvík or Tórshavn — not a stop on 410)
+        # Directional column headers
         "to klaksvík", "to tórshavn", "to klaksvik", "to torshavn",
         "to klaksví",
-        "from klaksví", "from tórshavn",
+        "from klaksví", "from klaksvík", "from tórshavn", "from torshavn",
         # Day-of-week abbreviations (route 61 uses these as column headers)
         "mán.", "týs.", "mik.", "hós.", "frí.", "ley.", "sun.",
         # Noise / season labels
@@ -407,174 +410,18 @@ def build_stop_registry(routes_data, coords):
 
 
 # ---------------------------------------------------------------------------
-# Route-specific data normalisers
+# Generic data normalisers
 # ---------------------------------------------------------------------------
 
-# Day-of-week abbreviations used by route 61 as column headers, mapped to the
-# GTFS service_id that covers that day.
-_ROUTE61_DAY_COLS = {
-    "Mán.": "weekdays",   # Monday
-    "Týs.": "weekdays",   # Tuesday
-    "Mik.": "weekdays",   # Wednesday
-    "Hós.": "weekdays",   # Thursday
-    "Frí.": "weekdays",   # Friday
-    "Ley.": "sat",        # Saturday
-    "Sun.": "sun",        # Sunday
+FERRY_CROSSING_MINS_BY_ROUTE = {
+    "7": 165,   # Tvøroyri ↔ Tórshavn
+    "36": 45,   # Sørvágur ↔ Mykines
+    "56": 20,   # Klaksvík ↔ Syðradalur
+    "58": 30,   # Hvannasund → Hattarvík
+    "61": 15,   # Gamlarætt ↔ Hestur
+    "66": 30,   # Sandur ↔ Skúvoy
+    "90": 25,   # Tórshavn ↔ Nólsoy
 }
-
-def normalise_route_61(route_data):
-    """
-    Route 61 (Gamlarætt – Hestur ferry) is scraped with day-of-week
-    abbreviations as "stops" and departure times per day as "times".
-    The actual direction is in trip["day_raw"].
-
-    This function rewrites the section so that:
-      - stops = ["Gamlarætt", "Hestur"]  (outbound) or reversed (inbound)
-      - each trip becomes one entry per non-null day column, with a single
-        departure time and the correct service_id.
-    """
-    new_sections = []
-    for sec in route_data.get("sections", []):
-        raw_trips = sec.get("trips", [])
-        outbound_trips = []
-        inbound_trips  = []
-
-        for raw_trip in raw_trips:
-            direction = raw_trip.get("day_raw", "")
-            # Pick the first non-null time across all day columns as the departure
-            times_by_day = raw_trip.get("times", {})
-            # Collect one trip per service_id (combining days that share the same time)
-            per_service: dict[str, str] = {}  # service_id -> time
-            for day_col, service_id in _ROUTE61_DAY_COLS.items():
-                t = times_by_day.get(day_col)
-                if t is None:
-                    continue
-                # If same service_id already has a time, they match — keep first
-                if service_id not in per_service:
-                    per_service[service_id] = t
-
-            is_outbound = "Gamlarætt - Hestur" in direction or not inbound_trips
-            # Use day_raw to distinguish direction; both stops always served
-            if "Hestur" in direction and "Gamlarætt" not in direction.split("-")[0].strip():
-                is_outbound = False
-            # Simpler heuristic: alternate outbound/inbound as they appear
-            # The raw data alternates: G→H, H→G, G→H, H→G …
-            idx = raw_trips.index(raw_trip)
-            is_outbound = (idx % 2 == 0)
-
-            for service_id, dep_time in per_service.items():
-                entry = {
-                    "service_id": service_id,
-                    "times": {"Gamlarætt": dep_time, "Hestur": dep_time},
-                    "_offset_hestur": 15,  # ferry is ~15 min crossing
-                }
-                if is_outbound:
-                    outbound_trips.append(entry)
-                else:
-                    inbound_trips.append(entry)
-
-        # Build proper arrival times: Gamlarætt dep → Hestur arr +15 min
-        def add_offset(trips, from_stop, to_stop):
-            result = []
-            for t in trips:
-                dep = t["times"][from_stop]
-                if dep:
-                    h, m = map(int, dep.split(":"))
-                    arr_m = h * 60 + m + 15
-                    arr = f"{arr_m // 60:02d}:{arr_m % 60:02d}"
-                else:
-                    arr = dep
-                result.append({
-                    "service_id": t["service_id"],
-                    "times": {from_stop: dep, to_stop: arr},
-                })
-            return result
-
-        if outbound_trips:
-            new_sections.append({
-                "heading": sec.get("heading", ""),
-                "seasonal": sec.get("seasonal"),
-                "stops": ["Gamlarætt", "Hestur"],
-                "trips": add_offset(outbound_trips, "Gamlarætt", "Hestur"),
-            })
-        if inbound_trips:
-            new_sections.append({
-                "heading": sec.get("heading", ""),
-                "seasonal": sec.get("seasonal"),
-                "stops": ["Hestur", "Gamlarætt"],
-                "trips": add_offset(inbound_trips, "Hestur", "Gamlarætt"),
-            })
-
-    route_data["sections"] = new_sections
-    return route_data
-
-
-def normalise_route_58(route_data):
-    """
-    Route 58 (Hvannasund – Hattarvík ferry) is scraped with only one real
-    stop ("From Hvannasund") plus a season-label ("Period" / "Winter") as the
-    second "stop".  The destination Hattarvík is never captured.
-
-    This function rewrites each section so stops = ["Hvannasund", "Hattarvík"]
-    and uses a 30-minute crossing estimate for the arrival time at Hattarvík.
-    """
-    new_sections = []
-    for sec in route_data.get("sections", []):
-        new_trips = []
-        for trip in sec.get("trips", []):
-            dep_time = trip["times"].get("From Hvannasund")
-            if not dep_time:
-                continue
-            h, m = map(int, dep_time.split(":"))
-            arr_m = h * 60 + m + 30
-            arr_time = f"{arr_m // 60:02d}:{arr_m % 60:02d}"
-            new_trips.append({
-                "service_id": trip["service_id"],
-                "times": {"Hvannasund": dep_time, "Hattarvík": arr_time},
-            })
-        if new_trips:
-            new_sections.append({
-                "heading": sec.get("heading", ""),
-                "seasonal": sec.get("seasonal"),
-                "stops": ["Hvannasund", "Hattarvík"],
-                "trips": new_trips,
-            })
-    route_data["sections"] = new_sections
-    return route_data
-
-
-# ---------------------------------------------------------------------------
-# Route 7: Suðuroy – Tórshavn ferry
-# The scraper captured only the outbound section (Tvøroyri → Tórshavn).
-# Some Saturday rows have reversed times, indicating inbound trips that were
-# captured in the wrong orientation.  Weekday/Sunday inbound trips are missing
-# entirely and are injected from a hardcoded table.
-# ---------------------------------------------------------------------------
-
-_FERRY_CROSSING_MINS = 165  # ~2h45m Tórshavn ↔ Tvøroyri
-
-# Weekday / Sunday Tórshavn → Tvøroyri departures not captured by the scraper.
-# Times derived from the known ~2h45m travel time applied to the outbound
-# arrival times.  Verify against ssl.fo if the schedule changes.
-_ROUTE7_INBOUND_EXTRA = [
-    # Monday
-    {"service_id": "weekdays", "times": {"Tórshavn": "10:00", "Tvøroyri": "12:45"}},
-    # Tuesday
-    {"service_id": "weekdays", "times": {"Tórshavn": "07:30", "Tvøroyri": "10:15"}},
-    {"service_id": "weekdays", "times": {"Tórshavn": "14:30", "Tvøroyri": "17:15"}},
-    # Wednesday
-    {"service_id": "weekdays", "times": {"Tórshavn": "10:00", "Tvøroyri": "12:45"}},
-    # Thursday
-    {"service_id": "weekdays", "times": {"Tórshavn": "07:30", "Tvøroyri": "10:15"}},
-    {"service_id": "weekdays", "times": {"Tórshavn": "16:00", "Tvøroyri": "18:45"}},
-    # Friday
-    {"service_id": "weekdays", "times": {"Tórshavn": "07:30", "Tvøroyri": "10:15"}},
-    {"service_id": "weekdays", "times": {"Tórshavn": "14:30", "Tvøroyri": "17:15"}},
-    {"service_id": "weekdays", "times": {"Tórshavn": "21:15", "Tvøroyri": "00:00"}},
-    # Sunday
-    {"service_id": "sun",      "times": {"Tórshavn": "11:30", "Tvøroyri": "14:15"}},
-    {"service_id": "sun",      "times": {"Tórshavn": "20:30", "Tvøroyri": "23:15"}},
-]
 
 
 def _time_to_mins(t):
@@ -585,91 +432,34 @@ def _time_to_mins(t):
 
 
 def _mins_to_time(mins):
-    return f"{(mins // 60) % 24:02d}:{mins % 60:02d}"
+    return f"{mins // 60:02d}:{mins % 60:02d}"
 
 
-def normalise_route_7(route_data):
-    """
-    Route 7 (Suðuroy ferry) was scraped with only one direction.
-    Some Saturday rows have reversed times (inbound trips stored backwards).
-    This function:
-      1. Separates outbound and inbound trips from the scraped data.
-      2. Estimates missing arrival times using the ~2h45m crossing time.
-      3. Appends hardcoded weekday/Sunday inbound trips the scraper missed.
-    """
-    outbound = []
-    inbound  = []
+def normalise_departure_only_ferry(route_data):
+    route_id = route_data["route_id"]
+    crossing_mins = FERRY_CROSSING_MINS_BY_ROUTE.get(route_id)
+    if crossing_mins is None:
+        return route_data
 
     for sec in route_data.get("sections", []):
+        stops = sec.get("stops", [])
+        if len(stops) != 2:
+            continue
+        origin, destination = stops
         for trip in sec.get("trips", []):
-            t_tvoy = trip["times"].get("Tvøroyri")
-            t_tors = trip["times"].get("Tórshavn")
-
-            m_tvoy = _time_to_mins(t_tvoy)
-            m_tors = _time_to_mins(t_tors)
-
-            if m_tvoy is not None and m_tors is not None:
-                if m_tvoy < m_tors:
-                    # Normal outbound: Tvøroyri departs first → Tórshavn arrives later
-                    outbound.append({
-                        "service_id": trip["service_id"],
-                        "times": {"Tvøroyri": t_tvoy, "Tórshavn": t_tors},
-                    })
-                else:
-                    # Reversed entry: the scraper stored Tórshavn dep / Tvøroyri arr
-                    # in the wrong columns.  Tvøroyri value is actually the arrival.
-                    inbound.append({
-                        "service_id": trip["service_id"],
-                        "times": {"Tórshavn": t_tors, "Tvøroyri": t_tvoy},
-                    })
-            elif m_tvoy is not None:
-                # Only Tvøroyri time captured — outbound, estimate Tórshavn arrival
-                est_arr = m_tvoy + _FERRY_CROSSING_MINS
-                outbound.append({
-                    "service_id": trip["service_id"],
-                    "times": {"Tvøroyri": t_tvoy, "Tórshavn": _mins_to_time(est_arr)},
-                })
-            elif m_tors is not None:
-                # Only Tórshavn time captured — inbound, estimate Tvøroyri arrival
-                est_arr = m_tors + _FERRY_CROSSING_MINS
-                inbound.append({
-                    "service_id": trip["service_id"],
-                    "times": {"Tórshavn": t_tors, "Tvøroyri": _mins_to_time(est_arr)},
-                })
-
-    # Add hardcoded inbound trips that the scraper missed entirely
-    inbound.extend(_ROUTE7_INBOUND_EXTRA)
-
-    new_sections = []
-    if outbound:
-        new_sections.append({
-            "heading": "7 Suðuroy – Tórshavn",
-            "seasonal": None,
-            "stops": ["Tvøroyri", "Tórshavn"],
-            "trips": outbound,
-        })
-    if inbound:
-        new_sections.append({
-            "heading": "7 Tórshavn – Suðuroy",
-            "seasonal": None,
-            "stops": ["Tórshavn", "Tvøroyri"],
-            "trips": inbound,
-        })
-
-    route_data["sections"] = new_sections
+            times = trip.get("times", {})
+            dep_time = times.get(origin)
+            arr_time = times.get(destination)
+            if dep_time and not arr_time:
+                times[destination] = _mins_to_time(_time_to_mins(dep_time) + crossing_mins)
     return route_data
 
 
 def normalise_routes(routes_data):
-    """Apply route-specific normalisers before generic processing."""
+    """Apply generic normalisers before GTFS processing."""
     result = []
     for route in routes_data:
-        if route["route_id"] == "7":
-            route = normalise_route_7(route)
-        elif route["route_id"] == "61":
-            route = normalise_route_61(route)
-        elif route["route_id"] == "58":
-            route = normalise_route_58(route)
+        route = normalise_departure_only_ferry(route)
         result.append(route)
     return result
 
@@ -686,6 +476,80 @@ def get_service_id(trip_service_id, seasonal_info):
     if season in ("winter", "summer"):
         return trip_service_id + f"_{season}"
     return trip_service_id
+
+
+def is_weekday_service(service_id):
+    """True when service runs on at least one Monday-Friday calendar column."""
+    return any(ALL_SERVICES.get(service_id, (0,0,0,0,0,0,0))[:5])
+
+
+def sanitise_monotonic_stop_times(trips_rows, stop_times_rows, stop_name_by_id):
+    """
+    GTFS trips must move forward in time. If a source table contains a loop or
+    malformed row that still produces a backwards timestamp, split that trip
+    into monotonic pieces and drop pieces that cannot form a connection.
+    """
+    grouped = {}
+    for row in stop_times_rows:
+        grouped.setdefault(row["trip_id"], []).append(row)
+
+    new_trips = []
+    new_stop_times = []
+    split_trips = 0
+    dropped_pieces = 0
+
+    for trip in trips_rows:
+        trip_id = trip["trip_id"]
+        rows = sorted(grouped.get(trip_id, []), key=lambda r: int(r["stop_sequence"]))
+        if not rows:
+            continue
+
+        chunks = []
+        current = []
+        last_mins = None
+        for row in rows:
+            mins = _time_to_mins(row["arrival_time"])
+            if current and mins is not None and last_mins is not None and mins < last_mins:
+                chunks.append(current)
+                current = [row]
+            else:
+                current.append(row)
+            last_mins = mins
+        if current:
+            chunks.append(current)
+
+        valid_chunks = [chunk for chunk in chunks if len(chunk) >= 2]
+        dropped_pieces += len(chunks) - len(valid_chunks)
+        if not valid_chunks:
+            continue
+
+        if len(valid_chunks) > 1 or len(chunks) > 1:
+            split_trips += 1
+
+        for idx, chunk in enumerate(valid_chunks, start=1):
+            if len(valid_chunks) == 1 and len(chunks) == 1:
+                chunk_trip_id = trip_id
+                chunk_trip = dict(trip)
+            else:
+                chunk_trip_id = f"{trip_id}_part{idx}"
+                chunk_trip = dict(trip)
+                chunk_trip["trip_id"] = chunk_trip_id
+                chunk_trip["trip_headsign"] = stop_name_by_id.get(chunk[-1]["stop_id"], trip["trip_headsign"])
+
+            new_trips.append(chunk_trip)
+            for seq, row in enumerate(chunk, start=1):
+                new_row = dict(row)
+                new_row["trip_id"] = chunk_trip_id
+                new_row["stop_sequence"] = seq
+                new_stop_times.append(new_row)
+
+    if split_trips or dropped_pieces:
+        print(
+            f"  Sanitised stop_times: split {split_trips} trip(s), "
+            f"dropped {dropped_pieces} single-stop/bad piece(s)"
+        )
+
+    return new_trips, new_stop_times
 
 
 # ---------------------------------------------------------------------------
@@ -808,8 +672,7 @@ def main():
     cal_dates_rows = []
 
     # Fixed-date holidays: remove service on weekday-based services
-    weekday_services = [sid for sid in used_service_ids
-                        if ALL_SERVICES.get(sid, (0,))[0] == 1]  # monday == 1
+    weekday_services = [sid for sid in sorted(used_service_ids) if is_weekday_service(sid)]
     for year in [2025, 2026]:
         for month, day in FIXED_HOLIDAYS:
             date_str = f"{year}{month}{day}"
@@ -827,29 +690,31 @@ def main():
                     "exception_type": 2,
                 })
 
-    # Seasonal windows: restrict _winter / _summer services to their date ranges
-    # Winter: Sep 15 – Apr 30  (remove outside that window = add service removed for May1–Sep14)
-    # Summer: May 1 – Sep 14   (remove outside that window = add service removed for Sep15–Apr30)
-    # Rather than listing every excluded date, we use start_date/end_date in calendar.txt.
-    # Override for known seasonal services:
-    seasonal_calendar_overrides = {
-        # service_id_suffix: (start_date, end_date)
-        "_winter": ("20250915", "20260430"),
-        "_summer": ("20250501", "20250914"),
-    }
-    # Rewrite calendar rows for seasonal services
-    new_cal_rows = []
-    for row in calendar_rows:
-        sid = row["service_id"]
-        for suffix, (start, end) in seasonal_calendar_overrides.items():
-            if sid.endswith(suffix):
-                row = dict(row)
-                row["start_date"] = start
-                row["end_date"] = end
-                break
-        new_cal_rows.append(row)
-    calendar_rows = new_cal_rows
-    # Rewrite calendar.txt with updated date ranges
+    # Seasonal windows recur each feed year. Keep seasonal services in
+    # calendar.txt for the whole feed, then remove service outside the route's
+    # season with calendar_dates.txt.
+    def each_date(start, end):
+        cur = start
+        while cur <= end:
+            yield cur
+            cur += timedelta(days=1)
+
+    feed_start_date = date(int(FEED_START[:4]), int(FEED_START[4:6]), int(FEED_START[6:8]))
+    feed_end_date = date(int(FEED_END[:4]), int(FEED_END[4:6]), int(FEED_END[6:8]))
+    for sid in sorted(used_service_ids):
+        if not (sid.endswith("_summer") or sid.endswith("_winter")):
+            continue
+        for day in each_date(feed_start_date, feed_end_date):
+            is_summer = date(day.year, 5, 1) <= day <= date(day.year, 9, 14)
+            in_season = is_summer if sid.endswith("_summer") else not is_summer
+            if not in_season:
+                cal_dates_rows.append({
+                    "service_id": sid,
+                    "date": day.strftime("%Y%m%d"),
+                    "exception_type": 2,
+                })
+
+    # Rewrite calendar.txt after all service ids are known.
     write_csv(os.path.join(GTFS_DIR, "calendar.txt"),
         ["service_id","monday","tuesday","wednesday","thursday","friday","saturday","sunday",
          "start_date","end_date"],
@@ -931,6 +796,10 @@ def main():
                         "drop_off_type": drop_off_type,
                     })
                     seq += 1
+
+    stop_name_by_id = {info["stop_id"]: info["stop_name"] for info in stop_registry.values()}
+    trips_rows, stop_times_rows = sanitise_monotonic_stop_times(
+        trips_rows, stop_times_rows, stop_name_by_id)
 
     # Drop trips that have fewer than 2 stop times — they can't form any
     # connection in the CSA graph and indicate scraper data gaps.

@@ -9,6 +9,35 @@
         "Glyvrar",
         "Runavík",
         "Rituvík",
+        "Æðuvík"
+      ],
+      "trips": [
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Glyvrar": null,
+            "Runavík": "07:10",
+            "Rituvík": null,
+            "Æðuvík": "07:20"
+          }
+        },
+        {
+          "service_id": "school",
+          "day_raw": "x",
+          "times": {
+            "Glyvrar": "15:40",
+            "Runavík": "15:45",
+            "Rituvík": "15:55",
+            "Æðuvík": "16:05"
+          }
+        }
+      ]
+    },
+    {
+      "heading": "442 Glyvrar - &#xC6;ðuvík - Rituvík",
+      "seasonal": null,
+      "stops": [
         "Æðuvík",
         "Rituvík",
         "Runavík"
@@ -18,20 +47,18 @@
           "service_id": "school",
           "day_raw": "x",
           "times": {
-            "Glyvrar": null,
-            "Runavík": "07:40",
+            "Æðuvík": "07:20",
             "Rituvík": "07:30",
-            "Æðuvík": "07:20"
+            "Runavík": "07:40"
           }
         },
         {
           "service_id": "school",
           "day_raw": "x",
           "times": {
-            "Glyvrar": "15:40",
-            "Runavík": "16:15",
+            "Æðuvík": "16:05",
             "Rituvík": null,
-            "Æðuvík": "16:05"
+            "Runavík": "16:15"
           }
         }
       ]

@@ -3,303 +3,6 @@
   "route_type": "ferry",
   "sections": [
     {
-      "heading": "Winther: valid from 15th of September until 30th of April",
-      "seasonal": {
-        "season": "winter",
-        "date_range": {
-          "from": "15th of September",
-          "to": "30th of April"
-        },
-        "raw": "Winther: valid from 15th of September until 30th of April"
-      },
-      "stops": [
-        "Klaksvík",
-        "Syðradalur"
-      ],
-      "trips": [
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "15:30",
-            "Syðradalur": "15:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "15:30",
-            "Syðradalur": "15:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "15:30",
-            "Syðradalur": "15:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "15:30",
-            "Syðradalur": "15:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "15:30",
-            "Syðradalur": "15:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Klaksvík": "14:00",
-            "Syðradalur": "14:20"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "sun",
-          "day_raw": "Sunday",
-          "times": {
-            "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
-          }
-        },
-        {
-          "service_id": "sun",
-          "day_raw": "Sunday",
-          "times": {
-            "Klaksvík": "14:00",
-            "Syðradalur": "14:20"
-          }
-        },
-        {
-          "service_id": "sun",
-          "day_raw": "Sunday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        }
-      ]
-    },
-    {
       "heading": "Summer: Valid from 1st of May until 14th of September",
       "seasonal": {
         "season": "summer",
@@ -315,283 +18,83 @@
       ],
       "trips": [
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
           "day_raw": "Monday",
           "times": {
             "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
+            "Syðradalur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "14:50",
-            "Syðradalur": "15:10"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "16:10",
-            "Syðradalur": "16:30"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "tue",
           "day_raw": "Tuesday",
           "times": {
             "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
+            "Syðradalur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "09:00",
-            "Syðradalur": "09:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "14:50",
-            "Syðradalur": "15:10"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "16:10",
-            "Syðradalur": "16:30"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "wed",
           "day_raw": "Wednesday",
           "times": {
             "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
+            "Syðradalur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "14:50",
-            "Syðradalur": "15:10"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "16:10",
-            "Syðradalur": "16:30"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "thu",
           "day_raw": "Thursday",
           "times": {
             "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
+            "Syðradalur": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "09:00",
-            "Syðradalur": "09:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "14:50",
-            "Syðradalur": "15:10"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "16:10",
-            "Syðradalur": "16:30"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "Friday",
           "times": {
             "Klaksvík": "06:40",
-            "Syðradalur": "07:00"
+            "Syðradalur": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
           "day_raw": "Friday",
           "times": {
             "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "14:50",
-            "Syðradalur": "15:10"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "16:10",
-            "Syðradalur": "16:30"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
+            "Syðradalur": null
           }
         },
         {
@@ -599,7 +102,47 @@
           "day_raw": "Saturday",
           "times": {
             "Klaksvík": "08:00",
-            "Syðradalur": "08:20"
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "09:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "09:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "10:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "10:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "10:00",
+            "Syðradalur": null
           }
         },
         {
@@ -607,7 +150,55 @@
           "day_raw": "Saturday",
           "times": {
             "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Klaksvík": "10:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "14:50",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "14:50",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "14:50",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "14:50",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "14:50",
+            "Syðradalur": null
           }
         },
         {
@@ -615,39 +206,7 @@
           "day_raw": "Saturday",
           "times": {
             "Klaksvík": "14:00",
-            "Syðradalur": "14:20"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Klaksvík": "15:10",
-            "Syðradalur": "15:30"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
-          }
-        },
-        {
-          "service_id": "sun",
-          "day_raw": "Sunday",
-          "times": {
-            "Klaksvík": "10:00",
-            "Syðradalur": "10:20"
+            "Syðradalur": null
           }
         },
         {
@@ -655,7 +214,15 @@
           "day_raw": "Sunday",
           "times": {
             "Klaksvík": "14:00",
-            "Syðradalur": "14:20"
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Klaksvík": "15:10",
+            "Syðradalur": null
           }
         },
         {
@@ -663,7 +230,95 @@
           "day_raw": "Sunday",
           "times": {
             "Klaksvík": "15:10",
-            "Syðradalur": "15:30"
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "16:10",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "16:10",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "16:10",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "16:10",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "16:10",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
           }
         },
         {
@@ -671,7 +326,55 @@
           "day_raw": "Sunday",
           "times": {
             "Klaksvík": "17:15",
-            "Syðradalur": "17:35"
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
           }
         },
         {
@@ -679,7 +382,986 @@
           "day_raw": "Sunday",
           "times": {
             "Klaksvík": "18:30",
-            "Syðradalur": "18:50"
+            "Syðradalur": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Summer: Valid from 1st of May until 14th of September",
+      "seasonal": {
+        "season": "summer",
+        "date_range": {
+          "from": "1st of May",
+          "to": "14th of September"
+        },
+        "raw": "Summer: Valid from 1st of May until 14th of September"
+      },
+      "stops": [
+        "Syðradalur",
+        "Klaksvík"
+      ],
+      "trips": [
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "09:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "09:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "15:10",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "15:10",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "15:10",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "15:10",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "15:10",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "14:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Syðradalur": "14:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "15:30",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Syðradalur": "15:30",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "16:30",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "16:30",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "16:30",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "16:30",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "16:30",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Winther: valid from 15th of September until 30th of April",
+      "seasonal": {
+        "season": "winter",
+        "date_range": {
+          "from": "15th of September",
+          "to": "30th of April"
+        },
+        "raw": "Winther: valid from 15th of September until 30th of April"
+      },
+      "stops": [
+        "Klaksvík",
+        "Syðradalur"
+      ],
+      "trips": [
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "06:40",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "06:40",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "06:40",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "06:40",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "06:40",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Klaksvík": "08:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "10:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "10:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "10:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Klaksvík": "10:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Klaksvík": "10:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "15:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "15:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "15:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "15:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "15:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Klaksvík": "14:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Klaksvík": "14:00",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Klaksvík": "17:15",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Klaksvík": "18:30",
+            "Syðradalur": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": "Winther: valid from 15th of September until 30th of April",
+      "seasonal": {
+        "season": "winter",
+        "date_range": {
+          "from": "15th of September",
+          "to": "30th of April"
+        },
+        "raw": "Winther: valid from 15th of September until 30th of April"
+      },
+      "stops": [
+        "Syðradalur",
+        "Klaksvík"
+      ],
+      "trips": [
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "07:00",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "08:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Syðradalur": "10:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "15:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "15:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "15:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "15:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "15:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "14:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Syðradalur": "14:20",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Syðradalur": "17:35",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Syðradalur": "18:50",
+            "Klaksvík": null
           }
         }
       ]

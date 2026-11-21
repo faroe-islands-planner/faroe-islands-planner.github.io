@@ -1,1 +1,4 @@
 images/others/
+__pycache__/
+*.py[cod]
+data/live_ssl_snapshot/

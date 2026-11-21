@@ -11,27 +11,349 @@
       ],
       "trips": [
         {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
+          "service_id": "mon",
+          "day_raw": "Monday",
           "times": {
-            "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Sørvágur": "09:30",
+            "Mykines": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "thu",
           "day_raw": "Thursday",
           "times": {
-            "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Sørvágur": "09:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": null
           }
         },
         {
           "service_id": "sat",
           "day_raw": "Saturday",
           "times": {
-            "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Sørvágur": "09:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sørvágur": "09:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sørvágur": "13:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Sørvágur": "17:30",
+            "Mykines": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": "36 Sørvágur - Mykines",
+      "seasonal": null,
+      "stops": [
+        "Mykines",
+        "Sørvágur"
+      ],
+      "trips": [
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Mykines": "10:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Mykines": "10:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Mykines": "10:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Mykines": "10:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Mykines": "10:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Mykines": "10:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Mykines": "10:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Mykines": "14:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Mykines": "14:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Mykines": "14:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Mykines": "14:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Mykines": "14:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Mykines": "14:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Mykines": "14:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Mykines": "18:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Mykines": "18:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Mykines": "18:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Mykines": "18:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Mykines": "18:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Mykines": "18:15",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Mykines": "18:15",
+            "Sørvágur": null
           }
         }
       ]
@@ -45,171 +367,61 @@
       ],
       "trips": [
         {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Sørvágur": "09:30",
-            "Mykines": "10:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Sørvágur": "13:30",
-            "Mykines": "14:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Monday",
-          "times": {
-            "Sørvágur": "17:30",
-            "Mykines": "18:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "tue",
           "day_raw": "Tuesday",
           "times": {
-            "Sørvágur": "09:30",
-            "Mykines": "10:15"
+            "Sørvágur": "10:45",
+            "Mykines": null
           }
         },
         {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Sørvágur": "13:30",
-            "Mykines": "14:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Tuesday",
-          "times": {
-            "Sørvágur": "17:30",
-            "Mykines": "18:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Sørvágur": "09:30",
-            "Mykines": "10:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Sørvágur": "13:30",
-            "Mykines": "14:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Wednesday",
-          "times": {
-            "Sørvágur": "17:30",
-            "Mykines": "18:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
+          "service_id": "thu",
           "day_raw": "Thursday",
           "times": {
-            "Sørvágur": "09:30",
-            "Mykines": "10:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Sørvágur": "13:30",
-            "Mykines": "14:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Thursday",
-          "times": {
-            "Sørvágur": "17:30",
-            "Mykines": "18:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Sørvágur": "09:30",
-            "Mykines": "10:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Sørvágur": "13:30",
-            "Mykines": "14:15"
-          }
-        },
-        {
-          "service_id": "weekdays",
-          "day_raw": "Friday",
-          "times": {
-            "Sørvágur": "17:30",
-            "Mykines": "18:15"
+            "Sørvágur": "10:45",
+            "Mykines": null
           }
         },
         {
           "service_id": "sat",
           "day_raw": "Saturday",
           "times": {
-            "Sørvágur": "09:30",
-            "Mykines": "10:15"
+            "Sørvágur": "10:45",
+            "Mykines": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Mykines",
+        "Sørvágur"
+      ],
+      "trips": [
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Mykines": "11:30",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Mykines": "11:30",
+            "Sørvágur": null
           }
         },
         {
           "service_id": "sat",
           "day_raw": "Saturday",
           "times": {
-            "Sørvágur": "13:30",
-            "Mykines": "14:15"
-          }
-        },
-        {
-          "service_id": "sat",
-          "day_raw": "Saturday",
-          "times": {
-            "Sørvágur": "17:30",
-            "Mykines": "18:15"
-          }
-        },
-        {
-          "service_id": "sun",
-          "day_raw": "Sunday",
-          "times": {
-            "Sørvágur": "09:30",
-            "Mykines": "10:15"
-          }
-        },
-        {
-          "service_id": "sun",
-          "day_raw": "Sunday",
-          "times": {
-            "Sørvágur": "13:30",
-            "Mykines": "14:15"
-          }
-        },
-        {
-          "service_id": "sun",
-          "day_raw": "Sunday",
-          "times": {
-            "Sørvágur": "17:30",
-            "Mykines": "18:15"
+            "Mykines": "11:30",
+            "Sørvágur": null
           }
         }
       ]
@@ -223,43 +435,43 @@
       ],
       "trips": [
         {
-          "service_id": "weekdays",
+          "service_id": "mon",
           "day_raw": "Monday",
           "times": {
             "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Mykines": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "tue",
           "day_raw": "Tuesday",
           "times": {
             "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Mykines": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "wed",
           "day_raw": "Wednesday",
           "times": {
             "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Mykines": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "thu",
           "day_raw": "Thursday",
           "times": {
             "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Mykines": null
           }
         },
         {
-          "service_id": "weekdays",
+          "service_id": "fri",
           "day_raw": "Friday",
           "times": {
             "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Mykines": null
           }
         },
         {
@@ -267,7 +479,7 @@
           "day_raw": "Saturday",
           "times": {
             "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Mykines": null
           }
         },
         {
@@ -275,7 +487,73 @@
           "day_raw": "Sunday",
           "times": {
             "Sørvágur": "10:45",
-            "Mykines": "11:30"
+            "Mykines": null
+          }
+        }
+      ]
+    },
+    {
+      "heading": null,
+      "seasonal": null,
+      "stops": [
+        "Mykines",
+        "Sørvágur"
+      ],
+      "trips": [
+        {
+          "service_id": "mon",
+          "day_raw": "Monday",
+          "times": {
+            "Mykines": "11:30",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "tue",
+          "day_raw": "Tuesday",
+          "times": {
+            "Mykines": "11:30",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "wed",
+          "day_raw": "Wednesday",
+          "times": {
+            "Mykines": "11:30",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "thu",
+          "day_raw": "Thursday",
+          "times": {
+            "Mykines": "11:30",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "fri",
+          "day_raw": "Friday",
+          "times": {
+            "Mykines": "11:30",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "sat",
+          "day_raw": "Saturday",
+          "times": {
+            "Mykines": "11:30",
+            "Sørvágur": null
+          }
+        },
+        {
+          "service_id": "sun",
+          "day_raw": "Sunday",
+          "times": {
+            "Mykines": "11:30",
+            "Sørvágur": null
           }
         }
       ]
